@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "custom-rainbow-colors",
+    "extended-colorschemes",
+    "minimal-cards"
+  ],
+  "theme": "moonstone"
+}

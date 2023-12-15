@@ -1,0 +1,223 @@
+{
+  "main": {
+    "id": "34a231df968b76a8",
+    "type": "split",
+    "children": [
+      {
+        "id": "77cabb101b6282dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c27bdfbac89e3ec3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Programming/Vault/Vault 서비스 실행방법.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "47b1d740e4133ced",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Programming/Vault/Vault 서비스 실행방법.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "94eb93f4b66c4ee5",
+    "type": "split",
+    "children": [
+      {
+        "id": "f52f2fe9bbc430eb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2888189617e12bd1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3c6c328fb5bfd675",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bc98b23547e00046",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "b95b6fb535e550bb",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c02c52d005d41634",
+    "type": "split",
+    "children": [
+      {
+        "id": "6ae8bb1a5591818c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59f013ae975dc1a5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Programming/Vault/Vault 서비스 실행방법.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d0678e5143222b02",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Programming/Vault/Vault 서비스 실행방법.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d68a401428f6ae3e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3b7b4afdacf9b3e2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Programming/Vault/Vault 서비스 실행방법.md"
+              }
+            }
+          },
+          {
+            "id": "55f8e4623e02ced6",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "templater-obsidian:Templater": false,
+      "smart-random-note:Open Random Note from Search": false
+    }
+  },
+  "active": "c27bdfbac89e3ec3",
+  "lastOpenFiles": [
+    "자기개발/출근했더니 스크럼 마스터가 된 건에 관하여.md",
+    "Programming/Vault/Vault 서비스 실행방법.md",
+    "투자자산운용사/용어정리/금융상품및 세재.md",
+    "Programming/Vault",
+    "투자자산운용사/금융상품및세제/금융상품의 개론.md",
+    "Spaces/Home",
+    "Spaces",
+    "자기개발/자기개발.md",
+    "투자자산운용사/투자운용 및 전략/투자분석기법.md",
+    "투자자산운용사/투자운용 및 전략/대안투자운용 및 투자전략.md",
+    "투자자산운용사/금융상품및세제/금융투자세제 개념정리.md",
+    "투자자산운용사/투자자산운용사.md",
+    "투자자산운용사/투자운용 및 전략",
+    "투자자산운용사/용어정리",
+    "투자자산운용사/스트림.md",
+    "투자자산운용사/금융상품및세제",
+    "투자자산운용사",
+    "자기개발",
+    "Programming/Spring/Spring Rest Docs 개념정리.md",
+    "Programming/Spring/Micrometer란.md",
+    "Programming/Spring/JWT 토큰 기반 인증.md",
+    "Programming/Spring/CompletableFuture.md",
+    "Programming/Spring/Spring Cloud Config란?.md",
+    "Programming/Spring/Webflux/Webflux의 요청처리에 대한 고찰.md",
+    "Programming/Spring/Webflux/Reactive Streams.md",
+    "Programming/Spring/Webflux/CompletableFuture 정리.md",
+    "Programming/Spring/Webflux",
+    "Programming/Spring/HttpEntity란?.md",
+    "Programming/Spring/프록시와 연관관계 관리.md",
+    "Programming/Spring/스프링 Custom Valid 어노테이션 작성.md",
+    "Programming/Spring/Spring Security Remember-Me 적용하기.md",
+    "Programming/Spring/Gradle 7.0 Relase.md",
+    "Programming/Spring/DI(Dependency Injection)와 서비스 로케이터.md",
+    "Programming/Spring/Spring WebMvcTest 적용하기.md",
+    "Programming/Spring/배치/스프링 부트 배치 입문을 위한 용어정리.md",
+    "Programming/Spring/배치",
+    "Attached file/Pasted image 20230923155402.png"
+  ]
+}

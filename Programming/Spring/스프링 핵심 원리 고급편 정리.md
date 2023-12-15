@@ -1,0 +1,251 @@
+# 스프링 핵심 원리 고급편 정리
+ 
+ 스프링 핵심 원리 고급편을 듣고 그동안 얕게 알았던 부분들에 대해서 좀 더 깊게 배운거 같아서 개인적으로 스프링 기반으로 개발한다면 꼭 들어볼만한 강의라고 생각합니다. 
+
+학습한 내용을 정리하면 아래 크게 8가지로 정리하였습니다.
+
+- `쓰레드 로컬(ThreadLocal)`
+- `템플릿 메서드 패턴과 콜백 패턴`
+- `프록시 패턴과 데코레이터 패턴`
+- `JDK 동적 프록시와 CGLIB 프록시 동작원리`
+- `스프링이 지원하는 자동 프록시 생성기`
+- `빈 후처리기`
+- `@Aspect의 개념`
+- `스프링 AOP 포인트컷`
+
+## 1. 쓰레드 로컬이란?
+
+사실 이 강의를 듣고 싶었던 이유 중 하나가 바로 쓰레드 로컬이였습니다. 이전 회사에서도 DB 동시성 문제 때문에 크게 삽질을 한적 이 있었는데, 그 당시에는 어플리케이션 계층에서 `ReentrantLock`을 사용하여 스레드 별 동시성을 제어하여 문제를 해결하였고, 그중 구글링을 통해서 찾아냈던 방법이 Redis나 ThreadLocal에 대한 글을 봤던게 인상이 깊었습니다. 
+
+그리고 마침내 이강의에서 조금이나마 얕지만 `스레드 로컬`에 대한 개념을 알 수 있었습니다.
+
+Spring에서 bean 객체는 대부분 `싱글톤` 방식으로 생성되기 때문에 JVM 힙 영역에 인스턴스가 하나 뿐이라는 메모리 이점이 있지만, 맴버변수로 특정 상태 값을 관리하고, 그 값을 새로 쓰게 된다면, 여러 request 스레드에서 해당 필드에 대해서 동시성 문제가 발생할 수 있습니다. 
+
+쓰레드 로컬은 이러한 멀티 쓰레드 환경에서도 각 `value`를 스레드별로 각 저장소를 가지고 있기 때문에 `Thread Safe` 하다고 말할 수 있습니다.
+
+아래 이미지는 `ThreadLocal`이 어떻게 쓰레드별로 데이터를 관리하는지 그려봤습니다.
+
+![ThreadLocal Diagram](https://user-images.githubusercontent.com/22395934/182642757-5494d767-9c7f-4df2-ab16-05922a037764.png)
+
+실제 `ThreadLocal` 클래스 파일을 대략적으로 살펴보면 Map으로 관리되는 것을 확인할 수 있었습니다. 확실하진 않지만 코드를 봤을 때 각 쓰레드 객체를 `ThreadLocalMap`이라는 Map 타입의 객체를 가지고 있습니다. 해당 쓰레드를 key로 관리하면 Thread Safe하게 관리할 수 있지 않을까 생각해봤습니다.
+
+```kotlin
+public void set(T value) {
+    Thread t = Thread.currentThread();
+    ThreadLocalMap map = getMap(t);
+    
+    if (map != null) {
+        map.set(this, value);
+    } else {
+        createMap(t, value);
+    }
+}
+
+public T get() {
+
+    Thread t = Thread.currentThread();
+    ThreadLocalMap map = getMap(t);
+    
+    if (map != null) {
+        ThreadLocalMap.Entry e = map.getEntry(this);
+        if (e != null) {
+            @SuppressWarning("unchecked")
+            T result = (T)e.value;
+            return result;
+        }
+    }
+
+    return setInitialValue();
+}
+```
+
+## 2. GOF의 디자인 패턴
+
+이 GOF 패턴은 너무나도 유명해서 사실 예전에 스프링을 처음 공부했을때 서적이나 블로그에서 많이 봐서 이 강의를 통해 다시 듣게 되어서 좋았습니다.
+
+이 강의에서 살펴본 디자인 패턴은 5가지 정도 입니다.
+
+- 템플릿 메서드 패턴
+- 템플릿 콜백 패턴
+- 전략 패턴
+- 프록시 패턴
+- 데코레이터 패턴
+
+
+해당 디자인 패턴에 대해서 예전에 블로그에 정리하여서 다시 한번 살펴보았습니다.
+
+
+> [객체지향 설계를 위한 디자인 패턴](https://velog.io/@sa1341/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%84%A4%EA%B3%84%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4)
+
+템플릿 메서드 패턴은 워낙 유명하고, 실제로 이전 회사에서도 대부분 이 디자인 패턴으로 된 코드도 많이 있었습니다. 
+
+템플릿 패턴의 주요 목적은 `변하지 않는 부분과 변하는 부분을 구분하여 코드를 작성하는 것입니다.`
+
+이 부분을 듣고 실제로 개별 공부로 해봤던 `RedisTemplate, KafkaTemplate, JdbcTemplate` 등이 대부분 변하지 않는 부분에 대해서 정의하고, 나머지 변하는 부분은 외부에서 개발자가 런타임 시 아규먼트로 넘겨서 뒷단에서 호출하는 부분에 대해서도 알게 되었습니다. 
+
+이것이 가장 많이 쓰이는 `템플릿 콜백 패턴` 입니다.
+
+
+여기서 프록시 패턴과 데코레이터 패턴을 보았고 사실 이전에 공부했을때도 코드만 봤을 때 두 패턴이 정확이 뭐가 다른건지 이해할 수 없었던 부분이 있었습니다.
+
+- 프록시 패턴: 접근제어가 목적
+- 데코레이터 패턴: 새로운 기능 추가가 목적
+
+위 두 목적들은 근본적으로 Proxy라는 객체를 생성해서 target(실제 서비스 객체)를 구현하거나 상속해서 해당 타겟 객체가 클라이언트에게 호출 될 때 해당 요청을 `intercept`하여 타겟 객체가 호출되기 전후로 특정 처리 코드를 넣는게 핀트였습니다.
+
+
+## JDK 동적 프록시와 CGLIB 프록시 동작원리
+
+둘의 차이는 JDK 동적 프록시는 target이 구현하고 있는 인터페이스를 구현하여 프록시를 생성하는 방법이고, CGLIB는 타겟을 직접 상속받아서 프록시를 생성하고 있습니다.
+
+> 스프링 부트 2.0버전 이상부터는 CGLIB는 스프링 내부에서 기본적으로 라이브러리로 내장하고 있고, 프록시 생성방식은 default가 CGLIB 방식입니다.
+
+위 정의만 사실 예전에 공부해봐서 알고 있었지만 스프링에서 실제로 해당 프록시 객체를 어떻게 빈으로 등록되고, advice(횡단 관심사)를 어떻게 적용하는지는 깊게 알고 있지는 않았습니다. 
+
+먼저, 두 프록시 생성하는 방법을 코드부터 살펴보았습니다.
+
+### JDK 동적 프록시 생성방법
+
+```kotlin
+class TimeInvocationHandler(
+    private val target: Any
+): InvocationHandler {
+
+    override fun invoke(proxy: Any, method: Method, args: Array<out Any>?): Any {
+        logger.info { "TimeProxy  실행" }
+        val startTime = System.currentTimeMillis()
+
+        val result = method.invoke(target)
+        val endTime = System.currentTimeMillis()
+
+        val resultTime = endTime - startTime
+        logger.info { "TimeProxy 종료, resultTime = ${resultTime}ms" }
+        return result
+    }
+}
+
+Proxy.newProxyInstance(AInterface::class.java.classLoader,
+            arrayOf(AInterface::class.java), handler)
+```
+
+실제 필요한 파라미터로는 프록시가 구현할 인터페이스의 클래스 로더와 프록시가 구현할 인터페이스 배열, 실제 advice(부가기능)이 호출하는 `InvocationHandler` 객체가 필요합니다.
+
+### CGLIB 프록시 생성방법
+
+```kotlin
+class TimeMethodInterceptor(
+    private val target: Any
+): MethodInterceptor {
+
+    override fun intercept(any: Any?, method: Method?, args: Array<out Any>?, methodProxy: MethodProxy?): Any? {
+        logger.info { "TimeProxy  실행" }
+        val startTime = System.currentTimeMillis()
+
+        val result = methodProxy?.invoke(target, args)
+        val endTime = System.currentTimeMillis()
+
+        val resultTime = endTime - startTime
+        logger.info { "TimeProxy 종료, resultTime = ${resultTime}ms" }
+        return result
+    }
+}
+
+val target = ConcreteService()
+
+val enhancer = Enhancer()
+enhancer.setSuperclass(ConcreteService::class.java)
+enhancer.setCallback(TimeMethodInterceptor(target))
+val proxy = enhancer.create() as ConcreteService
+```
+
+CGLIB는 `Enhancer`라는 객체를 사용하고 있습니다. setSuperclass 메서드에 프록시가 상속받을 타겟 클래스를 넣어주었고,
+실제 advice(부가기능)을 호출하는 `MethodInterceptor`를 참조하고 있습니다.
+
+> 참고로 CGLIB는 상속방식으로 생성되기 때문에 클래스에 final이 적용되어 있으면, 생성이 안됩니다. 이점은 주의해야 됩니다. Kotlin에서는 기본적으로 클래스 생성 시 final이 적용되기 때문에 상속이 불가능하게 됩니다. 따라서 상속을 허용하도록 open 키워드를 넣어줘야 됩니다.
+
+
+```kotlin
+class AToBPostProcessor: BeanPostProcessor {
+        override fun postProcessAfterInitialization(bean: Any, beanName: String): Any? {
+        logger.info { "beanName = $beanName, bean = $bean" }
+
+        return when (bean) {
+            else -> bean
+            is A -> B()
+        }
+    }
+}
+```
+
+위 코드는 스프링 Bean 객체 생성 후 스프링 컨테이너에 저장되기 전에 후킹 기능을 제공해주는 `BeanPostProcessor`를 구현해서 
+실제로 어떻게 프록시를 생성하는지 알 수 있었습니다.
+
+스프링 부트가 기동하면 기본적으로 `AnnotationAwareAspectJAutoProxyCreator`라는 자동 프록시 생성기를 호출하게 되는데, 이 프록시 생성기는 `@Aspect`가 정의된 빈 클래스들을 스프링 컨테이너에서 읽어온 다음에 `Aspect 빌더`에게 요청하여 해당 Aspect 클래스를 `Advisor(포인트컷과 advice를 가지는 객체)로 변환하여 내부 캐시에 저장하게 됩니다.`
+
+그 후에 프록시로 등록하기를 원하는 target 객체를 생성 후 스프링 컨테이너에 저장하기 전에 빈 후처리기에 자동 프록시 생성기가
+advisor의 pointcut을 참조하여 타겟의 메서드 중 하나라도 포인트컷에 매칭되면 해당 프록시를 빈으로 등록하고, 타겟은 프록시가 참조하게 되는 형태로 Spring AOP가 동작하게 됩니다.
+
+> 여기서 포인트는 실제로 스프링 컨테이너에 등록되는 Bean 객체는 Proxy이고, target은 참조로만 가진다는 것입니다.
+
+아래 블로그는 포인트컷 개념과 advice에 대해서 정리한 글입니다.
+
+[스프링 AOP 개념 및 Proxy를 이용한 구동원리](https://github.com/sa1341/TIL/blob/master/Java/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20AOP%20%EA%B0%9C%EB%85%90%20%EB%B0%8F%20Proxy%EB%A5%BC%20%EC%9D%B4%EC%9A%A9%ED%95%9C%20%EA%B5%AC%EB%8F%99%EC%9B%90%EB%A6%AC.md)
+
+
+## Spring AOP 실무 관점
+
+사실 실무에서 어떻게 AOP를 업무환경에 맞게 유용하게 사용할 수 있을지 궁금하였고, 이 강의목록 끝에서 가장 기다렸던 내용 중 하나였습니다.
+실무에서 가장 많이 부딪치는 문제로는 스프링 AOP를 작성하고 프록시를 통해 target 객체를 호출하게 되는데, 그 때 만약 타겟 객체 메소드 호출 중에 inner 메서드를 호출하게 되는 경우 의도와 다르게 Proxy가 적용이 안되는 부분입니다.
+
+사실 이것도 위에 내용을 토대로 AOP 개념을 이해하게 된다면 금방 알 수 있는 문제였습니다. 위에서 봤듯이 결국 스프링 컨테이너로 등록되는건 프록시이고, 실제 타겟은 프록시가 참조형식으로 가지고 있기 때문에, 실제 타겟을 호출하면 그다음은 프록시 제어밖인 상태가 되기 때문입니다.
+
+결국 타겟의 내부 메서드를 프록시로 적용할 경우 가장 좋은 대안으로는 해당 메서드를 `InnerService` 클래스로 작성 후 해당 객체를 프록시로 등록하는 방법입니다. 
+
+```java
+@Aspect
+class CallLogAspect {
+
+    @Before("execution(* com.kakaopaysec.aop.internal..*.*(..))")
+    fun doLog(joinPoint: JoinPoint) {
+        logger.info { "aop = {${joinPoint.signature}}" }
+    }
+}
+
+@Component
+class InternalService {
+
+    fun internal() {
+        logger.info { "call internal" }
+    }
+}
+
+@Component
+class CallServiceV3(
+    private val internalService: InternalService
+) {
+
+    fun external() {
+        logger.info { "call external" }
+        internalService.internal()
+    }
+}
+
+// 테스트 코드
+@Import(CallLogAspect::class)
+@SpringBootTest
+internal class CallServiceV3Test {
+
+    @Autowired lateinit var callServiceV3: CallServiceV3
+
+
+    @Test
+    fun external() {
+        callServiceV3.external()
+    }
+}
+```
+
+## 강의 후기
+
+사실 이 강의를 들으면서 느낀점은 스프링 AOP 발전 과정을 버전별 빌드업을 통해서 개념을 잘 설명하고 있다고 생각합니다.
+`JPA`를 공부했을 때도 지연로딩에서 Proxy 개념이 나오기 때문에 프록시는 스프링 개발자라면 Proxy 개념은 반드시 알고 가야된다고 생각하였고, 이 강의를 통해 조금이라도 Proxy에 대해서 알게 되어서 너무 좋았습니다.
