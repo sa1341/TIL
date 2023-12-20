@@ -182,6 +182,8 @@
   },
   "active": "c27bdfbac89e3ec3",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
@@ -215,8 +217,6 @@
     "Programming/Spring/Webflux/CompletableFuture 정리.md",
     "Programming/Spring/Webflux",
     "Programming/Spring/HttpEntity란?.md",
-    "Programming/Spring/프록시와 연관관계 관리.md",
-    "Programming/Spring/스프링 Custom Valid 어노테이션 작성.md",
     "Programming/Spring/배치",
     "Attached file/Pasted image 20230923155402.png"
   ]
