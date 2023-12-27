@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
-                "mode": "source",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md"
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
               }
             }
           },
@@ -182,8 +182,8 @@
   },
   "active": "c27bdfbac89e3ec3",
   "lastOpenFiles": [
-    "Untitled.md",
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
+    "Untitled.md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
