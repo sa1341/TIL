@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c27bdfbac89e3ec3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Obsidian/제텔카스텐을 위한 옵시디언.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "47b1d740e4133ced",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/Vault/Vault 서비스 실행방법.md",
+                "file": "Obsidian/제텔카스텐을 위한 옵시디언.md",
                 "mode": "source",
                 "source": false
               }
@@ -180,8 +168,10 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "c27bdfbac89e3ec3",
+  "active": "47b1d740e4133ced",
   "lastOpenFiles": [
+    "Programming/Vault/Vault 서비스 실행방법.md",
+    "Obsidian/제텔카스텐을 위한 옵시디언.md",
     "Obsidian/마크다운(Markdown) 문법 총정리.md",
     "투자자산운용사/투자자산운용사 합격후기.md",
     "투자자산운용사 합격.png",
@@ -199,7 +189,6 @@
     "Untitled.md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "README.md",
-    "Programming/Vault/Vault 서비스 실행방법.md",
     "자기개발/출근했더니 스크럼 마스터가 된 건에 관하여.md",
     "투자자산운용사/용어정리/금융상품및 세재.md",
     "Programming/Vault",
@@ -218,7 +207,6 @@
     "Programming/Spring/Micrometer란.md",
     "Programming/Spring/JWT 토큰 기반 인증.md",
     "Programming/Spring/CompletableFuture.md",
-    "Programming/Spring/Spring Cloud Config란?.md",
     "Programming/Spring/Webflux",
     "Programming/Spring/배치"
   ]
