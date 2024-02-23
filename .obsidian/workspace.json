@@ -20,6 +20,16 @@
             }
           },
           {
+            "id": "5986e28caf9496c5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.8"
+              }
+            }
+          },
+          {
             "id": "a8901f3ab7d016d0",
             "type": "leaf",
             "state": {
@@ -29,7 +39,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +94,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -178,7 +190,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "47b1d740e4133ced",
+  "active": "5986e28caf9496c5",
   "lastOpenFiles": [
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
     "투자자산운용사/투자자산운용사 합격후기.md",
