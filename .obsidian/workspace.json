@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
@@ -39,8 +39,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -94,8 +93,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,7 +188,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "5986e28caf9496c5",
+  "active": "47b1d740e4133ced",
   "lastOpenFiles": [
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
     "투자자산운용사/투자자산운용사 합격후기.md",
