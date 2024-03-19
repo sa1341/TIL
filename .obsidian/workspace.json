@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/모니터링/그라파나 연동.md",
                 "mode": "source",
                 "source": false
               }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/모니터링/그라파나 연동.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/모니터링/그라파나 연동.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
+                "file": "Programming/인프라/모니터링/그라파나 연동.md"
               }
             }
           },
@@ -190,6 +190,7 @@
   },
   "active": "47b1d740e4133ced",
   "lastOpenFiles": [
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
     "투자자산운용사/투자자산운용사 합격후기.md",
     "투자자산운용사/투자운용 및 전략/투자분석기법.md",
@@ -204,7 +205,6 @@
     "Programming/객체지향 프로그래밍/Java/스트림.md",
     "투자자산운용사/투자자산운용사.md",
     "Programming/객체지향 프로그래밍/Java/제네릭타입.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
