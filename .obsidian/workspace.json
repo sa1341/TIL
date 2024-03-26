@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/모니터링/Prometheus 연동하기.md",
+                "file": "Programming/인프라/AWS/AWS IAM 개요.md",
                 "mode": "source",
                 "source": false
               }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/모니터링/Prometheus 연동하기.md",
+                "file": "Programming/인프라/AWS/AWS IAM 개요.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/모니터링/Prometheus 연동하기.md",
+                "file": "Programming/인프라/AWS/AWS IAM 개요.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/모니터링/Prometheus 연동하기.md"
+                "file": "Programming/인프라/AWS/AWS IAM 개요.md"
               }
             }
           },
@@ -190,6 +190,10 @@
   },
   "active": "47b1d740e4133ced",
   "lastOpenFiles": [
+    "Programming/인프라/AWS/AWS Cloud란?.md",
+    "Programming/인프라/AWS/AWS IAM 개요.md",
+    "Programming/인프라/AWS/AWS VPC란?.md",
+    "Programming/인프라/모니터링/Prometheus 연동하기.md",
     "Programming/인프라/모니터링/그라파나 연동.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
@@ -210,7 +214,6 @@
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
     "Untitled.md",
-    "Programming/인프라/AWS/AWS Cloud란?.md",
     "README.md",
     "자기개발/출근했더니 스크럼 마스터가 된 건에 관하여.md",
     "Programming/Vault",
@@ -219,14 +222,11 @@
     "Spaces",
     "자기개발/자기개발.md",
     "투자자산운용사/투자운용 및 전략/대안투자운용 및 투자전략.md",
-    "투자자산운용사/금융상품및세제/금융투자세제 개념정리.md",
     "투자자산운용사/투자운용 및 전략",
     "투자자산운용사/용어정리",
     "투자자산운용사/금융상품및세제",
     "투자자산운용사",
     "자기개발",
-    "Programming/Spring/Spring Rest Docs 개념정리.md",
-    "Programming/Spring/Micrometer란.md",
     "Programming/Spring/Webflux",
     "Programming/Spring/배치"
   ]
