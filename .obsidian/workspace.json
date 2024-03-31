@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/Untitled.md",
+                "file": "Programming/인프라/AWS/보안그룹(Security Group).md",
                 "mode": "source",
                 "source": false
               }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/Untitled.md",
+                "file": "Programming/인프라/AWS/보안그룹(Security Group).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/Untitled.md",
+                "file": "Programming/인프라/AWS/보안그룹(Security Group).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/Untitled.md"
+                "file": "Programming/인프라/AWS/보안그룹(Security Group).md"
               }
             }
           },
@@ -191,7 +191,7 @@
   "active": "47b1d740e4133ced",
   "lastOpenFiles": [
     "Programming/인프라/AWS/AWS VPC란?.md",
-    "Programming/인프라/AWS/Untitled.md",
+    "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
     "Programming/인프라/AWS/AWS IAM 개요.md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
