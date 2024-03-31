@@ -18,6 +18,10 @@ VPC를 적용하면 아래와 같이 인스턴스가 VPC에 속함으로써 네�
 ![Untitled Diagram drawio (4)](https://user-images.githubusercontent.com/22395934/148958443-d35e761a-4c56-44ec-b3d9-e5ae4e4428e7.png)
 
 
+vpc 내부에는 서브넷이 존재하고, EC2 인스턴스는 내부적으로 서브넷에 포함되어 서브넷의 IP 주소 대역에서 private IP 주소를 기본 네트워크 인터페이스에 할당합니다. 그리고 IG(Internet Gateway)도 VPC에 있어서 인터넷과 통신이 가능합니다.
+
+> 퍼
+
 ## VPC 구성요소
 
 VPC는 독립된 하나의 네트워크를 구성하기 위한 가장 큰 단위입니다. 각 region에 종속되며 RFC1918이라는 사설 IP 대역에 맞추어 설계해야 한다. 
