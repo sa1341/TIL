@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/보안그룹(Security Group).md",
+                "file": "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
                 "mode": "source",
                 "source": false
               }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/보안그룹(Security Group).md",
+                "file": "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/보안그룹(Security Group).md",
+                "file": "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/보안그룹(Security Group).md"
+                "file": "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md"
               }
             }
           },
@@ -190,9 +190,10 @@
   },
   "active": "47b1d740e4133ced",
   "lastOpenFiles": [
+    "Programming/인프라/AWS/보안그룹(Security Group).md",
+    "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
     "Programming/인프라/AWS/AWS VPC란?.md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
-    "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
     "Programming/인프라/AWS/AWS IAM 개요.md",
     "Programming/인프라/모니터링/Prometheus 연동하기.md",
@@ -221,7 +222,6 @@
     "투자자산운용사/금융상품및세제/금융상품의 개론.md",
     "Spaces/Home",
     "Spaces",
-    "자기개발/자기개발.md",
     "투자자산운용사/투자운용 및 전략",
     "투자자산운용사/용어정리",
     "투자자산운용사/금융상품및세제",
