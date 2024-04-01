@@ -20,3 +20,8 @@ Application Load Balancer에서 사용합니다.
 
 고정(Stickiness Sessions / Session Affinity)
 - 클라이언트가 세션을 유지한 상태라면 모든 요청을 동일한 인스턴스로 유지하는 기능
+## 교차 영역 로드 밸런싱(Cross-Zone Load Balancing)
+
+- 교차영역 로드 밸런싱 비활성화: 가용영역 내에 있는 타겟에만 트래픽을 분배
+- 교차영역 로드 밸런싱 활성화: 모든 가용영역의 등록된 모든 타겟 인스턴스에 동일하게 트래픽을 분배
+
