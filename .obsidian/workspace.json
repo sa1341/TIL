@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/EC2 Auto Scaling.md",
+                "file": "Programming/인프라/AWS/Elastic Block Store(EBS).md",
                 "mode": "source",
                 "source": false
               }
@@ -113,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/EC2 Auto Scaling.md",
+                "file": "Programming/인프라/AWS/Elastic Block Store(EBS).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/EC2 Auto Scaling.md",
+                "file": "Programming/인프라/AWS/Elastic Block Store(EBS).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -153,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/EC2 Auto Scaling.md"
+                "file": "Programming/인프라/AWS/Elastic Block Store(EBS).md"
               }
             }
           },
@@ -191,9 +191,10 @@
   "active": "47b1d740e4133ced",
   "lastOpenFiles": [
     "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
+    "Programming/인프라/AWS/Elastic Block Store(EBS).md",
     "Programming/인프라/AWS/EC2 Auto Scaling.md",
-    "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS VPC란?.md",
+    "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
     "Programming/인프라/AWS/AWS IAM 개요.md",
@@ -218,7 +219,6 @@
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
     "Untitled.md",
     "README.md",
-    "자기개발/출근했더니 스크럼 마스터가 된 건에 관하여.md",
     "Programming/Vault",
     "Spaces/Home",
     "Spaces",
