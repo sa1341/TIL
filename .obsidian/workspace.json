@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "47b1d740e4133ced",
+            "id": "5986e28caf9496c5",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -16,16 +16,6 @@
                 "file": "Programming/인프라/AWS/S3 개요.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "5986e28caf9496c5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.8"
               }
             }
           },
@@ -188,17 +178,18 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "47b1d740e4133ced",
+  "active": "5986e28caf9496c5",
   "lastOpenFiles": [
-    "Programming/인프라/AWS/Elastic Block Store(EBS).md",
+    "().md",
     "Programming/인프라/AWS/S3 개요.md",
+    "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
+    "Programming/인프라/AWS/AWS IAM 개요.md",
+    "Programming/인프라/AWS/Elastic Block Store(EBS).md",
     "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
     "Programming/인프라/AWS/EC2 Auto Scaling.md",
     "Programming/인프라/AWS/AWS VPC란?.md",
     "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
-    "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
-    "Programming/인프라/AWS/AWS IAM 개요.md",
     "Programming/인프라/모니터링/Prometheus 연동하기.md",
     "Programming/인프라/모니터링/그라파나 연동.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
@@ -218,7 +209,6 @@
     "Programming/객체지향 프로그래밍/Java/제네릭타입.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
-    "Untitled.md",
     "Programming/Vault",
     "Spaces/Home",
     "Spaces",
