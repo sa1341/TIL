@@ -5,6 +5,10 @@ AWS 계정을 생성하면 기본 VPC 네트워크가 생성됩니다.
 
 AWS VPC를 살펴보기전에 선행지식으로 CIDR(사이더)에 대해서 살펴봤습니다.
 기본 VPC는 인터넷과 연결되어 있고, EC2 인스턴스를 생성하면 기본 VPC에 연결됩니다.
+
+
+![](../../../Attached%20file/AWS%20VPC%20구성도.drawio.png)
+
 ## CIDR(Classless Inter-Domain Routing)
  
 사이더는 IP주소 범위를 정의하는 방식입니다. IP 주소를 작은 그룹으로 분할 하는 것을 서브네팅이라고 합니다.
