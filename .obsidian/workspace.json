@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md"
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
               }
             }
           },
@@ -180,9 +180,14 @@
   },
   "active": "5986e28caf9496c5",
   "lastOpenFiles": [
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+    "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
+    "Programming/객체지향 프로그래밍/Kotlin/지연초기화와 위임.md",
+    "Programming/인프라/AWS/VPC 개요.md",
     "Attached file/AWS VPC 구성도.drawio.png",
     "Programming/인프라/네트워크/서브넷마스크 개념 정리.md",
-    "Programming/인프라/AWS/VPC 개요.md",
     "Programming/인프라/AWS/S3 개요.md",
     "().md",
     "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
@@ -195,7 +200,6 @@
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/인프라/모니터링/Prometheus 연동하기.md",
     "Programming/인프라/모니터링/그라파나 연동.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
     "투자자산운용사/투자자산운용사 합격후기.md",
     "투자자산운용사/투자운용 및 전략/투자분석기법.md",
@@ -206,9 +210,6 @@
     "Attached file/obsidian_image.png",
     "Programming/Vault/Vault 서비스 실행방법.md",
     "투자자산운용사 합격.png",
-    "Attached file/Attached file.md",
-    "Programming/객체지향 프로그래밍/Java/스트림.md",
-    "투자자산운용사/투자자산운용사.md",
     "Programming/Vault",
     "Spaces/Home",
     "Spaces",
