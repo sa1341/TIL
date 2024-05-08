@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "8a4b086f504ee7f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "a8901f3ab7d016d0",
             "type": "leaf",
             "state": {
@@ -29,7 +41,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md"
+                "file": "Untitled.md"
               }
             }
           },
@@ -178,14 +191,15 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "5986e28caf9496c5",
+  "active": "8a4b086f504ee7f3",
   "lastOpenFiles": [
+    "Programming/인프라/AWS/VPC 개요.md",
+    "Untitled.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
     "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
     "Programming/객체지향 프로그래밍/Kotlin/지연초기화와 위임.md",
-    "Programming/인프라/AWS/VPC 개요.md",
     "Attached file/AWS VPC 구성도.drawio.png",
     "Programming/인프라/네트워크/서브넷마스크 개념 정리.md",
     "Programming/인프라/AWS/S3 개요.md",
@@ -208,7 +222,6 @@
     "Attached file/투자자산운용사 합격.png",
     "Obsidian/마크다운(Markdown) 문법 총정리.md",
     "Attached file/obsidian_image.png",
-    "Programming/Vault/Vault 서비스 실행방법.md",
     "투자자산운용사 합격.png",
     "Programming/Vault",
     "Spaces/Home",
