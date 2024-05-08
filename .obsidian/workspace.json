@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/AWS/VPC 개요.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/AWS/VPC 개요.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/AWS/VPC 개요.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
+                "file": "Programming/인프라/AWS/VPC 개요.md"
               }
             }
           },
@@ -180,9 +180,9 @@
   },
   "active": "5986e28caf9496c5",
   "lastOpenFiles": [
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
     "Programming/객체지향 프로그래밍/Kotlin/지연초기화와 위임.md",
     "Programming/인프라/AWS/VPC 개요.md",
