@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "file": "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/VPC 개요.md"
+                "file": "Programming/인프라/AWS/AWS 컨테이너 서비스.md"
               }
             }
           },
@@ -180,8 +180,9 @@
   },
   "active": "5986e28caf9496c5",
   "lastOpenFiles": [
-    "N.md",
     "Programming/인프라/AWS/VPC 개요.md",
+    "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
+    "N.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
@@ -207,7 +208,6 @@
     "투자자산운용사/용어정리/금융상품및 세재.md",
     "Programming/객체지향 프로그래밍/디자인패턴/미디에이터(Mediator) 패턴.md",
     "Attached file/투자자산운용사 합격.png",
-    "Obsidian/마크다운(Markdown) 문법 총정리.md",
     "Attached file/obsidian_image.png",
     "투자자산운용사 합격.png",
     "Programming/Vault",
