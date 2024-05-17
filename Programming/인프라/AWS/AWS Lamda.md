@@ -20,4 +20,5 @@ AWS Lamda는 Serverless라는 주요 장점이 있습니다. Serverless는 서�
 - 다양한 프로그래밍 언어를 지원(Java, Node.js, Python, C#, Ruby 등)
 - AWS Lamda 함수는 실행당 최대 15분 동안 하도록 구성
 - Lamda는 AWS에서 서버 운영에 필요한 모든 인프라를 관리
-- 
+- AWS Lamda 함수는 실행당 최대 15분 동안 하도록 구성(1초에서 15분 사이의 값으로 제한 시간을 설정)
+- EC2는 Auto Scaling 기능을 사용해 서버를 확장하지만 Lamda는 사용량이 늘어나면 자동으로 용량이 확장되므로 용량 계획이 필요 없고 확장성이 뛰어납니다.
