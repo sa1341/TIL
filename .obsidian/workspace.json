@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/AWS Lamda.md",
-                "mode": "source",
+                "file": "Programming/인프라/AWS/VPC 개요.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/AWS Lamda.md",
+                "file": "Programming/인프라/AWS/VPC 개요.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/AWS Lamda.md",
+                "file": "Programming/인프라/AWS/VPC 개요.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/AWS Lamda.md"
+                "file": "Programming/인프라/AWS/VPC 개요.md"
               }
             }
           },
@@ -180,8 +180,9 @@
   },
   "active": "5986e28caf9496c5",
   "lastOpenFiles": [
-    "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
+    "Programming/인프라/AWS/AWS VPC란?.md",
     "Programming/인프라/AWS/AWS Lamda.md",
+    "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
     "Programming/인프라/AWS/VPC 개요.md",
     "N.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
@@ -198,7 +199,6 @@
     "Programming/인프라/AWS/Elastic Block Store(EBS).md",
     "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
     "Programming/인프라/AWS/EC2 Auto Scaling.md",
-    "Programming/인프라/AWS/AWS VPC란?.md",
     "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/인프라/모니터링/Prometheus 연동하기.md",
