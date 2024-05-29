@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/RDS.md",
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/RDS.md",
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/RDS.md",
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/RDS.md"
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md"
               }
             }
           },
@@ -181,7 +181,7 @@
   "active": "5986e28caf9496c5",
   "lastOpenFiles": [
     "Programming/인프라/AWS/AWS IAM 개요.md",
-    "Programming/인프라/AWS/RDS.md",
+    "Programming/인프라/AWS/\bAWS 데이터베이스.md",
     "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/인프라/AWS/AWS Lamda.md",
     "Programming/인프라/AWS/AWS VPC란?.md",
