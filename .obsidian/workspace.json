@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/AWS/AWS IAM 개요.md",
-                "mode": "preview",
+                "file": "Programming/인프라/AWS/RDS.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/AWS IAM 개요.md",
+                "file": "Programming/인프라/AWS/RDS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/AWS IAM 개요.md",
+                "file": "Programming/인프라/AWS/RDS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/AWS IAM 개요.md"
+                "file": "Programming/인프라/AWS/RDS.md"
               }
             }
           },
@@ -180,8 +180,9 @@
   },
   "active": "5986e28caf9496c5",
   "lastOpenFiles": [
-    "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/인프라/AWS/AWS IAM 개요.md",
+    "Programming/인프라/AWS/RDS.md",
+    "Programming/인프라/AWS/AWS Cloud란?.md",
     "Programming/인프라/AWS/AWS Lamda.md",
     "Programming/인프라/AWS/AWS VPC란?.md",
     "Programming/인프라/AWS/EC2 Auto Scaling.md",
@@ -206,7 +207,6 @@
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
     "투자자산운용사/투자자산운용사 합격후기.md",
     "투자자산운용사/투자운용 및 전략/투자분석기법.md",
-    "투자자산운용사/용어정리/금융상품및 세재.md",
     "Attached file/투자자산운용사 합격.png",
     "Attached file/obsidian_image.png",
     "투자자산운용사 합격.png",
