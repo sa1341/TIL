@@ -20,6 +20,21 @@
             }
           },
           {
+            "id": "f6f2e9e1e9c543c2",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              }
+            }
+          },
+          {
             "id": "a8901f3ab7d016d0",
             "type": "leaf",
             "state": {
@@ -29,7 +44,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -83,7 +99,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -103,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/ElasticCache 개요.md",
+                "file": "Untitled.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +137,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/ElasticCache 개요.md",
+                "file": "Untitled.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/인프라/AWS/ElasticCache 개요.md"
+                "file": "Untitled.canvas"
               }
             }
           },
@@ -178,8 +195,9 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "5986e28caf9496c5",
+  "active": "f6f2e9e1e9c543c2",
   "lastOpenFiles": [
+    "Untitled.canvas",
     "Programming/인프라/AWS/\bAWS 데이터베이스.md",
     "Programming/인프라/AWS/ElasticCache 개요.md",
     "Programming/인프라/AWS/AWS IAM 개요.md",
@@ -206,7 +224,6 @@
     "Programming/인프라/모니터링/Prometheus 연동하기.md",
     "Programming/인프라/모니터링/그라파나 연동.md",
     "Obsidian/제텔카스텐을 위한 옵시디언.md",
-    "투자자산운용사/투자자산운용사 합격후기.md",
     "Attached file/투자자산운용사 합격.png",
     "Attached file/obsidian_image.png",
     "투자자산운용사 합격.png",
