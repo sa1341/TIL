@@ -53,9 +53,19 @@
                 "currentVersion": "1.5.3"
               }
             }
+          },
+          {
+            "id": "5e94d29d0d697f76",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.5"
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -109,7 +119,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -204,7 +215,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "2888189617e12bd1",
+  "active": "5e94d29d0d697f76",
   "lastOpenFiles": [
     "Untitled.canvas",
     "Programming/인프라/AWS/\bAWS 데이터베이스.md",
