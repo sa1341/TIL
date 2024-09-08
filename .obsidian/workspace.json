@@ -70,7 +70,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "corouti",
+                "query": "cps",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,7 +131,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -151,7 +152,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -168,7 +169,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -191,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md"
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
               }
             }
           },
@@ -228,6 +229,7 @@
   },
   "active": "e77c780efbe0d631",
   "lastOpenFiles": [
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/DDD/도메인 서비스.md",
@@ -247,7 +249,6 @@
     "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
     "N.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
     "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
     "Programming/객체지향 프로그래밍/Kotlin/지연초기화와 위임.md",
     "Attached file/AWS VPC 구성도.drawio.png",
