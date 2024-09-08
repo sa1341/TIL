@@ -68,9 +68,11 @@
             "id": "e77c780efbe0d631",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.6.7"
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -104,7 +106,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "corouti",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -149,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,7 +168,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -189,7 +191,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.canvas"
+                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
               }
             }
           },
@@ -226,6 +228,7 @@
   },
   "active": "2888189617e12bd1",
   "lastOpenFiles": [
+    "Programming/객체지향 프로그래밍/DDD/도메인 서비스.md",
     "Untitled.canvas",
     "Programming/인프라/AWS/\bAWS 데이터베이스.md",
     "Programming/인프라/AWS/ElasticCache 개요.md",
