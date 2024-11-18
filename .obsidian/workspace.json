@@ -70,7 +70,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cps",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,8 +131,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -152,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -169,7 +168,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -192,7 +191,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md"
+                "file": "Programming/인프라/AWS/\bAWS 데이터베이스.md"
               }
             }
           },
@@ -229,9 +228,11 @@
   },
   "active": "e77c780efbe0d631",
   "lastOpenFiles": [
+    "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
+    "Programming/인프라/AWS/보안그룹(Security Group).md",
+    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
     "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
     "Programming/객체지향 프로그래밍/DDD/도메인 서비스.md",
     "Untitled.canvas",
     "Programming/인프라/AWS/\bAWS 데이터베이스.md",
@@ -245,8 +246,6 @@
     "Programming/인프라/AWS/Elastic Block Store(EBS).md",
     "Programming/인프라/AWS/S3 개요.md",
     "Programming/인프라/AWS/VPC 개요.md",
-    "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
-    "Programming/인프라/AWS/보안그룹(Security Group).md",
     "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
     "N.md",
     "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
