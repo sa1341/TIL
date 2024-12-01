@@ -16,7 +16,9 @@
                 "file": "Programming/인프라/AWS/ElasticCache 개요.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "ElasticCache 개요"
             }
           },
           {
@@ -31,7 +33,9 @@
                   "y": 0,
                   "zoom": 0
                 }
-              }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
             }
           },
           {
@@ -41,7 +45,9 @@
               "type": "release-notes",
               "state": {
                 "currentVersion": "1.6.3"
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.6.3"
             }
           },
           {
@@ -51,7 +57,9 @@
               "type": "release-notes",
               "state": {
                 "currentVersion": "1.5.3"
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.5.3"
             }
           },
           {
@@ -61,7 +69,9 @@
               "type": "release-notes",
               "state": {
                 "currentVersion": "1.6.5"
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.6.5"
             }
           },
           {
@@ -73,11 +83,25 @@
                 "file": "Programming/인프라/AWS/ElasticCache 개요.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "ElasticCache 개요"
+            }
+          },
+          {
+            "id": "8191f6dd82b4e5d2",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.7"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.7"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -97,7 +121,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -112,7 +138,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -120,18 +148,35 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           },
           {
             "id": "b95b6fb535e550bb",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ed9a60f9b2149a41",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
-              "state": {}
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -151,7 +196,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Programming/인프라/AWS/ElasticCache 개요.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +203,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
             }
           },
           {
@@ -168,10 +214,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Programming/인프라/AWS/ElasticCache 개요.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
             }
           },
           {
@@ -182,7 +229,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -190,9 +239,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Programming/인프라/AWS/ElasticCache 개요.md"
-              }
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
             }
           },
           {
@@ -200,7 +249,9 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -226,7 +277,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "e77c780efbe0d631",
+  "active": "8191f6dd82b4e5d2",
   "lastOpenFiles": [
     "Programming/인프라/AWS/VPC 개요.md",
     "Programming/인프라/AWS/EC2 Auto Scaling.md",
