@@ -106,12 +106,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/성능 테스트/Untitled.md",
+                "file": "Programming/성능 테스트/가상 스레드를 이용한 성능 테스트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "가상 스레드를 이용한 성능 테스트"
             }
           }
         ],
@@ -174,7 +174,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -209,13 +210,27 @@
             "id": "fa1c89ff91d7644d",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "91763bf025b5dc43",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -318,7 +333,7 @@
   },
   "active": "ee96f2f6d7938831",
   "lastOpenFiles": [
-    "Programming/성능 테스트/Untitled.md",
+    "Programming/성능 테스트/가상 스레드를 이용한 성능 테스트.md",
     "Programming/인프라/AWS/VPC 개요.md",
     "Programming/인프라/AWS/EC2 Auto Scaling.md",
     "Programming/인프라/AWS/AWS VPC란?.md",
