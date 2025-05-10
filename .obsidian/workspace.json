@@ -223,14 +223,26 @@
             "id": "91763bf025b5dc43",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3d26c4ea2ea331f3",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -331,7 +343,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "ee96f2f6d7938831",
+  "active": "2888189617e12bd1",
   "lastOpenFiles": [
     "Attached file/platform thread test.png",
     "Attached file/virtual thread test.png",
