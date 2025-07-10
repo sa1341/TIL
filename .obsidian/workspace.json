@@ -113,9 +113,21 @@
               "icon": "lucide-file",
               "title": "가상 스레드를 이용한 성능 테스트"
             }
+          },
+          {
+            "id": "0450535b29a26e1f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -236,13 +248,27 @@
             "id": "3d26c4ea2ea331f3",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5a0979dad39939ea",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
@@ -343,7 +369,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "2888189617e12bd1",
+  "active": "0450535b29a26e1f",
   "lastOpenFiles": [
     "Attached file/platform thread test.png",
     "Attached file/virtual thread test.png",
