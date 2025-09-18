@@ -575,7 +575,6 @@ task copyJava(type: Copy) {
 이것은 main 안에 java 폴더를 프로젝트 폴더 외부에 복사합니다. `gradle copyJava`라고 실행해 본다. java 폴더가 프로젝트 폴더와 같은 위치에 `java_backup`이라는 이름으로 복사됩니다.
 
 ## Delete 클래스
-
 Delete 클래스는 파일과 폴더를 삭제하는 것입니다. 여기에는 다음의 메서드가 준비되어 있습니다.
 
 ```java
@@ -583,8 +582,6 @@ delete "파일", ...
 ```
 
 삭제 대상 파일을 지정합니다. 이것은 파일 경로 텍스트입니다.
-
-
 ## Gradle JDK 및 JVM Target 지정
 아래와 같이 jvmToolchain을 25로 지정하면 실제 JDK 25 JVM위에서 코틀린 컴파일러를 실행한다는 의미이고 JDK 25 최신 JIT/GC/클래스 로딩 개선을 그대로 활용이 가능합니다.
 
@@ -599,13 +596,13 @@ kotlin {
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions {
         jvmTarget = "17"  // 결과물은 Java 17 클래스파일 
-        -Xjdk-release=17  // 17 API 한정
+        -Xjdk-release=17  // 컴파일 시점을 17 API로 한정
     }
 }
 ```
 
-> 위 프로젝트의 경우 바이트 코드 버전이 Java 17 버전이라서 실제  JDK 25 JVM에서는 실행이 불가능합니다. 대신 JDK 25의 빌드 성능 이점(JIT/GC/클래스 로딩 개선)을 누릴 수 있습니다.
- 
+> 위 프로젝트의 경우 바이트 코드 버전이 Java 17 버전이고 만약 물리서버가 JDK 17을 사용한다면 JDK 25의 신규 라이브러리 사용은 불가능합니다. 대신 JDK 25의 빌드 성능 이점(JIT/GC/클래스 로딩 개선)은 누릴 수 있습니다. 그래서 만약 JDK 25로 컴파일 되어도 JVM 17에서 실행 시 NoSuchMethodError와 같은 불상사를 피하기 위해 - - freeCompilerArgs += "-Xjdk-release=17" 안전하게 설정하는게 베스트 프랙티스 입니다.
+
  #### 참조: http://www.devkuma.com/books/pages/1076
 
 
