@@ -584,6 +584,28 @@ delete "파일", ...
 
 삭제 대상 파일을 지정합니다. 이것은 파일 경로 텍스트입니다.
 
+
+## Gradle JDK 및 JVM Target 지정
+아래와 같이 jvmToolchain을 25로 지정하면 실제 JDK 25 JVM위에서 코틀린 컴파일러를 실행한다는 의미이고 JDK 25 최신 JIT/GC/클래스 로딩 개선을 그대로 활용이 가능합니다.
+
+하지만 jvmTarget을 17로 지정하면 바이트 코드 버전은 Java 17 클래스 파일의 버전으로 생성이 되는것을 의미합니다.  "17"이면 클래스 파일 major version은 61.0이 생성됩니다. 
+JVM에서는 해당 바이트 코드 버전이 동일하거나 하위버전인 경우만 런타임으로 jar 파일 실행이 가능합니다.
+
+```java
+kotlin {
+    jvmToolchain(25)  // 빌드는 25에서
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "17"  // 결과물은 Java 17 클래스파일 
+        -Xjdk-release=17  // 17 API 한정
+    }
+}
+```
+
+> 위 프로젝트의 경우 바이트 코드 버전이 Java 17 버전이라서 실제  JDK 25 JVM에서는 실행이 불가능합니다. 대신 JDK 25의 빌드 성능 이점(JIT/GC/클래스 로딩 개선)을 누릴 수 있습니다.
+ 
  #### 참조: http://www.devkuma.com/books/pages/1076
 
 
