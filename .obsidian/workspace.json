@@ -22,23 +22,6 @@
             }
           },
           {
-            "id": "f6f2e9e1e9c543c2",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "Untitled"
-            }
-          },
-          {
             "id": "79861ded0cd387e8",
             "type": "leaf",
             "state": {
@@ -72,6 +55,23 @@
               },
               "icon": "lucide-file",
               "title": "Release Notes 1.6.5"
+            }
+          },
+          {
+            "id": "f6f2e9e1e9c543c2",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
             }
           },
           {
@@ -141,7 +141,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
