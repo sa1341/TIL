@@ -139,9 +139,21 @@
               "icon": "lucide-file",
               "title": "Gradle 기초 다지기"
             }
+          },
+          {
+            "id": "1bc2d58b1a3064dc",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.5"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -301,6 +313,19 @@
             "id": "4e04cf906a2bfed8",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f72c30822e134303",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
@@ -308,7 +333,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 12
       }
     ],
     "direction": "horizontal",
@@ -410,7 +435,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "56f62b6c70529d54",
+  "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
     "Attached file/platform thread test.png",
     "Attached file/virtual thread test.png",
