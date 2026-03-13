@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/네트워크/SSL&TLS 내부동작.md",
+                "file": "AI/SuperClaude 제대로 이해하기.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSL&TLS 내부동작"
+              "title": "SuperClaude 제대로 이해하기"
             }
           }
         ],
@@ -438,6 +438,8 @@
   },
   "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "AI/SuperClaude 제대로 이해하기.md",
+    "AI",
     "Programming/인프라/네트워크/SSL&TLS 내부동작.md",
     "Attached file/platform thread test.png",
     "Attached file/virtual thread test.png",
@@ -468,7 +470,6 @@
     "Attached file/AWS VPC 구성도.drawio.png",
     "Programming/인프라/네트워크/서브넷마스크 개념 정리.md",
     "().md",
-    "Programming/인프라/모니터링/Prometheus 연동하기.md",
     "Attached file/투자자산운용사 합격.png",
     "Attached file/obsidian_image.png",
     "투자자산운용사 합격.png",
@@ -480,7 +481,6 @@
     "투자자산운용사/금융상품및세제",
     "투자자산운용사",
     "자기개발",
-    "Programming/Spring/Webflux",
-    "Programming/Spring/배치"
+    "Programming/Spring/Webflux"
   ]
 }
