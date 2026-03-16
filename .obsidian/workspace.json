@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/SuperClaude 제대로 이해하기.md",
+                "file": "AI/Claude Code 입문 가이드.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SuperClaude 제대로 이해하기"
+              "title": "Claude Code 입문 가이드"
             }
           }
         ],
@@ -436,8 +436,9 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "1bc2d58b1a3064dc",
+  "active": "2888189617e12bd1",
   "lastOpenFiles": [
+    "AI/Claude Code 입문 가이드.md",
     "AI/SuperClaude 제대로 이해하기.md",
     "AI",
     "Programming/인프라/네트워크/SSL&TLS 내부동작.md",
@@ -469,7 +470,6 @@
     "Programming/객체지향 프로그래밍/Kotlin/지연초기화와 위임.md",
     "Attached file/AWS VPC 구성도.drawio.png",
     "Programming/인프라/네트워크/서브넷마스크 개념 정리.md",
-    "().md",
     "Attached file/투자자산운용사 합격.png",
     "Attached file/obsidian_image.png",
     "투자자산운용사 합격.png",
