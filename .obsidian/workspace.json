@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Claude Code 입문 가이드.md",
+                "file": "AI/MCP 아키텍처 개념정리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Claude Code 입문 가이드"
+              "title": "MCP 아키텍처 개념정리"
             }
           }
         ],
@@ -436,8 +436,11 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "2888189617e12bd1",
+  "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Attached file/MCP_LLM.png",
+    "Attached file/MCP_LAYER.png",
+    "AI/MCP 아키텍처 개념정리.md",
     "AI/Claude Code 입문 가이드.md",
     "AI/SuperClaude 제대로 이해하기.md",
     "AI",
@@ -467,9 +470,7 @@
     "Programming/인프라/AWS/S3 개요.md",
     "N.md",
     "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
-    "Programming/객체지향 프로그래밍/Kotlin/지연초기화와 위임.md",
     "Attached file/AWS VPC 구성도.drawio.png",
-    "Programming/인프라/네트워크/서브넷마스크 개념 정리.md",
     "Attached file/투자자산운용사 합격.png",
     "Attached file/obsidian_image.png",
     "투자자산운용사 합격.png",
