@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/MCP 아키텍처 개념정리.md",
-                "mode": "source",
+                "file": "Programming/CS/한글 인코딩 EUC-KR과 UTF-8 개념.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MCP 아키텍처 개념정리"
+              "title": "한글 인코딩 EUC-KR과 UTF-8 개념"
             }
           }
         ],
@@ -328,13 +328,27 @@
             "id": "f72c30822e134303",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "07812b445ad99432",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 13
       }
     ],
     "direction": "horizontal",
