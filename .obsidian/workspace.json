@@ -158,12 +158,14 @@
             "id": "1f7f9c7abca93086",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.7"
+                "file": "Programming/Redis/Redis Cluster 내부 동작 정리.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "릴리즈 노트 1.12.7"
+              "icon": "lucide-file",
+              "title": "Redis Cluster 내부 동작 정리"
             }
           }
         ],
@@ -190,7 +192,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "파일 탐색기"
             }
           },
           {
@@ -372,8 +374,7 @@
               "title": "Spaces"
             }
           }
-        ],
-        "currentTab": 14
+        ]
       }
     ],
     "direction": "horizontal",
@@ -475,8 +476,9 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "1f7f9c7abca93086",
+  "active": "2888189617e12bd1",
   "lastOpenFiles": [
+    "Programming/Redis/Redis Cluster 내부 동작 정리.md",
     "Attached file/MCP_LLM.png",
     "Attached file/MCP_LAYER.png",
     "AI/MCP 아키텍처 개념정리.md",
