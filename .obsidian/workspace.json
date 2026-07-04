@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/운영체제/CPU와 메모리.md",
+                "file": "Programming/CS/멀티 쓰레드의 개념.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CPU와 메모리"
+              "title": "멀티 쓰레드의 개념"
             }
           }
         ],
