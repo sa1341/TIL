@@ -29,8 +29,8 @@ openssl enc -e -des3 -salt -in plaintext.txt -out cipertext.bin;
 
 위 명령의 의미는 아래와 같습니다.
 
-- enc -e -des3: des3 방식으로 암호화 함
-- -in plaintext.txt -out cipertext.bin: plaintext.txt 파일을 암호화 한 결과를 cipertext.bin 파일에 저장함.
+- enc -e -des3: des3 방식으로 암호화함
+- -in plaintext.txt -out cipertext.bin: plaintext.txt 파일을 암호화한 결과를 cipertext.bin 파일에 저장함.
 
 ```bash
 openssl enc -d -des3 -in cipertext.bin -out plaintext2.txt;

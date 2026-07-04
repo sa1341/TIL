@@ -40,7 +40,7 @@
 
 ![Untitled Diagram (2)](https://user-images.githubusercontent.com/22395934/81065536-a0ea8d00-8f16-11ea-91f3-ebbfdb22a2d6.png)
 
-위 그림에서 중간에 위치한 VidioMeiator 클래스가 미디에이터 역할을 하며, 나머지 VidioPlayer, MediaController, VidioListUIM TitleUI는 협업 대상 역할을 수행합니다. 이들 협업 대상 객체들은 서로 직접적인 의존을 맺기보다는, 미디에이터 객체를 통해서 간접적으로 연결됩니다.
+위 그림에서 중간에 위치한 VidioMeiator 클래스가 미디에이터 역할을 하며, 나머지 VidioPlayer, MediaController, VidioListUI, TitleUI는 협업 대상 역할을 수행합니다. 이들 협업 대상 객체들은 서로 직접적인 의존을 맺기보다는, 미디에이터 객체를 통해서 간접적으로 연결됩니다.
 
 예를 들어, VidioListUI 클래스는 VidioPlayer 클래스에 직접적으로 의존하지 않는 대신, VidioMediator 클래스에 대한 의존만 갖고 있습니다. VidioListUI 객체는 목록에서 특정 비디오가 선택되면, VidioListUI 객체는 아래 리스트처럼 VidioMediator 객체의 메서드를 호출합니다.
 

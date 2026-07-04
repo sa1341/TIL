@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/네트워크/HTTP 2.0 맛보기.md",
+                "file": "Programming/인프라/DB/Oracle/인덱스 구조 및 탐색.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HTTP 2.0 맛보기"
+              "title": "인덱스 구조 및 탐색"
             }
           }
         ],
@@ -462,30 +462,31 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "2888189617e12bd1",
+  "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Programming/Spring/Proxy(프록시) 개념 정리.md.tmp.40895.ed85f2a49139",
+    "Programming/객체지향 프로그래밍/DDD/애그리거트.md.tmp.40895.6f14bc7852fd",
+    "Programming/객체지향 프로그래밍/디자인패턴/Facade 패턴.md.tmp.40895.9df4d8173ca3",
+    "Programming/Spring/Spring Rest Docs 개념정리.md.tmp.40895.41426b089c01",
+    "Programming/CS/멀티 쓰레드의 개념.md.tmp.40895.9fd199668796",
+    "Programming/Spring/Spring Cloud Config란?.md.tmp.40895.72127915f10f",
+    "Programming/CS/멀티 쓰레드의 개념.md.tmp.40895.fa42fe58cd93",
+    "Programming/CS/멀티 쓰레드의 개념.md.tmp.40895.f70e6fe92ff2",
+    "Programming/객체지향 프로그래밍/Java/IO 기반 입출력 및 네트워킹.md.tmp.40895.9b2677db57d3",
+    "Programming/CS/HashMap과 LinkedHashMap, TreeMap의 차이.md.tmp.40895.1566ca50d5fb",
+    "Programming/Spring/함수 관점에서 동기와 비동기의 차이.md.tmp.40895.07cd87f8a206",
+    "Attached file/k8s_rolling_update.svg",
+    "Attached file/k8s_objects.svg",
     "Programming/인프라/DB/Oracle/오라클 리스너.md",
     "Attached file/db_btree_index.svg",
     "Attached file/aws_elb_types.svg",
-    "Programming/인프라/AWS/EC2 Auto Scaling.md.tmp.40895.896019d9a1b0",
     "Attached file/aws_auto_scaling.svg",
-    "Attached file/aws_auto_scaling.svg.tmp.40895.5de28cd359de",
     "Attached file/net_http2_stream_frame.svg",
     "Attached file/aws_global_infra.svg",
     "Attached file/aws_vpc_structure.svg",
     "Programming/인프라/AWS/AWS 데이터베이스.md",
     "Attached file/os_buffering.svg",
     "Attached file/os_memory_partition.svg",
-    "Attached file/os_cpu_structure.svg",
-    "Attached file/os_cpu_structure.svg.tmp.40895.57de8bdc2b05",
-    "Attached file/net_tls_handshake.svg",
-    "Programming/Spring/JWT 토큰 기반 인증.md.tmp.40895.0b3c0b3530d6",
-    "Programming/JPA/JPA Auditing 기능.md.tmp.40895.4c5992eb761f",
-    "Programming/객체지향 프로그래밍/DDD/이벤트.md.tmp.40895.33bb02eb7024",
-    "Programming/React/State를 사용하는 방법.md.tmp.40895.878a9bce3c31",
-    "투자자산운용사/금융상품및세제/금융투자세제 개념정리.md.tmp.40895.ab95ac5f8eef",
-    "Programming/객체지향 프로그래밍/DDD/이벤트.md.tmp.40895.cdc1eecdc488",
-    "투자자산운용사/금융상품및세제/금융투자세제 개념정리.md.tmp.40895.475ee6958e15",
     "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
     "Programming/JavaScript/함수와 프로토타입 체이닝.md",
     "Programming/JavaScript/모듈.md",
@@ -509,7 +510,6 @@
     "Programming/인프라/DB/Oracle/서브쿼리의 종류.md",
     "Programming/인프라/DB/Oracle/인덱스 구조 및 탐색.md",
     "Programming/인프라/DB/Oracle/SQL 처리과정과 IO 다루기.md",
-    "Programming/인프라/DB/Oracle/데이터 저장 구조 및 IO 메커니즘.md",
     "Untitled.canvas"
   ]
 }

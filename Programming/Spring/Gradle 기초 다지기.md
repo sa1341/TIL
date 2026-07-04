@@ -4,11 +4,11 @@
 
 ## Gradle의 등장
 
-기본적으로 Java에서는 빌드 도구를 이용해서 프로젝트 관리가 이루어졌고, Apach Ant라는 빌드 도구가 등장한 것은 2000년입니다. 그 후에 아직까지도 실무에서 많이 사용하고 있는 Apache Maven이라는 빌드 툴이 등장하였고, `이것이 현 시점 Java 빌드 도구의 사실상 표준이라고 할 수 있습니다.`
+기본적으로 Java에서는 빌드 도구를 이용해서 프로젝트 관리가 이루어졌고, Apache Ant라는 빌드 도구가 등장한 것은 2000년입니다. 그 후에 아직까지도 실무에서 많이 사용하고 있는 Apache Maven이라는 빌드 툴이 등장하였고, `이것이 현 시점 Java 빌드 도구의 사실상 표준이라고 할 수 있습니다.`
 
 하지만 이 Maven을 위협할 만한 강력한 라이벌이 `Gradle`이라는 소프트웨어입니다. Gradle은 Groovy라는 언어를 기반으로 만들어진 빌드 도구입니다. Groovy를 배운 적이 없어서 구글링한 결과 Java와 마찬가지로 Java 가상 머신에서 실행되는 스크립트 언어입니다. 차이점이 있다면 Java와 달리 소스 코드를 컴파일할 필요는 없습니다. Groovy는 스크립트 언어이며, 소스 코드를 그대로 실행합니다. 또한 Java와 호환이 되고, Java 클래스 파일을 그대로 Groovy 클래스로 사용할 수 있습니다. 문법도 Java에 아주 가까워, Java를 보다 사용하기 쉽게 한 것으로 느낄 수 있습니다. 
 
-이 간편하게 사용할 수 있는 Java라고 할 수 있는 Groovy를 사용하여 빌드 처리를 작성하고, 실행하는 것이 Gradle 입니다.
+이 간편하게 사용할 수 있는 Java라고 할 수 있는 Groovy를 사용하여 빌드 처리를 작성하고, 실행하는 것이 Gradle입니다.
 
 기존에 Maven을 이용하면 XML 기반으로 빌드 처리를 작성합니다. 내용이 복잡해지면 XML 기반에 의한 묘사는 상당히 어렵습니다. 반면에 Gradle은 Java와 거의 비슷한 코드를 써서 빌드 처리를 관리할 수 있습니다. 그래서 많은 Java 개발자들이 Maven보다 Gradle을 더 선호하는지도 모르겠습니다.
 
@@ -34,7 +34,7 @@ Gradle 개발을 하기 위해서 먼저 프로젝트를 준비합니다.
 
 - gradle init --type java-application
 
-`gradle init`이라는 것이 Gradle 초기화를 위한 명령어입니다. 이후에 --type java-application는 Java 응용 프로그램 프로젝트 유형을 지정합니다.
+`gradle init`이라는 것이 Gradle 초기화를 위한 명령어입니다. 이후에 --type java-application은 Java 응용 프로그램 프로젝트 유형을 지정합니다.
 
 ## Gradle 프로젝트 구조
 
@@ -196,7 +196,7 @@ classpath '...라이브러리...'
 
 ## 테스크 정의
 
-Gradle은 명령에 의해 `테스크(task)`을 수행하는 프로그램입니다. 위에서  gradle compileJava라든지 gradle run와 같은 명령어를 사용하였는데, 이들도 모두 `compileJava 테스크 수행`, `run 테스크 수행`이라는 것입니다.
+Gradle은 명령에 의해 `테스크(task)`를 수행하는 프로그램입니다. 위에서 gradle compileJava라든지 gradle run과 같은 명령어를 사용하였는데, 이들도 모두 `compileJava 테스크 수행`, `run 테스크 수행`이라는 것입니다.
 
 ### 테스크 정의 기본
 
@@ -436,7 +436,7 @@ class 클래스 extends DefaultTask {
 }
 ```
 
-클래스는 DefaultTask라는 클래스를 상속하여 만듭니다. 이 클래스 내에 테스크로 수행할 처리를 메서드로 제공합니다. 이 메서드에는 @TaskAction 어노테이션을 붙여 둔다. 그러면 테스크로 실행되었을 때, 이 메서드가 호출됩니다.
+클래스는 DefaultTask라는 클래스를 상속하여 만듭니다. 이 클래스 내에 테스크로 수행할 처리를 메서드로 제공합니다. 이 메서드에는 @TaskAction 어노테이션을 붙여 둡니다. 그러면 테스크로 실행되었을 때, 이 메서드가 호출됩니다.
 
 테스크로 사용하는 각종의 값은 필드로 사용할 수 있어야 합니다. 이것은 그대로 이용해도 되지만, 외부에서 사용하는 경우 private 필드로 설정하여 접근을 위한 메서드를 따로 제공하는 것이 스마트합니다.
 
@@ -480,7 +480,7 @@ class Calc extends DefaultTask {
 }
 ```
 
-Calc 클래스에는 calc라는 테스크 액션을 준비하고 있습니다. 여기에서 num와 op의 값에 따라 총의 계산과 수치 계산을 하고 있습니다.
+Calc 클래스에는 calc라는 테스크 액션을 준비하고 있습니다. 여기에서 num과 op의 값에 따라 합계 계산과 수치 계산을 하고 있습니다.
 
 ### Calc 클래스를 지정한 테스크
 
@@ -511,7 +511,7 @@ task count(type:Calc) {
     op 'count'
 }
 ```
-여기에서는 앞에서 Calc 클래스를 type에 지정한 total, count라는 두 가지 테스크를 만들었습니다. gradle total라고 실행하면 100까지의 합계가 계산됩니다.
+여기에서는 앞에서 Calc 클래스를 type에 지정한 total, count라는 두 가지 테스크를 만들었습니다. gradle total이라고 실행하면 100까지의 합계가 계산됩니다.
 
 ```java
 $ gradle total
@@ -524,9 +524,9 @@ BUILD SUCCESSFUL in 0s
 1 actionable task: 1 executed
 ```
 
-이들은 모두 상속의 Calc 클래스에 있는 메서드를 호출하는 것입니다. group와 description은 DefaultTask 클래스에 있는 것으로, 각 그룹명과 설명 텍스트를 설정합니다.
+이들은 모두 상속의 Calc 클래스에 있는 메서드를 호출하는 것입니다. group과 description은 DefaultTask 클래스에 있는 것으로, 각 그룹명과 설명 텍스트를 설정합니다.
 
-그리고 Calc 클래스에 준비되어 있는 num와 op으로 계산의 정수 값과 작업의 유형을 지정하고 있습니다.
+그리고 Calc 클래스에 준비되어 있는 num과 op으로 계산의 정수 값과 작업의 유형을 지정하고 있습니다.
 
 이런 식으로 task로 정의된 가운데, type 지정한 클래스의 메서드를 호출하여 필요한 설정을 합니다. 그러면, 그 설정이 된 후에 테스크 액션이 수행됩니다.
 
@@ -601,7 +601,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 }
 ```
 
-> 위 프로젝트의 경우 바이트 코드 버전이 Java 17 버전이고 만약 물리서버가 JDK 17을 사용한다면 JDK 25의 신규 라이브러리 사용은 불가능합니다. 대신 JDK 25의 빌드 성능 이점(JIT/GC/클래스 로딩 개선)은 누릴 수 있습니다. 그래서 만약 JDK 25로 컴파일되어도 JVM 17에서 실행 시 NoSuchMethodError와 같은 불상사를 피하기 위해 - - freeCompilerArgs += "-Xjdk-release=17"로 안전하게 설정하는 게 베스트 프랙티스입니다.
+> 위 프로젝트의 경우 바이트 코드 버전이 Java 17 버전이고 만약 물리서버가 JDK 17을 사용한다면 JDK 25의 신규 라이브러리 사용은 불가능합니다. 대신 JDK 25의 빌드 성능 이점(JIT/GC/클래스 로딩 개선)은 누릴 수 있습니다. 그래서 만약 JDK 25로 컴파일되어도 JVM 17에서 실행 시 NoSuchMethodError와 같은 불상사를 피하기 위해 freeCompilerArgs += "-Xjdk-release=17"로 안전하게 설정하는 게 베스트 프랙티스입니다.
 
  #### 참조: http://www.devkuma.com/books/pages/1076
 

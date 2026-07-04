@@ -1,0 +1,54 @@
+<svg viewBox="0 0 860 460" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="k8ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="460" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">쿠버네티스 핵심 오브젝트 관계</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">Deployment가 ReplicaSet을, ReplicaSet이 Pod를 관리 · Service는 변하는 Pod들 앞에 고정 진입점을 제공</text>
+
+  <!-- Deployment -->
+  <rect x="40" y="92" width="470" height="330" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="60" y="116" font-size="14" font-weight="700" fill="#065A6E">Deployment (배포·롤링업데이트·버전관리 담당)</text>
+  <line x1="275" y1="126" x2="275" y2="148" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#k8ar)"/>
+
+  <!-- ReplicaSet -->
+  <rect x="66" y="150" width="418" height="252" rx="10" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="86" y="172" font-size="13" font-weight="700" fill="#17212B">ReplicaSet (원하는 Pod 개수 유지: replicas=3)</text>
+  <text x="86" y="190" font-size="10.5" fill="#8A9BA8">Pod가 죽으면 새로 만들어 항상 3개를 유지</text>
+
+  <!-- Pods -->
+  <g>
+    <rect x="86" y="204" width="122" height="180" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+    <text x="147" y="224" font-size="12" font-weight="700" fill="#1F6B4E" text-anchor="middle">Pod</text>
+    <text x="147" y="240" font-size="9.5" fill="#8A9BA8" text-anchor="middle">app=web</text>
+    <rect x="98" y="250" width="98" height="56" rx="5" fill="#ffffff" stroke="#2E8B6B"/><text x="147" y="282" font-size="10.5" fill="#1F6B4E" text-anchor="middle">컨테이너</text>
+    <text x="147" y="330" font-size="9.5" fill="#8A9BA8" text-anchor="middle">고유 IP(휘발성)</text>
+    <text x="147" y="346" font-size="9.5" fill="#8A9BA8" text-anchor="middle">최소 배포 단위</text>
+  </g>
+  <g>
+    <rect x="222" y="204" width="122" height="180" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+    <text x="283" y="224" font-size="12" font-weight="700" fill="#1F6B4E" text-anchor="middle">Pod</text>
+    <text x="283" y="240" font-size="9.5" fill="#8A9BA8" text-anchor="middle">app=web</text>
+    <rect x="234" y="250" width="98" height="56" rx="5" fill="#ffffff" stroke="#2E8B6B"/><text x="283" y="282" font-size="10.5" fill="#1F6B4E" text-anchor="middle">컨테이너</text>
+  </g>
+  <g>
+    <rect x="358" y="204" width="112" height="180" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+    <text x="414" y="224" font-size="12" font-weight="700" fill="#1F6B4E" text-anchor="middle">Pod</text>
+    <text x="414" y="240" font-size="9.5" fill="#8A9BA8" text-anchor="middle">app=web</text>
+    <rect x="370" y="250" width="88" height="56" rx="5" fill="#ffffff" stroke="#2E8B6B"/><text x="414" y="282" font-size="10.5" fill="#1F6B4E" text-anchor="middle">컨테이너</text>
+  </g>
+
+  <!-- Service -->
+  <rect x="560" y="150" width="260" height="120" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.8"/>
+  <text x="690" y="176" font-size="14" font-weight="700" fill="#8A5E12" text-anchor="middle">Service</text>
+  <text x="690" y="196" font-size="10.5" fill="#8A9BA8" text-anchor="middle">selector: app=web · 고정 IP/DNS</text>
+  <text x="690" y="222" font-size="11" fill="#8A5E12" text-anchor="middle">라벨(app=web)로 Pod를 찾아</text>
+  <text x="690" y="240" font-size="11" fill="#8A5E12" text-anchor="middle">트래픽을 분산 전달</text>
+  <line x1="560" y1="230" x2="474" y2="250" stroke="#C88A2E" stroke-width="1.6" marker-end="url(#k8ar)"/>
+
+  <!-- Service types -->
+  <text x="560" y="300" font-size="12" font-weight="700" fill="#3E5060">Service 타입</text>
+  <rect x="560" y="310" width="260" height="26" rx="5" fill="#ffffff" stroke="#E5DCC7"/><text x="570" y="328" font-size="11" fill="#17212B">ClusterIP — 클러스터 내부 통신용(기본)</text>
+  <rect x="560" y="340" width="260" height="26" rx="5" fill="#ffffff" stroke="#E5DCC7"/><text x="570" y="358" font-size="11" fill="#17212B">NodePort — 노드 포트로 외부 노출</text>
+  <rect x="560" y="370" width="260" height="26" rx="5" fill="#ffffff" stroke="#E5DCC7"/><text x="570" y="388" font-size="11" fill="#17212B">LoadBalancer — 클라우드 LB로 노출</text>
+</svg>

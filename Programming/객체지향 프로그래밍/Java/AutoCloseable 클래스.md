@@ -1,10 +1,10 @@
 # AutoCloseable 클래스
 
-`try-with-resources`는 try(...) 문에서 선언된 객체들에 대해서 try가 종료될 때 자동으로 자원을 해제해주는 기능입니다. 주로 외부 자원인 파일 관련 객체와 socket Handler 객체와 같은 자원들은 try-catch-finally 문을 사용하여 마지막에 다 사용한 자원을 해제하는 코드를 많이 보았을 겁니다. AutoCloseable은 try에 선언된 객체가 AutoCloseable을 구현했다면 java가 try 구문이 종료될 때 객체의 close() 메소드를 호출해 줍니다.
+`try-with-resources`는 try(...) 문에서 선언된 객체들에 대해서 try가 종료될 때 자동으로 자원을 해제해주는 기능입니다. 주로 외부 자원인 파일 관련 객체나 socket Handler 객체와 같은 자원들의 경우, try-catch-finally 문을 사용하여 마지막에 다 사용한 자원을 해제하는 코드를 많이 보셨을 겁니다. AutoCloseable은 try에 선언된 객체가 AutoCloseable을 구현했다면 java가 try 구문이 종료될 때 객체의 close() 메소드를 호출해 줍니다.
 
-자바6에서 리소스를 사용 및 해제하는 방법을 한번 살펴보고, try-with-resources로 동일한 코드를 리팩토링해보면서 장점이 무엇인지 살펴보겠습니다.
+자바 6에서 리소스를 사용 및 해제하는 방법을 한번 살펴보고, try-with-resources로 동일한 코드를 리팩토링해보면서 장점이 무엇인지 살펴보겠습니다.
 
-예를 들어, 다음 코드는 try-catch-finally을 사용하여 파일을 열고 문자열을 모두 출력하는 코드입니다.
+예를 들어, 다음 코드는 try-catch-finally를 사용하여 파일을 열고 문자열을 모두 출력하는 코드입니다.
 
 
 ```java
@@ -68,7 +68,7 @@ public class TraditionalResourceCloseable {
 }
 ```
 
-코드를 보시면, try(...)안에 InputStream 객체 선언 및 할당하였습니다. 여기에서 선언한 변수들은 try안에서 사용할 수 있습니다. 코드의 실행 위치가 try 문을 벗어나면 try-with-resources는 try(...)안에 선언된 객체의 close() 메소드를 호출해야 합니다. 그래서 finally에 close()를 명시적으로 호출해줄 필요가 없습니다.
+코드를 보시면, try(...) 안에 InputStream 객체를 선언 및 할당하였습니다. 여기에서 선언한 변수들은 try 안에서 사용할 수 있습니다. 코드의 실행 위치가 try 문을 벗어나면 try-with-resources는 try(...) 안에 선언된 객체의 close() 메소드를 호출해야 합니다. 그래서 finally에 close()를 명시적으로 호출해줄 필요가 없습니다.
 
 try-with-resources에서 자동으로 close가 호출되는 것은 AutoCloseable을 구현한 객체에만 해당이 됩니다. 이 부분은 아래에서 좀 더 자세히 설명하겠습니다.
 
@@ -86,7 +86,7 @@ public interface AutoCloseable {
 }
 ```
 
-> 주의할 점은 BufferedInputStream 객체는 InputStream 객체를 상속받습니다. 만약에 아래 코드와 같이 InputStream 객체가 AutoCloseable를 상속받은 Closeable을 구현하였을 때 BufferedInputStream 객체가 Try-with-resources에 의해서 해제될 수 있습니다.
+> 주의할 점은 BufferedInputStream 객체는 InputStream 객체를 상속받습니다. 만약에 아래 코드와 같이 InputStream 객체가 AutoCloseable을 상속받은 Closeable을 구현하였을 때 BufferedInputStream 객체가 Try-with-resources에 의해서 해제될 수 있습니다.
 
 ```java
 public abstract class InputStream extends Object implements Closeable {
@@ -132,7 +132,7 @@ public class CustomResource implements AutoCloseable {
 #### 실행 결과
 ![image](https://user-images.githubusercontent.com/22395934/75355616-1e2fcb00-58f2-11ea-8643-70376e7face7.png)
 
-> 참고로 close 메서드 구현시 구체적인 exception을 throw 하고, close 동작이 전혀 실패할 리가 없을 때는 exception을 던지지 않도록 구현하는 것을 강력하게 권고하고 있습니다. 특히 close 메서드에서 InterruptedException을 던지지 않는 것을 강하게 권고합니다. InterruptedException은 쓰레드의 인터럽트 상태와 상호작용 하므로 interruptedException이 억제되었을 때 런타임에서 잘못된 동작이 발생할 수 있기 때문입니다.
+> 참고로 close 메서드 구현 시 구체적인 exception을 throw 하고, close 동작이 전혀 실패할 리가 없을 때는 exception을 던지지 않도록 구현하는 것을 강력하게 권고하고 있습니다. 특히 close 메서드에서 InterruptedException을 던지지 않는 것을 강하게 권고합니다. InterruptedException은 쓰레드의 인터럽트 상태와 상호작용하므로 InterruptedException이 억제되었을 때 런타임에서 잘못된 동작이 발생할 수 있기 때문입니다.
 
 
 

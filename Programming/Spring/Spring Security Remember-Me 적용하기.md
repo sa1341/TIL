@@ -98,7 +98,7 @@ http.rememberMe()
 .tokenValiditySeconds(60*60*24);
 ```
 
-마지막에 추가한 tokenValiditySeconds()는 쿠키의 유효시간을 초단위로 설정하는데 사용합니다. 코드에서는 24시간을 유지하는 쿠키를 생성합니다.
+마지막에 추가한 tokenValiditySeconds()는 쿠키의 유효 시간을 초 단위로 설정하는 데 사용합니다. 코드에서는 24시간을 유지하는 쿠키를 생성합니다.
 
 # 브라우저에서 토큰정보
 SecurityConfig의 설정을 추가한 후에 화면에서 `remember-me`를 선택하여 로그인을 하면 `persistent_logins` 테이블에 생성된 토큰의 값이 기록되는 것을 확인할 수 있습니다.

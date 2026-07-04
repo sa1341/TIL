@@ -89,7 +89,7 @@ public class SessionUser implements Serializable {
 
 이제 가장 중요한 HandlerMethodArgumentResolver를 상속받은 LoginUserArgumentResolver를 작성합니다.
 
-HandlerMethodArgumentResolver를 상속받은 객체는 아래 두개의 메소드를 구현해야 합니다.
+HandlerMethodArgumentResolver를 상속받은 객체는 아래 두 개의 메소드를 구현해야 합니다.
 
 
 ```java
@@ -99,7 +99,7 @@ public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer m
 ```
 
 
-- supportsParameter 메소드는  파라미터가 Resolver에 의해 수행될 수 있는 타입인지 `true / false`를 리턴합니다. 만약 true를 리턴한다면 resolveArgument() 메소드를 실행합니다.
+- supportsParameter 메소드는 파라미터가 Resolver에 의해 수행될 수 있는 타입인지 `true / false`를 리턴합니다. 만약 true를 리턴한다면 resolveArgument() 메소드를 실행합니다.
 
 - resolveArgument 메소드는 실제로 파라미터와 바인딩을 할 객체를 리턴합니다.
 NativeWebRequest를 통해 클라이언트 요청이 담긴 파라미터를 컨트롤러보다 먼저 받아서 작업을 수행할 수 있습니다.
@@ -137,7 +137,7 @@ public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver 
     }
 }
 ```
-LoginUserArgumentResolver의 supportsParameter(MethodParameter parameter) 메소드는 컨트롤러의 메소드의 파라미터를 가져와서 LoginUser.class 어노테이션이 적용 유무와, 실제로 해당 세션 객체의 타입이 SessionUser.class 인지 검증 후 둘다 조건이 맞다면 `true`를 리턴하여 resolveArgument() 메소드를 수행하도록 작성하였습니다.
+LoginUserArgumentResolver의 supportsParameter(MethodParameter parameter) 메소드는 컨트롤러의 메소드의 파라미터를 가져와서 LoginUser.class 어노테이션의 적용 여부와, 실제로 해당 세션 객체의 타입이 SessionUser.class인지 검증 후 둘 다 조건이 맞다면 `true`를 리턴하여 resolveArgument() 메소드를 수행하도록 작성하였습니다.
 
 
 ## resolver 등록

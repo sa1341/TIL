@@ -19,9 +19,9 @@ testImplementation(“com.github.tomakehurst:wiremock:3.0.0-beta-10”)
 ```
 2. WireMock Server 셋팅
 WireMock은 위에서 설명했듯이 웹서비스 mocking, stubbing을 위한 라이브러리이기 때문에 실제 내부적으로는 HTTP 서버가 내장되어 있습니다.
-따라서 실제 호스트와 포트를 설정을 할 수 있습니다. 호스트는 기본적으로 별도로 명시하지 않으면 localhost이고, port 같은 경우에는 8080 입니다.
+따라서 실제 호스트와 포트를 설정할 수 있습니다. 호스트는 기본적으로 별도로 명시하지 않으면 localhost이고, port 같은 경우에는 8080입니다.
 먼저 테스트 코드를 실행하기 전에 아래와 같이 helper 클래스를 하나 만들어서 WireMock 서버를 셋팅하였습니다.
-host는 따로 작성하지 않아서 localhost이고, port 같은 경우에는 dynamicPort()를 사용하여 random하게 사용하지 않는 포트를 할당하도록 설정하였습니다.
+host는 따로 작성하지 않아서 localhost이고, port 같은 경우에는 dynamicPort()를 사용하여 사용하지 않는 포트를 random하게 할당하도록 설정하였습니다.
 ```kotlin
 @WireMockTest
 abstract class WireMockHelper {
@@ -155,6 +155,6 @@ class SecuritiesAccountServiceTest : WireMockHelper() {
 ```
 위에 코드를 보면 `wireMock.register(post(path).willReturn(jsonResponse(TFPU7231.pfpq7231Response, 200)))`만 선언한 부분이 있는데 여기서는 호출하고자 하는 path와 위에 정의한 stub 객체, 응답코드 200을 리턴하도록 stub를 설정하였습니다.
 ## 사용 후기
-WireMock 베타 이전버전을 사용했을 때에는 dynamicPort 설정 및 서버 셋팅자체가 조금 복잡했었는데, 베타 버전을 사용하니까 어노테이션 기반으로 손쉽고 빠르게 더 직관적으로 테스트 코드 작성을 도와줄 수 있어서 나름 유용했다고 생각합니다.
+WireMock 베타 이전 버전을 사용했을 때에는 dynamicPort 설정 및 서버 셋팅 자체가 조금 복잡했었는데, 베타 버전을 사용하니까 어노테이션 기반으로 손쉽고 빠르며 직관적으로 테스트 코드를 작성할 수 있어서 나름 유용했다고 생각합니다.
 
  > 참조: [junit5에서 wiremock 연동 샘플코드](https://wiremock.org/docs/junit-jupiter/)

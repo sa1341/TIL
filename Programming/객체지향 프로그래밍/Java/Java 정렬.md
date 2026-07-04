@@ -1,9 +1,9 @@
 
 # Java 정렬 Comparable, Comparator가 무엇인가?
 
-배열이나 Collection 프레임워크 등에서 sort() 를 사용하면 컴퓨터가 알아서 정렬을 해줍니다.
+배열이나 Collection 프레임워크 등에서 sort()를 사용하면 컴퓨터가 알아서 정렬을 해줍니다.
 
-여기서 사용되는 sort() 는 Comparable 구현에 의해 정렬된 것인데, 
+여기서 사용되는 sort()는 Comparable 구현에 의해 정렬된 것인데, 
 
 오늘은 자바 정렬 Java Comparable과 Comparator에 대해 알아보겠습니다.
 
@@ -11,27 +11,27 @@
 Comparable - 기본 정렬기준을 구현하는 데 사용.
 Comparator - 기본 정렬기준 외에 다른 기준으로 정렬하고자 할 때 사용. 
 
-여기서 Arrays.sort(sports), Arrays.sort(names)는 String 의 Comparable 구현에 의해 정렬된 것입니다.
+여기서 Arrays.sort(sports), Arrays.sort(names)는 String의 Comparable 구현에 의해 정렬된 것입니다.
 
 ```java
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence 
 ```
 
-Comparable 을 구현하고 있는 클래스들은 같은 타입의 인스턴스끼리 서로 비교할 수 있는 클래스들, String, Integer, Date, File 등과 같은 것들입니다. 
+Comparable을 구현하고 있는 클래스들은 같은 타입의 인스턴스끼리 서로 비교할 수 있는 클래스들로, String, Integer, Date, File 등과 같은 것들입니다. 
 
 그리고 기본적으로는 작은 값에서 큰 값의 순서, 오름차순 형태로 구현되도록 만들어져 있습니다.
 이것을 상단 Comparable에 명시되어 있는 < 기본 정렬기준 > 으로 보면 될 것 같습니다.
 
 > 주의사항
- 배열 타입을 정렬할 때는 Arrays.sort() 메소드를 써야 하지만, Collection 타입의 객체의 요소를 정렬할 때는 Collections.sort() 를 적용해야 합니다.
+ 배열 타입을 정렬할 때는 Arrays.sort() 메소드를 써야 하지만, Collection 타입 객체의 요소를 정렬할 때는 Collections.sort()를 적용해야 합니다.
 
 # 객체 정렬
 SoccerPlayer는 이름, 포지션, 나이 속성을 갖고 있고 각각 setter와 getter를 선언해줬습니다. 
 여기서 동일하게 SoccerPlayer 객체를 생성하고, 배열이나 ArrayList 형태로 만들었을 경우 Arrays.sort(), Collections.sort() 는 작동할까요?
 
 답부터 말하자면 `오류`가 발생합니다.
-이유는 정렬을 시도했지만, 객체내의 어떤 변수를 기준으로 정렬할지 정하지 않았기 때문입니다.
+이유는 정렬을 시도했지만, 객체 내의 어떤 변수를 기준으로 정렬할지 정하지 않았기 때문입니다.
 String 타입의 배열이나 ArrayList는 값이 하나지만, 객체를 정렬할 경우 객체 내의 어떤 변수로 정렬할지 만들어줘야 합니다.
 
 
@@ -128,17 +128,17 @@ public class SoccerComparable {
 Process finished with exit code 0
 ```
 
-위의 실행결과를 보면 오름차순으로 정렬이 된것을 알 수 있습니다.
-SoccerPlayer 클래스에서 Comparable을 implements 했고, 하단에 compareTo를 Override하며 이름비교 코드를 만들어준 덕분입니다.
+위의 실행결과를 보면 오름차순으로 정렬이 된 것을 알 수 있습니다.
+SoccerPlayer 클래스에서 Comparable을 implements 했고, 하단에 compareTo를 Override하며 이름 비교 코드를 만들어준 덕분입니다.
 
-이 부분을 이름순서가 아닌 나이순서로 바꿔줄 수도 있고, 포지션을 기준으로 해도 무방합니다.
+이 부분을 이름 순서가 아닌 나이 순서로 바꿔줄 수도 있고, 포지션을 기준으로 해도 무방합니다.
 본인이 필요한 기준을 정해 코딩을 하면 됩니다.
 
 
 # Comparator 
 Comparable을 implements 하지 않고도 오브젝트의 특정 변수를 기준으로 정렬하는 방법은 있습니다.
 
-이 때 사용하는 방법이 바로 `Comparator` 입니다. 
+이때 사용하는 방법이 바로 `Comparator`입니다. 
 
 `Comparator`를 사용하면 정렬기준을 본인이 원하는 대로 바꾸는 것이 가능합니다. 
 
@@ -197,7 +197,7 @@ SoccerPlayer 클래스에 Comparable을 implements하지 않은 상태로 메인
 여기서는 Collections.sort(playerList, new Comparator<SoccerPlayer>() { } 형태로 구현해야 하며,
 이때 compare 메소드가 나타나 내부 코딩을 마무리해야 합니다. 
 
-저는 축구선수의 나이순서대로 정렬이 되도록 구현했고, 결과는 정상적으로 나이 순서대로 나타났습니다. 
+저는 축구선수의 나이 순서대로 정렬이 되도록 구현했고, 결과는 정상적으로 나이 순서대로 나타났습니다. 
 
 Comparable을 사용하든 Comparator를 사용하든 어떻게 구현하느냐에 따라 정렬이 진행되니 참고해야 합니다.
 

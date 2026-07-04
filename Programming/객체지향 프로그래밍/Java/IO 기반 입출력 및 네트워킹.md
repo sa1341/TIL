@@ -105,7 +105,7 @@ os.write(data, 1, 2); // "BC"만 출력
 
 ### flush()와 close() 메소드
 
-출력 스트림은 내부에 작은 버퍼(buffer)가 있어서 데이터가 출력되기 전에 버퍼에 쌓여있다가 순서대로 출력됩니다. flush() 메소드는 버퍼에 잔류하고 있는 데이터를 모두 출력시키고 버퍼를 비우는 역할을 합니다. 프로그램에서 더 이상 출력할 데이터가 없다면 flush() 메소드를 마지막으로 호출하여 버퍼에 잔류하는 모든 데이터가 출력되도록 해야 합니다. OuputStream을 더 이상 사용하지 않을 경우에는 close() 메소드를 호출해서 OutputStream에서 사용했던 시스템 자원을 풀어줍니다.
+출력 스트림은 내부에 작은 버퍼(buffer)가 있어서 데이터가 출력되기 전에 버퍼에 쌓여있다가 순서대로 출력됩니다. flush() 메소드는 버퍼에 잔류하고 있는 데이터를 모두 출력시키고 버퍼를 비우는 역할을 합니다. 프로그램에서 더 이상 출력할 데이터가 없다면 flush() 메소드를 마지막으로 호출하여 버퍼에 잔류하는 모든 데이터가 출력되도록 해야 합니다. OutputStream을 더 이상 사용하지 않을 경우에는 close() 메소드를 호출해서 OutputStream에서 사용했던 시스템 자원을 풀어줍니다.
 
 ```java
 OutputStream os = new FileOutputStream("C:/test.txt");
@@ -144,7 +144,7 @@ while ((readData=reader.read() != -1)) {
 
 read(char[] cbuf) 메소드는 입력 스트림으로부터 매개값으로 주어진 문자 배열의 길이만큼 문자를 읽고 배열에 저장합니다. 그리고 읽은 문자 수를 리턴합니다. 실제로 읽은 문자 수가 배열의 길이보다 작을 경우 읽은 수만큼만 리턴합니다. 예를 들어 입력 스트림에서 세 개의 문자가 들어온다면 다음과 같이 길이가 2인 문자 배열로 두 번 읽을 수 있습니다.
 
-입력 스트림으로부터 100개의 문자가 들어온다면 read() 메소드는 100번을 루핑해서 읽어들어야 합니다. 그러나 read(char[] cbuf) 메소드는 한번 읽을 때 주어진 배열 길이만큼 읽기 때문에 루핑 횟수가 현저히 줄어듭니다. 그러므로 많은 양의 문자를 읽을 때는 read(char[] cbuf) 메소드를 사용하는 것이 좋습니다.
+입력 스트림으로부터 100개의 문자가 들어온다면 read() 메소드는 100번을 루핑해서 읽어들여야 합니다. 그러나 read(char[] cbuf) 메소드는 한번 읽을 때 주어진 배열 길이만큼 읽기 때문에 루핑 횟수가 현저히 줄어듭니다. 그러므로 많은 양의 문자를 읽을 때는 read(char[] cbuf) 메소드를 사용하는 것이 좋습니다.
 
 
 ## Writer
@@ -154,7 +154,7 @@ Writer 클래스에는 모든 문자 기반 출력 스트림이 기본적으로 
 Writer 클래스의 주요 메소드는 대표적으로 아래와 같은 메소드가 존재합니다.
 
 ### write(int c)  메소드
-write(int c) 메소드는 매개 변수로 주어진 int 값에서 끝에 있는 2바이트(한개의 문자)만 출력 스트림으로 보냅니다. 매개 변수가 int 타입이므로 4바이트 모두를 보내는 것으로 오해할 수 있습니다.
+write(int c) 메소드는 매개 변수로 주어진 int 값에서 끝에 있는 2바이트(한 개의 문자)만 출력 스트림으로 보냅니다. 매개 변수가 int 타입이므로 4바이트 모두를 보내는 것으로 오해할 수 있습니다.
 
 ```java
 Writer writer = new FileWriter("C:/test.txt");
@@ -336,7 +336,7 @@ exists() 메소드의 리턴값이 false라면 createNewFile(), mkdir(), mkdirs(
 |  <center>리턴타입</center> |  <center>메소드</center> | <center>설명</center>
 |:--------|:--------:|:--------|
 | boolean | <center>createNewFile()</center> | 새로운 파일을 생성 |
-| boolean | <center>mkdir()</center> | 새로운 디렉토리 를 생성 |
+| boolean | <center>mkdir()</center> | 새로운 디렉토리를 생성 |
 | boolean | <center>mkdirs()</center> | 경로상에 없는 모든 디렉토리를 생성 | 
 | boolean | <center>delete()</center> | 파일 또는 디렉토리 삭제 |
 
@@ -356,7 +356,7 @@ exists() 메소드의 리턴값이 false라면 createNewFile(), mkdir(), mkdirs(
 | long | <center>lastModified()</center> | 마지막 수정 날짜 및 시간을 리턴 |
 | long | <center>length()</center> | 파일의 크기를 리턴 |
 | String[] | <center>list()</center> | 디렉토리에 포함된 파일 및 서브디렉토리 목록 전부를 String[] 배열로 리턴 |
-| String[] | <center>list(FileNameFilter filter)</center> | 디렉토리에 포함 된 파일 및 서브 디렉토리 목록 중에 FileNameFilter에 맞는 것만 String 배열로 리턴 |
+| String[] | <center>list(FileNameFilter filter)</center> | 디렉토리에 포함된 파일 및 서브 디렉토리 목록 중에 FileNameFilter에 맞는 것만 String 배열로 리턴 |
 | File[] | <center>listFiles()</center> | 디렉토리에 포함된 파일 및 서브 디렉토리 목록 전부를 File 배열로 리턴 |
 | File[] | <center>listFiles(FileNameFilter filter)</center> | 디렉토리에 포함된 파일 및 서브 디렉토리 목록 중에 FileNameFilter에 맞는 것만 File 배열로 리턴 |
 
@@ -437,7 +437,7 @@ while ( readByteNo = fis.read(readBytes) != -1) {
 fis.close();
 ```
 
-다음은 FileInputStreamExample.java 소스 파일을 읽고 콘솔에 보여주는 예제 입니다.
+다음은 FileInputStreamExample.java 소스 파일을 읽고 콘솔에 보여주는 예제입니다.
 
 ```java
 public class FileInputStreamExample {
@@ -546,7 +546,7 @@ while ((readCharNo = fr.read(cbuf)) != -1 ) {
 }
 fr.close();
 ```
-파일의 내용을 모두 읽은 후에는 close() 메소드를 호출해서 파일을 닫아줍니다. 다음은 FileReader Example.java 소스 파일을 읽고 콘솔에 출력하는 예제입니다.
+파일의 내용을 모두 읽은 후에는 close() 메소드를 호출해서 파일을 닫아줍니다. 다음은 FileReaderExample.java 소스 파일을 읽고 콘솔에 출력하는 예제입니다.
 
 ```java
 public class FileReaderExample {

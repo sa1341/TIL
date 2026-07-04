@@ -2,9 +2,9 @@
 
 Interceptor는 `가로채는 것(요격기)`을 의미합니다. 클라이언트(브라우저)에서 요청 Url을 Controller라는 표현계층에 전송하면 해당 요청 Url과 매핑되는 메소드가 실행되기 전후에 어떤 작업을 수행하기 위해서 Url을 가로채는 주체라고 생각하면 됩니다. 
 
-대표적으로 Url Mapping된 Controller를 거치는 전, 후 처리를 할 수 있도록 도와주는 요소를 말합니다. 주로 세션 검증, 로그 처리 같은 행위가 간단한 예시입니다.
+대표적으로 Url Mapping된 Controller를 거치는 전, 후 처리를 할 수 있도록 도와주는 요소를 말합니다. 주로 세션 검증, 로그 처리 같은 작업이 대표적인 예시입니다.
 
-`Interceptor`는 Spring-WebMvc에 포함되어 있습니다. Spring Boot에서 gradle을 빌더로 사용할 때 build.gradle 파일에 dependency에 `spring-boot-starter-web`을 가져옴으로 해결할 수 있습니다.
+`Interceptor`는 Spring-WebMvc에 포함되어 있습니다. Spring Boot에서 gradle을 빌드 도구로 사용할 때 build.gradle 파일의 dependency에 `spring-boot-starter-web`을 가져오면 해결할 수 있습니다.
 
 ```java
 dependencies{
@@ -14,7 +14,7 @@ dependencies{
 
 ## Interceptor 예제 코드
 
-기본 인터페이스는 `HandlerInterceptor` 이고, 이를 구현해서 Interceptor class를 작성해도 되고, `HandlerInterceptorAdapter`를 구현할 수도 있습니다. 하지만 `Java 1.8` 이상부터는 HandlerInterceptor의 메소드가 default로 선언되어 있기 때문에 필요한 메소드만 선택해서 구현할 수 있기 때문에 굳이 HandlerInterceptorAdapter를 이용하지 않아도 됩니다. 
+기본 인터페이스는 `HandlerInterceptor`이고, 이를 구현해서 Interceptor class를 작성해도 되고, `HandlerInterceptorAdapter`를 구현할 수도 있습니다. 하지만 `Java 1.8` 이상부터는 HandlerInterceptor의 메소드가 default로 선언되어 있어 필요한 메소드만 선택해서 구현할 수 있기 때문에 굳이 HandlerInterceptorAdapter를 이용하지 않아도 됩니다. 
 
 
 ```java

@@ -91,9 +91,9 @@ CompletableFuture 클래스를 살펴보면 Future, CompletionStage 인터페이
 
 먼저, CompletableFuture supplyAsync 메서드가 있는데 살펴보면 다음과 같습니다.
 
-- Supplier를 제공하여 CompletabeFuture를 생성 가능합니다.
+- Supplier를 제공하여 CompletableFuture를 생성할 수 있습니다.
 
-- Supplier의 반환값이 CompletableFuture의 결과로 
+- Supplier의 반환값이 CompletableFuture의 결과가 됩니다.
 
 
 ### 3.1 CompletableFuture.complete 살펴보기

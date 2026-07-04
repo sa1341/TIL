@@ -6,9 +6,9 @@ Bean의 생성 시점이 스프링 애플리케이션이 실행되는 시점이 
 #### Spring Batch에서 이렇게 Late Binding을 하면서 얻는 이점들은 아래와 같습니다.
 
 1. JobParameter를 특정 메서드가 실행하는 시점까지 지연시켜 할당시킬 수 있습니다.
-즉, 애플리케이션이 구동되는 시점이 아니라 비즈니스 로직이 구현되는 어디든 JobParameter를 할당함으로 유연한 설계를 가능하게 합니다.
+즉, 애플리케이션이 구동되는 시점이 아니라 비즈니스 로직이 구현되는 어디든 JobParameter를 할당함으로써 유연한 설계를 가능하게 합니다.
 2. 병렬처리에 안전합니다.
-Step의 구성요소인 ItemReader, ItemProcessor, ItemWriter가 있고, ItemReader에서 데이터를 읽어 오는 메서드를 서로 다른 Step으로부터 동시에 병렬 실행이 된다면 서로 상태를 간섭받게 될 수 있습니다. 하지만 @StepScope를 적용하면 각각의 Step에서 실행될 때 서로의 상태를 침범하지 않고 처리를 완료할 수 있습니다.
+Step의 구성요소인 ItemReader, ItemProcessor, ItemWriter가 있고, ItemReader에서 데이터를 읽어오는 메서드가 서로 다른 Step으로부터 동시에 병렬로 실행된다면 서로 상태를 간섭받게 될 수 있습니다. 하지만 @StepScope를 적용하면 각각의 Step에서 실행될 때 서로의 상태를 침범하지 않고 처리를 완료할 수 있습니다.
 
 > @JobScope는 Step 선언문에서만 사용이 가능하고, @StepScope는 Step을 구성하는 ItemReader, ItemProcessor, ItemWriter에서 사용 가능합니다.
 

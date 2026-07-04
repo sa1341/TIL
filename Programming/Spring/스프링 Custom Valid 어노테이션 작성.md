@@ -77,7 +77,7 @@ annotation class StringFormatDateTime(
 )
 ```
 
-JSON에서 날짜(DateTime) 변수에 적용할 `StringFormatDateTime 클래스`를 정의하였습니다. groups, payload 객체는 검증을 수행할 경우 반드시 필요한 맴버 변수입니다.
+JSON에서 날짜(DateTime) 변수에 적용할 `StringFormatDateTime 클래스`를 정의하였습니다. groups, payload 객체는 검증을 수행할 경우 반드시 필요한 멤버 변수입니다.
 
 custom constraint 어노테이션에는 다음과 같은 것들이 필요합니다.
 
@@ -95,7 +95,7 @@ pattern 변수 값은 String 타입의 날짜 패턴을 `yyyy-MM-dd HH:mm:ss`로
 
 ## 3. Custom Validator 구현체 작성
 
-실제 @StringFormatDateTime만 작성한다고 검증이 끝난게 아니고 실제로 Controller에서 파라미터로 들어온 String 타입의 날짜 값이 검증을 위해 정의한 패턴과 일치하는지 검사하는 Validator 구현체를 작성해야 합니다.
+실제 @StringFormatDateTime만 작성한다고 검증이 끝난 게 아니고 실제로 Controller에서 파라미터로 들어온 String 타입의 날짜 값이 검증을 위해 정의한 패턴과 일치하는지 검사하는 Validator 구현체를 작성해야 합니다.
 
 
 ```kotlin
@@ -119,7 +119,7 @@ class StringFormatDateTimeValidator: ConstraintValidator<StringFormatDateTime, S
 }
 ```
 
-ConstraintValidator 인터페이스를 구현하여 isValid() 메서드안에서 LocalDateTime 클래스의 parse 메서드로 파라미터가 @StringFormatDateTime 어노테이션에서 정의한 패턴이랑 일치하는지 확인하는 검증 로직을 작성합니다.
+ConstraintValidator 인터페이스를 구현하여 isValid() 메서드 안에서 LocalDateTime 클래스의 parse 메서드로 파라미터가 @StringFormatDateTime 어노테이션에서 정의한 패턴과 일치하는지 확인하는 검증 로직을 작성합니다.
 
 > initialize() 메서드는 편의상 constraintAnnotation(StringFormatDateTime)에서 정의한 패턴을 가져오기 위해 구현하였습니다. 반드시 구현할 필요는 없습니다.
 

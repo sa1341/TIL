@@ -117,7 +117,7 @@ spring:
 
 `Git Repository`에 있는 fund 디렉토리 하위에 있는 `fund-config-sandbox.yml`에 정의된 `fund.service.url": "https://sandbox.fund-channel-server.com` 가 정상적으로 조회되는 것을 확인할 수 있었습니다. 
 
-> Spring Cloud Config Repositry Git 주소: https://github.com/sa1341/spring-cloud-config-repository
+> Spring Cloud Config Repository Git 주소: https://github.com/sa1341/spring-cloud-config-repository
 
 ### 2.2 Spring Cloud Config Client 프로젝트 생성
 
@@ -152,7 +152,7 @@ dependencyManagement {
 
 어떻게 `Config Server`로부터 외부 설정 값을 받아올지에 대한 기본적인 설정정보를 `yml` 파일에 정의해봤습니다.
 
-사실 이부분을 작성하는 부분에서 `공홈`에서는 스프링 부트가 기동될 때 `application.yml` 파일보다 먼저 읽어들이는 `bootstrap.yml` 파일에 config 설정 정보를 기입하라고 나왔지만, 블로그를 찾아보니 2.4 버전부터는 조금 변경이 되어서  `bootstrap.yml`이 아니라 `applicatio.yml`에 정의해야 된다고 합니다.
+사실 이 부분을 작성할 때 `공홈`에서는 스프링 부트가 기동될 때 `application.yml` 파일보다 먼저 읽어들이는 `bootstrap.yml` 파일에 config 설정 정보를 기입하라고 나왔지만, 블로그를 찾아보니 2.4 버전부터는 조금 변경이 되어서  `bootstrap.yml`이 아니라 `applicatio.yml`에 정의해야 된다고 합니다.
 
 #### Spring Boot 2.4버전 이전 버전
 
@@ -208,7 +208,7 @@ management:
 
 ![image](https://user-images.githubusercontent.com/22395934/179767725-8f3a1eb0-c423-423d-8ba6-32f3257c0eca.png)
 
-- management.endpoints. web.exposure.include: refresh: 이 설정 값은 Spring Boot Application을 모니터링 및 관리하는 Actuator가 제공해주는 `config refresh` EndPoint를 제공해주는 설정 값입니다.
+- management.endpoints.web.exposure.include: refresh: 이 설정 값은 Spring Boot Application을 모니터링 및 관리하는 Actuator가 제공해주는 `config refresh` EndPoint를 제공해주는 설정 값입니다.
 
 > 이 값을 refresh로 설정한 이유는 설정값이 동적으로 변경되면 그 값을 다시 주입받기 위해서는 서비스를 다시 빌드와 배포를 해야 되는데 `refresh`로 하게 되면 API(/actuator/refresh)를 통해서 graceful 하게 설정 값 refresh가 가능합니다.
 
@@ -286,7 +286,7 @@ class DynamicConfigService {
 
 ![image](https://user-images.githubusercontent.com/22395934/179772862-4b471f30-925a-448d-a7b8-c781575a82c0.png)
 
-둘다 결과는 동일 합니다. 이제 Git Config 저장소에서 값을 아래처럼 변경해보고 Actuator를 통해서 `/actuator/refresh` EndPoint를 호출해보고 실제 재기동 없이 값이 변경됐는지 확인해보았습니다.
+둘 다 결과는 동일합니다. 이제 Git Config 저장소에서 값을 아래처럼 변경해보고 Actuator를 통해서 `/actuator/refresh` EndPoint를 호출해보고 실제 재기동 없이 값이 변경됐는지 확인해보았습니다.
 
  - 변경전 fund.service.url: https://sandbox.fund-channel.server.com 
  - 변경 후 fund.service.url: https://sandbox.fund-channel.server.kakaopaysec.com 
@@ -328,7 +328,7 @@ class DynamicConfigService {
 
 사실 위에서 실습한 예제는 정말 기초적인 부분이고, 공홈에 들어가면 SSL 설정부터 Spring Cloud Config에 대한 많은 가이드 라인을 제공해주고 있습니다. 
 
-예를 들어서 Config Server에서 Git Config 저장소에서 `PropertySource`를 읽어오는데 타임아웃 설정은 어떻게 가져갈것인지도 필요할 것이고... 
+예를 들어서 Config Server에서 Git Config 저장소에서 `PropertySource`를 읽어오는데 타임아웃 설정은 어떻게 가져갈 것인지도 필요할 것이고... 
 
 Spring Cloud 생태계가 워낙 잘 갖춰져 있었고, 아직 Spring Cloud Config에 대해서 공부해야 되는 부분이 밑도 끝도 없지만 공홈에서 이해되지 않는 부분은 그나마 좋은 블로그를 찾아보고 대략적으로나 정말 얕게...Spring Cloud Config가 이렇게 동작하는것을 조금이라도 알게 되었습니다. 
 
