@@ -1,9 +1,23 @@
-# Target Group 개요
-ELB와 연결할 수 있는 Target Type으로는 하기와 같은 구성요소들이 존재합니다.
+# ELB (Elastic Load Balancer) 개요
 
-- EC2 인스턴스(개별 EC2 인스턴스, EC2 Auto Scaling Groups)
-- IP 주소 
-- Lamada 함수(오직 Application Load Balancer만 연결이 가능합니다.) 
+ELB는 들어오는 트래픽을 여러 대상(EC2 등)에 분산해 주는 AWS의 로드 밸런서 서비스입니다. 동작 계층과 용도에 따라 아래 유형이 있습니다.
+
+- **ALB (Application Load Balancer)** — **L7(HTTP/HTTPS)**. 요청의 경로·호스트·헤더 등 **내용을 보고 라우팅**합니다. 마이크로서비스에 적합하며 Lambda도 타깃으로 연결 가능합니다.
+- **NLB (Network Load Balancer)** — **L4(TCP/UDP)**. IP·포트만 보고 전달해 **초고성능·초저지연**이며 고정 IP를 제공할 수 있습니다.
+- **GLB (Gateway Load Balancer)** — 방화벽 등 서드파티 네트워크 어플라이언스 앞단에 사용.
+- **CLB (Classic Load Balancer)** — 구세대(레거시). 신규 구성에서는 ALB/NLB를 권장합니다.
+
+![ALB(L7) vs NLB(L4)](../../../Attached%20file/aws_elb_types.svg)
+
+> L4/L7 개념이 헷갈린다면 [L4와 L7의 개념 및 차이점 정리](../네트워크/L4와%20L7의%20개념%20및%20차이점%20정리.md)를 함께 참고하세요.
+
+## Target Group 개요
+
+ELB는 요청을 직접 인스턴스에 보내지 않고 **타깃 그룹(Target Group)**을 거칩니다. 연결할 수 있는 Target Type은 다음과 같습니다.
+
+- EC2 인스턴스(개별 EC2 인스턴스, EC2 Auto Scaling Group)
+- IP 주소
+- Lambda 함수(오직 Application Load Balancer만 연결 가능)
 - Application Load Balancer(Network Load Balancer만 연결이 가능합니다.)
 
 

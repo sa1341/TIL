@@ -1,0 +1,52 @@
+<svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="asar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="420" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">EC2 Auto Scaling — 수요에 따라 자동 확장/축소</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">CloudWatch 지표(예: 평균 CPU)를 감시 → 임계치 넘으면 Scale out, 낮으면 Scale in · Min/Desired/Max 범위 안에서</text>
+
+  <!-- metric trigger -->
+  <rect x="40" y="100" width="150" height="88" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="115" y="128" font-size="12.5" font-weight="700" fill="#8A5E12" text-anchor="middle">CloudWatch</text>
+  <text x="115" y="148" font-size="11" fill="#8A5E12" text-anchor="middle">평균 CPU 감시</text>
+  <text x="115" y="170" font-size="11" fill="#8A9BA8" text-anchor="middle">기준: 50%</text>
+
+  <!-- scale out -->
+  <line x1="190" y1="130" x2="250" y2="130" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#asar)"/>
+  <text x="220" y="122" font-size="10.5" fill="#B83227" text-anchor="middle" font-weight="700">CPU↑</text>
+
+  <!-- ASG box -->
+  <rect x="250" y="92" width="570" height="240" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="270" y="116" font-size="14" font-weight="700" fill="#065A6E">Auto Scaling 그룹 (ASG)</text>
+  <text x="270" y="135" font-size="11" fill="#8A9BA8">Min 2 · Desired 2~4 · Max 6 · 여러 AZ에 분산 배치</text>
+
+  <!-- baseline instances -->
+  <text x="288" y="164" font-size="11.5" font-weight="700" fill="#3E5060">평상시 (Desired 2)</text>
+  <rect x="288" y="172" width="66" height="40" rx="6" fill="#ffffff" stroke="#08748C"/><text x="321" y="197" font-size="11" fill="#065A6E" text-anchor="middle">EC2</text>
+  <rect x="362" y="172" width="66" height="40" rx="6" fill="#ffffff" stroke="#08748C"/><text x="395" y="197" font-size="11" fill="#065A6E" text-anchor="middle">EC2</text>
+
+  <!-- scaled out -->
+  <text x="470" y="164" font-size="11.5" font-weight="700" fill="#B83227">Scale out (부하↑ → 최대 6대)</text>
+  <rect x="470" y="172" width="60" height="40" rx="6" fill="#ffffff" stroke="#08748C"/><text x="500" y="197" font-size="11" fill="#065A6E" text-anchor="middle">EC2</text>
+  <rect x="536" y="172" width="60" height="40" rx="6" fill="#ffffff" stroke="#08748C"/><text x="566" y="197" font-size="11" fill="#065A6E" text-anchor="middle">EC2</text>
+  <rect x="602" y="172" width="60" height="40" rx="6" fill="#DFF0E8" stroke="#2E8B6B" stroke-dasharray="4,3"/><text x="632" y="197" font-size="10.5" fill="#1F6B4E" text-anchor="middle">+신규</text>
+  <rect x="668" y="172" width="60" height="40" rx="6" fill="#DFF0E8" stroke="#2E8B6B" stroke-dasharray="4,3"/><text x="698" y="197" font-size="10.5" fill="#1F6B4E" text-anchor="middle">+신규</text>
+
+  <!-- health check -->
+  <rect x="288" y="232" width="504" height="80" rx="10" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="304" y="256" font-size="12.5" font-weight="700" fill="#17212B">헬스 체크 & 자가 치유</text>
+  <text x="304" y="278" font-size="11.5" fill="#3E5060">비정상 인스턴스를 자동 탐지 → 종료 후 새 인스턴스로 교체</text>
+  <text x="304" y="298" font-size="11.5" fill="#3E5060">한 AZ 장애 시 다른 AZ에서 새 인스턴스 시작 → 고가용성 유지</text>
+
+  <!-- scale in note -->
+  <text x="40" y="228" font-size="11.5" fill="#08748C" font-weight="700">CPU↓ 이면</text>
+  <text x="40" y="248" font-size="11.5" fill="#08748C" font-weight="700">Scale in</text>
+  <text x="40" y="268" font-size="11" fill="#8A9BA8">(불필요한 인스턴스</text>
+  <text x="40" y="284" font-size="11" fill="#8A9BA8">종료 → 비용 절감)</text>
+
+  <text x="40" y="372" font-size="12" font-weight="700" fill="#3E5060">조정 정책:</text>
+  <text x="120" y="372" font-size="11.5" fill="#8A9BA8">대상 추적(CPU 50% 유지) · 단순/단계 조정 · 예약(일정 기반) · 예측(ML 기반)</text>
+  <text x="40" y="396" font-size="12" font-weight="700" fill="#3E5060">구성 요소:</text>
+  <text x="120" y="396" font-size="11.5" fill="#8A9BA8">ASG(인스턴스 모음) · 시작 템플릿(AMI·유형·SG 등) · 조정 정책</text>
+</svg>
