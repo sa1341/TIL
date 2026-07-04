@@ -1,0 +1,70 @@
+<svg viewBox="0 0 860 560" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="ar3" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6C5C9E"/>
+    </marker>
+    <marker id="ar3s" markerWidth="10" markerHeight="10" refX="7.5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#3E5060"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="560" fill="#ffffff"/>
+  <text x="32" y="42" font-size="21" font-weight="700" fill="#17212B">왜 옛날 데이터를 보는가 — UNDO로 CR Clone 복원</text>
+  <text x="32" y="66" font-size="13.5" fill="#8A9BA8">문장 실행 "도중"에 다른 트랜잭션이 커밋해도, 그 문장은 시작 시점 SCN으로 통일해서 본다 (Statement-level Read Consistency)</text>
+
+  <!-- Step 1: query start -->
+  <rect x="32" y="92" width="360" height="66" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="50" y="116" font-size="13" font-weight="700" fill="#B83227">① 내 쿼리 (SELECT) 시작</text>
+  <rect x="50" y="126" width="176" height="24" rx="12" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="138" y="143" font-size="12" fill="#8A5E12" text-anchor="middle" font-weight="700">문장 시작 SCN = 100 (고정)</text>
+  <text x="238" y="143" font-size="11.5" fill="#8A9BA8">이 값이 기준선</text>
+
+  <!-- Step 2: block in buffer cache changed to 101 -->
+  <rect x="32" y="180" width="360" height="150" rx="10" fill="#F4F7F9" stroke="#D4DCE2"/>
+  <text x="50" y="204" font-size="13" font-weight="700" fill="#17212B">② Buffer Cache 의 데이터 블록 (원본)</text>
+
+  <rect x="50" y="216" width="324" height="44" rx="7" fill="#ffffff" stroke="#B83227" stroke-dasharray="4,3"/>
+  <text x="66" y="234" font-size="11.5" fill="#3E5060">이 블록을 T2가 방금 UPDATE + COMMIT</text>
+  <text x="66" y="251" font-size="12" fill="#B83227" font-weight="700">현재 block SCN = 101</text>
+
+  <!-- ITL -->
+  <rect x="50" y="270" width="324" height="48" rx="7" fill="#EDEAF5" stroke="#6C5C9E"/>
+  <text x="66" y="290" font-size="11.5" font-weight="700" fill="#4A3D78">ITL (Interested Transaction List) · 블록 헤더</text>
+  <text x="66" y="308" font-size="11" fill="#3E5060">"row는 T2가 수정, commit SCN=101, UNDO 위치는 여기 →"</text>
+
+  <!-- Decision -->
+  <rect x="32" y="352" width="360" height="70" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="50" y="376" font-size="13" font-weight="700" fill="#8A5E12">③ 판단</text>
+  <text x="50" y="398" font-size="13" fill="#3E5060">내 쿼리 SCN(100)  <tspan font-weight="700" fill="#B83227">&lt;</tspan>  block SCN(101) ?</text>
+  <text x="50" y="416" font-size="12.5" fill="#C88A2E" font-weight="700">→ YES: 내 시점 이후에 바뀐 블록 → 예전 이미지 필요</text>
+
+  <!-- arrow to UNDO -->
+  <line x1="392" y1="294" x2="470" y2="294" stroke="#6C5C9E" stroke-width="2" marker-end="url(#ar3)"/>
+  <text x="431" y="286" font-size="11" fill="#6C5C9E" text-anchor="middle" font-weight="700">UNDO</text>
+  <text x="431" y="308" font-size="11" fill="#6C5C9E" text-anchor="middle">포인터 추적</text>
+
+  <!-- UNDO segment -->
+  <rect x="476" y="180" width="356" height="150" rx="10" fill="#EDEAF5" stroke="#6C5C9E" stroke-width="1.4"/>
+  <text x="496" y="204" font-size="13" font-weight="700" fill="#4A3D78">④ UNDO Segment (rollback segment)</text>
+  <text x="496" y="224" font-size="11.5" fill="#6C5C9E">변경 직전(before-image) 값들을 체인으로 보관</text>
+
+  <rect x="496" y="236" width="316" height="40" rx="7" fill="#ffffff" stroke="#B7ADD6"/>
+  <text x="512" y="253" font-size="11.5" fill="#3E5060">이 row가 UPDATE 되기 직전 값 · UNDO 레코드 SCN ≤ 100</text>
+  <text x="512" y="269" font-size="11.5" fill="#4A3D78" font-weight="700">"내가 원하는 SCN 100 시점 값이다" → 채택</text>
+
+  <text x="496" y="298" font-size="11" fill="#8A9BA8">아직 100보다 크면 → 체인을 더 거슬러 올라감 (undo → undo → ...)</text>
+  <text x="496" y="316" font-size="11" fill="#8A9BA8">필요한 이미지가 이미 재사용(overwrite)돼 없으면 → 아래 경고</text>
+
+  <!-- CR clone -->
+  <rect x="476" y="352" width="356" height="70" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="496" y="376" font-size="13" font-weight="700" fill="#1F6B4E">⑤ CR Clone (Consistent Read Clone) 생성</text>
+  <text x="496" y="397" font-size="12" fill="#3E5060">원본은 그대로 두고, 별도 버퍼에 SCN 100 이미지를 재구성</text>
+  <text x="496" y="415" font-size="12.5" fill="#2E8B6B" font-weight="700">→ 이 복원본을 쿼리 결과로 반환</text>
+
+  <line x1="392" y1="387" x2="476" y2="387" stroke="#3E5060" stroke-width="1.6" marker-end="url(#ar3s)"/>
+
+  <!-- ORA-01555 warning -->
+  <rect x="32" y="446" width="800" height="88" rx="10" fill="#FCEDEB" stroke="#B83227" stroke-width="1.4"/>
+  <text x="52" y="472" font-size="14" font-weight="700" fill="#B83227">⚠ ORA-01555 "snapshot too old" 의 정체</text>
+  <text x="52" y="496" font-size="12.5" fill="#3E5060">④단계에서 필요한 과거 이미지가 다른 트랜잭션에 의해 이미 덮어써져 복원 불가하면 이 에러가 발생.</text>
+  <text x="52" y="516" font-size="12.5" fill="#3E5060">오래 걸리는 배치 쿼리 + 작은 <tspan font-weight="700">UNDO_RETENTION</tspan> / UNDO 테이블스페이스 부족일 때 잘 남. (원본 블록은 항상 최신 상태 유지)</text>
+</svg>

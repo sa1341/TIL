@@ -1,0 +1,83 @@
+<svg viewBox="0 0 860 600" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arf" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#3E5060"/>
+    </marker>
+    <marker id="arfo" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#B83227"/>
+    </marker>
+    <marker id="arfm" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="600" fill="#ffffff"/>
+  <text x="32" y="42" font-size="21" font-weight="700" fill="#17212B">executeQuery / next() 와 fetchSize — Oracle vs MySQL</text>
+  <text x="32" y="66" font-size="13.5" fill="#8A9BA8">next()는 대부분 "드라이버 로컬 버퍼"에서 1건씩 꺼내는 것 · 버퍼가 비면 서버 왕복이 일어남</text>
+
+  <!-- Lane 1: Oracle -->
+  <rect x="32" y="86" width="800" height="140" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="52" y="110" font-size="14" font-weight="700" fill="#B83227">Oracle JDBC — 서버 사이드 커서 + fetchSize 단위 왕복</text>
+  <text x="52" y="130" font-size="11.5" fill="#8A9BA8">기본 fetchSize=10 (보수적이라 OOM은 잘 안 남) · 23ai 드라이버는 adaptive (4번째 fetch에서 최대 250까지 자동 증가)</text>
+
+  <rect x="52" y="144" width="120" height="60" rx="7" fill="#ffffff" stroke="#D4DCE2"/>
+  <text x="112" y="170" font-size="11.5" fill="#3E5060" text-anchor="middle">executeQuery()</text>
+  <text x="112" y="188" font-size="10.5" fill="#8A9BA8" text-anchor="middle">커서 open, SCN 고정</text>
+
+  <line x1="172" y1="174" x2="212" y2="174" stroke="#B83227" stroke-width="1.6" marker-end="url(#arfo)"/>
+
+  <rect x="214" y="144" width="230" height="60" rx="7" fill="#ffffff" stroke="#D4DCE2"/>
+  <text x="329" y="167" font-size="11.5" fill="#3E5060" text-anchor="middle">드라이버 버퍼: row 1~10</text>
+  <text x="329" y="185" font-size="10.5" fill="#8A9BA8" text-anchor="middle">next() 1~10회 = 버퍼에서 꺼냄(왕복 X)</text>
+
+  <line x1="444" y1="174" x2="484" y2="174" stroke="#B83227" stroke-width="1.6" marker-end="url(#arfo)"/>
+  <text x="464" y="166" font-size="9.5" fill="#B83227" text-anchor="middle">11회째</text>
+
+  <rect x="486" y="144" width="230" height="60" rx="7" fill="#ffffff" stroke="#D4DCE2"/>
+  <text x="601" y="167" font-size="11.5" fill="#3E5060" text-anchor="middle">버퍼 비면 → 서버 왕복</text>
+  <text x="601" y="185" font-size="10.5" fill="#8A9BA8" text-anchor="middle">다음 10건 채워옴 (커서 유지)</text>
+
+  <text x="740" y="178" font-size="26" fill="#B83227">↻</text>
+
+  <!-- Lane 2: MySQL default -->
+  <rect x="32" y="238" width="800" height="140" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="52" y="262" font-size="14" font-weight="700" fill="#065A6E">MySQL Connector/J — 기본 모드 (⚠ 함정)</text>
+  <text x="52" y="282" font-size="11.5" fill="#8A9BA8">공식 문서: "ResultSet은 기본적으로 전부 메모리에 저장됨" · 조건 없는 100만 건 → OOM 위험</text>
+
+  <rect x="52" y="296" width="150" height="60" rx="7" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="127" y="322" font-size="11.5" fill="#3E5060" text-anchor="middle">executeQuery()</text>
+  <text x="127" y="340" font-size="10.5" fill="#C0392B" text-anchor="middle" font-weight="700">이 시점에 전부 전송</text>
+
+  <line x1="202" y1="326" x2="242" y2="326" stroke="#08748C" stroke-width="1.6" marker-end="url(#arfm)"/>
+
+  <rect x="244" y="296" width="290" height="60" rx="7" fill="#FCEDEB" stroke="#C0392B"/>
+  <text x="389" y="320" font-size="11.5" fill="#B83227" text-anchor="middle" font-weight="700">전체 결과셋을 JVM Heap에 통째로 로드</text>
+  <text x="389" y="338" font-size="10.5" fill="#8A9BA8" text-anchor="middle">100만 건이면 다 메모리로 → OOM</text>
+
+  <line x1="534" y1="326" x2="574" y2="326" stroke="#08748C" stroke-width="1.6" marker-end="url(#arfm)"/>
+
+  <rect x="576" y="296" width="240" height="60" rx="7" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="696" y="320" font-size="11.5" fill="#3E5060" text-anchor="middle">next() = 로컬 메모리 순회</text>
+  <text x="696" y="338" font-size="10.5" fill="#8A9BA8" text-anchor="middle">서버 왕복 이미 끝남 · fetchSize 무의미</text>
+
+  <!-- Lane 3: MySQL streaming -->
+  <rect x="32" y="390" width="800" height="176" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="52" y="414" font-size="14" font-weight="700" fill="#065A6E">MySQL — 안전하게 하려면 (두 가지 방법)</text>
+
+  <!-- option A -->
+  <rect x="52" y="428" width="372" height="120" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="70" y="450" font-size="12.5" font-weight="700" fill="#065A6E">A. Row-by-row 스트리밍</text>
+  <rect x="70" y="460" width="336" height="26" rx="6" fill="#F4F7F9" stroke="#D4DCE2"/>
+  <text x="238" y="477" font-size="11" fill="#3E5060" text-anchor="middle" font-family="monospace">setFetchSize(Integer.MIN_VALUE)</text>
+  <text x="70" y="504" font-size="11" fill="#3E5060">forward-only + read-only 조합이 스트리밍 신호</text>
+  <text x="70" y="521" font-size="11" fill="#3E5060">next()마다 소켓에서 1 row씩 읽음 (버퍼링 X)</text>
+  <text x="70" y="538" font-size="10.5" fill="#C0392B">주의: 다 읽거나 닫기 전엔 그 커넥션으로 다른 쿼리 불가</text>
+
+  <!-- option B -->
+  <rect x="440" y="428" width="376" height="120" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="458" y="450" font-size="12.5" font-weight="700" fill="#065A6E">B. 서버 커서 (Oracle 방식에 가장 근접)</text>
+  <rect x="458" y="460" width="340" height="26" rx="6" fill="#F4F7F9" stroke="#D4DCE2"/>
+  <text x="628" y="477" font-size="10.5" fill="#3E5060" text-anchor="middle" font-family="monospace">useCursorFetch=true + setFetchSize(N)</text>
+  <text x="458" y="504" font-size="11" fill="#3E5060">N건씩 서버에서 나눠 받음 (Oracle의 fetchSize와 유사)</text>
+  <text x="458" y="521" font-size="11" fill="#3E5060">1000 지정 시 → 1000건 메모리, 소진하면 다음 1000건</text>
+  <text x="458" y="538" font-size="10.5" fill="#8A9BA8">배치 처리 시 깔끔한 선택지</text>
+</svg>

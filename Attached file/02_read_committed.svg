@@ -1,0 +1,59 @@
+<svg viewBox="0 0 840 500" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#B83227"/>
+    </marker>
+    <marker id="ar2g" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#2E8B6B"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="840" height="500" fill="#ffffff"/>
+  <text x="32" y="42" font-size="21" font-weight="700" fill="#17212B">READ COMMITTED: SCN은 '문장(statement)' 단위로 새로 찍힌다</text>
+  <text x="32" y="66" font-size="13.5" fill="#8A9BA8">한 트랜잭션 안에서도 문장마다 최신 커밋 기준 → Non-repeatable Read 발생 (Oracle 기본 격리수준)</text>
+
+  <!-- T1 transaction container -->
+  <rect x="40" y="92" width="480" height="330" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="60" y="118" font-size="14" font-weight="700" fill="#B83227">트랜잭션 T1 (커밋 안 하고 계속 유지)</text>
+
+  <!-- statement A -->
+  <rect x="66" y="136" width="428" height="78" rx="8" fill="#ffffff" stroke="#D4DCE2"/>
+  <text x="84" y="160" font-size="13" font-weight="700" fill="#17212B">① 문장 A · SELECT ... FROM accounts</text>
+  <rect x="84" y="172" width="150" height="28" rx="14" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="159" y="191" font-size="12.5" fill="#8A5E12" text-anchor="middle" font-weight="700">시작 시점 SCN = 100</text>
+  <text x="250" y="191" font-size="12.5" fill="#3E5060">결과: balance 합계 = 1,000,000</text>
+
+  <!-- gap: T2 commit -->
+  <rect x="66" y="226" width="428" height="52" rx="8" fill="#FBF3E4" stroke="#C88A2E" stroke-dasharray="4,3"/>
+  <text x="84" y="248" font-size="12.5" font-weight="700" fill="#8A5E12">② 이 사이 다른 트랜잭션 T2 가 UPDATE + COMMIT</text>
+  <text x="84" y="266" font-size="12" fill="#C88A2E" font-weight="700">전역 SCN 100 → 101</text>
+
+  <!-- statement B -->
+  <rect x="66" y="290" width="428" height="88" rx="8" fill="#ffffff" stroke="#B83227" stroke-width="1.4"/>
+  <text x="84" y="314" font-size="13" font-weight="700" fill="#17212B">③ 문장 B · 똑같은 SELECT (하지만 새 문장!)</text>
+  <rect x="84" y="326" width="150" height="28" rx="14" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="159" y="345" font-size="12.5" fill="#8A5E12" text-anchor="middle" font-weight="700">시작 시점 SCN = 101</text>
+  <text x="250" y="345" font-size="12.5" fill="#B83227" font-weight="700">결과: 1,500,000 ← 값이 달라짐!</text>
+  <text x="84" y="369" font-size="11.5" fill="#8A9BA8">문장마다 최신 SCN을 다시 찍으므로 T2의 커밋이 반영됨</text>
+
+  <text x="60" y="410" font-size="12.5" fill="#B83227" font-weight="700">= Non-repeatable Read (같은 쿼리, 다른 결과)</text>
+
+  <!-- vs MySQL box -->
+  <rect x="540" y="92" width="270" height="330" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="560" y="118" font-size="14" font-weight="700" fill="#065A6E">비교 · MySQL REPEATABLE READ</text>
+  <text x="560" y="140" font-size="12" fill="#3E5060">(InnoDB 기본 격리수준)</text>
+
+  <rect x="562" y="156" width="226" height="70" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="576" y="180" font-size="12.5" font-weight="700" fill="#17212B">트랜잭션 시작 시</text>
+  <text x="576" y="200" font-size="12.5" fill="#065A6E" font-weight="700">Read View 를 딱 1번 고정</text>
+  <text x="576" y="217" font-size="11" fill="#8A9BA8">(첫 조회 시점 스냅샷)</text>
+
+  <line x1="675" y1="234" x2="675" y2="266" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#ar2g)"/>
+
+  <rect x="562" y="272" width="226" height="60" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="576" y="296" font-size="12" fill="#3E5060">문장 A 결과 = 문장 B 결과</text>
+  <text x="576" y="316" font-size="12.5" fill="#2E8B6B" font-weight="700">항상 동일 (반복 읽기 보장)</text>
+
+  <rect x="562" y="348" width="226" height="58" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="576" y="371" font-size="11.5" fill="#1F6B4E">트랜잭션 안에서 몇 번을 조회해도</text>
+  <text x="576" y="390" font-size="11.5" fill="#1F6B4E" font-weight="700">계속 같은 시점(trx_id)만 봄</text>
+</svg>

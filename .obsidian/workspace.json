@@ -158,14 +158,12 @@
             "id": "1f7f9c7abca93086",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Programming/Redis/Redis Cluster 내부 동작 정리.md",
-                "mode": "source",
-                "source": false
+                "file": "Attached file/01_scn_basics.svg"
               },
-              "icon": "lucide-file",
-              "title": "Redis Cluster 내부 동작 정리"
+              "icon": "lucide-image",
+              "title": "01_scn_basics"
             }
           }
         ],
@@ -476,8 +474,13 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "2888189617e12bd1",
+  "active": "1f7f9c7abca93086",
   "lastOpenFiles": [
+    "Attached file/01_scn_basics.svg",
+    "Attached file/02_read_committed.svg",
+    "Attached file/03_cr_clone_undo.svg",
+    "Attached file/04_jdbc_fetch.svg",
+    "Programming/인프라/DB/오라클/읽기 일관성.md",
     "Programming/Redis/Redis Cluster 내부 동작 정리.md",
     "Attached file/MCP_LLM.png",
     "Attached file/MCP_LAYER.png",
@@ -509,12 +512,8 @@
     "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
     "Programming/인프라/AWS/Elastic Block Store(EBS).md",
     "Programming/인프라/AWS/S3 개요.md",
-    "N.md",
-    "Programming/객체지향 프로그래밍/Kotlin/kotlin 기본 학습.md",
     "Attached file/AWS VPC 구성도.drawio.png",
     "Attached file/투자자산운용사 합격.png",
-    "Attached file/obsidian_image.png",
-    "투자자산운용사 합격.png",
     "Programming/Vault",
     "Spaces/Home",
     "Spaces",
