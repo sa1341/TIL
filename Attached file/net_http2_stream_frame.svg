@@ -1,0 +1,50 @@
+<svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="sfar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="470" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">HTTP/2 계층 구조 — 커넥션 · 스트림 · 메시지 · 프레임</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">1커넥션 안에 여러 스트림, 스트림은 메시지, 메시지는 여러 프레임으로 구성 · 프레임마다 스트림 ID가 붙어 뒤섞여도 재조립 가능</text>
+
+  <!-- Connection box -->
+  <rect x="40" y="90" width="780" height="212" rx="12" fill="#F4F6F7" stroke="#5A6B78" stroke-width="1.8"/>
+  <text x="60" y="114" font-size="14" font-weight="700" fill="#5A6B78">1개의 TCP 커넥션 (Connection)</text>
+
+  <!-- Stream 1 -->
+  <rect x="62" y="126" width="360" height="160" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="80" y="148" font-size="12.5" font-weight="700" fill="#065A6E">스트림 1 (Stream ID=1, 홀수=클라이언트 시작)</text>
+  <rect x="80" y="158" width="324" height="54" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="92" y="177" font-size="11.5" font-weight="700" fill="#17212B">메시지: 요청 (Request)</text>
+  <rect x="92" y="184" width="86" height="22" rx="4" fill="#FBF3E4" stroke="#C88A2E"/><text x="135" y="199" font-size="10" fill="#8A5E12" text-anchor="middle">HEADERS</text>
+  <rect x="184" y="184" width="70" height="22" rx="4" fill="#EAF4F6" stroke="#08748C"/><text x="219" y="199" font-size="10" fill="#065A6E" text-anchor="middle">DATA</text>
+  <rect x="80" y="220" width="324" height="54" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="92" y="239" font-size="11.5" font-weight="700" fill="#17212B">메시지: 응답 (Response)</text>
+  <rect x="92" y="246" width="86" height="22" rx="4" fill="#FBF3E4" stroke="#C88A2E"/><text x="135" y="261" font-size="10" fill="#8A5E12" text-anchor="middle">HEADERS</text>
+  <rect x="184" y="246" width="70" height="22" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/><text x="219" y="261" font-size="10" fill="#1F6B4E" text-anchor="middle">DATA</text>
+  <rect x="260" y="246" width="70" height="22" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/><text x="295" y="261" font-size="10" fill="#1F6B4E" text-anchor="middle">DATA</text>
+
+  <!-- Stream 3 -->
+  <rect x="440" y="126" width="360" height="160" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="458" y="148" font-size="12.5" font-weight="700" fill="#B83227">스트림 3 (Stream ID=3)</text>
+  <rect x="458" y="158" width="324" height="54" rx="8" fill="#ffffff" stroke="#E3B5AE"/>
+  <text x="470" y="177" font-size="11.5" font-weight="700" fill="#17212B">메시지: 요청 (Request)</text>
+  <rect x="470" y="184" width="86" height="22" rx="4" fill="#FBF3E4" stroke="#C88A2E"/><text x="513" y="199" font-size="10" fill="#8A5E12" text-anchor="middle">HEADERS</text>
+  <rect x="458" y="220" width="324" height="54" rx="8" fill="#ffffff" stroke="#E3B5AE"/>
+  <text x="470" y="239" font-size="11.5" font-weight="700" fill="#17212B">메시지: 응답 (Response)</text>
+  <rect x="470" y="246" width="86" height="22" rx="4" fill="#FBF3E4" stroke="#C88A2E"/><text x="513" y="261" font-size="10" fill="#8A5E12" text-anchor="middle">HEADERS</text>
+  <rect x="562" y="246" width="70" height="22" rx="4" fill="#F4E4E1" stroke="#B83227"/><text x="597" y="261" font-size="10" fill="#B83227" text-anchor="middle">DATA</text>
+
+  <line x1="430" y1="330" x2="430" y2="356" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#sfar)"/>
+  <text x="440" y="348" font-size="11" fill="#8A9BA8">실제 전송 시 프레임들이 뒤섞여 흐름 (스트림 ID로 구분)</text>
+
+  <!-- wire -->
+  <text x="40" y="380" font-size="12.5" font-weight="700" fill="#3E5060">전송 순서 (wire)</text>
+  <rect x="40" y="388" width="90" height="30" rx="5" fill="#FBF3E4" stroke="#C88A2E"/><text x="85" y="408" font-size="10" fill="#8A5E12" text-anchor="middle">S1 HEADERS</text>
+  <rect x="136" y="388" width="90" height="30" rx="5" fill="#FBF3E4" stroke="#C88A2E"/><text x="181" y="408" font-size="10" fill="#8A5E12" text-anchor="middle">S3 HEADERS</text>
+  <rect x="232" y="388" width="70" height="30" rx="5" fill="#EAF4F6" stroke="#08748C"/><text x="267" y="408" font-size="10" fill="#065A6E" text-anchor="middle">S1 DATA</text>
+  <rect x="308" y="388" width="70" height="30" rx="5" fill="#F4E4E1" stroke="#B83227"/><text x="343" y="408" font-size="10" fill="#B83227" text-anchor="middle">S3 DATA</text>
+  <rect x="384" y="388" width="70" height="30" rx="5" fill="#EAF4F6" stroke="#08748C"/><text x="419" y="408" font-size="10" fill="#065A6E" text-anchor="middle">S1 DATA</text>
+  <text x="470" y="408" font-size="11" fill="#8A9BA8">→ 받는 쪽은 스트림 ID를 보고 원래 메시지로 재조립</text>
+
+  <text x="40" y="446" font-size="11.5" fill="#8A9BA8">스트림 ID: 클라이언트가 시작하면 홀수(1,3,5…), 서버가 시작하면 짝수 · 큰 번호일수록 나중에 생성</text>
+</svg>

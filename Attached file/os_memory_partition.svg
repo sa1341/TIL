@@ -1,0 +1,32 @@
+<svg viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="820" height="430" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">가변 분할 vs 고정 분할 — 그리고 단편화</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">가변 분할은 프로세스 크기대로(→ 외부 단편화) · 고정 분할은 똑같은 크기로(→ 내부 단편화)</text>
+
+  <!-- 가변 분할 -->
+  <text x="150" y="100" font-size="14.5" font-weight="700" fill="#08748C" text-anchor="middle">가변 분할 (세그먼테이션)</text>
+  <text x="150" y="120" font-size="11" fill="#8A9BA8" text-anchor="middle">프로세스 크기에 맞춰 나눔 · 연속 할당</text>
+  <rect x="70" y="132" width="160" height="250" rx="8" fill="#F4F6F7" stroke="#8A9BA8"/>
+  <rect x="76" y="138" width="148" height="46" fill="#EAF4F6" stroke="#08748C"/><text x="150" y="166" font-size="12" fill="#065A6E" text-anchor="middle">프로세스 A</text>
+  <rect x="76" y="186" width="148" height="20" fill="#F4E4E1" stroke="#B83227" stroke-dasharray="3,2"/><text x="150" y="201" font-size="9.5" fill="#B83227" text-anchor="middle">빈틈</text>
+  <rect x="76" y="208" width="148" height="66" fill="#EAF4F6" stroke="#08748C"/><text x="150" y="245" font-size="12" fill="#065A6E" text-anchor="middle">프로세스 B</text>
+  <rect x="76" y="276" width="148" height="16" fill="#F4E4E1" stroke="#B83227" stroke-dasharray="3,2"/><text x="150" y="289" font-size="9" fill="#B83227" text-anchor="middle">빈틈</text>
+  <rect x="76" y="294" width="148" height="38" fill="#EAF4F6" stroke="#08748C"/><text x="150" y="318" font-size="12" fill="#065A6E" text-anchor="middle">프로세스 C</text>
+  <rect x="76" y="334" width="148" height="42" fill="#F4E4E1" stroke="#B83227" stroke-dasharray="3,2"/><text x="150" y="359" font-size="9.5" fill="#B83227" text-anchor="middle">빈틈</text>
+  <text x="150" y="402" font-size="11.5" fill="#B83227" text-anchor="middle" font-weight="700">외부 단편화 (흩어진 빈틈)</text>
+
+  <!-- arrow / vs -->
+  <text x="410" y="260" font-size="16" font-weight="700" fill="#8A9BA8" text-anchor="middle">vs</text>
+
+  <!-- 고정 분할 -->
+  <text x="600" y="100" font-size="14.5" font-weight="700" fill="#C88A2E" text-anchor="middle">고정 분할 (페이징)</text>
+  <text x="600" y="120" font-size="11" fill="#8A9BA8" text-anchor="middle">똑같은 크기로 나눔 · 비연속 할당</text>
+  <rect x="520" y="132" width="160" height="250" rx="8" fill="#F4F6F7" stroke="#8A9BA8"/>
+  <rect x="526" y="138" width="148" height="58" fill="#FBF3E4" stroke="#C88A2E"/><text x="590" y="163" font-size="12" fill="#8A5E12" text-anchor="middle">A (18KB)</text><rect x="526" y="180" width="148" height="16" fill="#F4E4E1" stroke="#B83227"/><text x="640" y="192" font-size="9" fill="#B83227" text-anchor="middle">2KB 낭비</text>
+  <rect x="526" y="200" width="148" height="58" fill="#FBF3E4" stroke="#C88A2E"/><text x="590" y="225" font-size="12" fill="#8A5E12" text-anchor="middle">B (12KB)</text><rect x="526" y="242" width="148" height="16" fill="#F4E4E1" stroke="#B83227"/><text x="640" y="254" font-size="9" fill="#B83227" text-anchor="middle">8KB 낭비</text>
+  <rect x="526" y="262" width="148" height="58" fill="#FBF3E4" stroke="#C88A2E"/><text x="590" y="287" font-size="12" fill="#8A5E12" text-anchor="middle">C (20KB)</text><rect x="526" y="306" width="148" height="12" fill="#DFF0E8" stroke="#2E8B6B"/><text x="640" y="316" font-size="8.5" fill="#1F6B4E" text-anchor="middle">딱 맞음</text>
+  <rect x="526" y="324" width="148" height="52" fill="#ffffff" stroke="#CBD5DC" stroke-dasharray="3,2"/><text x="590" y="354" font-size="11" fill="#8A9BA8" text-anchor="middle">빈 칸(20KB)</text>
+  <text x="600" y="402" font-size="11.5" fill="#B83227" text-anchor="middle" font-weight="700">내부 단편화 (칸 안 자투리)</text>
+
+  <text x="410" y="120" font-size="11" fill="#8A9BA8" text-anchor="middle">각 칸 20KB</text>
+</svg>

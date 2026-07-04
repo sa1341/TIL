@@ -1,0 +1,44 @@
+<svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="820" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">AWS 글로벌 인프라 — 리전 · 가용영역 · 엣지 로케이션</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">리전 안에 여러 AZ(데이터센터 묶음), AZ는 전용선으로 연결 · 엣지 로케이션은 훨씬 촘촘한 CDN 거점</text>
+
+  <!-- Region box -->
+  <rect x="40" y="92" width="470" height="270" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="60" y="118" font-size="15" font-weight="700" fill="#065A6E">리전 (Region) — 예: 서울(ap-northeast-2)</text>
+  <text x="60" y="138" font-size="11" fill="#8A9BA8">데이터센터를 클러스터링한 물리적 위치 · 1리전 = 2개 이상 AZ</text>
+
+  <!-- AZs -->
+  <g>
+    <rect x="66" y="152" width="130" height="196" rx="10" fill="#ffffff" stroke="#B7D5DC" stroke-dasharray="5,3"/>
+    <text x="131" y="174" font-size="12.5" font-weight="700" fill="#3E5060" text-anchor="middle">AZ-a</text>
+    <rect x="80" y="186" width="102" height="44" rx="6" fill="#FCF5F4" stroke="#B83227"/><text x="131" y="213" font-size="11" fill="#B83227" text-anchor="middle">데이터센터</text>
+    <rect x="80" y="240" width="102" height="44" rx="6" fill="#FCF5F4" stroke="#B83227"/><text x="131" y="267" font-size="11" fill="#B83227" text-anchor="middle">데이터센터</text>
+    <text x="131" y="316" font-size="10" fill="#8A9BA8" text-anchor="middle">EC2·RDS 등</text>
+    <text x="131" y="332" font-size="10" fill="#8A9BA8" text-anchor="middle">리소스 배치</text>
+  </g>
+  <g>
+    <rect x="206" y="152" width="130" height="196" rx="10" fill="#ffffff" stroke="#B7D5DC" stroke-dasharray="5,3"/>
+    <text x="271" y="174" font-size="12.5" font-weight="700" fill="#3E5060" text-anchor="middle">AZ-c</text>
+    <rect x="220" y="186" width="102" height="44" rx="6" fill="#FCF5F4" stroke="#B83227"/><text x="271" y="213" font-size="11" fill="#B83227" text-anchor="middle">데이터센터</text>
+    <rect x="220" y="240" width="102" height="44" rx="6" fill="#FCF5F4" stroke="#B83227"/><text x="271" y="267" font-size="11" fill="#B83227" text-anchor="middle">데이터센터</text>
+  </g>
+  <g>
+    <rect x="346" y="152" width="150" height="196" rx="10" fill="#ffffff" stroke="#B7D5DC" stroke-dasharray="5,3"/>
+    <text x="421" y="174" font-size="12.5" font-weight="700" fill="#3E5060" text-anchor="middle">AZ-d</text>
+    <rect x="360" y="186" width="122" height="44" rx="6" fill="#FCF5F4" stroke="#B83227"/><text x="421" y="213" font-size="11" fill="#B83227" text-anchor="middle">데이터센터</text>
+    <text x="421" y="258" font-size="10.5" fill="#8A9BA8" text-anchor="middle">AZ끼리는 물리적으로</text>
+    <text x="421" y="274" font-size="10.5" fill="#8A9BA8" text-anchor="middle">떨어져 있고</text>
+    <text x="421" y="290" font-size="10.5" fill="#8A9BA8" text-anchor="middle">고속 전용선으로 연결</text>
+  </g>
+
+  <!-- Edge -->
+  <rect x="540" y="92" width="240" height="270" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="660" y="118" font-size="14" font-weight="700" fill="#8A5E12" text-anchor="middle">엣지 로케이션</text>
+  <text x="660" y="138" font-size="11" fill="#8A9BA8" text-anchor="middle">Edge Location (CloudFront)</text>
+  <circle cx="580" cy="176" r="6" fill="#C88A2E"/><circle cx="620" cy="200" r="6" fill="#C88A2E"/><circle cx="680" cy="172" r="6" fill="#C88A2E"/><circle cx="730" cy="196" r="6" fill="#C88A2E"/><circle cx="600" cy="240" r="6" fill="#C88A2E"/><circle cx="660" cy="228" r="6" fill="#C88A2E"/><circle cx="720" cy="248" r="6" fill="#C88A2E"/><circle cx="570" cy="272" r="6" fill="#C88A2E"/><circle cx="700" cy="288" r="6" fill="#C88A2E"/>
+  <text x="660" y="322" font-size="10.5" fill="#8A5E12" text-anchor="middle">리전보다 훨씬 많고 촘촘함</text>
+  <text x="660" y="340" font-size="10.5" fill="#8A5E12" text-anchor="middle">콘텐츠 캐싱 → 짧은 지연시간</text>
+
+  <text x="40" y="386" font-size="11.5" fill="#8A9BA8">고가용성 설계 = 여러 AZ에 분산(Multi-AZ) · 재해복구(DR) = 2개 이상 리전에 배치</text>
+</svg>
