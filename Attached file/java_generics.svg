@@ -1,0 +1,36 @@
+<svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="gnar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">제네릭 — 컴파일 타임 타입 체크 + 런타임 타입 소거</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">잘못된 타입을 컴파일 단계에서 막아 준다(런타임 ClassCastException 예방) · 런타임엔 타입 정보가 지워진다(erasure)</text>
+
+  <!-- Without generics -->
+  <rect x="40" y="92" width="360" height="130" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="60" y="116" font-size="13" font-weight="700" fill="#B83227">제네릭 없이 (raw List)</text>
+  <rect x="60" y="128" width="320" height="26" rx="4" fill="#ffffff" stroke="#E3B5AE"/><text x="72" y="146" font-size="10.5" fill="#3E5060">List list = new ArrayList();  list.add("hi");</text>
+  <rect x="60" y="158" width="320" height="26" rx="4" fill="#ffffff" stroke="#E3B5AE"/><text x="72" y="176" font-size="10.5" fill="#3E5060">list.add(123);  // 컴파일 통과 😐</text>
+  <text x="60" y="206" font-size="11.5" fill="#B83227" font-weight="700">→ 꺼내 쓸 때 (String) 캐스팅 실패 → 런타임 예외 💥</text>
+
+  <!-- With generics -->
+  <rect x="40" y="238" width="360" height="130" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="60" y="262" font-size="13" font-weight="700" fill="#1F6B4E">제네릭 사용 (List&lt;String&gt;)</text>
+  <rect x="60" y="274" width="320" height="26" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="72" y="292" font-size="10.5" fill="#3E5060">List&lt;String&gt; list = new ArrayList&lt;&gt;();</text>
+  <rect x="60" y="304" width="320" height="26" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="72" y="322" font-size="10.5" fill="#3E5060">list.add(123);  // 컴파일 에러 ✅ 차단</text>
+  <text x="60" y="352" font-size="11.5" fill="#1F6B4E" font-weight="700">→ 잘못된 타입을 컴파일 단계에서 미리 차단 · 캐스팅 불필요</text>
+
+  <!-- compile / runtime -->
+  <line x1="400" y1="300" x2="450" y2="230" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#gnar)"/>
+  <rect x="450" y="150" width="150" height="90" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="525" y="180" font-size="12" font-weight="700" fill="#065A6E" text-anchor="middle">컴파일러</text>
+  <text x="525" y="200" font-size="10" fill="#8A9BA8" text-anchor="middle">타입 체크 후</text>
+  <text x="525" y="215" font-size="10" fill="#8A9BA8" text-anchor="middle">타입 정보 제거(소거)</text>
+  <line x1="600" y1="195" x2="648" y2="195" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#gnar)"/>
+
+  <rect x="650" y="150" width="150" height="90" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="725" y="176" font-size="12" font-weight="700" fill="#8A5E12" text-anchor="middle">런타임</text>
+  <text x="725" y="196" font-size="10" fill="#8A9BA8" text-anchor="middle">List&lt;String&gt; → List</text>
+  <text x="725" y="212" font-size="10" fill="#8A9BA8" text-anchor="middle">(타입 지워짐)</text>
+  <text x="725" y="228" font-size="9.5" fill="#8A9BA8" text-anchor="middle">필요한 캐스팅은 자동 삽입</text>
+</svg>
