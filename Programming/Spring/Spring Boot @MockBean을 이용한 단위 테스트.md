@@ -1,5 +1,5 @@
 
-Spring Boot로 개발을 REST API 개발을 하면서 repository, service 계층을 위주로만 TDD를 수행하였고, 표현 계층인 Controller 테스트는 소홀하게 대한점이 있어서 다시 공부를 하였습니다.
+Spring Boot로 REST API 개발을 하면서 repository, service 계층을 위주로만 TDD를 수행하였고, 표현 계층인 Controller 테스트는 소홀히 한 점이 있어서 다시 공부를 하였습니다.
 
 
 #### 표현 계층 (Controller)
@@ -62,7 +62,7 @@ public class UserControllerTests {
 }
 ```
 
-@WebMvcTest 어노테이션이 사용되면 스프링 WebApplication 관련된 Bean들만 등록하기 때문에 통합 테스트보다 빠르고, 통합 테스트를 진행하기 어려운 테스트도 진행 할 수 있는 장점이 있습니다. 예를 들어서 Third Party 모듈을 연계할 경우에는 Mock이라는 가짜 객체를 만들어서 임의로 테스트가 가능합니다.
+@WebMvcTest 어노테이션이 사용되면 스프링 WebApplication 관련된 Bean들만 등록하기 때문에 통합 테스트보다 빠르고, 통합 테스트를 진행하기 어려운 테스트도 진행할 수 있는 장점이 있습니다. 예를 들어서 Third Party 모듈을 연계할 경우에는 Mock이라는 가짜 객체를 만들어서 임의로 테스트가 가능합니다.
 
 단점이라면 요청에서 응답까지 모든 테스트를 Mock 기반으로 테스트하기 때문에 실제 환경에서는 정상적인 동작을 장담할 수 없습니다.
  
@@ -79,7 +79,7 @@ given(userService.findUser(any())).willReturn(responseDto);
 ```
 
 >
-given() 메서드에서는 Controller에서 UserService의 findUser() 메서드를 호출 할 경우 any()를 주었기 때문에 어떤 값이 들어와도 위에서 명시적으로 선언한 UserResponseDto 객체를 반드시 리턴하도록 설정하였습니다.
+given() 메서드에서는 Controller에서 UserService의 findUser() 메서드를 호출할 경우 any()를 주었기 때문에 어떤 값이 들어와도 위에서 명시적으로 선언한 UserResponseDto 객체를 반드시 리턴하도록 설정하였습니다.
 
 2. when에서 MockMvc 객체를 사용하여 JSON String 데이터를 전달하여 미리 정의된 객체를 반환받아서 처리합니다.
 

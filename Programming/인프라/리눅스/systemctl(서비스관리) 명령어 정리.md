@@ -1,9 +1,9 @@
 
-systemd는 CentOS 7버전부터 init 시스템 대신 사용되며 Ubuntu에서도 systemd를 사용합니다. 
+systemd는 CentOS 7 버전부터 init 시스템 대신 사용되며 Ubuntu에서도 systemd를 사용합니다. 
 
-systemd의 용도는 프로세스를 관리하고 `유닛(Unit)`으로 서비스를 제어하는 시스템자원 통합관리 도구 입니다.
+systemd의 용도는 프로세스를 관리하고 `유닛(Unit)`으로 서비스를 제어하는 시스템 자원 통합 관리 도구입니다.
 
-> systemd(sytstem daemon)은 전통적으로 Unix 시스템이 부팅한후에 가장 먼저 생성된 후에 다른 프로세스를 실행하는 init 역할을 대체하는 데몬입니다. 현재는 대부분의 리눅스 시스템에 공식적으로 채택되었습니다.
+> systemd(system daemon)는 전통적으로 Unix 시스템이 부팅한 후에 가장 먼저 생성되어 다른 프로세스를 실행하는 init 역할을 대체하는 데몬입니다. 현재는 대부분의 리눅스 시스템에 공식적으로 채택되었습니다.
 
 ## systemctl 명령어
 

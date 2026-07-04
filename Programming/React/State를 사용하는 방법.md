@@ -58,7 +58,7 @@ class App extends Component {
 export default App;
 ```
 
-Counter 컴포넌트에서 state를 변경할 때 반드시 setState()를 사용해서 바꿔야 합니다. 만약 아래처럼 handleIncrease, handleDecrease() 메서드로 바꾸게 된다면 컴포넌트에서 state 값이 update가 되었는지 알 수가 없기 때문에 이렇게 변경하는건 절대 안됩니다.
+Counter 컴포넌트에서 state를 변경할 때 반드시 setState()를 사용해서 바꿔야 합니다. 만약 아래처럼 handleIncrease, handleDecrease() 메서드로 바꾸게 된다면 컴포넌트에서 state 값이 update가 되었는지 알 수가 없기 때문에 이렇게 변경하는 건 절대 안 됩니다.
 
 ```javascript
 handleIncrease = () => {
@@ -98,9 +98,9 @@ const person = {
 person.greet(); // hi
 ```
 
-위 예제에서 보듯이 바깥 스코프에서 this의 값을 계승받습니다. 즉, this는 메소드를 호출한 객체를 가르키지 않고 상위 컨텍스트인 전역 객체, window를 가리키게 됩니다. node.js일 경우 global을 가르킬 겁니다.
+위 예제에서 보듯이 바깥 스코프에서 this의 값을 계승받습니다. 즉, this는 메소드를 호출한 객체를 가리키지 않고 상위 컨텍스트인 전역 객체, window를 가리키게 됩니다. node.js일 경우 global을 가리킬 겁니다.
 
 객체의 메소드에서는 화살표 함수가 아닌, function 문법 함수를 사용해야 합니다.
 
-function 문법과 화살표 함수의 차이점은 function 문법에서 this는 함수가 어떻게 실행되는 가에 따라서 동적으로 바뀌게 됩니다. 반면에 화살표 함수의 경우 화살표 함수가 정의된 곳의 문맥에 의해서 this가 정의됩니다.
+function 문법과 화살표 함수의 차이점은 function 문법에서 this는 함수가 어떻게 실행되는가에 따라서 동적으로 바뀌게 됩니다. 반면에 화살표 함수의 경우 화살표 함수가 정의된 곳의 문맥에 의해서 this가 정의됩니다.
 

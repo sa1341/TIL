@@ -1,5 +1,5 @@
 
-현재 실무에서 모니터링을 `프로메테우스 + 그라파나`를 연동해서 인사이트를 얻고 있는데, 처음부터 제가 스스로 구축한게 아니여서 이번 기회에 각 매트릭 정보에 대해서 공부할 겸 스프링 부트 프로젝트를 만들어서 연동하여 어떻게 그래프로 매트릭 정보를 보여주는지 확인해 봤습니다.
+현재 실무에서 모니터링을 `프로메테우스 + 그라파나`를 연동해서 인사이트를 얻고 있는데, 처음부터 제가 스스로 구축한 게 아니어서 이번 기회에 각 메트릭 정보에 대해서 공부할 겸 스프링 부트 프로젝트를 만들어서 연동하여 어떻게 그래프로 메트릭 정보를 보여주는지 확인해 봤습니다.
 
 ## 프로메테우스 설치
 
@@ -7,9 +7,9 @@
 
 [Prometheus 설치](https://prometheus.io/download/)
 
-## Spring Boot Prometheus dependecy 추가
+## Spring Boot Prometheus dependency 추가
 
-아래에 spring boot actuator랑 매트릭을 프로메테우스가 수집할 수 있는 포맷으로 변환해주는 마이크로미터 구현체인 `micrometer-registry-prometheus`도 함께 dependency에 선언해 줍니다.
+아래에 spring boot actuator랑 메트릭을 프로메테우스가 수집할 수 있는 포맷으로 변환해주는 마이크로미터 구현체인 `micrometer-registry-prometheus`도 함께 dependency에 선언해 줍니다.
 
 ```kotlin
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -20,7 +20,7 @@
 
 ### application.yml 설정
 
-spring boot acutator에 prometheus가 수집할 수 있는 엔드포인트를 활성화 시킵니다.
+spring boot actuator에 prometheus가 수집할 수 있는 엔드포인트를 활성화시킵니다.
 
 ```kotlin
 management:
@@ -69,7 +69,7 @@ scrape_configs:
       - targets: ['localhost:8083']
 ```
 
-맨 막줄 라인에 로컬 스프링 부트 서비스랑 연동한 설정 값을 추가 했습니다. 크게 아래 설정 값 4가지가 있습니다.
+맨 마지막 줄에 로컬 스프링 부트 서비스랑 연동한 설정 값을 추가했습니다. 크게 아래 설정 값 4가지가 있습니다.
 
 - job_name: 수집하는 이름
 - metrics_path: 수집할 경로
@@ -78,14 +78,14 @@ scrape_configs:
 
 `scrape_interval`을 1s로 설정했지만, 실제 실무에서는 서비스에 많은 부하를 줄 수 있기 때문에 운영에서는 `10s ~ 1m`정도를 권장합니다.
 
-이제 설정이 끝났으면 프로메테우스 압축헤제한 디렉토리 경로로 접속 후 `./prometheus`를 실행하면 default로 9090 포트로 접속 후에 
+이제 설정이 끝났으면 프로메테우스 압축을 해제한 디렉토리 경로로 접속 후 `./prometheus`를 실행하면 default로 9090 포트로 접속 후에 
 
 상단의 Status -> Targets으로 들어가서 실제 로컬에서 띄운 스프링부트 서비스를 프로메테우스가 정상적으로 수집하는지 확인할 수 있습니다.
 
 
 ![image](https://user-images.githubusercontent.com/22395934/226826618-9b202e7d-538f-416e-af7d-f74ec8a9aa85.png)
 
-`UP`으로 보여지면 잘 붙은걸로 확인 할 수 있습니다.
+`UP`으로 보여지면 잘 붙은 걸로 확인할 수 있습니다.
 
 
 ## 프로메테우스 검색 기능
@@ -94,7 +94,7 @@ scrape_configs:
 
 ![image](https://user-images.githubusercontent.com/22395934/226828192-95a9d142-3a88-413f-83d0-fe97344f33dd.png)
 
-또한 매트릭 정보를 구분하기 위해서 태그를 사용할 수 있는데 마이크로미터에서는 태그라고 부르지만, 프로메테우스에서는 레이블(Label)이라고 부르고 있습니다.
+또한 메트릭 정보를 구분하기 위해서 태그를 사용할 수 있는데 마이크로미터에서는 태그라고 부르지만, 프로메테우스에서는 레이블(Label)이라고 부르고 있습니다.
 
 ```
 ex) 
@@ -193,7 +193,7 @@ increase(http_server_requests_seconds_count{uri="/api/v1/date-type"}[1m])
 
 ![image](https://user-images.githubusercontent.com/22395934/226831956-fc6456cb-aff4-45d1-ab8f-97e0f944f836.png)
 
-increase() 함수를 적용하니 실제로 분당 얼마나 고객의 요청이 어느정도 증가했는지 한눈에 파악할 수 있습니다.
+increase() 함수를 적용하니 실제로 분당 고객의 요청이 얼마나 증가했는지 한눈에 파악할 수 있습니다.
 
 ### rate()
 

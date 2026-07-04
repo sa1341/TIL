@@ -52,7 +52,7 @@ CompletionStage 연산자가 어떻게 연결되는지도 정리해봤습니다.
 - thenRun(Runnable action)
 - exceptionally
 
-thenAccept[Async]의 실행 스레드는 done 상태에 따라서 스레드가 달리집니다. 예를 들어서 done 상태에서 thenAccept는 caller(main)의 스레드에서 실행되고, done 상태의 completionStage에 thenAccept를 사용하는 경우, caller 스레드를 block 할 수 있습니다.
+thenAccept[Async]의 실행 스레드는 done 상태에 따라서 스레드가 달라집니다. 예를 들어서 done 상태에서 thenAccept는 caller(main)의 스레드에서 실행되고, done 상태의 completionStage에 thenAccept를 사용하는 경우, caller 스레드를 block할 수 있습니다.
 
 exceptionally라는 메서드는 CompletionStage 파이프라인에서 예외가 발생하면 예외처리를 위해 제공되는 메서드입니다.
 

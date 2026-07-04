@@ -121,7 +121,7 @@ assert future.get() == 1; // true
 
 ## 4. Future와 CompletableFuture의 차이
 
-Future는 상태 값이 `completed, canceled` 두 가지 밖에 존재하지 않아 예외상황을 알기가 어려웠는데, CompletableFuture는 `isCompletedExceptionally`와 같은 메서드를 제공하여 Exception에 의해서 completed 되었는지 확인 할 수 있습니다.
+Future는 상태 값이 `completed, canceled` 두 가지밖에 존재하지 않아 예외상황을 알기가 어려웠는데, CompletableFuture는 `isCompletedExceptionally`와 같은 메서드를 제공하여 Exception에 의해서 completed 되었는지 확인 할 수 있습니다.
 
 ## 5. CompletableFuture의 한계
 

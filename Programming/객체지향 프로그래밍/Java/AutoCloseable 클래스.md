@@ -1,8 +1,8 @@
 # AutoCloseable 클래스
 
-`try-with-resources`는 try(...) 문에서 선언된 객체들에 대해서 try가 종료될 때 자동으로 자원을 해제해주는 기능입니다. 주로 외부 자원인 파일 관련 객체와 socket Handler 객체와 같은 자원들은 try-catch-finally 문을 사용하여 마지막에 다 사용한 자원을 해제하는 코드를 많이 보았을 겁니다. AutoClosable은 try에 선언된 객체가 AutoCloseable을 구현했더라면 java는 try 구문이 종료될 때 객체의 close() 메소드를 호출해 줍니다.
+`try-with-resources`는 try(...) 문에서 선언된 객체들에 대해서 try가 종료될 때 자동으로 자원을 해제해주는 기능입니다. 주로 외부 자원인 파일 관련 객체와 socket Handler 객체와 같은 자원들은 try-catch-finally 문을 사용하여 마지막에 다 사용한 자원을 해제하는 코드를 많이 보았을 겁니다. AutoCloseable은 try에 선언된 객체가 AutoCloseable을 구현했다면 java가 try 구문이 종료될 때 객체의 close() 메소드를 호출해 줍니다.
 
-자바6에서 리소스 사용및 해제하는 방법을 한번 살펴보고, try-with-resources로 동일한 코드를 리팩토링해보면서 장점이 무엇인지 살펴보겠습니다.
+자바6에서 리소스를 사용 및 해제하는 방법을 한번 살펴보고, try-with-resources로 동일한 코드를 리팩토링해보면서 장점이 무엇인지 살펴보겠습니다.
 
 예를 들어, 다음 코드는 try-catch-finally을 사용하여 파일을 열고 문자열을 모두 출력하는 코드입니다.
 
@@ -36,7 +36,7 @@ public class TraditionalResourceCloseable {
 }
 ```
 
-코드를 보시면 try에서 inputStream 객체를 생성하고 finally에서 close를 해주었습니다. try 안의 코드를 실행하다 Exception이 발생하는 경우 모든 코드가 실행되지 않을 수 있기 때문에 finally에 close 코드를 넣어주어야 합니다. 심지어 InputStream 객체가 null인지 체크해줘야 하며 close에 대한 Exception 처리도 해야합니다. 저는 main에서 IOException을 throws한다고 명시적으로 선언했기 때문에 close에 대한 try-catch 구문을 작성하지 않았습니다.
+코드를 보시면 try에서 inputStream 객체를 생성하고 finally에서 close를 해주었습니다. try 안의 코드를 실행하다 Exception이 발생하는 경우 모든 코드가 실행되지 않을 수 있기 때문에 finally에 close 코드를 넣어주어야 합니다. 심지어 InputStream 객체가 null인지 체크해줘야 하며 close에 대한 Exception 처리도 해야 합니다. 저는 main에서 IOException을 throws한다고 명시적으로 선언했기 때문에 close에 대한 try-catch 구문을 작성하지 않았습니다.
 
 
 ## Try-with-resources로 자원 쉽게 해제
@@ -68,11 +68,11 @@ public class TraditionalResourceCloseable {
 }
 ```
 
-코드를 보시면, try(...)안에 InputStream 객체 선언 및 할당하였습니다. 여기에서 선언한 변수들은 try안에서 사용할 수 있습니다. 코드의 실행 위치가 try 문을 벗어나면 try-with-resources는 try(...)안에 선언된 객체의 close() 메소드를 호출해야합니다. 그래서 finally에 close()를 명시적으로 호출해줄 필요가 없습니다.
+코드를 보시면, try(...)안에 InputStream 객체 선언 및 할당하였습니다. 여기에서 선언한 변수들은 try안에서 사용할 수 있습니다. 코드의 실행 위치가 try 문을 벗어나면 try-with-resources는 try(...)안에 선언된 객체의 close() 메소드를 호출해야 합니다. 그래서 finally에 close()를 명시적으로 호출해줄 필요가 없습니다.
 
 try-with-resources에서 자동으로 close가 호출되는 것은 AutoCloseable을 구현한 객체에만 해당이 됩니다. 이 부분은 아래에서 좀 더 자세히 설명하겠습니다.
 
-try-with-resources의 장점은 코드를 짧고 간결하게 만들어 읽고 쉽고 유지보수가 쉬워집니다. 또한 명시적으로 close를 호출하려면 많은 if와 try-catch를 사용해야 하기 때문에 실수로 close를 빼먹는 경우가 있습니다. 이것을 이용하면 이런 자잘한 버그들이 발생할 가능성이 적습니다.
+try-with-resources의 장점은 코드를 짧고 간결하게 만들어 읽기 쉽고 유지보수가 쉬워진다는 것입니다. 또한 명시적으로 close를 호출하려면 많은 if와 try-catch를 사용해야 하기 때문에 실수로 close를 빼먹는 경우가 있습니다. 이것을 이용하면 이런 자잘한 버그들이 발생할 가능성이 적습니다.
 
 ## Try-with-resources로 close() 메소드가 호출되는 객체
 
@@ -99,7 +99,7 @@ public interface Closeable extends AutoCloseable {
 ```
 
 ##  AutoCloseable을 구현하는 클래스 만들기
-내가 만든 클래스가 try-with-resources으로 자원이 해제되길 원한다면 AutoCloseable을 implements 해야합니다.
+내가 만든 클래스가 try-with-resources로 자원이 해제되길 원한다면 AutoCloseable을 implements 해야 합니다.
 
 아래 코드에서 CustomResource 클래스는 AutoCloseable을 구현하였습니다. main에서는 이 객체를 try-with-resources로 사용하고 있습니다.
 

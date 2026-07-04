@@ -6,19 +6,19 @@ WireMock is a library for stubbing and mocking web services. It constructs an HT
 When a WireMock server is in action, we can set up expectations, call the service and then verify its behaviors.
 ```
 웹서비스를 mocking 및 stubbing 하기 위한 라이브러리라고 소개하고 있습니다.
-mocking과 stub의 차이를 아시는분들도 계시겠지만 저는 잘 몰랐었던 내용이라서 둘의 차이점을 간략하게 정리해봤습니다.
-일단 둘의 차이점을 알기전에 `Test Double(테스트 대역)`의 개념에 대해서 알아두면 좋지만
+mocking과 stub의 차이를 아시는 분들도 계시겠지만 저는 잘 몰랐던 내용이라서 둘의 차이점을 간략하게 정리해봤습니다.
+일단 둘의 차이점을 알기 전에 `Test Double(테스트 대역)`의 개념에 대해서 알아두면 좋지만
 이번 주제는 WireMock 편리하게 사용하는 방법을 다루고 있다보니 구체적인 내용은 여기 [블로그](https://azderica.github.io/00-test-mock-and-stub/)로 대체하였습니다.
 ## Mock과 Stub의 차이점
 - Stub: 테스트 중에 만들어진 호출에 미리 준비된 답변을 제공하며 일반적으로 테스트를 위해 프로그래밍된 것 외에는 전혀 응답하지 않습니다.
-- Mock: 예상되는 기대값으로 미리 프로그래밍 객체입니다.
+- Mock: 예상되는 기대값으로 미리 프로그래밍된 객체입니다.
 ## WireMock을 Spring Boot에 적용하기
 1. gradle에 3.0.0-beta-10 버전 적용
 ```kotlin
 testImplementation(“com.github.tomakehurst:wiremock:3.0.0-beta-10”)
 ```
 2. WireMock Server 셋팅
-WireMock은 위에서 설명했듯이 웹서비스 mocking, stubbing을 위한 라이브러리기 때문에 실제 내부적으로는 HTTP 서버가 내장되어 있습니다.
+WireMock은 위에서 설명했듯이 웹서비스 mocking, stubbing을 위한 라이브러리이기 때문에 실제 내부적으로는 HTTP 서버가 내장되어 있습니다.
 따라서 실제 호스트와 포트를 설정을 할 수 있습니다. 호스트는 기본적으로 별도로 명시하지 않으면 localhost이고, port 같은 경우에는 8080 입니다.
 먼저 테스트 코드를 실행하기 전에 아래와 같이 helper 클래스를 하나 만들어서 WireMock 서버를 셋팅하였습니다.
 host는 따로 작성하지 않아서 localhost이고, port 같은 경우에는 dynamicPort()를 사용하여 random하게 사용하지 않는 포트를 할당하도록 설정하였습니다.

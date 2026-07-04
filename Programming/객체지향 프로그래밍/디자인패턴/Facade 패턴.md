@@ -154,7 +154,7 @@ HR팀으로부터 화면뿐만 아니라 XML이나 엑셀로 동일한 데이터
 ![Untitled Diagram](https://user-images.githubusercontent.com/22395934/81474957-e58e6500-9243-11ea-8520-1953558b4387.png)
 
 위 그림의 구조에서 발생할 수 있는 문제점 중 가장 큰 것은 GUIViewer, XMLExporter, ExcelExporter 사이에서 코드 중복이 발생한다는 점입니다. 세 클래스는 모두 동일한 코드를 이용해서 EmpDao, ResumeDao, EvaluationDao 객체를 사용하고 데이터를 추출합니다.
-이런 코드 중복에서 더 큰 문제는 완전히 똑같기 보다는 GUIViewer, XMLExporter, ExcellExporter 마다 약간씩 달라질 수 있다는 점입니다. 중복된 코드에서 미세한 차이가 발생하면 이후 변경해 주어야 할 때 미세한 차이점을 누락할 가능성이 높아지고, 이는 결극 프로그램에 버그를 만드는 원인이 됩니다.
+이런 코드 중복에서 더 큰 문제는 완전히 똑같기 보다는 GUIViewer, XMLExporter, ExcellExporter 마다 약간씩 달라질 수 있다는 점입니다. 중복된 코드에서 미세한 차이가 발생하면 이후 변경해 주어야 할 때 미세한 차이점을 누락할 가능성이 높아지고, 이는 결국 프로그램에 버그를 만드는 원인이 됩니다.
 
 또 다른 문제는 EmpDao, ResumeDao, EvaluationDao에 대해 직접적인 의존을 하고 있다는 점입니다. 필요한 건 이 세개의 Dao가 제공하는 데이터를 통합한 하나의 데이터인데, 이 데이터를 얻기 위해 개별 Dao 객체에 의존하고 있습니다. 따라서 이들 Dao들의 인터페이스에 일부 변화가 발생하면 이 Dao를 직접적으로 사용하고 있는 나머지 GUIViewer, XMLExporter, ExcelExporter에 모두 영향을 미치게 됩니다.
 

@@ -1,0 +1,73 @@
+<svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="vmar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/>
+    </marker>
+    <marker id="vmarr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#B83227"/>
+    </marker>
+    <marker id="vmarg" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#2E8B6B"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="470" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">가상 메모리: 동적 주소 변환과 스왑</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">프로세스는 0번지부터 연속된 가상 주소만 본다 → MMU가 실제 물리 주소로 변환 → 부족분은 스왑 영역이 보충</text>
+
+  <!-- Virtual address space -->
+  <rect x="40" y="98" width="180" height="330" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="130" y="122" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">가상 주소 공간</text>
+  <text x="130" y="140" font-size="11" fill="#8A9BA8" text-anchor="middle">(프로세스마다 독립 · 0번지~)</text>
+  <rect x="64" y="154" width="132" height="44" rx="6" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="130" y="181" font-size="12.5" fill="#17212B" text-anchor="middle">스택 (Stack)</text>
+  <rect x="64" y="206" width="132" height="44" rx="6" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="130" y="233" font-size="12.5" fill="#17212B" text-anchor="middle">힙 (Heap)</text>
+  <rect x="64" y="258" width="132" height="44" rx="6" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="130" y="285" font-size="12.5" fill="#17212B" text-anchor="middle">데이터 (Data)</text>
+  <rect x="64" y="310" width="132" height="44" rx="6" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="130" y="337" font-size="12.5" fill="#17212B" text-anchor="middle">코드 (Text)</text>
+  <text x="130" y="378" font-size="11" fill="#8A9BA8" text-anchor="middle">페이지 단위로 쪼갬</text>
+  <text x="130" y="396" font-size="11" fill="#8A9BA8" text-anchor="middle">(보통 4KB)</text>
+
+  <!-- MMU translation -->
+  <line x1="220" y1="250" x2="292" y2="250" stroke="#08748C" stroke-width="1.8" marker-end="url(#vmar)"/>
+  <rect x="292" y="178" width="150" height="150" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="367" y="204" font-size="13.5" font-weight="700" fill="#8A5E12" text-anchor="middle">MMU</text>
+  <text x="367" y="222" font-size="11" fill="#8A5E12" text-anchor="middle">동적 주소 변환</text>
+  <rect x="312" y="236" width="110" height="34" rx="6" fill="#ffffff" stroke="#C88A2E"/>
+  <text x="367" y="257" font-size="11.5" fill="#17212B" text-anchor="middle">페이지 테이블</text>
+  <text x="367" y="292" font-size="10.5" fill="#8A5E12" text-anchor="middle">가상 페이지 →</text>
+  <text x="367" y="307" font-size="10.5" fill="#8A5E12" text-anchor="middle">물리 프레임 매핑</text>
+  <line x1="442" y1="250" x2="514" y2="250" stroke="#08748C" stroke-width="1.8" marker-end="url(#vmar)"/>
+
+  <!-- Physical memory -->
+  <rect x="514" y="98" width="306" height="180" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="667" y="122" font-size="13.5" font-weight="700" fill="#B83227" text-anchor="middle">물리 메모리 (RAM)</text>
+  <text x="667" y="140" font-size="11" fill="#8A9BA8" text-anchor="middle">빠름 · 용량 작음 · 프레임 단위</text>
+  <rect x="536" y="154" width="126" height="40" rx="6" fill="#ffffff" stroke="#E3B5AE"/>
+  <text x="599" y="179" font-size="11.5" fill="#17212B" text-anchor="middle">Frame · 코드</text>
+  <rect x="672" y="154" width="126" height="40" rx="6" fill="#ffffff" stroke="#E3B5AE"/>
+  <text x="735" y="179" font-size="11.5" fill="#17212B" text-anchor="middle">Frame · 힙</text>
+  <rect x="536" y="202" width="126" height="40" rx="6" fill="#ffffff" stroke="#E3B5AE"/>
+  <text x="599" y="227" font-size="11.5" fill="#17212B" text-anchor="middle">Frame · 스택</text>
+  <rect x="672" y="202" width="126" height="40" rx="6" fill="#F4E4E1" stroke="#E3B5AE" stroke-dasharray="4,3"/>
+  <text x="735" y="221" font-size="10.5" fill="#8A9BA8" text-anchor="middle">비어 있음</text>
+  <text x="735" y="235" font-size="10.5" fill="#8A9BA8" text-anchor="middle">(미사용)</text>
+
+  <!-- Swap area -->
+  <rect x="514" y="326" width="306" height="102" rx="12" fill="#F4F6F7" stroke="#8A9BA8" stroke-width="1.6"/>
+  <text x="667" y="350" font-size="13.5" font-weight="700" fill="#5A6B78" text-anchor="middle">스왑 영역 (디스크)</text>
+  <text x="667" y="368" font-size="11" fill="#8A9BA8" text-anchor="middle">느림 · 용량 큼 · 물리 메모리의 연장</text>
+  <rect x="536" y="382" width="126" height="34" rx="6" fill="#ffffff" stroke="#CBD5DC"/>
+  <text x="599" y="403" font-size="11.5" fill="#5A6B78" text-anchor="middle">쫓겨난 페이지</text>
+  <rect x="672" y="382" width="126" height="34" rx="6" fill="#ffffff" stroke="#CBD5DC"/>
+  <text x="735" y="403" font-size="11.5" fill="#5A6B78" text-anchor="middle">쫓겨난 페이지</text>
+
+  <!-- swap in/out arrows -->
+  <line x1="590" y1="278" x2="590" y2="326" stroke="#B83227" stroke-width="1.8" marker-end="url(#vmarr)"/>
+  <text x="556" y="306" font-size="11" fill="#B83227" font-weight="700">스왑아웃</text>
+  <line x1="744" y1="326" x2="744" y2="278" stroke="#2E8B6B" stroke-width="1.8" marker-end="url(#vmarg)"/>
+  <text x="752" y="306" font-size="11" fill="#2E8B6B" font-weight="700">스왑인</text>
+
+  <text x="514" y="452" font-size="11.5" fill="#8A9BA8">사용 가능한 전체 메모리 = 물리 메모리 + 스왑 영역</text>
+</svg>

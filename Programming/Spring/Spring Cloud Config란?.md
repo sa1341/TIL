@@ -1,6 +1,6 @@
 # Spring Cloud Config란?
 
-MSA 환경에서 각 서비스에서 필요한 설정 `property`들을 어떻게 관리하고 읽어올수 있는지 구글링을 통해서 여러 문서와 블로그를 찾아보았고 그중에서 `Spring Cloud Config`에 대해서 아주 기본적인 부부만 `얕게` 살펴봤습니다.
+MSA 환경에서 각 서비스에서 필요한 설정 `property`들을 어떻게 관리하고 읽어올 수 있는지 구글링을 통해서 여러 문서와 블로그를 찾아보았고 그중에서 `Spring Cloud Config`에 대해서 아주 기본적인 부분만 `얕게` 살펴봤습니다.
 
 
 ## 1. Spring Cloud Config 살펴보기
@@ -90,7 +90,7 @@ spring:
           search-paths: fund,account // 설정파일이 위치한 sub-directory
 ```
 
-이제 외부 설정파일을 어떻게 가져올지는 `yml` 파일에 정의하면 기본적인 셋팅은 끝이납니다. 
+이제 외부 설정파일을 어떻게 가져올지는 `yml` 파일에 정의하면 기본적인 셋팅은 끝이 납니다. 
 `spring.cloud.config.server.git.uri`는 실제 사용자가 입력한 설정 값을 push 하는 git 저장소의 uri를 기입합니다.
 
 > Spring Cloud Config Server Git 주소: https://github.com/sa1341/spring-cloud-config-server
@@ -103,7 +103,7 @@ spring:
 
 설정 파일을 생성할때는 `{application}-{profile}.yml` 형태로 생성합니다. 저 같은 경우에는 `fund-config`로 application 이름을 만들었습니다. 
 
-이제 GitHub에 `PUSH`만 하면 Config 저장소 설정도 끝이납니다.
+이제 GitHub에 `PUSH`만 하면 Config 저장소 설정도 끝이 납니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/179760221-8dee3327-677f-4224-81d8-763eefbb0182.png)
 
@@ -115,7 +115,7 @@ spring:
 
 ![image](https://user-images.githubusercontent.com/22395934/179760760-d99b9cc8-0e0b-4cca-801e-39491b42f656.png)
 
-`Git Repository`에 있는 fund 디렉토리 하위에 있는 `fund-config-sandbox.yml`에 정의된 `fund.service.url": "https://sandbox.fund-channel-server.com` 를 정상 조회되는 것을 확인할 수 있었습니다. 
+`Git Repository`에 있는 fund 디렉토리 하위에 있는 `fund-config-sandbox.yml`에 정의된 `fund.service.url": "https://sandbox.fund-channel-server.com` 가 정상적으로 조회되는 것을 확인할 수 있었습니다. 
 
 > Spring Cloud Config Repositry Git 주소: https://github.com/sa1341/spring-cloud-config-repository
 
@@ -210,7 +210,7 @@ management:
 
 - management.endpoints. web.exposure.include: refresh: 이 설정 값은 Spring Boot Application을 모니터링 및 관리하는 Actuator가 제공해주는 `config refresh` EndPoint를 제공해주는 설정 값입니다.
 
-> 이 값을 refresh로 설정한 이유는 설정값이 동적으로 변경되면 그 값을 다시 주입받기 위해서는 서비스를 다시 빌드와 배포를 해야되는데 `refresh`로 하게 되면 API(/actuator/refresh)를 통해서 graceful 하게 설정 값 refresh가 가능합니다.
+> 이 값을 refresh로 설정한 이유는 설정값이 동적으로 변경되면 그 값을 다시 주입받기 위해서는 서비스를 다시 빌드와 배포를 해야 되는데 `refresh`로 하게 되면 API(/actuator/refresh)를 통해서 graceful 하게 설정 값 refresh가 가능합니다.
 
 
 
@@ -276,7 +276,7 @@ class DynamicConfigService {
 }
 ```
 
-서비스는 `StaticConfigService`와 `DynamicConfigService`를 작성했는데 둘의 차이점은 클래스 상위에 `@RefreshScope` 어노테이션 적용여부 뿐입니다. 이 어노테이션은 Config 저장소에서 값이 변경될 경우 Actuator를 통해서 다시 Config Refresh를 호출하면 설정 값이 갱신이 되는지 안되는지를 확인하기 위해서 작성한 예제 코드입니다.
+서비스는 `StaticConfigService`와 `DynamicConfigService`를 작성했는데 둘의 차이점은 클래스 상위에 `@RefreshScope` 어노테이션 적용 여부뿐입니다. 이 어노테이션은 Config 저장소에서 값이 변경될 경우 Actuator를 통해서 다시 Config Refresh를 호출하면 설정 값이 갱신이 되는지 안되는지를 확인하기 위해서 작성한 예제 코드입니다.
 
 - StaticConfigService 호출 결과
 
@@ -286,7 +286,7 @@ class DynamicConfigService {
 
 ![image](https://user-images.githubusercontent.com/22395934/179772862-4b471f30-925a-448d-a7b8-c781575a82c0.png)
 
-둘다 결과는 동일 합니다. 이제 Git Config 저장소에서 값을 아래처럼 변경해보고 Actuator를 통해서 `/actuator/refresh` EndPoint를 호출해보고 실제 재기동 없이 값이 변경됬는지 확인해보았습니다.
+둘다 결과는 동일 합니다. 이제 Git Config 저장소에서 값을 아래처럼 변경해보고 Actuator를 통해서 `/actuator/refresh` EndPoint를 호출해보고 실제 재기동 없이 값이 변경됐는지 확인해보았습니다.
 
  - 변경전 fund.service.url: https://sandbox.fund-channel.server.com 
  - 변경 후 fund.service.url: https://sandbox.fund-channel.server.kakaopaysec.com 
@@ -336,9 +336,9 @@ Spring Cloud 생태계가 워낙 잘 갖춰져 있었고, 아직 Spring Cloud Co
 
 위에서 `Actuator`가 제공해주는 `Refresh EndPoint`로 할 수는 있겠지만, 수동으로 해야되는 문제점이 있습니다. 만약 각 서비스(Config 클라이언트) 인스턴스가 많이 늘어난다면 수동으로 호출해야되는 Refresh API도 많아지게 됩니다. 이렇게 되면 최악의 상황인 경우 몇몇 인스턴스는 `Config Refresh 호출`이 누락될 수 있는 리스크가 생기게 됩니다.
 
-이 부분에 대해서도 자동화 할 수 있는 방안 역시 찾아 볼수 있었습니다.  `Spring Cloud Bus`라는 dependecy가 있는데 간단히 요약하면 카프카나 RabbitMQ 같은 메시지 플랫폼을 연계해서 Config 저장소에 변경 이벤트가 발생하면 `GitHub webhook`을 설정하여 Config Server로 Config 변경 이벤트를 보내게 되고 Config 서버에서 이벤트를 수신하고 Spring Cloud Bus에 갱신 이벤트를 전달하게 됩니다. 
+이 부분에 대해서도 자동화할 수 있는 방안 역시 찾아볼 수 있었습니다.  `Spring Cloud Bus`라는 dependency가 있는데 간단히 요약하면 카프카나 RabbitMQ 같은 메시지 플랫폼을 연계해서 Config 저장소에 변경 이벤트가 발생하면 `GitHub webhook`을 설정하여 Config Server로 Config 변경 이벤트를 보내게 되고 Config 서버에서 이벤트를 수신하고 Spring Cloud Bus에 갱신 이벤트를 전달하게 됩니다. 
 
-갱신 이벤트를 전달받은 `Spring Cloud Bus`는 연결된 모든 클라이언트 인스턴스에게 Actuator의 Config Refhres API를 호출하여 서비스 재기동 없이 동적으로 변경된 Config를 주입받도록 하는 방법이 나와 있습니다. 이 부분은 별도로 다시 공부해서 정리해보겠습니다.
+갱신 이벤트를 전달받은 `Spring Cloud Bus`는 연결된 모든 클라이언트 인스턴스에게 Actuator의 Config Refresh API를 호출하여 서비스 재기동 없이 동적으로 변경된 Config를 주입받도록 하는 방법이 나와 있습니다. 이 부분은 별도로 다시 공부해서 정리해보겠습니다.
 
 > Spring Cloud Config Client Git 주소: https://github.com/sa1341/spring-cloud-config-client
 

@@ -1,22 +1,22 @@
 # Elasticsearch 클러스터 구성
 
-먼저, Elasticsearch에 개념부터 정리하면 Apache Lucene(아파치 루씬) 기반의 Java 오픈소스 분산 검색 엔진입니다. 
+먼저, Elasticsearch의 개념부터 정리하면 Apache Lucene(아파치 루씬) 기반의 Java 오픈소스 분산 검색 엔진입니다. 
 
-Elasticsearch는 역 색인(Inverted Index)를 사용합니다. ES는 `문서 -> 내용`으로 저장하는 것 외에 `단어 -> 문서`로 찾을 수 있는 테이블을 추가로 만듭니다. 이렇게하면 특정 단어가 포함된 문서를 빠르게 찾을 수 있습니다.
+Elasticsearch는 역 색인(Inverted Index)을 사용합니다. ES는 `문서 -> 내용`으로 저장하는 것 외에 `단어 -> 문서`로 찾을 수 있는 테이블을 추가로 만듭니다. 이렇게 하면 특정 단어가 포함된 문서를 빠르게 찾을 수 있습니다.
 
 주로 실무에서도 많이 쓰이는 `ELK(Elasticsearch/ Logstash / Kibana)` 스택으로 사용되기도 합니다.
 
-- Logstash: 다양한 소스(DB, csv 파일 등)의 로그 또는 트랜잭션 데이터를 수집, 집계, 파싱하여 Elasticsearch로 전달 합니다.
+- Logstash: 다양한 소스(DB, csv 파일 등)의 로그 또는 트랜잭션 데이터를 수집, 집계, 파싱하여 Elasticsearch로 전달합니다.
 
-- Elasticsearch: Logstash로부터 받은 데이터를 검색 및 집계를 하여 필요한 관심있는 정보를 획득합니다.
+- Elasticsearch: Logstash로부터 받은 데이터를 검색 및 집계를 하여 관심 있는 정보를 획득합니다.
 
-- Kibana: Elasticsearch의 빠른 검색을 통해 데이터를 시각화 및 모니터링을 담당합니다.
+- Kibana: Elasticsearch의 빠른 검색을 통해 데이터 시각화 및 모니터링을 담당합니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/148631213-b6d443ff-c83c-4352-addd-7d3b9153008e.png)
 
 ## Elasticsearch와 관계형 DB 비교
 
-아래 표는 흔히 사용하고 있는 관계형 데이터베이스는 Elasticsearch에서 아래와 같이 대응시킬 수 있습니다.
+아래 표는 흔히 사용하는 관계형 데이터베이스를 Elasticsearch에 대응시킨 것입니다.
 
 | 관계형 데이터베이스 | Elasticsearch |
 |:-------:|:-------:|
@@ -38,7 +38,7 @@ Elasticsearch는 역 색인(Inverted Index)를 사용합니다. ES는 `문서 ->
 
 클러스터란 Elasticsearch에서 가장 큰 시스템 단위를 의미합니다. 최소 하나 이상의 노드로 이루어진 노드들의 집합입니다.
 
-서로 다른 클러스터는 데이터 접근, 교환을 할 수 없는 독립적인 시스템으로 유지되며, 여러 대의 서버가 하나의 클러스터를 구성할 수 있고, 한 서버에 여러개의 클러스터가 존재할 수도 있습니다.
+서로 다른 클러스터는 데이터 접근, 교환을 할 수 없는 독립적인 시스템으로 유지되며, 여러 대의 서버가 하나의 클러스터를 구성할 수 있고, 한 서버에 여러 개의 클러스터가 존재할 수도 있습니다.
 
 ### node(노드)
 
@@ -62,15 +62,15 @@ Elasticsearch는 역 색인(Inverted Index)를 사용합니다. ES는 `문서 ->
 
 ### Coordination only node
 
-data node와 master-eligible node의 일을 대신하는 이 노드는 대규모 클러스터에서 큰 이점이 있습니다. 즉 로드벨런서와 비슷한 역할을 한다고 봅니다. 
+data node와 master-eligible node의 일을 대신하는 이 노드는 대규모 클러스터에서 큰 이점이 있습니다. 즉 로드밸런서와 비슷한 역할을 한다고 봅니다. 
 
 ### Shard(샤드)
 
-샤딩은 데이터를 분산해서 저장하는 방법을 의미합니다. 즉, Elasticsearch에서 스케일 아웃을 위해 index를 여러 shard로 쪼갠 것입니다. 기본적으로 1개가 존재하며, 검색 성능 향상을 위해 클러스터의 샤드 갯수를 조정하는 튜닝을 하기도 합니다.
+샤딩은 데이터를 분산해서 저장하는 방법을 의미합니다. 즉, Elasticsearch에서 스케일 아웃을 위해 index를 여러 shard로 쪼갠 것입니다. 기본적으로 1개가 존재하며, 검색 성능 향상을 위해 클러스터의 샤드 개수를 조정하는 튜닝을 하기도 합니다.
 
 ![Untitled Diagram drawio (2)](https://user-images.githubusercontent.com/22395934/148633756-113e09f2-d5ea-4b5f-9dda-4265da95927b.png)
 
-샤드를 사용하는 이유는 예를 들어 문서가 1~100번까지 있다고 하면, 이 문서를 여러 곳에 쪼개어 저장할 경우 여러 곳에서 한번에 검색되도록하면 컴퓨팅 리소스를 분산해서 사용하기 때문에 검색속도 향상시킬 수 있는 장점이 있습니다.
+샤드를 사용하는 이유는 예를 들어 문서가 1~100번까지 있다고 하면, 이 문서를 여러 곳에 쪼개어 저장할 경우 여러 곳에서 한 번에 검색되도록 하면 컴퓨팅 리소스를 분산해서 사용하기 때문에 검색 속도를 향상시킬 수 있는 장점이 있습니다.
 
 또한 이렇게 구성하면 노드를 늘리고 샤드도 늘려서 손쉽게 `scale out`을 할 수 있습니다.
 
@@ -92,7 +92,7 @@ EC2 인스턴스 4개를 구성하여 Elasticsearch 클러스터를 구성해보
 
 [도커설치방법](https://github.com/sa1341/TIL/blob/master/docker/%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%B6%80%ED%8A%B8%20%EA%B8%B0%EB%B0%98%20%EB%8F%84%EC%BB%A4%ED%8C%8C%EC%9D%BC%20%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0.md)
 
-ES에서는 가상 메모리를 많이 필요하기 때문에 각 ec2 인스턴스마다 가상 메모리 사이즈를 늘려줘야 합니다.
+ES에서는 가상 메모리가 많이 필요하기 때문에 각 ec2 인스턴스마다 가상 메모리 사이즈를 늘려줘야 합니다.
 
 ```java
 // 가상메모리 사이즈 늘리기
@@ -122,19 +122,19 @@ docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.seed_
 docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.seed_hosts=172.31.47.200,172.31.36.213,172.31.43.4" -e "node.name=es04" -e "cluster.initial_master_nodes=es01,es02,es03,es04" -e "network.publish_host=172.31.40.131" elasticsearch:7.10.1
 ```
 
-도커 환경변수 설정하는 부분에서 `discovery.seed_hosts`는 현재 노드의 ip를 제외한 나머지 노드들의 ip를 명시해줘야하고, 반대로 `network.publish_host`는 현재 노드의 ip로 설정해야 합니다. 
+도커 환경변수 설정하는 부분에서 `discovery.seed_hosts`는 현재 노드의 ip를 제외한 나머지 노드들의 ip를 명시해줘야 하고, 반대로 `network.publish_host`는 현재 노드의 ip로 설정해야 합니다. 
 
 이렇게 각 ES 노드 컨테이너를 실행시키고 http://{ES 노드 외부ip}:9200로 접속해보면 아래와 같이 노드 정보가 나옵니다.
 
 ![스크린샷 2022-01-08 오후 4 51 01](https://user-images.githubusercontent.com/22395934/148637921-f8c9f5b0-2201-44a2-86b2-beb6b2166a76.png)
 
-하지만 보기 불편하기 때문에 크롬에서 제공해주는 ElasticSearch Head 플러그인을 설치 후 이곳에서 ES 클러스터 노드들의 상태를 확인 합니다.
+하지만 보기 불편하기 때문에 크롬에서 제공해주는 ElasticSearch Head 플러그인을 설치한 후 이곳에서 ES 클러스터 노드들의 상태를 확인합니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/148637964-abe220a9-4cf3-4a24-8fdb-e4d6a3d5b8ea.png)
 
 ## ES와 DB의 비교
 
-ES는 DB의 상위호환이진 않습니다. 둘다 데이터를 저장하는 공통점이 있지만, 목적과 방식이 조금 다릅니다. 
+ES는 DB의 상위 호환이진 않습니다. 둘 다 데이터를 저장하는 공통점이 있지만, 목적과 방식이 조금 다릅니다. 
 
 ES는 실시간 처리가 불가합니다. 어플리케이션에서 DB 테이블에 INSERT를 하고 바로 조회가 가능하지만 ES는 내부적으로 처리하는 로직이 있어서 조회하는데 딜레이가 어느정도 있습니다. 한마디로 실시간 처리는 불가합니다.
 

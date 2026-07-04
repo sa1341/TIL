@@ -2,7 +2,7 @@
 
 서비스를 개발하는 도중에 외부 서비스와 통신을 하는 경우 대부분 스프링에서 제공해주는 `RestTemplate` 클래스를 사용하여 원하는 데이터를 주고받았지만, 서비스가 점점 커지면서 요청 수가 늘어남에 따라서 가끔씩 `SocketTimeoutException`이나 `ReadTimeoutException` 등의 예외들이 발생하기 시작했습니다.  
 
-이러한 이슈들을 해결하기 위해 RestTemplate 내부적으로 타 서비스에 요청 시 Connection을 어떻게 설정하는지 좀 더 알 고 싶었습니다.
+이러한 이슈들을 해결하기 위해 RestTemplate 내부적으로 타 서비스에 요청 시 Connection을 어떻게 설정하는지 좀 더 알고 싶었습니다.
 
 RestTemplate은 Thread Safe하게 설계되어 있습니다.
 
@@ -63,8 +63,8 @@ class RestConfig {
 
 MAX_TOTAL_CONNECTION은 Connection Pool의 수용 가능한 최대 사이즈입니다.
 
-MAX_PER_ROUTE는 호스트(IP + PORT)당 Connection Pool에 생성할 수 있는 Connection 수를  의미합니다. 
+MAX_PER_ROUTE는 호스트(IP + PORT)당 Connection Pool에 생성할 수 있는 Connection 수를 의미합니다. 
 
-예를 들어서 http://localhost:8080/testA, http://localhost:8080/testB 두개의 경로에 대해서 최대 20개의 연결이 생성된다는 뜻입니다.
+예를 들어서 http://localhost:8080/testA, http://localhost:8080/testB 두 개의 경로에 대해서 최대 20개의 연결이 생성된다는 뜻입니다.
 
 > 참조: https://jodu.tistory.com/46

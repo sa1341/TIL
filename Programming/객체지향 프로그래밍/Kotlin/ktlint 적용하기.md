@@ -12,7 +12,7 @@ ktlint는 eslint 플러그인과 마찬가지로 Kotlin 코드에 대해서 lint
 
 ktlint는 [Kotlin 공식 코딩 컨벤션 가이드](https://kotlinlang.org/docs/coding-conventions.html#names-for-backing-properties)와 일치하는 프로그래밍을 할 수 있도록 지원합니다.
 
-기본적으로 `kitlint`는 jcenter에 배포되어 있고, jar 파일형태로 import하여 별도의 Gradle plugin 없이 사용이 가능하지만 ktlint 공홈에서는 Gradle pugin을 더 권장하고 있습니다.
+기본적으로 `kitlint`는 jcenter에 배포되어 있고, jar 파일 형태로 import하여 별도의 Gradle plugin 없이 사용이 가능하지만 ktlint 공홈에서는 Gradle plugin을 더 권장하고 있습니다.
 
 
 ## .editorconfig 사용
@@ -47,7 +47,7 @@ disabled_rules = no-wildcard-imports,import-ordering,comment-spacing
 
 ### .editorconfig 파일 이점
 
-ktlint는 .editorconfig 파일이 없어도 default 규칙으로 실행이 가능하지만, 의도치 않게 상위 디렉토리의 .editorconfig가 참조되는 경우를 막기 위해서 권고되어 집니다.
+ktlint는 .editorconfig 파일이 없어도 default 규칙으로 실행이 가능하지만, 의도치 않게 상위 디렉토리의 .editorconfig가 참조되는 경우를 막기 위해서 권고됩니다.
 
 위에서 `root = true`는 .editorconfig 파일의 규약으로, 이 파일을 지원하는 도구들은 `root = true` 선언이 된 .editorconfig 파일을 찾기 전까지는 모든 상위 디렉토리를 탐색합니다.
 
@@ -139,7 +139,7 @@ BUILD FAILED in 3s
 /Users/limjun-young/workspace/privacy/dev/cicd-gradle-project/src/test/kotlin/com/junyoung/cicdgradleproject/practice/Practice01.kt:6:1: Exceeded max line length (120)
 ```
 
-빌드가 실패나면서 reports 디렉토리 하위에 텍스트 파일이 생성된 것을 확인 할 수 있었습니다.
+빌드가 실패하면서 reports 디렉토리 하위에 텍스트 파일이 생성된 것을 확인할 수 있었습니다.
 해당 파일을 열어보니 라인 최대 길이가 120자를 넘었다고 나옵니다.
 
 그리고 다시 120자 이내로 수정 후 `ktlintCheck`를 수행해보니 정상으로 빌드 된 것을 확인 할 수 있었습니다.
@@ -150,7 +150,7 @@ BUILD FAILED in 3s
 ./gradlew ktlintFormat
 ```
 
-하지만 `ktlintFormat`은 가끔 파일이 삭제될 수 있는 리스크가 있을 수 있어서 왠만하면 권하지 않는다고 합니다.
+하지만 `ktlintFormat`은 가끔 파일이 삭제될 수 있는 리스크가 있어서 웬만하면 권하지 않는다고 합니다.
 
 ### addKtlintCheckGitPreCommitHook
 

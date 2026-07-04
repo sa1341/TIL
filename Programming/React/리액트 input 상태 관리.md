@@ -1,8 +1,8 @@
-# react Input 상태 관리
+# React Input 상태 관리
 
-리액트에서 form 태그 안에 input 태그들을 넣은 후 , 값을 입력하는데 이러한 값들의 상태를 관리하는 방법에 대해서 살펴보겠습니다.
+리액트에서 form 태그 안에 input 태그들을 넣은 후, 값을 입력하는데 이러한 값들의 상태를 관리하는 방법에 대해서 살펴보겠습니다.
 
-아래 이름과 전화번호를 input 태그 안에 입력 후 컴포넌트의 상태 값에 동기화 해주는 에제 코드를 작성하였습니다.
+아래 이름과 전화번호를 input 태그 안에 입력 후 컴포넌트의 상태 값에 동기화해주는 예제 코드를 작성하였습니다.
 
 ```javascript
 import React, { Component } from 'react';
@@ -48,8 +48,8 @@ class PhoneForm extends Component {
 export default PhoneForm;
 ```
 
->> 꿀팁 정보: Reactjs code snippets 플러그인을 설치하면 Componet 생성할 때 `rcc` 단축키만으로 Component를 간편하게 생성 할 수 있습니다.
-`rsc` 단축키를 입력하면 함수형 컴포넌트를 생성 할 수 있습니다.
+>> 꿀팁 정보: Reactjs code snippets 플러그인을 설치하면 Component 생성할 때 `rcc` 단축키만으로 Component를 간편하게 생성할 수 있습니다.
+`rsc` 단축키를 입력하면 함수형 컴포넌트를 생성할 수 있습니다.
 
 PhoneForm 컴포넌트를 생성한 후에 render() 함수에서 <form>과 하위의 <input>을 JSX로 리턴하고 있습니다. 이 때 onChange 함수는 이벤트로 내용을 감지하여 변화가 일어났는지 탐지해줍니다. 
 
@@ -70,7 +70,7 @@ handleChange = (e) => {
 }
 ```
 
-위 코드는 객체 안에서 key를 []로 감싸면 그 안에 넣은 그 안에 넣은 레퍼런스가 가리키는 실제 값이 key 값으로 사용됩니다. 예를 들어 다음과 같은 객체를 만들면 아래와 같은 결과를 얻을 수 있습니다.
+위 코드는 객체 안에서 key를 []로 감싸면 그 안에 넣은 레퍼런스가 가리키는 실제 값이 key 값으로 사용됩니다. 예를 들어 다음과 같은 객체를 만들면 아래와 같은 결과를 얻을 수 있습니다.
 
 ```javascript
 const name = 'junyoung';
