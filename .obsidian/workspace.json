@@ -158,12 +158,14 @@
             "id": "1f7f9c7abca93086",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Attached file/01_scn_basics.svg"
+                "file": "Programming/인프라/DB/오라클/읽기 일관성.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "01_scn_basics"
+              "icon": "lucide-file",
+              "title": "읽기 일관성"
             }
           }
         ],
