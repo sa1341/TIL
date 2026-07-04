@@ -1,0 +1,47 @@
+<svg viewBox="0 0 860 500" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="thr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+    <marker id="thl" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto"><path d="M9,0 L0,4.5 L9,9 Z" fill="#B83227"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="500" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">TLS 핸드셰이크 — 대칭키를 안전하게 만드는 과정</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">난수·Pre-Master Secret을 모아 Master Secret을 만들고, 여기서 실제 암호화용 대칭키들을 파생시킨다</text>
+
+  <!-- actors -->
+  <rect x="120" y="90" width="150" height="40" rx="8" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="195" y="115" font-size="14" font-weight="700" fill="#065A6E" text-anchor="middle">클라이언트</text>
+  <rect x="590" y="90" width="150" height="40" rx="8" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="665" y="115" font-size="14" font-weight="700" fill="#B83227" text-anchor="middle">서버</text>
+  <line x1="195" y1="130" x2="195" y2="470" stroke="#D4DCE2" stroke-width="1.4"/>
+  <line x1="665" y1="130" x2="665" y2="470" stroke="#D4DCE2" stroke-width="1.4"/>
+
+  <!-- 1 ClientHello -->
+  <line x1="195" y1="162" x2="665" y2="162" stroke="#08748C" stroke-width="1.6" marker-end="url(#thr)"/>
+  <text x="205" y="156" font-size="12.5" font-weight="700" fill="#065A6E">① ClientHello</text>
+  <text x="205" y="177" font-size="11" fill="#8A9BA8">지원 TLS 버전·Cipher Suite + Client Random 🎲</text>
+
+  <!-- 2 ServerHello + Cert -->
+  <line x1="665" y1="212" x2="195" y2="212" stroke="#B83227" stroke-width="1.6" marker-end="url(#thl)"/>
+  <text x="660" y="206" font-size="12.5" font-weight="700" fill="#B83227" text-anchor="end">② ServerHello + Certificate</text>
+  <text x="660" y="227" font-size="11" fill="#8A9BA8" text-anchor="end">선택된 Cipher Suite + Server Random 🎲 + 인증서 📜</text>
+
+  <!-- verify -->
+  <rect x="70" y="242" width="250" height="34" rx="6" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="82" y="264" font-size="11.5" fill="#8A5E12">신뢰 저장소(cacerts)로 인증서 유효성 검증</text>
+
+  <!-- 3 key exchange -->
+  <line x1="195" y1="308" x2="665" y2="308" stroke="#08748C" stroke-width="1.6" marker-end="url(#thr)"/>
+  <text x="205" y="302" font-size="12.5" font-weight="700" fill="#065A6E">③ 키 교환 (Pre-Master Secret 합의)</text>
+  <text x="205" y="323" font-size="11" fill="#8A9BA8">RSA: 공개키로 암호화 전송 · ECDHE: 각자 유도(전송 X, 더 안전)</text>
+
+  <!-- derive box -->
+  <rect x="300" y="344" width="260" height="66" rx="8" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="430" y="366" font-size="12" font-weight="700" fill="#1F6B4E" text-anchor="middle">양쪽 각자 동일하게 계산</text>
+  <text x="430" y="385" font-size="10.5" fill="#1F6B4E" text-anchor="middle">Master Secret = PRF(Pre-Master + Client·Server Random)</text>
+  <text x="430" y="401" font-size="10.5" fill="#1F6B4E" text-anchor="middle">→ KDF로 Write Key·MAC Key·IV 파생</text>
+
+  <!-- 4 Finished -->
+  <line x1="195" y1="440" x2="665" y2="440" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#thr)"/>
+  <line x1="665" y1="462" x2="195" y2="462" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#thl)"/>
+  <text x="205" y="434" font-size="12.5" font-weight="700" fill="#1F6B4E">④ Finished (대화 요약본 교환·검증) ✅ → 이후 대칭키로 암호화 통신</text>
+</svg>

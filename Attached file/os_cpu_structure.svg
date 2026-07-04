@@ -1,0 +1,45 @@
+<svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="cpar" markerWidth="9" markerHeight="9" refX="4.5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">CPU의 구성과 메모리·버스</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">CPU는 제어장치·ALU·레지스터로 구성 · 클록의 박자에 맞춰 버스를 통해 메모리와 데이터를 주고받는다</text>
+
+  <!-- CPU box -->
+  <rect x="40" y="96" width="340" height="240" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="60" y="122" font-size="15" font-weight="700" fill="#065A6E">CPU (요리사)</text>
+
+  <rect x="62" y="138" width="296" height="52" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="76" y="160" font-size="13" font-weight="700" fill="#17212B">제어장치 (Control Unit)</text>
+  <text x="76" y="179" font-size="11" fill="#8A9BA8">명령어를 해석하고 각 부품에 작업을 지시</text>
+
+  <rect x="62" y="200" width="296" height="52" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="76" y="222" font-size="13" font-weight="700" fill="#17212B">ALU (산술논리 연산장치)</text>
+  <text x="76" y="241" font-size="11" fill="#8A9BA8">덧셈·뺄셈 등 산술 연산과 AND·OR 논리 연산 수행</text>
+
+  <rect x="62" y="262" width="296" height="52" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="76" y="284" font-size="13" font-weight="700" fill="#17212B">레지스터 (Register)</text>
+  <text x="76" y="303" font-size="11" fill="#8A9BA8">CPU 내부의 초고속 임시 저장소 (손질해 둔 재료)</text>
+
+  <!-- clock -->
+  <rect x="140" y="352" width="140" height="34" rx="17" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="210" y="374" font-size="12" fill="#8A5E12" text-anchor="middle" font-weight="700">클록(Clock) ⏱ 틱마다 동작</text>
+
+  <!-- Bus -->
+  <rect x="420" y="180" width="70" height="80" rx="8" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="455" y="216" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">버스</text>
+  <text x="455" y="234" font-size="10.5" fill="#8A5E12" text-anchor="middle">Bus</text>
+  <line x1="380" y1="220" x2="418" y2="220" stroke="#8A9BA8" stroke-width="1.6" marker-start="url(#cpar)" marker-end="url(#cpar)"/>
+
+  <!-- Memory -->
+  <rect x="530" y="96" width="250" height="240" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="550" y="122" font-size="15" font-weight="700" fill="#B83227">메모리 (RAM · 작업대)</text>
+  <text x="550" y="144" font-size="11" fill="#8A9BA8">실행할 프로그램과 데이터가 올라오는 공간</text>
+  <rect x="552" y="158" width="206" height="30" rx="5" fill="#ffffff" stroke="#E3B5AE"/><text x="564" y="178" font-size="11.5" fill="#3E5060">명령어 · 데이터</text>
+  <rect x="552" y="196" width="206" height="30" rx="5" fill="#ffffff" stroke="#E3B5AE"/><text x="564" y="216" font-size="11.5" fill="#3E5060">명령어 · 데이터</text>
+  <rect x="552" y="234" width="206" height="30" rx="5" fill="#ffffff" stroke="#E3B5AE"/><text x="564" y="254" font-size="11.5" fill="#3E5060">명령어 · 데이터</text>
+  <line x1="492" y1="220" x2="528" y2="220" stroke="#8A9BA8" stroke-width="1.6" marker-start="url(#cpar)" marker-end="url(#cpar)"/>
+  <text x="552" y="292" font-size="11" fill="#8A9BA8">CPU가 메모리에서 명령어를 하나씩</text>
+  <text x="552" y="310" font-size="11" fill="#8A9BA8">가져와(fetch) 해석·실행을 반복</text>
+</svg>

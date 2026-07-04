@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/운영체제/가상 메모리 시스템.md",
+                "file": "Programming/인프라/운영체제/메모리 관리.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "가상 메모리 시스템"
+              "title": "메모리 관리"
             }
           }
         ],
@@ -464,6 +464,11 @@
   },
   "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Attached file/os_cpu_structure.svg",
+    "Attached file/os_cpu_structure.svg.tmp.40895.57de8bdc2b05",
+    "Attached file/net_tls_handshake.svg",
+    "Attached file/net_tcpip_layers.svg",
+    "Attached file/net_http2_multiplexing.svg",
     "Programming/Spring/JWT 토큰 기반 인증.md.tmp.40895.0b3c0b3530d6",
     "Programming/JPA/JPA Auditing 기능.md.tmp.40895.4c5992eb761f",
     "Programming/객체지향 프로그래밍/DDD/이벤트.md.tmp.40895.33bb02eb7024",
@@ -474,8 +479,6 @@
     "Programming/JPA/고급 매핑.md.tmp.40895.e1334224b8a4",
     "Attached file/os_virtual_memory.svg",
     "Programming/객체지향 프로그래밍/DDD/객체지향 프로그래밍.md.tmp.40895.4f8615a39ece",
-    "Programming/Spring/JWT 토큰 기반 인증.md.tmp.40895.9a8d67c7199d",
-    "Programming/객체지향 프로그래밍/DDD/응용 서비스와 표현 영역.md.tmp.40895.2eb0d91bff56",
     "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
     "Programming/JavaScript/함수와 프로토타입 체이닝.md",
     "Programming/JavaScript/모듈.md",
@@ -507,9 +510,6 @@
     "Attached file/04_jdbc_fetch.svg",
     "Attached file/MCP_LLM.png",
     "Attached file/MCP_LAYER.png",
-    "Attached file/platform thread test.png",
-    "Attached file/virtual thread test.png",
-    "Attached file/gatling.png",
     "Untitled.canvas"
   ]
 }

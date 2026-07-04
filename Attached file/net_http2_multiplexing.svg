@@ -1,0 +1,62 @@
+<svg viewBox="0 0 860 440" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="h2ar" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#8A9BA8"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="440" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">HTTP/1.1 vs HTTP/2 — 하나의 커넥션을 쓰는 방식</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">HTTP/1.1은 요청을 줄 세워 처리(HOL 블로킹) · HTTP/2는 한 커넥션에서 여러 요청을 잘게 쪼개 동시에 흘려보냄(멀티플렉싱)</text>
+
+  <!-- HTTP/1.1 panel -->
+  <rect x="40" y="92" width="370" height="316" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="60" y="118" font-size="14.5" font-weight="700" fill="#B83227">HTTP/1.1 — 순차 처리</text>
+  <text x="60" y="138" font-size="11.5" fill="#8A9BA8">커넥션 1개당 요청 1개, 응답이 와야 다음 요청</text>
+
+  <!-- timeline 1.1 -->
+  <line x1="72" y1="170" x2="72" y2="386" stroke="#D4DCE2" stroke-width="1.4"/>
+  <text x="60" y="166" font-size="10.5" fill="#8A9BA8">time</text>
+
+  <rect x="86" y="168" width="150" height="26" rx="5" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="96" y="185" font-size="11.5" fill="#065A6E">요청 a.html</text>
+  <rect x="248" y="168" width="140" height="26" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="258" y="185" font-size="11.5" fill="#1F6B4E">응답 a.html</text>
+
+  <rect x="86" y="204" width="150" height="26" rx="5" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="96" y="221" font-size="11.5" fill="#065A6E">요청 b.png</text>
+  <rect x="248" y="204" width="140" height="26" rx="5" fill="#FBF3E4" stroke="#C88A2E" stroke-dasharray="4,3"/>
+  <text x="258" y="221" font-size="11" fill="#8A5E12">응답 지연…</text>
+
+  <rect x="86" y="252" width="302" height="30" rx="5" fill="#F4E4E1" stroke="#B83227" stroke-dasharray="4,3"/>
+  <text x="96" y="271" font-size="11.5" fill="#B83227" font-weight="700">c.js 는 b.png 가 끝날 때까지 대기 (HOL 블로킹)</text>
+
+  <text x="60" y="320" font-size="11.5" fill="#3E5060">해결 시도: 커넥션 여러 개 열기 / 파이프라이닝</text>
+  <text x="60" y="340" font-size="11.5" fill="#B83227">→ 커넥션 남발, 파이프라이닝도 응답 순서 고정이라</text>
+  <text x="60" y="358" font-size="11.5" fill="#B83227">  앞 응답이 막히면 뒤가 다 막힘 (한계)</text>
+
+  <!-- HTTP/2 panel -->
+  <rect x="450" y="92" width="370" height="316" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="470" y="118" font-size="14.5" font-weight="700" fill="#065A6E">HTTP/2 — 멀티플렉싱</text>
+  <text x="470" y="138" font-size="11.5" fill="#8A9BA8">한 커넥션에서 여러 스트림을 프레임 단위로 동시에</text>
+
+  <!-- single connection bar with interleaved frames -->
+  <rect x="470" y="160" width="330" height="40" rx="6" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="478" y="153" font-size="10.5" fill="#8A9BA8">하나의 TCP 커넥션</text>
+  <rect x="478" y="168" width="46" height="24" rx="4" fill="#EAF4F6" stroke="#08748C"/><text x="501" y="184" font-size="10" fill="#065A6E" text-anchor="middle">S1</text>
+  <rect x="528" y="168" width="46" height="24" rx="4" fill="#FBF3E4" stroke="#C88A2E"/><text x="551" y="184" font-size="10" fill="#8A5E12" text-anchor="middle">S3</text>
+  <rect x="578" y="168" width="46" height="24" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/><text x="601" y="184" font-size="10" fill="#1F6B4E" text-anchor="middle">S2</text>
+  <rect x="628" y="168" width="46" height="24" rx="4" fill="#EAF4F6" stroke="#08748C"/><text x="651" y="184" font-size="10" fill="#065A6E" text-anchor="middle">S1</text>
+  <rect x="678" y="168" width="46" height="24" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/><text x="701" y="184" font-size="10" fill="#1F6B4E" text-anchor="middle">S2</text>
+  <rect x="728" y="168" width="46" height="24" rx="4" fill="#FBF3E4" stroke="#C88A2E"/><text x="751" y="184" font-size="10" fill="#8A5E12" text-anchor="middle">S3</text>
+  <text x="470" y="216" font-size="10.5" fill="#8A9BA8">S1=a.html · S2=b.png · S3=c.js 프레임이 뒤섞여 흐름 → 하나가 느려도 나머지는 계속</text>
+
+  <text x="470" y="246" font-size="12.5" font-weight="700" fill="#065A6E">핵심 개선</text>
+  <rect x="470" y="256" width="330" height="30" rx="5" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="480" y="275" font-size="11.5" fill="#17212B">① 바이너리 프레이밍 — 텍스트 대신 이진 프레임</text>
+  <rect x="470" y="292" width="330" height="30" rx="5" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="480" y="311" font-size="11.5" fill="#17212B">② 멀티플렉싱 — HTTP 레벨 HOL 블로킹 해소</text>
+  <rect x="470" y="328" width="330" height="30" rx="5" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="480" y="347" font-size="11.5" fill="#17212B">③ HPACK 헤더 압축 — 중복 헤더 대폭 절감</text>
+  <rect x="470" y="364" width="330" height="30" rx="5" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="480" y="383" font-size="11.5" fill="#17212B">④ 스트림 우선순위 (서버 푸시는 현재 사실상 폐기)</text>
+</svg>

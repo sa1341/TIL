@@ -2,6 +2,9 @@
 
 최근 회사에서 IntelliJ http 파일로 샌드박스 서버에 요청하다가 SSL HandShake 오류가 발생해 디버깅을 하다 보니, JVM의 cacerts 디렉토리에 샌드박스 서버 인증서가 없어서 발생한 문제였습니다. 그 과정에서 예전에 공부했던 SSL/TLS 동작 과정을 gemini를 통해 다시 요약하여 정리해봤습니다.
 
+![TLS 핸드셰이크 시퀀스](../../../Attached%20file/net_tls_handshake.svg)
+
+아래는 위 핸드셰이크 각 단계를 좀 더 풀어서 설명한 내용입니다.
 
 - **인사 및 탐색 (Hello) 🤝**
     

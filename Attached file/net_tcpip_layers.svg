@@ -1,0 +1,54 @@
+<svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="tlar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="470" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">TCP/IP 4계층과 캡슐화</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">HTTP는 최상위(애플리케이션) 계층 · 데이터는 아래로 내려가며 헤더가 덧붙고(캡슐화), 받는 쪽은 역순으로 벗김</text>
+
+  <!-- layer stack -->
+  <text x="60" y="96" font-size="12.5" font-weight="700" fill="#3E5060">계층</text>
+  <text x="330" y="96" font-size="12.5" font-weight="700" fill="#3E5060">대표 프로토콜 · 역할</text>
+  <text x="690" y="96" font-size="12.5" font-weight="700" fill="#3E5060">전송 단위(PDU)</text>
+
+  <!-- L4 Application -->
+  <rect x="56" y="106" width="748" height="66" rx="8" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="76" y="132" font-size="14" font-weight="700" fill="#065A6E">애플리케이션 계층</text>
+  <text x="76" y="154" font-size="11" fill="#8A9BA8">Application</text>
+  <text x="330" y="132" font-size="12.5" fill="#17212B">HTTP, HTTPS, DNS, FTP, SMTP</text>
+  <text x="330" y="152" font-size="11" fill="#8A9BA8">사람이 쓰는 서비스 수준의 데이터(String) 처리</text>
+  <text x="690" y="144" font-size="12.5" fill="#065A6E" font-weight="700">Message / Data</text>
+
+  <!-- L3 Transport -->
+  <rect x="56" y="180" width="748" height="66" rx="8" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="76" y="206" font-size="14" font-weight="700" fill="#8A5E12">전송 계층</text>
+  <text x="76" y="228" font-size="11" fill="#8A9BA8">Transport</text>
+  <text x="330" y="206" font-size="12.5" fill="#17212B">TCP, UDP</text>
+  <text x="330" y="226" font-size="11" fill="#8A9BA8">출발지·목적지 포트 / 신뢰성 · 순서 보장(TCP)</text>
+  <text x="690" y="218" font-size="12.5" fill="#8A5E12" font-weight="700">Segment (TCP)</text>
+
+  <!-- L2 Internet -->
+  <rect x="56" y="254" width="748" height="66" rx="8" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="76" y="280" font-size="14" font-weight="700" fill="#B83227">인터넷 계층</text>
+  <text x="76" y="302" font-size="11" fill="#8A9BA8">Internet</text>
+  <text x="330" y="280" font-size="12.5" fill="#17212B">IP, ICMP, ARP</text>
+  <text x="330" y="300" font-size="11" fill="#8A9BA8">출발지·목적지 IP 주소 / 라우팅(길 찾기)</text>
+  <text x="690" y="292" font-size="12.5" fill="#B83227" font-weight="700">Packet</text>
+
+  <!-- L1 Network Access -->
+  <rect x="56" y="328" width="748" height="66" rx="8" fill="#F4F6F7" stroke="#8A9BA8" stroke-width="1.4"/>
+  <text x="76" y="354" font-size="14" font-weight="700" fill="#5A6B78">네트워크 접근 계층</text>
+  <text x="76" y="376" font-size="11" fill="#8A9BA8">Network Access</text>
+  <text x="330" y="354" font-size="12.5" fill="#17212B">Ethernet, Wi-Fi</text>
+  <text x="330" y="374" font-size="11" fill="#8A9BA8">MAC 주소 / 실제 물리 매체로 비트 전송</text>
+  <text x="690" y="366" font-size="12.5" fill="#5A6B78" font-weight="700">Frame</text>
+
+  <!-- down arrow -->
+  <line x1="30" y1="112" x2="30" y2="388" stroke="#08748C" stroke-width="1.6" marker-end="url(#tlar)"/>
+  <text x="14" y="255" font-size="11" fill="#08748C" transform="rotate(-90 14 255)">송신: 캡슐화 ↓</text>
+
+  <text x="56" y="428" font-size="12" fill="#8A9BA8">비유: IP = 아파트(건물) 주소, TCP 포트 = 동·호수 → 둘이 합쳐져야 정확한 목적지에 도착</text>
+  <text x="56" y="450" font-size="12" fill="#8A9BA8">받는 쪽은 Frame→Packet→Segment→Data 순서로 헤더를 벗겨(역캡슐화) 원래 메시지를 복원</text>
+</svg>
