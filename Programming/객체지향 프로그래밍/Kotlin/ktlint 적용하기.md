@@ -142,7 +142,7 @@ BUILD FAILED in 3s
 빌드가 실패하면서 reports 디렉토리 하위에 텍스트 파일이 생성된 것을 확인할 수 있었습니다.
 해당 파일을 열어보니 라인 최대 길이가 120자를 넘었다고 나옵니다.
 
-그리고 다시 120자 이내로 수정 후 `ktlintCheck`를 수행해보니 정상으로 빌드 된 것을 확인 할 수 있었습니다.
+그리고 다시 120자 이내로 수정 후 `ktlintCheck`를 수행해보니 정상적으로 빌드된 것을 확인할 수 있었습니다.
 
 참고로 Gradle에서는 `ktlintFormat` task도 지원해주는데 이건 자동으로 코딩 컨벤션에 맞게 스타일을 일괄로 변환해서 수정해주는 테스크입니다. 
 
@@ -160,7 +160,7 @@ BUILD FAILED in 3s
 $ ./gradlew addKtlintCheckGitPreCommitHook
 ```
 
-실제로 컨벤션을 위배 후에 commit을 시도해본 결과 아래와 같이 Error가 발생했음을 확인 할 수 있었습니다.
+실제로 컨벤션을 위배한 후에 commit을 시도해본 결과 아래와 같이 Error가 발생했음을 확인할 수 있었습니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/216989326-65d8d2d1-382e-4dba-af25-20b67cdc759c.png)
 

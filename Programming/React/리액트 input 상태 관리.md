@@ -53,7 +53,7 @@ export default PhoneForm;
 
 PhoneForm 컴포넌트를 생성한 후에 render() 함수에서 <form>과 하위의 <input>을 JSX로 리턴하고 있습니다. 이 때 onChange 함수는 이벤트로 내용을 감지하여 변화가 일어났는지 탐지해줍니다. 
 
-만약 input 태그의 value 값에 값을 입력하면 PhoneComponent가 가지고 있는 클래스 필드인 state 객체의 name, phone 프로퍼티 값을 동기화를 어떻게 해줘야 할까요? 
+만약 input 태그의 value 값에 값을 입력하면 PhoneComponent가 가지고 있는 클래스 필드인 state 객체의 name, phone 프로퍼티 값을 어떻게 동기화해줘야 할까요? 
 
 onChange 이벤트 함수를 이용해서 값이 변경될 때마다 this.handleChange 메서드를 호출하여 setState() 함수로 state 값을 변경해주게 됩니다. 
 

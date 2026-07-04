@@ -21,14 +21,14 @@ public class CompletableFuture<T> implements Future<T>, CompletionStage<T>
 - get: 결과를 구할 때까지 thread가 계속 block
 또한, future에서 무한 루프나 오랜 시간이 걸린다면 스레드가 blocking 상태를 유지합니다.
 
-- get(long timeout, TimeUnit unit): 결과를 구할 때까지 timeout동안 thread가 block, timeout이 넘어가도 응답이 반환되지 않으면 TimeoutException이 발생합니다.
+- get(long timeout, TimeUnit unit): 결과를 구할 때까지 timeout 동안 thread가 block, timeout이 넘어가도 응답이 반환되지 않으면 TimeoutException이 발생합니다.
 
 - cancel: future의 작업 실행을 취소합니다, 취소할 수 없는 상황이라면 false를 반환합니다.
 인자 값으로 boolean 타입의 `mayInterruptIfRunning`를 받는데, 해당 인자 값이 false라면 시작하지 않은 작업에 대해서만 취소가 가능합니다.
 
 ### 1.1 Future 인터페이스의 한계
 
-- cancel을 제외하고 외부에서 future를 컨트롤 할 수 없습니다.
+- cancel을 제외하고 외부에서 future를 컨트롤할 수 없습니다.
 
 - 반환된 결과를 get()해서 접근하기 때문에 비동기 처리가 어렵습니다.
 
@@ -51,7 +51,7 @@ CompletionStage 연산자가 어떻게 연결되는지도 정리해봤습니다.
 - thenRun(Runnable action)
 - exceptionally
 
-thenAccept[Async]의 실행 스레드는 done 상태에 따라서 스레드가 달리집니다. 예를 들어서 done 상태에서 thenAccept는 caller(main)의 스레드에서 실행되고, done 상태의 completionStage에 thenAccept를 사용하는 경우, caller 스레드를 block 할 수 있습니다.
+thenAccept[Async]의 실행 스레드는 done 상태에 따라서 스레드가 달라집니다. 예를 들어서 done 상태에서 thenAccept는 caller(main)의 스레드에서 실행되고, done 상태의 completionStage에 thenAccept를 사용하는 경우, caller 스레드를 block할 수 있습니다.
 
 exceptionally라는 메서드는 CompletionStage 파이프라인에서 예외가 발생하면 예외처리를 위해 제공되는 메서드입니다.
 
@@ -90,9 +90,9 @@ CompletableFuture 클래스를 살펴보면 Future, CompletionStage 인터페이
 
 먼저, CompletableFuture supplyAsync 메서드가 있는데 살펴보면 다음과 같습니다.
 
-- Supplier를 제공하여 CompletabeFuture를 생성 가능합니다.
+- Supplier를 제공하여 CompletableFuture를 생성 가능합니다.
 
-- Supplier의 반환값이 CompletableFuture의 결과로 
+- Supplier의 반환값이 CompletableFuture의 결과가 됩니다.
 
 
 ### 3.1 CompletableFuture.complete 살펴보기
@@ -103,7 +103,7 @@ CompletableFuture 클래스를 살펴보면 Future, CompletionStage 인터페이
 
 - complete에 의해서 상태가 바뀌었다면 true, 아니라면 false를 반환합니다.
 
-마찬가지로.. 코드로 이해해보는게 좋아서 예시를 적어놨습니다.
+마찬가지로.. 코드로 이해해보는 게 좋아서 예시를 적어놨습니다.
 
 ```java
 CompletableFuture<Integer> future = new CompletableFuture<>(); // 껍데기 CompletableFuture 인스턴스 생성
@@ -121,7 +121,7 @@ assert future.get() == 1; // true
 
 ## 4. Future와 CompletableFuture의 차이
 
-Future는 상태 값이 `completed, canceled` 두 가지밖에 존재하지 않아 예외상황을 알기가 어려웠는데, CompletableFuture는 `isCompletedExceptionally`와 같은 메서드를 제공하여 Exception에 의해서 completed 되었는지 확인 할 수 있습니다.
+Future는 상태 값이 `completed, canceled` 두 가지밖에 존재하지 않아 예외상황을 알기가 어려웠는데, CompletableFuture는 `isCompletedExceptionally`와 같은 메서드를 제공하여 Exception에 의해서 completed 되었는지 확인할 수 있습니다.
 
 ## 5. CompletableFuture의 한계
 
