@@ -1,0 +1,44 @@
+<svg viewBox="0 0 860 440" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="440" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">트랜잭션 전파 — REQUIRED vs REQUIRES_NEW</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">REQUIRED는 하나의 물리 트랜잭션에 참여(내부 롤백 → 전체 롤백) · REQUIRES_NEW는 별도 물리 트랜잭션(서로 영향 없음)</text>
+
+  <!-- REQUIRED -->
+  <rect x="40" y="92" width="380" height="320" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="60" y="116" font-size="14.5" font-weight="700" fill="#065A6E">REQUIRED (기본)</text>
+  <text x="60" y="135" font-size="11" fill="#8A9BA8">내부가 외부 트랜잭션에 참여 · 커넥션 1개</text>
+
+  <!-- physical tx box -->
+  <rect x="60" y="150" width="340" height="180" rx="10" fill="#ffffff" stroke="#08748C" stroke-dasharray="5,3"/>
+  <text x="74" y="170" font-size="11.5" font-weight="700" fill="#065A6E">물리 트랜잭션 (커넥션 1개)</text>
+  <rect x="80" y="182" width="300" height="60" rx="8" fill="#F4F6F7" stroke="#B7D5DC"/>
+  <text x="94" y="204" font-size="11.5" font-weight="700" fill="#17212B">외부 트랜잭션 (신규)</text>
+  <text x="94" y="223" font-size="10.5" fill="#8A9BA8">커밋 시점에 rollbackOnly 체크</text>
+  <rect x="100" y="250" width="264" height="60" rx="8" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="114" y="272" font-size="11.5" font-weight="700" fill="#B83227">내부 트랜잭션 (참여) — 예외 발생 💥</text>
+  <text x="114" y="291" font-size="10.5" fill="#8A9BA8">롤백 대신 rollbackOnly = true 로 표시</text>
+
+  <text x="60" y="352" font-size="11.5" fill="#B83227" font-weight="700">내부에서 예외 → rollbackOnly=true</text>
+  <text x="60" y="372" font-size="11.5" fill="#B83227" font-weight="700">→ 외부가 커밋해도 물리 트랜잭션 전체 롤백</text>
+  <text x="60" y="396" font-size="10.5" fill="#8A9BA8">"모든 논리 트랜잭션이 커밋돼야 물리 커밋"</text>
+
+  <!-- REQUIRES_NEW -->
+  <rect x="440" y="92" width="380" height="320" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="460" y="116" font-size="14.5" font-weight="700" fill="#8A5E12">REQUIRES_NEW</text>
+  <text x="460" y="135" font-size="11" fill="#8A9BA8">완전히 분리된 별도 물리 트랜잭션 · 커넥션 2개</text>
+
+  <rect x="460" y="150" width="340" height="70" rx="10" fill="#ffffff" stroke="#08748C" stroke-dasharray="5,3"/>
+  <text x="474" y="170" font-size="11" font-weight="700" fill="#065A6E">물리 트랜잭션 A (커넥션 1)</text>
+  <rect x="474" y="180" width="312" height="30" rx="6" fill="#F4F6F7" stroke="#B7D5DC"/>
+  <text x="488" y="200" font-size="11" fill="#17212B">외부 트랜잭션 — 커밋 ✅ (영향 없음)</text>
+
+  <rect x="460" y="234" width="340" height="70" rx="10" fill="#ffffff" stroke="#B83227" stroke-dasharray="5,3"/>
+  <text x="474" y="254" font-size="11" font-weight="700" fill="#B83227">물리 트랜잭션 B (커넥션 2)</text>
+  <rect x="474" y="264" width="312" height="30" rx="6" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="488" y="284" font-size="11" fill="#B83227">내부 트랜잭션 — 예외 💥 → 롤백 (독립)</text>
+
+  <text x="460" y="332" font-size="11.5" fill="#8A5E12" font-weight="700">내부가 롤백돼도 외부는 영향받지 않음</text>
+  <text x="460" y="356" font-size="10.5" fill="#8A9BA8">단점: 한 스레드가 커넥션 2개 점유</text>
+  <text x="460" y="374" font-size="10.5" fill="#8A9BA8">→ 커넥션 풀 고갈 리스크 주의</text>
+  <text x="460" y="396" font-size="10.5" fill="#8A9BA8">서로 영향 없어야 하는 로직에 사용</text>
+</svg>

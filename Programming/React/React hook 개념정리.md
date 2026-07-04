@@ -431,7 +431,7 @@ const Counter = () => {
 export default Counter;
 ```
 
-useReducer의 첫 번째 파라미터로는 리듀서 함수, 그리고 두 번째 파라미터는 해당 리듀서의 기본 값을 넣어줍니다. 이 Hook을 사용 했을 때에는 state 값과 dispatch 함수를 받아오게 됩니다. 여기서 state는 현재 가르키고 있는 상태이고, dispatch는 액션을 발생시키는 함수입니다. dispatch(action)와 같은 형태로, 함수 안에 파라미터로 액션 값을 넣어주면 리듀서 함수가 호출되는 구조입니다.
+useReducer의 첫 번째 파라미터로는 리듀서 함수, 그리고 두 번째 파라미터는 해당 리듀서의 기본 값을 넣어줍니다. 이 Hook을 사용 했을 때에는 state 값과 dispatch 함수를 받아오게 됩니다. 여기서 state는 현재 가리키고 있는 상태이고, dispatch는 액션을 발생시키는 함수입니다. dispatch(action)와 같은 형태로, 함수 안에 파라미터로 액션 값을 넣어주면 리듀서 함수가 호출되는 구조입니다.
 
 useReducer을 사용했을 때의 가장 큰 장점은 컴포넌트 업데이트 로직을 컴포넌트 바깥으로 빼낼 수 있다는 점입니다. 
 
@@ -802,7 +802,7 @@ const Average = () => {
 export default Average;
 ```
 
-useRef를 사용하여 ref를 설정하면, useRef를 통해 만든 객체 안의 current 값이 실제 엘리먼트를 가르키게 됩니다.
+useRef를 사용하여 ref를 설정하면, useRef를 통해 만든 객체 안의 current 값이 실제 엘리먼트를 가리키게 됩니다.
 
 ## 커스텀 Hooks 만들기
 

@@ -1,0 +1,54 @@
+<svg viewBox="0 0 860 450" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="jgar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+    <marker id="jgpr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#B83227"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="450" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">JVM 힙 구조와 세대별 가비지 수집</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">객체는 Eden에서 태어나 → Minor GC마다 Survivor로 옮겨지며 나이를 먹고 → 오래 살아남으면 Old로 승격(promotion)</text>
+
+  <!-- Young Generation -->
+  <rect x="40" y="92" width="530" height="250" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="60" y="116" font-size="14" font-weight="700" fill="#065A6E">Young Generation (젊은 세대) — Minor GC 대상</text>
+
+  <!-- Eden -->
+  <rect x="60" y="130" width="300" height="196" rx="10" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="210" y="152" font-size="13" font-weight="700" fill="#17212B" text-anchor="middle">Eden</text>
+  <text x="210" y="170" font-size="10.5" fill="#8A9BA8" text-anchor="middle">대부분의 객체가 여기서 생성됨</text>
+  <rect x="76" y="182" width="124" height="60" rx="6" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="138" y="206" font-size="11" fill="#1F6B4E" text-anchor="middle" font-weight="700">TLAB (스레드1)</text>
+  <text x="138" y="224" font-size="9.5" fill="#8A9BA8" text-anchor="middle">스레드 전용 버퍼</text>
+  <rect x="212" y="182" width="132" height="60" rx="6" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="278" y="206" font-size="11" fill="#1F6B4E" text-anchor="middle" font-weight="700">TLAB (스레드2)</text>
+  <text x="278" y="224" font-size="9.5" fill="#8A9BA8" text-anchor="middle">할당 복잡도 O(1)</text>
+  <text x="210" y="270" font-size="10.5" fill="#8A9BA8" text-anchor="middle">Eden이 가득 차면 → Minor GC 발생 (전체 스레드 STW)</text>
+  <text x="210" y="290" font-size="10.5" fill="#8A9BA8" text-anchor="middle">살아남은 객체만 Survivor로 복사</text>
+
+  <!-- Survivors -->
+  <rect x="372" y="130" width="88" height="196" rx="10" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="416" y="152" font-size="12" font-weight="700" fill="#17212B" text-anchor="middle">S0</text>
+  <text x="416" y="168" font-size="9.5" fill="#8A9BA8" text-anchor="middle">Survivor</text>
+  <rect x="384" y="180" width="64" height="30" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/><text x="416" y="200" font-size="9" fill="#1F6B4E" text-anchor="middle">age++</text>
+  <rect x="472" y="130" width="88" height="196" rx="10" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="516" y="152" font-size="12" font-weight="700" fill="#17212B" text-anchor="middle">S1</text>
+  <text x="516" y="168" font-size="9.5" fill="#8A9BA8" text-anchor="middle">Survivor</text>
+  <text x="466" y="300" font-size="10" fill="#8A9BA8" text-anchor="middle">둘 중 하나는 항상 비어 있음</text>
+
+  <!-- Old Generation -->
+  <rect x="600" y="92" width="220" height="250" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.8"/>
+  <text x="710" y="116" font-size="14" font-weight="700" fill="#B83227" text-anchor="middle">Old Generation</text>
+  <text x="710" y="134" font-size="10.5" fill="#8A9BA8" text-anchor="middle">오래 살아남은 객체 · Major(Full) GC</text>
+  <rect x="620" y="150" width="180" height="40" rx="6" fill="#ffffff" stroke="#E3B5AE"/><text x="710" y="175" font-size="11" fill="#B83227" text-anchor="middle">장수 객체</text>
+  <rect x="620" y="200" width="180" height="40" rx="6" fill="#ffffff" stroke="#E3B5AE"/><text x="710" y="225" font-size="11" fill="#B83227" text-anchor="middle">장수 객체</text>
+  <text x="710" y="270" font-size="10" fill="#8A9BA8" text-anchor="middle">가득 차면 Full GC</text>
+  <text x="710" y="286" font-size="10" fill="#8A9BA8" text-anchor="middle">(STW 길어 비용 큼)</text>
+
+  <!-- promotion arrow -->
+  <line x1="560" y1="220" x2="598" y2="180" stroke="#B83227" stroke-width="1.8" marker-end="url(#jgpr)"/>
+  <text x="582" y="214" font-size="10" fill="#B83227" font-weight="700">승격</text>
+
+  <!-- Metaspace -->
+  <rect x="40" y="360" width="780" height="54" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="60" y="382" font-size="13" font-weight="700" fill="#8A5E12">Metaspace (자바 8+)</text>
+  <text x="60" y="402" font-size="11" fill="#8A9BA8">클래스 메타데이터 저장 · 힙이 아닌 네이티브 메모리 영역 (자바 7의 PermGen을 대체)</text>
+</svg>

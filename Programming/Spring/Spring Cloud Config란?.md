@@ -334,7 +334,7 @@ Spring Cloud 생태계가 워낙 잘 갖춰져 있었고, 아직 Spring Cloud Co
 
 이제 `Spring Cloud Config`를 어떻게 증권 서비스에 접목시킬 수 있을지 고민을 해봐야 되는 포인트들은 실시간으로 운영환경에서 `Config 값이 변경될때` 마다 서비스 재기동 없이 어떻게 `Config Refresh`를 할 수 있는지 입니다.  
 
-위에서 `Actuator`가 제공해주는 `Refresh EndPoint`로 할 수는 있겠지만, 수동으로 해야되는 문제점이 있습니다. 만약 각 서비스(Config 클라이언트) 인스턴스가 많이 늘어난다면 수동으로 호출해야되는 Refresh API도 많아지게 됩니다. 이렇게 되면 최악의 상황인 경우 몇몇 인스턴스는 `Config Refresh 호출`이 누락될 수 있는 리스크가 생기게 됩니다.
+위에서 `Actuator`가 제공해주는 `Refresh EndPoint`로 할 수는 있겠지만, 수동으로 해야 되는 문제점이 있습니다. 만약 각 서비스(Config 클라이언트) 인스턴스가 많이 늘어난다면 수동으로 호출해야 되는 Refresh API도 많아지게 됩니다. 이렇게 되면 최악의 상황인 경우 몇몇 인스턴스는 `Config Refresh 호출`이 누락될 수 있는 리스크가 생기게 됩니다.
 
 이 부분에 대해서도 자동화할 수 있는 방안 역시 찾아볼 수 있었습니다.  `Spring Cloud Bus`라는 dependency가 있는데 간단히 요약하면 카프카나 RabbitMQ 같은 메시지 플랫폼을 연계해서 Config 저장소에 변경 이벤트가 발생하면 `GitHub webhook`을 설정하여 Config Server로 Config 변경 이벤트를 보내게 되고 Config 서버에서 이벤트를 수신하고 Spring Cloud Bus에 갱신 이벤트를 전달하게 됩니다. 
 

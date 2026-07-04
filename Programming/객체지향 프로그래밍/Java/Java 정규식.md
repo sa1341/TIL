@@ -46,7 +46,7 @@ Pattern 클래스 주요 메서드
 
 - compile(String regex) : 주어진 정규표현식으로부터 패턴을 만듭니다.
 - matcher(CharSequence input) : 대상 문자열이 패턴과 일치할 경우 true를 반환합니다.
-- asPredicate() : 문자열을 일치시키는 데 사용할 수있는 술어를 작성합니다.
+- asPredicate() : 문자열을 일치시키는 데 사용할 수 있는 술어를 작성합니다.
 - pattern() : 컴파일된 정규표현식을 String 형태로 반환합니다.
 - split(CharSequence input) : 문자열을 주어진 인자값 CharSequence 패턴에 따라 분리합니다.
 

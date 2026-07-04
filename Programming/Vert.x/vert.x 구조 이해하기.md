@@ -42,9 +42,9 @@ Q. 전체 socket에 대해서 모두 이벤트 처리를 하는데 걸리는 시
 
 이 worker verticle은 쉽게 생각하면, Message Queue를 Listen하는 message subscriber라고 생각하면 됩니다.
 
-vert.x 내부의 Event bus를 이용해서 메세지를 보내면, 뒷단의 worker verticle이 message queue에서 메세지를 받아서 처리한 후에 그 결과값을 다시 event bus를 통해 caller에게 보내는 형태입니다. (Asynchronous call back 패턴)
+vert.x 내부의 Event bus를 이용해서 메시지를 보내면, 뒷단의 worker verticle이 message queue에서 메시지를 받아서 처리한 후에 그 결과값을 다시 event bus를 통해 caller에게 보내는 형태입니다. (Asynchronous call back 패턴)
 
-event bus로 request를 보낸 verticle은 resonse를 기다리지 않고 바로 다음 로직을 진행하다가 worker verticle에서 작업이 끝난 이벤트 메세지가 오면 다음 ELP가 돌때 그 이벤트를 받아서 응답 메세지 처리를 합니다.
+event bus로 request를 보낸 verticle은 resonse를 기다리지 않고 바로 다음 로직을 진행하다가 worker verticle에서 작업이 끝난 이벤트 메시지가 오면 다음 ELP가 돌때 그 이벤트를 받아서 응답 메시지 처리를 합니다.
 DB 작업이나 시간이 오래 걸리는 작업은 이렇게 worker verticle을 이용해서 구현할 수 있습니다.
 
 ![jvm_messageque](https://user-images.githubusercontent.com/22395934/75113125-0c4dee00-568e-11ea-815a-3074117edfb9.png)

@@ -54,7 +54,7 @@ yum install jenkins
 
 yum으로 jenkins 설치 시 패키지가 없기 때문에 별도로 [젠킨스 공식 홈페이지](https://pkg.jenkins.io/redhat-stable/)를 보고 다음과 같이 추가해줘야 합니다.
 
-설치가 완료됬다면 Jenkins를 실행시켜 봅니다.
+설치가 완료됐다면 Jenkins를 실행시켜 봅니다.
 
 ```java
 // 젠킨스 기동
