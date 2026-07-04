@@ -22,6 +22,8 @@
 
 ## 1. 슬롯 구조
 
+![Redis Cluster 해시 슬롯과 마스터/레플리카 토폴로지](../../Attached%20file/redis_cluster_slots.svg)
+
 Redis Cluster는 전체 키 공간을 **16384개 해시 슬롯**(0~16383)으로 나누고, 이걸 마스터들끼리 나눠 갖는다.
 
 마스터 3대 기준 분배 예시:

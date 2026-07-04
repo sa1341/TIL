@@ -1,0 +1,51 @@
+<svg viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="dsimpl" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12" fill="none" stroke="#8A9BA8" stroke-width="1.4"/></marker>
+    <marker id="dshas" markerWidth="14" markerHeight="12" refX="1" refY="6" orient="auto"><path d="M1,6 L7,2 L13,6 L7,10 Z" fill="#ffffff" stroke="#08748C" stroke-width="1.2"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="420" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">전략 패턴 (Strategy Pattern)</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">변하는 알고리즘을 인터페이스로 추상화 → Context는 구현이 아닌 인터페이스에 의존 → 새 전략 추가에 열려 있음(OCP)</text>
+
+  <!-- Context -->
+  <rect x="60" y="110" width="230" height="110" rx="8" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="175" y="134" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">Context</text>
+  <line x1="60" y1="144" x2="290" y2="144" stroke="#08748C"/>
+  <text x="74" y="164" font-size="11" fill="#17212B">- strategy: Strategy</text>
+  <line x1="60" y1="174" x2="290" y2="174" stroke="#B7D5DC"/>
+  <text x="74" y="194" font-size="11" fill="#17212B">+ setStrategy(s)</text>
+  <text x="74" y="211" font-size="11" fill="#17212B">+ execute() → strategy.algorithm()</text>
+
+  <!-- Strategy interface -->
+  <rect x="500" y="110" width="250" height="90" rx="8" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="625" y="132" font-size="11" fill="#8A5E12" text-anchor="middle">«interface»</text>
+  <text x="625" y="150" font-size="13.5" font-weight="700" fill="#8A5E12" text-anchor="middle">Strategy</text>
+  <line x1="500" y1="160" x2="750" y2="160" stroke="#C88A2E"/>
+  <text x="514" y="182" font-size="11.5" fill="#17212B">+ algorithm()</text>
+
+  <!-- has-a arrow Context -> Strategy -->
+  <line x1="290" y1="150" x2="498" y2="150" stroke="#08748C" stroke-width="1.5" marker-start="url(#dshas)"/>
+  <text x="394" y="142" font-size="10.5" fill="#8A9BA8" text-anchor="middle">has-a (조합)</text>
+
+  <!-- Concrete strategies -->
+  <rect x="440" y="270" width="170" height="70" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="525" y="294" font-size="12" font-weight="700" fill="#17212B" text-anchor="middle">ConcreteStrategyA</text>
+  <line x1="440" y1="304" x2="610" y2="304" stroke="#B7D5DC"/>
+  <text x="454" y="325" font-size="10.5" fill="#8A9BA8">+ algorithm() {…}</text>
+
+  <rect x="640" y="270" width="170" height="70" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="725" y="294" font-size="12" font-weight="700" fill="#17212B" text-anchor="middle">ConcreteStrategyB</text>
+  <line x1="640" y1="304" x2="810" y2="304" stroke="#B7D5DC"/>
+  <text x="654" y="325" font-size="10.5" fill="#8A9BA8">+ algorithm() {…}</text>
+
+  <!-- implements arrows -->
+  <line x1="525" y1="270" x2="600" y2="202" stroke="#8A9BA8" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#dsimpl)"/>
+  <line x1="725" y1="270" x2="650" y2="202" stroke="#8A9BA8" stroke-width="1.3" stroke-dasharray="5,3" marker-end="url(#dsimpl)"/>
+  <text x="700" y="238" font-size="10" fill="#8A9BA8">implements</text>
+
+  <text x="60" y="290" font-size="11.5" fill="#3E5060" font-weight="700">핵심</text>
+  <text x="60" y="312" font-size="11" fill="#8A9BA8">Context는 어떤 구체 전략인지 모른 채</text>
+  <text x="60" y="330" font-size="11" fill="#8A9BA8">Strategy 인터페이스로만 호출 →</text>
+  <text x="60" y="348" font-size="11" fill="#8A9BA8">전략을 런타임에 갈아끼울 수 있고,</text>
+  <text x="60" y="366" font-size="11" fill="#8A9BA8">새 전략 추가 시 기존 코드 수정 불필요</text>
+</svg>
