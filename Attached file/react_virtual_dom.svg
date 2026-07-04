@@ -1,0 +1,44 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="rvar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Virtual DOM — 바뀐 부분만 실제 DOM에 반영</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">state 변경 → 새 가상 DOM 생성 → 이전 것과 비교(diff) → 달라진 최소 부분만 실제 DOM에 적용(reconciliation)</text>
+
+  <!-- state change -->
+  <rect x="40" y="100" width="150" height="50" rx="8" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="115" y="122" font-size="12" font-weight="700" fill="#8A5E12" text-anchor="middle">state / props</text>
+  <text x="115" y="140" font-size="10.5" fill="#8A9BA8" text-anchor="middle">변경 발생</text>
+  <line x1="190" y1="125" x2="226" y2="125" stroke="#08748C" stroke-width="1.6" marker-end="url(#rvar)"/>
+
+  <!-- old vDOM -->
+  <rect x="226" y="86" width="180" height="120" rx="8" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="316" y="108" font-size="12" font-weight="700" fill="#065A6E" text-anchor="middle">이전 Virtual DOM</text>
+  <rect x="244" y="120" width="144" height="22" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="316" y="136" font-size="10" fill="#3E5060" text-anchor="middle">&lt;ul&gt; item A</text>
+  <rect x="244" y="148" width="144" height="22" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="316" y="164" font-size="10" fill="#3E5060" text-anchor="middle">item B</text>
+  <rect x="244" y="176" width="144" height="22" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="316" y="192" font-size="10" fill="#3E5060" text-anchor="middle">item C</text>
+
+  <!-- new vDOM -->
+  <rect x="446" y="86" width="180" height="120" rx="8" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="536" y="108" font-size="12" font-weight="700" fill="#065A6E" text-anchor="middle">새 Virtual DOM</text>
+  <rect x="464" y="120" width="144" height="22" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="536" y="136" font-size="10" fill="#3E5060" text-anchor="middle">&lt;ul&gt; item A</text>
+  <rect x="464" y="148" width="144" height="22" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/><text x="536" y="164" font-size="10" fill="#1F6B4E" text-anchor="middle">item B★ (변경)</text>
+  <rect x="464" y="176" width="144" height="22" rx="4" fill="#ffffff" stroke="#B7D5DC"/><text x="536" y="192" font-size="10" fill="#3E5060" text-anchor="middle">item C</text>
+
+  <text x="426" y="150" font-size="18" fill="#8A9BA8" text-anchor="middle">≠</text>
+  <text x="426" y="228" font-size="11" fill="#8A9BA8" text-anchor="middle">diff 비교</text>
+
+  <!-- real DOM -->
+  <line x1="536" y1="206" x2="536" y2="248" stroke="#08748C" stroke-width="1.6" marker-end="url(#rvar)"/>
+  <rect x="360" y="256" width="360" height="100" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="540" y="280" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">실제 DOM (Real DOM)</text>
+  <text x="540" y="304" font-size="11" fill="#3E5060" text-anchor="middle">달라진 item B 한 줄만 실제로 다시 그림</text>
+  <text x="540" y="324" font-size="11" fill="#8A9BA8" text-anchor="middle">A · C 는 건드리지 않음 → 비싼 DOM 조작 최소화</text>
+  <text x="540" y="344" font-size="10.5" fill="#8A9BA8" text-anchor="middle">(실제 DOM 조작은 느리므로, 메모리상의 가상 DOM에서 먼저 계산)</text>
+
+  <text x="40" y="290" font-size="11.5" fill="#3E5060" font-weight="700">왜 빠른가?</text>
+  <text x="40" y="312" font-size="11" fill="#8A9BA8">실제 DOM 조작은</text>
+  <text x="40" y="330" font-size="11" fill="#8A9BA8">비용이 큼 → 가상</text>
+  <text x="40" y="348" font-size="11" fill="#8A9BA8">DOM에서 미리 최소화</text>
+</svg>

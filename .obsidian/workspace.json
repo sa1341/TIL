@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/DB/Oracle/인덱스 구조 및 탐색.md",
+                "file": "Programming/인프라/운영체제/CPU와 메모리.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "인덱스 구조 및 탐색"
+              "title": "CPU와 메모리"
             }
           }
         ],
@@ -464,6 +464,10 @@
   },
   "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Attached file/cs_hash_table.svg",
+    "Attached file/cs_map_comparison.svg",
+    "Attached file/react_virtual_dom.svg",
+    "Attached file/react_virtual_dom.svg.tmp.40895.a5c1e1fedc21",
     "Attached file/design_strategy_pattern.svg",
     "Attached file/kotlin_coroutine_suspend.svg",
     "Attached file/kotlin_coroutine_suspend.svg.tmp.40895.349dad288d6e",
@@ -479,13 +483,9 @@
     "Programming/객체지향 프로그래밍/DDD/애그리거트.md.tmp.40895.6f14bc7852fd",
     "Programming/객체지향 프로그래밍/디자인패턴/Facade 패턴.md.tmp.40895.9df4d8173ca3",
     "Programming/Spring/Spring Rest Docs 개념정리.md.tmp.40895.41426b089c01",
-    "Programming/CS/멀티 쓰레드의 개념.md.tmp.40895.9fd199668796",
     "Attached file/k8s_rolling_update.svg",
     "Attached file/k8s_objects.svg",
     "Programming/인프라/DB/Oracle/오라클 리스너.md",
-    "Attached file/db_btree_index.svg",
-    "Attached file/aws_elb_types.svg",
-    "Attached file/aws_auto_scaling.svg",
     "Programming/인프라/AWS/AWS 데이터베이스.md",
     "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
     "Programming/JavaScript/함수와 프로토타입 체이닝.md",

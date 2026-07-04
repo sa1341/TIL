@@ -8,6 +8,8 @@ Map은 key-value 형식의 비정형 데이터를 저장할 수 있는 구조입
 - HashTable
 - LinkedHashMap
 
+![HashMap · LinkedHashMap · TreeMap 비교](../../Attached%20file/cs_map_comparison.svg)
+
 ## 1. HashMap
 
 HashMap은 실무에서 가장 많이 쓰는 Collection 객체 중 하나입니다. 내부적으로 Entry<K, V> {} Entry Array로 구성되어 있습니다. Array의 index를 Hash 함수를 통해 계산합니다.
