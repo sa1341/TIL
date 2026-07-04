@@ -153,23 +153,9 @@
               "icon": "lucide-file",
               "title": "한글 인코딩 EUC-KR과 UTF-8 개념"
             }
-          },
-          {
-            "id": "1f7f9c7abca93086",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Programming/인프라/DB/오라클/읽기 일관성.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "읽기 일관성"
-            }
           }
         ],
-        "currentTab": 11
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -476,54 +462,54 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "1f7f9c7abca93086",
+  "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
+    "Programming/JavaScript/함수와 프로토타입 체이닝.md",
+    "Programming/JavaScript/모듈.md",
+    "Programming/JavaScript/자바스크립트 함수형 프로그래밍.md",
+    "Programming/JavaScript/자바스크립트 에러 핸들링.md",
+    "Programming/JavaScript/자바스크립트 기초.md",
+    "Programming/JavaScript/duck 타이핑.md",
+    "Programming/JavaScript/실행 컨텍스트와 클로저.md",
+    "Programming/JavaScript/css 기본 속성.md",
+    "Programming/JavaScript/JavaScript 프라미스.md",
+    "Programming/JavaScript/JavaScript 컴파일.md",
+    "Programming/JavaScript/JavaScript Proxy와 Reflect.md",
+    "Programming/JavaScript/HTML DOM.md",
+    "Programming/JavaScript/Ajax.md",
+    "Programming/JavaScript",
+    "Programming/인프라/k8s/Docker/컨테이너 오케스트레이션.md",
+    "Programming/인프라/k8s/Docker/도커 설치 및 실행 방법.md",
+    "Programming/인프라/k8s/Docker/Dockerfile 만들기.md",
+    "Programming/인프라/k8s/Docker/Docker Compose.md",
+    "Programming/인프라/k8s/Docker/Ansible 개념 및 실습.md",
+    "Programming/인프라/k8s/Docker",
+    "Programming/인프라/DB/Oracle/읽기 일관성.md",
+    "Programming/인프라/DB/Oracle/서브쿼리의 종류.md",
+    "Programming/인프라/DB/Oracle/인덱스 구조 및 탐색.md",
+    "Programming/인프라/DB/Oracle/SQL 처리과정과 IO 다루기.md",
+    "Programming/인프라/DB/Oracle/데이터 저장 구조 및 IO 메커니즘.md",
+    "Programming/인프라/DB/Oracle/SQL 조인.md",
+    "Programming/인프라/DB/Oracle",
+    "Programming/인프라/네트워크/gRPC.md",
+    "투자자산운용사/용어정리/금융상품 및 세제.md.tmp.40895.370e0034ceb5",
+    "Programming/객체지향 프로그래밍/DDD/값 타입.md.tmp.40895.5167e1b0930e",
     "Attached file/01_scn_basics.svg",
     "Attached file/02_read_committed.svg",
     "Attached file/03_cr_clone_undo.svg",
     "Attached file/04_jdbc_fetch.svg",
-    "Programming/인프라/DB/오라클/읽기 일관성.md",
-    "Programming/Redis/Redis Cluster 내부 동작 정리.md",
     "Attached file/MCP_LLM.png",
     "Attached file/MCP_LAYER.png",
-    "AI/MCP 아키텍처 개념정리.md",
-    "AI/Claude Code 입문 가이드.md",
-    "AI/SuperClaude 제대로 이해하기.md",
     "AI",
-    "Programming/인프라/네트워크/SSL&TLS 내부동작.md",
     "Attached file/platform thread test.png",
     "Attached file/virtual thread test.png",
     "Attached file/gatling.png",
-    "Programming/성능 테스트/가상 스레드를 이용한 성능 테스트.md",
-    "Programming/인프라/AWS/VPC 개요.md",
-    "Programming/인프라/AWS/EC2 Auto Scaling.md",
-    "Programming/인프라/AWS/AWS VPC란?.md",
-    "Programming/인프라/AWS/AWS Lamda.md",
-    "Programming/인프라/AWS/AWS IAM 개요.md",
-    "Programming/인프라/AWS/AWS Cloud란?.md",
-    "Programming/인프라/AWS/AWS 컨테이너 서비스.md",
-    "Programming/인프라/AWS/\bAWS 데이터베이스.md",
-    "Programming/인프라/AWS/AWS 글로벌 인프라의 이해.md",
-    "Programming/인프라/AWS/보안그룹(Security Group).md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴이란?.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코루틴과 동시성 프로그래밍.md",
-    "Programming/객체지향 프로그래밍/Kotlin/코루틴/코틀린 정보은닉.md",
-    "Programming/객체지향 프로그래밍/DDD/도메인 서비스.md",
     "Untitled.canvas",
-    "Programming/인프라/AWS/ElasticCache 개요.md",
-    "Programming/인프라/AWS/Elastic Load Balancer(ELB) 개요.md",
-    "Programming/인프라/AWS/Elastic Block Store(EBS).md",
-    "Programming/인프라/AWS/S3 개요.md",
     "Attached file/AWS VPC 구성도.drawio.png",
-    "Attached file/투자자산운용사 합격.png",
     "Programming/Vault",
     "Spaces/Home",
     "Spaces",
-    "투자자산운용사/투자운용 및 전략",
-    "투자자산운용사/용어정리",
-    "투자자산운용사/금융상품및세제",
-    "투자자산운용사",
-    "자기개발",
-    "Programming/Spring/Webflux"
+    "투자자산운용사/투자운용 및 전략"
   ]
 }
