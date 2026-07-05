@@ -1,0 +1,44 @@
+<svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="scar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">SSL 인증서 — 신뢰의 사슬 (Chain of Trust)</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">상위 인증기관이 하위를 서명 · 브라우저는 미리 신뢰하는 Root CA까지 서명을 따라 올라가 검증한다</text>
+
+  <!-- Root CA -->
+  <rect x="300" y="88" width="220" height="60" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="410" y="112" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">Root CA (최상위 인증기관)</text>
+  <text x="410" y="132" font-size="10" fill="#8A9BA8" text-anchor="middle">브라우저·OS 신뢰 저장소에 미리 내장</text>
+
+  <line x1="410" y1="148" x2="410" y2="178" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#scar)"/>
+  <text x="425" y="168" font-size="10" fill="#8A9BA8">서명</text>
+
+  <!-- Intermediate CA -->
+  <rect x="300" y="180" width="220" height="60" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="410" y="204" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">Intermediate CA (중간 기관)</text>
+  <text x="410" y="224" font-size="10" fill="#8A9BA8" text-anchor="middle">Root의 서명을 받아 하위를 서명</text>
+
+  <line x1="410" y1="240" x2="410" y2="270" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#scar)"/>
+  <text x="425" y="260" font-size="10" fill="#8A9BA8">서명</text>
+
+  <!-- Server cert -->
+  <rect x="300" y="272" width="220" height="66" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="410" y="296" font-size="13" font-weight="700" fill="#065A6E" text-anchor="middle">서버 인증서 (example.com)</text>
+  <text x="410" y="315" font-size="10" fill="#8A9BA8" text-anchor="middle">도메인·서버 공개키 포함</text>
+  <text x="410" y="330" font-size="10" fill="#8A9BA8" text-anchor="middle">접속 시 클라이언트에게 전달</text>
+
+  <!-- verify direction -->
+  <line x1="560" y1="305" x2="560" y2="110" stroke="#B83227" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#scar)"/>
+  <text x="575" y="210" font-size="11" fill="#B83227" transform="rotate(0 575 210)">클라이언트 검증 방향 ↑</text>
+  <text x="575" y="228" font-size="10" fill="#8A9BA8">(서버→중간→루트 서명 확인)</text>
+
+  <!-- browser -->
+  <rect x="40" y="180" width="200" height="80" rx="10" fill="#F4F6F7" stroke="#8A9BA8" stroke-width="1.4"/>
+  <text x="140" y="206" font-size="12.5" font-weight="700" fill="#5A6B78" text-anchor="middle">클라이언트(브라우저)</text>
+  <text x="140" y="228" font-size="10" fill="#8A9BA8" text-anchor="middle">신뢰하는 Root CA 목록 보유</text>
+  <text x="140" y="245" font-size="10" fill="#8A9BA8" text-anchor="middle">체인이 신뢰 루트에 닿으면 OK</text>
+
+  <text x="40" y="368" font-size="11" fill="#8A9BA8">하나라도 서명이 안 맞거나 신뢰 루트에 닿지 못하면 "이 사이트는 안전하지 않음" 경고 · 만료·도메인 불일치도 실패 사유.</text>
+  <text x="40" y="386" font-size="11" fill="#8A9BA8">검증에 성공하면 서버의 공개키로 안전하게 대칭키를 교환해 이후 통신을 암호화한다.</text>
+</svg>

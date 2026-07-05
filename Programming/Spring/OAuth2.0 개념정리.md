@@ -23,6 +23,9 @@ OAuth 2.0은 `외부 서비스(third-party-application)`의 인증 및 권한부
 
 
 ### OAuth 2.0 프레임워크 흐름
+
+![OAuth 2.0 Authorization Code 흐름](../../Attached%20file/oauth_authorization_code.svg)
+
 ![Untitled Diagram (1)](https://user-images.githubusercontent.com/22395934/70778169-fa65ea00-1dc4-11ea-8860-c3d396faebfd.png)
 
 

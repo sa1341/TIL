@@ -1,0 +1,43 @@
+<svg viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="oaar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+    <marker id="oaback" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto"><path d="M9,0 L0,4.5 L9,9 Z" fill="#2E8B6B"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="470" fill="#ffffff"/>
+  <text x="32" y="34" font-size="20" font-weight="700" fill="#17212B">OAuth 2.0 — Authorization Code 흐름</text>
+  <text x="32" y="56" font-size="12.5" fill="#8A9BA8">Access Token을 직접 주지 않고 먼저 Code를 발급 → Code+client_secret으로 토큰 교환 (유출 위험 감소)</text>
+
+  <!-- actors -->
+  <rect x="30" y="72" width="150" height="36" rx="8" fill="#EAF4F6" stroke="#08748C"/><text x="105" y="95" font-size="11.5" font-weight="700" fill="#065A6E" text-anchor="middle">Resource Owner(사용자)</text>
+  <rect x="250" y="72" width="150" height="36" rx="8" fill="#FBF3E4" stroke="#C88A2E"/><text x="325" y="95" font-size="11.5" font-weight="700" fill="#8A5E12" text-anchor="middle">Client(모두의 커뮤니티)</text>
+  <rect x="470" y="72" width="160" height="36" rx="8" fill="#FCF5F4" stroke="#B83227"/><text x="550" y="95" font-size="11.5" font-weight="700" fill="#B83227" text-anchor="middle">Authorization Server</text>
+  <rect x="690" y="72" width="150" height="36" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/><text x="765" y="95" font-size="11.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">Resource Server(구글)</text>
+  <line x1="105" y1="108" x2="105" y2="450" stroke="#D4DCE2"/><line x1="325" y1="108" x2="325" y2="450" stroke="#D4DCE2"/><line x1="550" y1="108" x2="550" y2="450" stroke="#D4DCE2"/><line x1="765" y1="108" x2="765" y2="450" stroke="#D4DCE2"/>
+
+  <!-- steps -->
+  <line x1="105" y1="140" x2="323" y2="140" stroke="#08748C" stroke-width="1.5" marker-end="url(#oaar)"/>
+  <text x="115" y="134" font-size="11" fill="#065A6E">① 서비스 접속 · 권한 필요한 기능 요청</text>
+
+  <line x1="105" y1="178" x2="548" y2="178" stroke="#08748C" stroke-width="1.5" marker-end="url(#oaar)"/>
+  <text x="115" y="172" font-size="11" fill="#065A6E">② 로그인·동의 (Client가 인가 서버로 리다이렉트)</text>
+
+  <line x1="548" y1="216" x2="107" y2="216" stroke="#2E8B6B" stroke-width="1.5" marker-end="url(#oaback)"/>
+  <text x="130" y="210" font-size="11" fill="#1F6B4E">③ Authorization Code 발급 (사용자→Client로 전달)</text>
+
+  <line x1="325" y1="262" x2="548" y2="262" stroke="#08748C" stroke-width="1.5" marker-end="url(#oaar)"/>
+  <text x="335" y="242" font-size="11" fill="#065A6E">④ Code + client_id/secret</text>
+  <text x="335" y="256" font-size="10.5" fill="#8A9BA8">   → 토큰 교환 요청</text>
+
+  <line x1="548" y1="300" x2="327" y2="300" stroke="#2E8B6B" stroke-width="1.5" marker-end="url(#oaback)"/>
+  <text x="360" y="294" font-size="11" fill="#1F6B4E">⑤ Access Token 발급</text>
+
+  <line x1="325" y1="340" x2="763" y2="340" stroke="#08748C" stroke-width="1.5" marker-end="url(#oaar)"/>
+  <text x="335" y="334" font-size="11" fill="#065A6E">⑥ Access Token 으로 자원(캘린더 목록) 요청</text>
+
+  <rect x="690" y="356" width="150" height="30" rx="6" fill="#DFF0E8" stroke="#2E8B6B"/><text x="765" y="376" font-size="10" fill="#1F6B4E" text-anchor="middle">토큰 유효성 검증</text>
+
+  <line x1="763" y1="404" x2="327" y2="404" stroke="#2E8B6B" stroke-width="1.5" marker-end="url(#oaback)"/>
+  <text x="360" y="398" font-size="11" fill="#1F6B4E">⑦ 자원 응답 (요청한 데이터 반환)</text>
+
+  <text x="32" y="440" font-size="10.5" fill="#8A9BA8">client_secret은 절대 노출 금지 · scope로 접근 범위를 제한해 탈취 시 피해 최소화 · (인가/리소스 서버는 같은 제공자(구글) 소속)</text>
+</svg>
