@@ -678,8 +678,8 @@ public class BoardSearch {
 
 제목, 내용, 작성자 같은 검색 타입을 선택하고 키워드를 입력하여 검색을 요청하면 BoardSearch 객체에 바인딩 됩니다.
 
-바인딩 되어진 boardSearch 객체는 응용 계층으로 값이 전달 됩니다.
-응용 계층(서비스)에서는 검색정보를 가진 boardSearch를 아큐먼트로 받아서 Predicate 타입의 인터페이스를 구현하는 BooleanBuilder 객체를 리턴하는데 이 객체의 역할은 동적 쿼리를 생성하는 책임을 가지고 있는 객체입니다.
+바인딩된 boardSearch 객체는 응용 계층으로 값이 전달됩니다.
+응용 계층(서비스)에서는 검색정보를 가진 boardSearch를 아규먼트로 받아서 Predicate 타입의 인터페이스를 구현하는 BooleanBuilder 객체를 리턴하는데 이 객체의 역할은 동적 쿼리를 생성하는 책임을 가지고 있는 객체입니다.
 
 동적쿼리 생성부분은 아래 URL을 참조하시면 됩니다.
 

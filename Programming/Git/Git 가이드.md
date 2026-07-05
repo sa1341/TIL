@@ -286,7 +286,7 @@ git checkout -t origin/feature/test01
 ```
 -t옵션과 원격 저장소의 branch 이름을 입력하면 로컬의 동일한 이름의 branch를 생성하면서 해당 branch로 Checkout을 합니다.
 
-만약 branch를 변경하여 가져오고 싶다면 위에서 언급한것 처럼 아래 명령어를 입력하면 됩니다.
+만약 branch를 변경하여 가져오고 싶다면 위에서 언급한것처럼 아래 명령어를 입력하면 됩니다.
 ```java
 git checkout -b 생성할 branch 이름 원격 저장소의 branch 이름
 ```
