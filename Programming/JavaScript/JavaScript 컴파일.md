@@ -21,6 +21,8 @@ V8은 아래 특징을 지닙니다.
 
 ## JIT 컴파일러
 
+![V8 엔진의 인터프리터 + JIT 컴파일](../../Attached%20file/js_v8_jit.svg)
+
 Javascript는 보통 js 파일 (text)로 배포되고, 이를 브라우저에서 사용합니다.
 
 브라우저에서는 Javascript를 처리하기 위해서, Javascript 엔진으로 Javascript 소스를 내부에서 이해할 수 있는 언어로 변환하고 실행하는데, 이를 컴파일이라고 부릅니다.

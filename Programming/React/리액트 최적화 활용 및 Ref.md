@@ -2,7 +2,7 @@
 
 ![리렌더 최적화 — shouldComponentUpdate / React.memo](../../Attached%20file/react_optimization.svg)
 
-shouldComponentUpdate 함수는 컴포넌트의 상태 값과 부모 컴포넌트로부터 받은 props 객체의 값에 따라서 리렌더링을 할지 말지 결정해주는 함수입니다. 만약 PhoneInfo 컴포넌트 중에서 굳이 update를 할 필요가 없는데 다른 PhoneInfo 컴포넌트의 수정이 발생할 때마다 모든 PhoneInfo 컴포넌트가 리렌더링 된다면 업데이트 성능이 많이 떨어질 수 밖에 없습니다. 
+shouldComponentUpdate 함수는 컴포넌트의 상태 값과 부모 컴포넌트로부터 받은 props 객체의 값에 따라서 리렌더링을 할지 말지 결정해주는 함수입니다. 만약 PhoneInfo 컴포넌트 중에서 굳이 update를 할 필요가 없는데 다른 PhoneInfo 컴포넌트의 수정이 발생할 때마다 모든 PhoneInfo 컴포넌트가 리렌더링 된다면 업데이트 성능이 많이 떨어질 수밖에 없습니다. 
 
 
 ```javascript
@@ -22,7 +22,7 @@ shouldComponentUpdate(nextProps, nextState) {
 }    
 ```
 
-위에 shouldComponentUpdate 함수를 구현해서 PhoneInfo 컴포넌트 업데이트를 하기 위한 조건 로직을 작성하였습니다. setState 함수가 호출되면 무조건 컴포넌트를 업데이트를 해주고, 부모 컴포넌트로 부터 받은 props 객체가 다르면 마찬가지로 업데이트를 해줍니다. 
+위에 shouldComponentUpdate 함수를 구현해서 PhoneInfo 컴포넌트 업데이트를 하기 위한 조건 로직을 작성하였습니다. setState 함수가 호출되면 무조건 컴포넌트를 업데이트를 해주고, 부모 컴포넌트로부터 받은 props 객체가 다르면 마찬가지로 업데이트를 해줍니다. 
 
 만약 불변성을 보장하지 않는다면 컴포넌트를 업데이트 할 때 객체가 가지고 있는 벨류들을 비교해야 되고 그러면 더 복잡해지기 때문에 state나 props는 불변성을 가져야 합니다.
 
