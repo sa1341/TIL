@@ -19,7 +19,7 @@ let promise = new Promise(function(resolve, reject)) {
 });
 ```
 
-new Promise에 전달되는 함수는 excutor(실행자, 실행 함수)라고 부릅니다. executor는 new Promise가 만들어질 때 자동으로 실행되는데, 결과를 최종적으로 만들어내는 제작 코드를 포함합니다. 위 비유에서 `가수`가 바로 executor입니다.
+new Promise에 전달되는 함수는 executor(실행자, 실행 함수)라고 부릅니다. executor는 new Promise가 만들어질 때 자동으로 실행되는데, 결과를 최종적으로 만들어내는 제작 코드를 포함합니다. 위 비유에서 `가수`가 바로 executor입니다.
 
 executor의 인수 resolve와 reject는 자바스크립트가 자체적으로 제공하는 콜백입니다. 개발자는 resolve와 reject를 신경 쓰지 않고 executor 안 코드만 작성하면 됩니다. 대신 executor에선 결과를 즉시 얻든, 늦게 얻든 상관없이 상황에 따라 인수로 넘겨준 콜백 중 하나를 반드시 호출해야 합니다.
 
