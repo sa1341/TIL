@@ -1,0 +1,32 @@
+<svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="mdar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="360" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">ES 모듈 — export / import 와 모듈 스코프</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">각 파일은 독립된 스코프를 가짐 · export한 것만 밖으로 공개되고, import로 다른 모듈이 가져다 씀</text>
+
+  <!-- module A -->
+  <rect x="40" y="92" width="330" height="220" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="60" y="116" font-size="13" font-weight="700" fill="#065A6E">sayHi.js (모듈 스코프)</text>
+  <rect x="60" y="128" width="290" height="30" rx="5" fill="#FCF5F4" stroke="#B83227"/><text x="72" y="148" font-size="10.5" fill="#B83227">const secret = "..."  // 내부 전용(비공개)</text>
+  <rect x="60" y="166" width="290" height="34" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="72" y="187" font-size="10.5" fill="#1F6B4E">export function sayHi(user) { ... }</text>
+  <rect x="60" y="208" width="290" height="34" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="72" y="229" font-size="10.5" fill="#1F6B4E">export const version = "1.0";</text>
+  <text x="60" y="268" font-size="10.5" fill="#8A9BA8">export 안 붙인 secret 은 밖에서 접근 불가</text>
+  <text x="60" y="288" font-size="10.5" fill="#8A9BA8">→ 전역 오염 없이 캡슐화</text>
+
+  <!-- import arrow -->
+  <line x1="370" y1="200" x2="450" y2="200" stroke="#08748C" stroke-width="1.8" marker-end="url(#mdar)"/>
+  <text x="410" y="190" font-size="10" fill="#065A6E" text-anchor="middle" font-weight="700">import</text>
+
+  <!-- module B -->
+  <rect x="455" y="92" width="330" height="220" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="475" y="116" font-size="13" font-weight="700" fill="#8A5E12">main.js</text>
+  <rect x="475" y="128" width="290" height="34" rx="5" fill="#ffffff" stroke="#E5DCC7"/><text x="487" y="149" font-size="10.5" fill="#3E5060">import { sayHi } from './sayHi.js'</text>
+  <rect x="475" y="170" width="290" height="34" rx="5" fill="#ffffff" stroke="#E5DCC7"/><text x="487" y="191" font-size="10.5" fill="#3E5060">sayHi("Kim");  // 사용 가능 ✅</text>
+  <rect x="475" y="212" width="290" height="34" rx="5" fill="#F4E4E1" stroke="#B83227"/><text x="487" y="233" font-size="10.5" fill="#B83227">secret;  // 접근 불가 ❌</text>
+  <text x="475" y="272" font-size="10.5" fill="#8A9BA8">필요한 것만 골라 가져와 사용</text>
+  <text x="475" y="292" font-size="10.5" fill="#8A9BA8">(default export / named export 구분)</text>
+
+  <text x="40" y="342" font-size="11" fill="#8A9BA8">모듈은 최초 import 시 한 번만 평가되고 그 결과가 공유됨 · 브라우저에서는 &lt;script type="module"&gt; 로 로드.</text>
+</svg>

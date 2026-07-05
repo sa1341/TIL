@@ -9,7 +9,9 @@
 
 
 Comparable - 기본 정렬기준을 구현하는 데 사용.
-Comparator - 기본 정렬기준 외에 다른 기준으로 정렬하고자 할 때 사용. 
+Comparator - 기본 정렬기준 외에 다른 기준으로 정렬하고자 할 때 사용.
+
+![Comparable vs Comparator](../../../Attached%20file/java_comparable_comparator.svg)
 
 여기서 Arrays.sort(sports), Arrays.sort(names)는 String의 Comparable 구현에 의해 정렬된 것입니다.
 

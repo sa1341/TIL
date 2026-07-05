@@ -1,0 +1,46 @@
+<svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="tcar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="380" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">try / catch / finally 제어 흐름</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">try 실행 중 에러가 나면 즉시 catch로 점프 · finally는 에러 여부와 상관없이 항상 실행 (런타임 에러에만 동작)</text>
+
+  <!-- try -->
+  <rect x="330" y="90" width="160" height="50" rx="8" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="410" y="112" font-size="12.5" font-weight="700" fill="#065A6E" text-anchor="middle">try { ... }</text>
+  <text x="410" y="130" font-size="10" fill="#8A9BA8" text-anchor="middle">위험할 수 있는 코드 실행</text>
+
+  <!-- decision -->
+  <path d="M 410 155 L 470 190 L 410 225 L 350 190 Z" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="410" y="188" font-size="11" fill="#8A5E12" text-anchor="middle">에러</text>
+  <text x="410" y="203" font-size="11" fill="#8A5E12" text-anchor="middle">발생?</text>
+  <line x1="410" y1="140" x2="410" y2="153" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#tcar)"/>
+
+  <!-- no error path -->
+  <line x1="470" y1="190" x2="600" y2="190" stroke="#2E8B6B" stroke-width="1.4" marker-end="url(#tcar)"/>
+  <text x="535" y="180" font-size="10" fill="#2E8B6B" text-anchor="middle">아니오</text>
+  <rect x="600" y="168" width="180" height="44" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="690" y="188" font-size="11" fill="#1F6B4E" text-anchor="middle">catch 건너뜀</text>
+  <text x="690" y="204" font-size="9.5" fill="#8A9BA8" text-anchor="middle">try 끝까지 정상 실행</text>
+
+  <!-- error path -->
+  <line x1="350" y1="190" x2="230" y2="190" stroke="#B83227" stroke-width="1.4" marker-end="url(#tcar)"/>
+  <text x="290" y="180" font-size="10" fill="#B83227" text-anchor="middle">예</text>
+  <rect x="40" y="160" width="190" height="60" rx="8" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="135" y="182" font-size="11.5" font-weight="700" fill="#B83227" text-anchor="middle">catch (err) { ... }</text>
+  <text x="135" y="200" font-size="9.5" fill="#8A9BA8" text-anchor="middle">try 실행 중단 → 여기로 점프</text>
+  <text x="135" y="213" font-size="9.5" fill="#8A9BA8" text-anchor="middle">err에 에러 정보(name·message)</text>
+
+  <!-- finally -->
+  <line x1="135" y1="220" x2="135" y2="270" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#tcar)"/>
+  <line x1="690" y1="212" x2="690" y2="270" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#tcar)"/>
+  <rect x="260" y="272" width="300" height="48" rx="8" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="410" y="294" font-size="12" font-weight="700" fill="#8A5E12" text-anchor="middle">finally { ... } — 항상 실행</text>
+  <text x="410" y="311" font-size="9.5" fill="#8A9BA8" text-anchor="middle">에러가 나든 안 나든 실행 (자원 정리 등)</text>
+  <line x1="135" y1="296" x2="258" y2="296" stroke="#8A9BA8" stroke-width="1.2"/>
+  <line x1="690" y1="296" x2="562" y2="296" stroke="#8A9BA8" stroke-width="1.2"/>
+
+  <text x="40" y="352" font-size="11" fill="#8A9BA8">catch에서 처리하지 못하거나 다시 throw하면, 에러는 콜스택을 따라 상위로 전파된다(끝까지 안 잡히면 스크립트 중단).</text>
+  <text x="40" y="370" font-size="11" fill="#8A9BA8">문법 오류(중괄호 짝 안 맞음 등)는 런타임 이전이라 try..catch로 잡히지 않는다.</text>
+</svg>

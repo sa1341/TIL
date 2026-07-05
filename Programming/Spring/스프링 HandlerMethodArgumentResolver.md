@@ -1,6 +1,8 @@
 
 대부분 웹 어플리케이션에서 사용자들이 로그인 인증 후 서버에서 세션을 생성하고 발급을 해주게 됩니다. 그때마다 컨트롤러에서 세션정보를 요구하는 특정 메소드를 수행하게 되면 아래 코드처럼 중복적인 코드를 작성해야 되는 불필요한 상황이 발생하게 됩니다.
 
+![HandlerMethodArgumentResolver 동작 흐름](../../Attached%20file/spring_argument_resolver.svg)
+
 ```java
 @Controller
 public class indexController{

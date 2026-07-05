@@ -1,0 +1,35 @@
+<svg viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="skar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+    <marker id="skarr" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto"><path d="M9,0 L0,4.5 L9,9 Z" fill="#B83227"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="420" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">TCP 소켓 연결 흐름 (Java ServerSocket / Socket)</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">서버는 포트에 바인딩 후 accept()로 대기 · 클라이언트가 연결 요청하면 통신용 Socket이 생성되어 데이터를 주고받음</text>
+
+  <!-- Server column -->
+  <rect x="470" y="86" width="310" height="300" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="625" y="110" font-size="14" font-weight="700" fill="#B83227" text-anchor="middle">서버</text>
+  <rect x="490" y="124" width="270" height="34" rx="6" fill="#ffffff" stroke="#E3B5AE"/><text x="504" y="146" font-size="11" fill="#3E5060">① ServerSocket(5001) — 포트 바인딩</text>
+  <rect x="490" y="164" width="270" height="34" rx="6" fill="#ffffff" stroke="#E3B5AE"/><text x="504" y="186" font-size="11" fill="#3E5060">② accept() — 연결 올 때까지 블로킹 ⏳</text>
+  <rect x="490" y="238" width="270" height="34" rx="6" fill="#DFF0E8" stroke="#2E8B6B"/><text x="504" y="260" font-size="11" fill="#1F6B4E">③ 통신용 Socket 리턴 (연결 수락)</text>
+  <rect x="490" y="300" width="270" height="34" rx="6" fill="#ffffff" stroke="#E3B5AE"/><text x="504" y="322" font-size="11" fill="#3E5060">⑤ Socket I/O 스트림으로 통신</text>
+  <rect x="490" y="342" width="270" height="30" rx="6" fill="#ffffff" stroke="#E3B5AE"/><text x="504" y="362" font-size="10.5" fill="#8A9BA8">끝나면 close()로 포트 언바인딩</text>
+
+  <!-- Client column -->
+  <rect x="40" y="86" width="310" height="300" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="195" y="110" font-size="14" font-weight="700" fill="#065A6E" text-anchor="middle">클라이언트</text>
+  <rect x="60" y="200" width="270" height="34" rx="6" fill="#ffffff" stroke="#B7D5DC"/><text x="74" y="222" font-size="11" fill="#3E5060">④ Socket("서버IP", 5001) — 연결 요청</text>
+  <rect x="60" y="300" width="270" height="34" rx="6" fill="#ffffff" stroke="#B7D5DC"/><text x="74" y="322" font-size="11" fill="#3E5060">⑤ Socket I/O 스트림으로 통신</text>
+
+  <!-- connect arrow -->
+  <line x1="330" y1="217" x2="488" y2="181" stroke="#08748C" stroke-width="1.6" marker-end="url(#skar)"/>
+  <text x="410" y="192" font-size="9.5" fill="#065A6E" text-anchor="middle">연결 요청</text>
+  <!-- accept returns -->
+  <line x1="488" y1="255" x2="440" y2="255" stroke="#B83227" stroke-width="1.4"/>
+  <!-- communication bidirectional -->
+  <line x1="330" y1="317" x2="488" y2="317" stroke="#08748C" stroke-width="1.8" marker-start="url(#skarr)" marker-end="url(#skar)"/>
+  <text x="410" y="308" font-size="9.5" fill="#8A9BA8" text-anchor="middle">양방향 데이터</text>
+
+  <text x="40" y="410" font-size="11.5" fill="#8A9BA8">accept()는 블로킹되므로 UI·이벤트 스레드에서 호출하지 않는다 · 서버는 보통 accept()를 반복 호출해 다중 클라이언트를 수락.</text>
+</svg>

@@ -13,6 +13,8 @@ Annotation은 class위에 @를 사용해서 정의합니다.
 
 ## Angular에서 Module이란?
 
+![Angular @NgModule 메타데이터](../../Attached%20file/angular_ngmodule.svg)
+
 1. 특정 기능에 대하여 관련된 component나 service, directive 등을 편하게 사용하기 위해 하나로 모은 것입니다.
 
 즉, 특정한 기능을 사용하기 위해 관련된 모든 것을 모아 놓은 것이라고 볼 수 있습니다.

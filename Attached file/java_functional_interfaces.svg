@@ -1,0 +1,45 @@
+<svg viewBox="0 0 820 420" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="fiar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="420" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">표준 함수형 인터페이스와 람다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">함수형 인터페이스 = 추상 메서드가 딱 1개(SAM) · 람다는 그 메서드의 구현을 간결하게 표현한 것</text>
+
+  <!-- concept -->
+  <rect x="40" y="88" width="330" height="40" rx="6" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="54" y="113" font-size="11.5" fill="#065A6E">Function&lt;String,Integer&gt; f = s -&gt; s.length();</text>
+  <line x1="370" y1="108" x2="418" y2="108" stroke="#08748C" stroke-width="1.6" marker-end="url(#fiar)"/>
+  <rect x="424" y="88" width="356" height="40" rx="6" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="438" y="113" font-size="11" fill="#1F6B4E">람다 `s -&gt; s.length()` 가 apply() 구현을 대신함</text>
+
+  <text x="40" y="160" font-size="13" font-weight="700" fill="#3E5060">자주 쓰는 4가지 (입력 → 출력)</text>
+
+  <!-- Function -->
+  <rect x="40" y="172" width="360" height="56" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="54" y="194" font-size="12.5" font-weight="700" fill="#065A6E">Function&lt;T, R&gt;</text>
+  <text x="54" y="214" font-size="11" fill="#8A9BA8">T 입력 → R 반환 · 메서드: apply(T)</text>
+  <rect x="330" y="184" width="58" height="30" rx="14" fill="#EAF4F6" stroke="#08748C"/><text x="359" y="204" font-size="10.5" fill="#065A6E" text-anchor="middle">T→R</text>
+
+  <!-- Predicate -->
+  <rect x="420" y="172" width="360" height="56" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="434" y="194" font-size="12.5" font-weight="700" fill="#8A5E12">Predicate&lt;T&gt;</text>
+  <text x="434" y="214" font-size="11" fill="#8A9BA8">T 입력 → boolean · 메서드: test(T)</text>
+  <rect x="710" y="184" width="58" height="30" rx="14" fill="#FBF3E4" stroke="#C88A2E"/><text x="739" y="204" font-size="10" fill="#8A5E12" text-anchor="middle">T→bool</text>
+
+  <!-- Consumer -->
+  <rect x="40" y="240" width="360" height="56" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="54" y="262" font-size="12.5" font-weight="700" fill="#B83227">Consumer&lt;T&gt;</text>
+  <text x="54" y="282" font-size="11" fill="#8A9BA8">T 입력 → 반환 없음(소비) · 메서드: accept(T)</text>
+  <rect x="330" y="252" width="58" height="30" rx="14" fill="#FCF5F4" stroke="#B83227"/><text x="359" y="272" font-size="10" fill="#B83227" text-anchor="middle">T→void</text>
+
+  <!-- Supplier -->
+  <rect x="420" y="240" width="360" height="56" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="434" y="262" font-size="12.5" font-weight="700" fill="#1F6B4E">Supplier&lt;T&gt;</text>
+  <text x="434" y="282" font-size="11" fill="#8A9BA8">입력 없음 → T 반환(공급) · 메서드: get()</text>
+  <rect x="710" y="252" width="58" height="30" rx="14" fill="#DFF0E8" stroke="#2E8B6B"/><text x="739" y="272" font-size="10.5" fill="#1F6B4E" text-anchor="middle">()→T</text>
+
+  <text x="40" y="330" font-size="12" fill="#3E5060">확장형: <tspan font-weight="700">BiFunction&lt;T,U,R&gt;</tspan>(인자 2개), <tspan font-weight="700">UnaryOperator&lt;T&gt;</tspan>(T→T), <tspan font-weight="700">BinaryOperator&lt;T&gt;</tspan>(T,T→T)</text>
+  <text x="40" y="356" font-size="12" fill="#3E5060">기본형 특화: <tspan font-weight="700">IntPredicate, IntFunction, ToIntFunction</tspan> … (오토박싱 비용 회피용)</text>
+  <text x="40" y="390" font-size="11.5" fill="#8A9BA8">@FunctionalInterface 를 붙이면 컴파일러가 "추상 메서드 1개" 규칙을 강제해 준다.</text>
+</svg>

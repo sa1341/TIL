@@ -1,0 +1,40 @@
+<svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="820" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Angular @NgModule — 모듈 메타데이터</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">관련된 컴포넌트·서비스를 하나의 모듈로 묶는다 · @NgModule의 각 속성이 "무엇을 담는지"를 선언</text>
+
+  <!-- decorator container -->
+  <rect x="40" y="88" width="740" height="256" rx="12" fill="#F4F6F7" stroke="#8A9BA8" stroke-width="1.6"/>
+  <text x="60" y="112" font-size="14" font-weight="700" fill="#5A6B78">@NgModule({ ... })</text>
+
+  <!-- declarations -->
+  <rect x="60" y="124" width="345" height="66" rx="8" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="74" y="146" font-size="12.5" font-weight="700" fill="#065A6E">declarations</text>
+  <text x="74" y="166" font-size="10.5" fill="#3E5060">이 모듈에 속한 컴포넌트·디렉티브·파이프</text>
+  <text x="74" y="182" font-size="10" fill="#8A9BA8">(뷰를 이루는 구성요소들)</text>
+
+  <!-- imports -->
+  <rect x="415" y="124" width="345" height="66" rx="8" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="429" y="146" font-size="12.5" font-weight="700" fill="#8A5E12">imports</text>
+  <text x="429" y="166" font-size="10.5" fill="#3E5060">이 모듈이 필요로 하는 다른 모듈</text>
+  <text x="429" y="182" font-size="10" fill="#8A9BA8">(예: BrowserModule, FormsModule)</text>
+
+  <!-- exports -->
+  <rect x="60" y="200" width="345" height="66" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="74" y="222" font-size="12.5" font-weight="700" fill="#1F6B4E">exports</text>
+  <text x="74" y="242" font-size="10.5" fill="#3E5060">declarations 중 다른 모듈에 공개할 것</text>
+  <text x="74" y="258" font-size="10" fill="#8A9BA8">(공개 안 하면 이 모듈 안에서만 사용)</text>
+
+  <!-- providers -->
+  <rect x="415" y="200" width="345" height="66" rx="8" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="429" y="222" font-size="12.5" font-weight="700" fill="#B83227">providers</text>
+  <text x="429" y="242" font-size="10.5" fill="#3E5060">의존성 주입(DI)에 등록할 서비스</text>
+  <text x="429" y="258" font-size="10" fill="#8A9BA8">(컴포넌트에 주입되는 로직·데이터)</text>
+
+  <!-- bootstrap -->
+  <rect x="60" y="276" width="700" height="54" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="74" y="298" font-size="12.5" font-weight="700" fill="#17212B">bootstrap</text>
+  <text x="74" y="318" font-size="10.5" fill="#8A9BA8">앱이 시작될 때 최초로 띄울 루트 컴포넌트 지정 (루트 모듈에만 존재)</text>
+
+  <text x="40" y="372" font-size="11" fill="#8A9BA8">앱은 최소 하나의 루트 모듈(AppModule)을 가지며, 기능 단위로 여러 모듈로 나눠 관리할 수 있다.</text>
+</svg>
