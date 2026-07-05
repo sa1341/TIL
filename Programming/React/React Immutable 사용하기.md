@@ -1,6 +1,6 @@
 # React Immutable 사용하기
 
-리엑트에서는 컴포넌트들은 상태 값을 가질 수 있고, 해당 상태 값이 변하면 리렌더링 하도록 설계가 되어있습니다. 
+리엑트에서는 컴포넌트들은 상태 값을 가질 수 있고, 해당 상태 값이 변하면 리렌더링하도록 설계가 되어있습니다. 
 
 setState({...}) 함수로 상태 값을 변경할 때 주의할 점은 상태 객체는 immutable, 즉 불변의 값을 가져야 합니다. 따라서 상태 값을  변경할 때마다 이전 state 객체의 값을 변경하지 않고 새 객체를 생성하여 참조해야 합니다. 
 
@@ -17,7 +17,7 @@ class User extends Component {
   }
   render() {
     const { user } = this.props;
-    console.log('%s가 렌더링 되고있어요!!!', user.username);
+    console.log('%s가 렌더링되고있어요!!!', user.username);
 
     return (
       <div>
@@ -134,7 +134,7 @@ export default App;
 
 input에 값을 입력할 때마다 렌더 함수가 실행됩니다.
 
-이것은 리엑트의 기본적인 속성입니다. 부모 컴포넌트가 렌더링 되면, 자식 컴포넌트들 또한 리렌더링이 됩니다. 이 과정은, 가상 DOM에만 이뤄지는 렌더링이며, 렌더링을 마치고, 리액트의 diffing 알고리즘을 통하여 변화가 일어나는 부분만 실제로 업데이트 해줍니다.
+이것은 리엑트의 기본적인 속성입니다. 부모 컴포넌트가 렌더링되면, 자식 컴포넌트들 또한 리렌더링이 됩니다. 이 과정은, 가상 DOM에만 이뤄지는 렌더링이며, 렌더링을 마치고, 리액트의 diffing 알고리즘을 통하여 변화가 일어나는 부분만 실제로 업데이트해줍니다.
 
 지금은 인풋 내용이 수정될 때마다 UserList도 새로 렌더링이 되고 있습니다. 아무리 실제 DOM에는 반영되지는 않겠지만, 그래도 CPU 쪽에 미세한 낭비가 발생합니다.
 
@@ -158,7 +158,7 @@ shouldComponentUpdate(nextProps, nextState) {
 }
 ```
 
-이러한 이유 때문에 우리는 state를 업데이트 할 때는 불변함을 유지하면서 업데이트를 해주어야 합니다.
+이러한 이유 때문에 우리는 state를 업데이트할 때는 불변함을 유지하면서 업데이트를 해주어야 합니다.
 
 ## 불변함을 유지하다 보면 코드가 좀 복잡해집니다.
 
@@ -223,7 +223,7 @@ state = {
 }
 ```
 
-위 state를 분변함을 유지하면서 업데이트 하려면 완전 귀찮습니다.
+위 state를 불변함을 유지하면서 업데이트하려면 완전 귀찮습니다.
 
 ```javascript
 const { where } = this.state;
@@ -241,7 +241,7 @@ this.setState({
 });
 ```
 
-이렇게 해야 비로소 기존의 객체를 건들이지 않고 새 객체를 생성하여 불변함을 유지하며 값을 업데이트 할 수 있습니다. 애초에 state의 구조를 저렇게 복잡하게 하면 안되긴 하지만, 위와 같은 작업을 매번 하기는 엄청나게 번거롭습니다. 실수도 유발할 수 있구요. 
+이렇게 해야 비로소 기존의 객체를 건들이지 않고 새 객체를 생성하여 불변함을 유지하며 값을 업데이트할 수 있습니다. 애초에 state의 구조를 저렇게 복잡하게 하면 안되긴 하지만, 위와 같은 작업을 매번 하기는 엄청나게 번거롭습니다. 실수도 유발할 수 있구요. 
 
 이러한 작업을 쉽게 해줄 수 있는 것이 바로 Immutable.js 입니다.
 
@@ -259,10 +259,10 @@ Immutable을 사용할 때는 아래와 같은 규칙들을 꼭 기억해야 합
 - 배열은 List
 - 설정할땐 set
 - 읽을땐 get
-- 읽은 다음에 설정 할 땐 update
+- 읽은 다음에 설정할 땐 update
 - 내부에 있는걸 ~ 할땐 뒤에 In 을 붙인다: 
 - setIn, getIn, updateIn
-- 일반 자바스크립트 객체로 변환 할 땐 toJS
+- 일반 자바스크립트 객체로 변환할 땐 toJS
 - List 엔 배열 내장함수와 비슷한 함수들이 존재함.
 - push, slice, filter, sort, concat… 전부 불변함을 유지함
 - 특정 key 를 지울때 (혹은 List 에서 원소를 지울 때) delete 사용
@@ -304,7 +304,7 @@ console.log(nextObj !== obj);
 console.log(obj.get('foo'));
 console.log(arr.get(0));
 
-// 5. 읽은 다음에 설정 할 때는 update
+// 5. 읽은 다음에 설정할 때는 update
 // 두번째 파라미터로는 updater 함수가 들어갑니다.
 nextObj = nextObj.update('foo', value => value + 1);
 console.log(nextObj.toJS());
@@ -335,7 +335,7 @@ render(<App />, document.getElementById('root'));
 
 ## 리액트 컴포넌트에서 Immutable 사용하기
 
-Imutable은 페이스북에서 만들었기 때문에 React와 호환이 어느정도 되긴 합니다. state 자체를 Imutable 데이터로 사용하는것 까지는 지원되지 않습니다. 따라서, state 내부에 하나의 Immutable 객체를 만들어두고, 상태를 모두 이 객체를 통해서 진행하면 됩니다.
+Immutable은 페이스북에서 만들었기 때문에 React와 호환이 어느정도 되긴 합니다. state 자체를 Immutable 데이터로 사용하는것 까지는 지원되지 않습니다. 따라서, state 내부에 하나의 Immutable 객체를 만들어두고, 상태를 모두 이 객체를 통해서 진행하면 됩니다.
 
 우선 state부터 변경해보겠습니다.
 
@@ -357,9 +357,9 @@ state = {
 }
 ```
 
-data라는 Map을 만들었고, 그 내부에는 users List가 있고, 그안에 또 Map 두개가 안에 들어있습니다. 이렇게 수정을 하고 나면 코드에서 오류가 나기 시잘할 것입니다. 이제 차근차근 다른 컴포넌트들도 수정해보겠습니다.
+data라는 Map을 만들었고, 그 내부에는 users List가 있고, 그안에 또 Map 두개가 안에 들어있습니다. 이렇게 수정을 하고 나면 코드에서 오류가 나기 시작할 것입니다. 이제 차근차근 다른 컴포넌트들도 수정해보겠습니다.
 
-이제 setState를 하게 될 대도 코드를 조금씩 바꿔줘야 합니다.
+이제 setState를 하게 될 때도 코드를 조금씩 바꿔줘야 합니다.
 
 onChange 부터 수정하겠습니다.
 
@@ -481,10 +481,10 @@ User 컴포넌트에서는, username을 보여주기 위해서, const username =
 
 ## Record 사용하기
 
-get, getIn이 하는게 싫다면 Record를 사용하는 방법도 있습니다. Immutable에서 제공합니다. Imuutable의 set, update, delete 등을 계속 사용할 수 있으면서도, 값을 조회 할 때 get, getIn을 사용 할 필요 없이, data.input 이런식으로 조회를 할 수 있습니다.
+get, getIn이 하는게 싫다면 Record를 사용하는 방법도 있습니다. Immutable에서 제공합니다. Immutable의 set, update, delete 등을 계속 사용할 수 있으면서도, 값을 조회 할 때 get, getIn을 사용할 필요 없이, data.input 이런식으로 조회를 할 수 있습니다.
 
 
-Record는 Typescript 같은 타입시스템을 도입할 때 굉장이 유용합니다.
+Record는 Typescript 같은 타입시스템을 도입할 때 굉장히 유용합니다.
 
 Record 연습 코드를 작성해 보겠습니다.
 

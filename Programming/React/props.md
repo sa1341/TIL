@@ -28,7 +28,7 @@ class MyName extends Component {
 export default MyName;
 ```
 
-아래 App 컴포넌트에서 \<MyName name ='임준영'> 으로 선언 및 값을 입력하면 MyName 컴포넌트에서 this.props.name 값에서 `임준영`이라는 값을 받아서 처리할 수 가 있습니다. 만약 name이라는 프로퍼티가 존재하지 않을 시에 defaultProps라는 객체를 정의 후 `기본이름`으로 초기화 하는 방법도 있습니다. 
+아래 App 컴포넌트에서 \<MyName name ='임준영'> 으로 선언 및 값을 입력하면 MyName 컴포넌트에서 this.props.name 값에서 `임준영`이라는 값을 받아서 처리할 수가 있습니다. 만약 name이라는 프로퍼티가 존재하지 않을 시에 defaultProps라는 객체를 정의 후 `기본이름`으로 초기화하는 방법도 있습니다. 
 
 ```javascript
 import React, { Component } from 'react';

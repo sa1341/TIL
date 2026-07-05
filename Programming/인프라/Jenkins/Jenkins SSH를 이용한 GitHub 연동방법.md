@@ -43,7 +43,7 @@ ssh-keygen -t rsa -f /var/lib/jenkins/.ssh/github_ansible-in-action
 
 ![image](https://user-images.githubusercontent.com/22395934/118797759-dcfd4f80-b8d7-11eb-9ea6-878d6f8734d0.png)
 
-> 비밀번호는 모두 입력없이 바로 Enter로 넘어갑니다.
+> 비밀번호는 모두 입력 없이 바로 Enter로 넘어갑니다.
 
 위와 같이 터미널 콘솔에 출력되었다면 키들이 RSA 공개키/비밀키가 잘 생성되었는지 확인합니다.
 
@@ -71,7 +71,7 @@ bash-3.2$ cat github_ansible-in-action.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCnLB6lRaWdLRCDjhoIj1n9BYWd7oTCKbKQXuaxH82tkhFmmgL4VNPlUZV+TKLaQpyQN3ZxG86fGXNQFmuDRdmuJvLtQyeVY2abKkv9KFvmpeUV1++G7JBduxV9WU7qtlGt/LoR+s9Wvlv9Tc6hdDMiTg/jKSK5Ppk5d3HUotTQNfncPYzU6lqyZhR9x+uUhEUKObh3oGi0Xz+x2VHEYrDYpnWQPOsmYJbH8uqA12coQyL+9YPt4wfbuqsGl9qUy3eS7YkRCQQCQXYUiTibPvz6DLieWKF+EO/lVZO/3rCAvX9EI4zhre2ATDLVOjqMmWnL+Db3OoAjGCOxz5FuIm6CojKNdj2BJdadipd8Qop+uPbBnkePnYSx4b4Arlh5OFSONdeyxTV5CoF+NTQCzGRcc+Yj3sAbOKZvU3qX5NwBZRSUskvla1w3Bg+ybU59f5sHc5PuHAF46BdS28J2tJ6Sep0c8nMeZTNJjAqAhlJQ9NjmHViQ2kRzxt1nnre7mD8= root@imjun-yeong-ui-MacBookPro.local
 ```
 
-출력된 코드를 key 항복에 붙여넣습니다.
+출력된 코드를 key 항목에 붙여넣습니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/118798689-e1763800-b8d8-11eb-947f-7b6bddf7e4ea.png)
 
@@ -124,7 +124,7 @@ GitHub의 코드를 가져올 수 있는지 소스코드 관리 항목에 입력
 
 ![image](https://user-images.githubusercontent.com/22395934/118800566-04a1e700-b8db-11eb-9134-5dc496c4408d.png)
 
-## 4, Build 결과물
+## 4. Build 결과물
 
 Build가 성공했으니 실제 결과물을 확인해야 합니다. 저는 FreeStyle 프로젝트 생성 시 입력한 타이틀을 github로 하였습니다. 작업공간을 클릭합니다.
 

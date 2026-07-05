@@ -288,7 +288,7 @@ kubectl apply -f sample1.yml
 
 pod가 k8s에서 배포하는 최소단위라면 deployment의 정의가 무엇인지 궁금해서 구글링하여 찾아봤습니다.
 
-deployment는 `stateless 앱`을 배포할때 사용되는 가장 기본이 되는 컨트롤러입니다. 
+deployment는 `stateless 앱`을 배포할 때 사용되는 가장 기본이 되는 컨트롤러입니다. 
  
 k8s의 deployment 컨트롤러는 지속적으로 배포된 인스턴스들을 모니터링하고, 스케일링 및 관리를 하는 역할입니다. 유저에 의해 정해진 적정 개수를 유지하게끔 실행 중인 `pod`의 개수를 관리해줍니다.
 

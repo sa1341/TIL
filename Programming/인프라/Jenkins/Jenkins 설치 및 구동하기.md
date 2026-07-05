@@ -37,7 +37,7 @@ $ vi /var/lib/jenkins/secrets/initialAdminPassword
 
 ### 플러그인 설치 화면
 
-패스워드를 입력 후 아래와 같이 플러그인 설치화면이 나오는데 특별히 설치할 플러그인이 필요없다면 `install suggested plugins`를 선택합니다.
+패스워드를 입력 후 아래와 같이 플러그인 설치화면이 나오는데 특별히 설치할 플러그인이 필요 없다면 `install suggested plugins`를 선택합니다.
 
 ![jenkins install](https://user-images.githubusercontent.com/22395934/118791200-72491580-b8d1-11eb-9567-d898b94e78d0.png)
 
@@ -49,7 +49,7 @@ $ vi /var/lib/jenkins/secrets/initialAdminPassword
 ![스크린샷 2021-05-19 오후 4 18 20](https://user-images.githubusercontent.com/22395934/118791512-bc31fb80-b8d1-11eb-9eb4-70d4fee8b123.png)
 
 
-## 2.외부 IP로 접근 가능하도록 설정
+## 2. 외부 IP로 접근 가능하도록 설정
 
 해당 Mac 호스트를 CI 전용 서버로 쓰는 경우 localhost:8080 이외의 도메인이나 공인 IP, 외부 IP로 접속하기를 원할 수 있습니다. 이 경우에는 아래와 같은 경로에서 `--httpListenAddress` 값을 127.0.0.1에서 0.0.0.0으로 변경해야합니다. 만약 Jenkins 포트번호도 변경하고 싶다면 `--httpPort={port번호}`를 수정하면 됩니다. 그럼 이제 공인이나 사설 IP로도 Jenkins로 접근이 가능해집니다.
 
@@ -80,12 +80,12 @@ $ vi /var/lib/jenkins/secrets/initialAdminPassword
 </plist>
 ```
 
-> -Dmail.smtp ~ 위에 설정한 JDK 버전 값은 만약 /usr/libexec/java_home -V에서 여러개의 JDK를 설치된 경우 특정 JDK 버전을 지정하기 위해서 명시한 설정 값입니다. 저 같은 경우에는 JDK가 2개가 설치되어 있어서 1.8.0_201버전으로 Jenkins의 Job을 구동하도록 설정하였습니다.
+> -Dmail.smtp ~ 위에 설정한 JDK 버전 값은 만약 /usr/libexec/java_home -V에서 여러 개의 JDK가 설치된 경우 특정 JDK 버전을 지정하기 위해서 명시한 설정 값입니다. 저 같은 경우에는 JDK가 2개가 설치되어 있어서 1.8.0_201버전으로 Jenkins의 Job을 구동하도록 설정하였습니다.
 
 
 ## 3. Jenkins 웹 UI 화면
 
-만약 저처럼 위 설정파일에서 젠킨스 실행포트를 `8888`로 변경하지 않았다면 기본인`http://localhost:8080`로 접속하면 아래와 같이 젠킨스 웹 화면이보이게 됩니다.
+만약 저처럼 위 설정파일에서 젠킨스 실행포트를 `8888`로 변경하지 않았다면 기본인`http://localhost:8080`로 접속하면 아래와 같이 젠킨스 웹 화면이 보이게 됩니다.
 
 ![스크린샷 2021-05-19 오후 6 58 04](https://user-images.githubusercontent.com/22395934/118794093-32cff880-b8d4-11eb-8e8e-585a756410a4.png)
 

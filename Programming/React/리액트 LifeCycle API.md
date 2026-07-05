@@ -1,6 +1,6 @@
 # LifeCycle API
 
-LifeCycle API는 컴포넌트가 브라우저에 나타날 때, 사라질때, 그리고 업데이트 될 때, 호출되는 API 입니다.
+LifeCycle API는 컴포넌트가 브라우저에 나타날 때, 사라질 때, 그리고 업데이트 될 때, 호출되는 API 입니다.
 
 컴포넌트가 브라우저에 나타나기 전, 후에 호출되는 API들이 있습니다.
 
@@ -52,11 +52,11 @@ componentWillReceiveProps(nextProps) {
 }
 ```
 
-이 API는 컴포넌트가 새로운 props를 받게 됐을 때 호출됩니다. 이 안에서는 주로, state가 props에 따라 변해ㅐ야하는 로직을 작성합니다. 새로 받게될 nextProps로 조회할 수 있으며, 이 때 this.props를 조회하면 업데이트 되기 전의 API이니 참고만 하면 됩니다. 이 API 또한 v16.3부터 deprecate 됩니다.
+이 API는 컴포넌트가 새로운 props를 받게 됐을 때 호출됩니다. 이 안에서는 주로, state가 props에 따라 변해야 하는 로직을 작성합니다. 새로 받게될 nextProps로 조회할 수 있으며, 이 때 this.props를 조회하면 업데이트되기 전의 API이니 참고만 하면 됩니다. 이 API 또한 v16.3부터 deprecate 됩니다.
 
 ## static getDerivedStateFromProps)()
 
-이 함수는, v16.3 이후에 만들어진 라이프사이클 API 입니다. 이 API는 props로 받아온 값을 state로 동기화 하는 작업을 해줘야 하는 경우에 사용됩니다.
+이 함수는, v16.3 이후에 만들어진 라이프사이클 API 입니다. 이 API는 props로 받아온 값을 state로 동기화하는 작업을 해줘야 하는 경우에 사용됩니다.
 
 
 ```javascript
@@ -67,7 +67,7 @@ static getDerivedStateFromProps(nextProps, prevState) {
      value: nextProps.value
     };
  }
- return null; // null을 리턴하면 따로 업데이트 할 것은 없다는 의미입니다.
+ return null; // null을 리턴하면 따로 업데이트할 것은 없다는 의미입니다.
 }
 ```
 
@@ -85,11 +85,11 @@ if (nextProps.value === 10) return false;
 
 이 API는 컴포넌트를 최적화하는 작업에서 매우 유용하게 사용됩니다. 리액트에서는 변화가 발생하는 부분만 업데이트를 해줘서 성능이 꽤 잘나옵니다. 하지만, 변화가 발생한 부분만 감지해내기 위해서는 Virtual DOM에 한번 그려줘야 합니다.
 
-즉, 현재 컴포넌트의 상태가 업데이트 되지 않아도, 부모 컴포넌트가 리렌더링되면, 자식 컴포넌트들도 렌더링 됩니다. 여기서 `렌더링` 된다는 건, render() 함수가 호출된다는 의미입니다.
+즉, 현재 컴포넌트의 상태가 업데이트되지 않아도, 부모 컴포넌트가 리렌더링되면, 자식 컴포넌트들도 렌더링 됩니다. 여기서 `렌더링` 된다는 건, render() 함수가 호출된다는 의미입니다.
 
-변화가 없으면 물론 DOM 조작은 하지 않게 됩니다. 그저 Virtual DOM에만 렌더링 할 뿐입니다. 이 작업은 그렇게 부하가 많은 작업은 아니지만, 컴포넌트가 무수히 많아 렌더링된다면 애기가 달라집니다. CPU 자원을 어느정도 사용하고 있는것은 사실이니까요
+변화가 없으면 물론 DOM 조작은 하지 않게 됩니다. 그저 Virtual DOM에만 렌더링할 뿐입니다. 이 작업은 그렇게 부하가 많은 작업은 아니지만, 컴포넌트가 무수히 많아 렌더링된다면 얘기가 달라집니다. CPU 자원을 어느 정도 사용하고 있는 것은 사실이니까요
 
-쓸대없이 낭비되고 있는 이 CPU 처리량을 줄여주기 위해서 우리는 Virtual DOM에 리렌더링 하는것도, 불필요한 경우엔 방지하기 위해서 shouldComponentUpdate를 작성합니다.
+쓸데없이 낭비되고 있는 이 CPU 처리량을 줄여주기 위해서 우리는 Virtual DOM에 리렌더링하는것도, 불필요한 경우엔 방지하기 위해서 shouldComponentUpdate를 작성합니다.
 
 이 함수는 기본적으로 true를 반환합니다. 따로 작성을 해주어서 조건에 따라 false를 반환하면 해당 조건에는 render 함수를 호출하지 않습니다.
 
@@ -118,7 +118,7 @@ componentWillUnmount() {
 
 ### componentDidCatch
 
-render 함수에서 에러가 발생하면, 리액트 앱이 크래쉬 되어버립니다. 그러한 상황에 사용 할 수 있는 API가 componentDidCatch 함수입니다.
+render 함수에서 에러가 발생하면, 리액트 앱이 크래쉬 되어버립니다. 그러한 상황에 사용할 수 있는 API가 componentDidCatch 함수입니다.
 
 ```javascript
  
@@ -129,7 +129,7 @@ componentDidCatch(error, info) {
 }
 ```
 
-에러가 발생하면 이런식으로 componentDidCatch가 실행되게 하고, state.error를 true로 설정하게 하고, render 함수쪽에서 이에 따라 에러를 띄어주며 됩니다.
+에러가 발생하면 이런식으로 componentDidCatch가 실행되게 하고, state.error를 true로 설정하게 하고, render 함수쪽에서 이에 따라 에러를 띄워주면 됩니다.
 
 이 API를 사용하게 될 때 주의할 점은 컴포넌트 자신의 render 함수에서 에러가 발생해버리는 것은 잡아낼 수는 없지만, 그 대신에 컴포넌트의 자식 컴포넌트 내부에서 발생하는 에러들을 잡아 낼 수 있습니다.
 
@@ -156,14 +156,14 @@ class MyComponent extends Component {
 export default MyComponent;
 ```
 
-render() 함수에서 `{this.props.missing.something}` 값을 브라우저에 렌더링 할 경우 missing이 객체인데 undefined 일 경우 something 값에 접근 할 경우 아래와 같이 에러 문구가 노출이 됩니다.
+render() 함수에서 `{this.props.missing.something}` 값을 브라우저에 렌더링할 경우 missing이 객체인데 undefined 일 경우 something 값에 접근 할 경우 아래와 같이 에러 문구가 노출이 됩니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/103901901-1d380e80-513d-11eb-8628-12239301bfd7.png)
 
 
 이건 사용자들이 봤을 때 좋지 않은 화면이기 때문에 개발자들에게 에러정보를 전달해 주고 개발자는 사용자가 이해하기 쉬운 에러 문구를 보여줘야 할 경우가 있습니다.
 
-이 경우에는 부모 컴포넌트에서 자식 컴포넌트가 렌더링 할 때 에러가 발생하면 해당 에러를 캐치하여 에러 문구를 보여줄 수 있도록 해줄 수 있습니다.
+이 경우에는 부모 컴포넌트에서 자식 컴포넌트가 렌더링할 때 에러가 발생하면 해당 에러를 캐치하여 에러 문구를 보여줄 수 있도록 해줄 수 있습니다.
 
 ```javascript
 import React, { Component } from 'react';
@@ -217,11 +217,11 @@ class App extends Component {
 export default App;
 ```
 
-위 App은 부모 컴포넌트이고 state 객체에 error라는 프로퍼티를 가지고 있습니다. 디폴트로 false로 설정해주고, MyComponent인 자식 컴포넌트에서 에러가 발생하면 위에서 설명했듯이 `componentDidCatch(error, info)`로 에러를 확인 하고 처리 할 수 있습니다. error와 info를 console에 찍으면 아래와 같이 나옵니다.
+위 App은 부모 컴포넌트이고 state 객체에 error라는 프로퍼티를 가지고 있습니다. 디폴트로 false로 설정해주고, MyComponent인 자식 컴포넌트에서 에러가 발생하면 위에서 설명했듯이 `componentDidCatch(error, info)`로 에러를 확인하고 처리할 수 있습니다. error와 info를 console에 찍으면 아래와 같이 나옵니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/103902427-db5b9800-513d-11eb-8288-c314e2ebfa26.png)
 
 
 error는 어떤 자식 컴포넌트에서 렌더링 에러가 발생했는지 보여줍니다. 그리고 info는 stackTrace 정보를 보여주고 있습니다.
 
-여기서 에러 문구를 보여주기 위해서 componentDidCatch 호출 시 state.error를 true로 변경하면 render() 함수 호출 시 에러 문구만 보여주도록 렌더링 할 수 있습니다. 
+여기서 에러 문구를 보여주기 위해서 componentDidCatch 호출 시 state.error를 true로 변경하면 render() 함수 호출 시 에러 문구만 보여주도록 렌더링할 수 있습니다. 

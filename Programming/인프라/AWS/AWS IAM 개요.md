@@ -1,6 +1,6 @@
 # 1. IAM 개요
 
-IAM(Identity and Access Management)는 계정 및 권한 관리 서비스입니다.
+IAM(Identity and Access Management)은 계정 및 권한 관리 서비스입니다.
 AWS 서비스와 리소스에 대한 엑세스를 관리합니다.
 
 IAM 구성요소들은 아래와 같이 구성됩니다.

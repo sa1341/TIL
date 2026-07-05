@@ -1,6 +1,6 @@
 # gRPC란 무엇인가?
 
-gRPC를 살펴보기전에 RPC(Remote Procedure Call)에 대해서 먼저 개념을 살펴보았습니다.
+gRPC를 살펴보기 전에 RPC(Remote Procedure Call)에 대해서 먼저 개념을 살펴보았습니다.
 
 ## 1. RPC
 
