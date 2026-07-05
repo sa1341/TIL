@@ -1,6 +1,8 @@
-# 리엑트 최적화 활용 및 Ref
+# 리액트 최적화 활용 및 Ref
 
-ShouldComponentUpdate 함수는 컴포넌트의 상태 값과 부모 컴포넌트로부터 받은 props 객체의 값에 따라서 리렌더링 할지 안할지 결정해주는 함수 입니다. 만약 PhoneInfo 컴포넌트 중에서 굳이 update를 할 필요가 없는데 다른 PhoneInfo 컴포넌트의 수정이 발생할 때마다 모든 PhoneInfo 컴포넌트가 리렌더링 된다면 업데이트 성능이 많이 떨어질 수 밖에 없습니다. 
+![리렌더 최적화 — shouldComponentUpdate / React.memo](../../Attached%20file/react_optimization.svg)
+
+shouldComponentUpdate 함수는 컴포넌트의 상태 값과 부모 컴포넌트로부터 받은 props 객체의 값에 따라서 리렌더링을 할지 말지 결정해주는 함수입니다. 만약 PhoneInfo 컴포넌트 중에서 굳이 update를 할 필요가 없는데 다른 PhoneInfo 컴포넌트의 수정이 발생할 때마다 모든 PhoneInfo 컴포넌트가 리렌더링 된다면 업데이트 성능이 많이 떨어질 수 밖에 없습니다. 
 
 
 ```javascript
