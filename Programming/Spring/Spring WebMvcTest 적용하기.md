@@ -151,4 +151,4 @@ given()을 사용하여 getBookList() 메서드의 실행에 대한 반환값을
 - andExpect(status().isOk()): http 상탯값이 200인지 테스트
 - andExpect(view().name("book")): 반환하는 뷰의 이름이 'book'인지 테스트
 - andExpect(model().attributeExists("bookList")): 모델의 프로퍼티 중 'bookList'라는 프로퍼티가 존재하는지 테스트
-- andExpect(model().attribute("bookList", contains(book))): 모델의 프로퍼티 중 'bookList'라는 프로퍼티에 book 객체가 담겨져 있는지 테스트
+- andExpect(model().attribute("bookList", contains(book))): 모델의 프로퍼티 중 'bookList'라는 프로퍼티에 book 객체가 담겨 있는지 테스트

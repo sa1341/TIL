@@ -139,7 +139,7 @@ public interface ApiDocumentUtils {
 
 위의 ApiDocumentUtils 클래스의 getDocumentRequest() 메서드는 문서상 uri를 기본 값인 `http://localhost:8080`에서 `http://investment.api.com`으로 변경하기 위해 사용합니다.
 
-prettyPrint()는 문서의 request를 보기좋게 출력하기 위해 사용합니다.
+prettyPrint()는 문서의 request를 보기 좋게 출력하기 위해 사용합니다.
 getDocumentResponse() 메서드 역시 문서의 response를 보기 좋게 출력하는 용도로 사용합니다.
 
 

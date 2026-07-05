@@ -63,7 +63,7 @@ dependencyManagement {
 
 아래 Spring Boot를 실행하는 클래스에 `@EnableConfigServer` 어노테이션을 추가하면 외부 설정값들을 제공하기 위한 API를 제공해주는 Config Server의 역할을 하게 됩니다. 
 
->> 제공해주는 API 목록은 [공홈](https://cloud.spring.io/spring-cloud-config/reference/html/#_setting_http_connection_timeout)에서 확인 할 수 있습니다.
+>> 제공해주는 API 목록은 [공홈](https://cloud.spring.io/spring-cloud-config/reference/html/#_setting_http_connection_timeout)에서 확인할 수 있습니다.
 
 ```kotlin
 @SpringBootApplication
@@ -101,7 +101,7 @@ spring:
 
 ![image](https://user-images.githubusercontent.com/22395934/179759402-c0ba5bb9-c404-45ea-aa55-25f9a4ad9233.png)
 
-설정 파일을 생성할때는 `{application}-{profile}.yml` 형태로 생성합니다. 저 같은 경우에는 `fund-config`로 application 이름을 만들었습니다. 
+설정 파일을 생성할 때는 `{application}-{profile}.yml` 형태로 생성합니다. 저 같은 경우에는 `fund-config`로 application 이름을 만들었습니다. 
 
 이제 GitHub에 `PUSH`만 하면 Config 저장소 설정도 끝이 납니다.
 

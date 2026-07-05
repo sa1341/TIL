@@ -119,7 +119,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 ```
 
-이 `application`은 응용 프로그램에 대한 기능을 제공하는 플러그인입니다. run 응용 프로그램을 실행하는 테스크도 `application` 플러그인에 의해 제공되는 테스크 입니다.
+이 `application`은 응용 프로그램에 대한 기능을 제공하는 플러그인입니다. run 응용 프로그램을 실행하는 테스크도 `application` 플러그인에 의해 제공되는 테스크입니다.
 
 - 메인 클래스 이름
 ```java
