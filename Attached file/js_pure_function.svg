@@ -1,0 +1,38 @@
+<svg viewBox="0 0 820 370" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="pfar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#2E8B6B"/></marker>
+    <marker id="pfarr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#B83227"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="370" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">순수 함수 (Pure Function) — 함수형의 핵심</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">같은 입력이면 항상 같은 출력 · 외부 상태를 읽거나 바꾸지 않음(부수 효과 없음) → 예측·테스트가 쉬움</text>
+
+  <!-- pure -->
+  <rect x="40" y="92" width="360" height="120" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.6"/>
+  <text x="60" y="116" font-size="13.5" font-weight="700" fill="#1F6B4E">순수 함수 ✅</text>
+  <rect x="60" y="128" width="90" height="34" rx="6" fill="#ffffff" stroke="#2E8B6B"/><text x="105" y="150" font-size="11" fill="#1F6B4E" text-anchor="middle">입력 2, 3</text>
+  <line x1="150" y1="145" x2="196" y2="145" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#pfar)"/>
+  <rect x="200" y="128" width="90" height="34" rx="6" fill="#ffffff" stroke="#2E8B6B"/><text x="245" y="150" font-size="11" fill="#1F6B4E" text-anchor="middle">add(a,b)</text>
+  <line x1="290" y1="145" x2="336" y2="145" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#pfar)"/>
+  <rect x="340" y="128" width="50" height="34" rx="6" fill="#ffffff" stroke="#2E8B6B"/><text x="365" y="150" font-size="11" fill="#1F6B4E" text-anchor="middle">5</text>
+  <text x="60" y="186" font-size="10.5" fill="#3E5060">항상 5 반환 · 외부 변수 안 건드림 · 콘솔·DOM·네트워크 X</text>
+  <text x="60" y="203" font-size="10.5" fill="#8A9BA8">→ 캐싱(메모이제이션)·병렬화·테스트가 쉬움</text>
+
+  <!-- impure -->
+  <rect x="420" y="92" width="360" height="120" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="440" y="116" font-size="13.5" font-weight="700" fill="#B83227">비순수 함수 ⚠</text>
+  <rect x="440" y="128" width="90" height="34" rx="6" fill="#ffffff" stroke="#B83227"/><text x="485" y="150" font-size="11" fill="#B83227" text-anchor="middle">입력</text>
+  <line x1="530" y1="145" x2="576" y2="145" stroke="#B83227" stroke-width="1.6" marker-end="url(#pfarr)"/>
+  <rect x="580" y="128" width="100" height="34" rx="6" fill="#ffffff" stroke="#B83227"/><text x="630" y="150" font-size="10.5" fill="#B83227" text-anchor="middle">함수 + 외부상태</text>
+  <line x1="680" y1="145" x2="726" y2="145" stroke="#B83227" stroke-width="1.6" marker-end="url(#pfarr)"/>
+  <rect x="730" y="128" width="40" height="34" rx="6" fill="#ffffff" stroke="#B83227"/><text x="750" y="150" font-size="10" fill="#B83227" text-anchor="middle">?</text>
+  <text x="440" y="186" font-size="10.5" fill="#3E5060">전역 변수·시간·랜덤에 의존하거나 외부 상태를 변경</text>
+  <text x="440" y="203" font-size="10.5" fill="#8A9BA8">→ 같은 입력에도 결과가 달라질 수 있어 예측 어려움</text>
+
+  <!-- FP principles -->
+  <rect x="40" y="234" width="740" height="100" rx="12" fill="#F4F6F7" stroke="#8A9BA8"/>
+  <text x="60" y="258" font-size="12.5" font-weight="700" fill="#3E5060">함수형 프로그래밍의 지향점</text>
+  <text x="60" y="282" font-size="11" fill="#8A9BA8">• 순수 함수로 로직 구성 · • 불변성(데이터를 바꾸지 않고 새 값 반환) · • 부수 효과 최소화·격리</text>
+  <text x="60" y="304" font-size="11" fill="#8A9BA8">• 함수를 값처럼 다룸(고차 함수: 함수를 인자로 받거나 반환) · • map/filter/reduce 로 선언적으로 표현</text>
+  <text x="60" y="326" font-size="11" fill="#8A9BA8">→ 결과적으로 예측 가능하고 테스트·재사용·병렬화하기 쉬운 코드가 된다.</text>
+</svg>

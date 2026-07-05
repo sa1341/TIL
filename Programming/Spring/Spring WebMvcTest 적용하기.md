@@ -1,5 +1,7 @@
 ## @WebMvcTest
 
+![스프링 테스트 슬라이스 로딩 범위 비교](../../Attached%20file/spring_test_slices.svg)
+
 MVC를 위한 테스트로 웹에서 테스트하기 힘든 컨트롤러를 테스트하는데 적합합니다. 웹 상에서 요청과 응답에 대해 테스트할 수 있습니다. 뿐만 아니라 시큐리티 혹은 필터까지 자동으로 테스트하며 수동으로 추가/삭제까지 가능한 유용한 녀석입니다.
 
 @WebMvcTest 어노테이션을 사용하면 MVC 관련 설정인 @Controller, @ControllerAdvice, @JsonComponent와 Filter, WebMvcConfigurer, HandlerMethodArgumentResolver만 로드되기 때문에 @SpringBootTest 어노테이션보다 가볍게 테스트할 수 있습니다.

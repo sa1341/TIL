@@ -1,0 +1,43 @@
+<svg viewBox="0 0 820 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="spar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="380" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Specification(스펙) 패턴 — 검색 조건을 객체로</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">조건 조합마다 find 메서드를 만들면 폭발 → 조건을 스펙 객체로 만들어 조합(and/or)하고 리포지터리에 전달</text>
+
+  <!-- problem -->
+  <rect x="40" y="90" width="230" height="120" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="60" y="114" font-size="12.5" font-weight="700" fill="#B83227">문제</text>
+  <text x="60" y="136" font-size="10.5" fill="#3E5060">findByCustomer()</text>
+  <text x="60" y="154" font-size="10.5" fill="#3E5060">findByCustomerAndDate()</text>
+  <text x="60" y="172" font-size="10.5" fill="#3E5060">findByStatusAndDate()...</text>
+  <text x="60" y="196" font-size="10.5" fill="#B83227" font-weight="700">조합마다 메서드 폭발 💥</text>
+
+  <line x1="270" y1="150" x2="316" y2="150" stroke="#08748C" stroke-width="1.6" marker-end="url(#spar)"/>
+
+  <!-- Specification interface -->
+  <rect x="320" y="90" width="240" height="120" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="440" y="112" font-size="11" fill="#8A5E12" text-anchor="middle">«interface»</text>
+  <text x="440" y="130" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">Specification&lt;T&gt;</text>
+  <line x1="320" y1="140" x2="560" y2="140" stroke="#C88A2E"/>
+  <text x="336" y="162" font-size="11" fill="#17212B">boolean isSatisfiedBy(T agg)</text>
+  <text x="336" y="186" font-size="10" fill="#8A9BA8">대상이 조건을 충족하면 true</text>
+
+  <!-- compose -->
+  <rect x="600" y="90" width="180" height="120" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="690" y="114" font-size="12.5" font-weight="700" fill="#065A6E" text-anchor="middle">조합</text>
+  <text x="690" y="138" font-size="10.5" fill="#3E5060" text-anchor="middle">spec1.and(spec2)</text>
+  <text x="690" y="158" font-size="10.5" fill="#3E5060" text-anchor="middle">spec1.or(spec2)</text>
+  <text x="690" y="178" font-size="10.5" fill="#3E5060" text-anchor="middle">not(spec)</text>
+  <text x="690" y="198" font-size="9.5" fill="#8A9BA8" text-anchor="middle">작은 스펙을 조립</text>
+  <line x1="560" y1="150" x2="598" y2="150" stroke="#08748C" stroke-width="1.4" marker-end="url(#spar)"/>
+
+  <!-- repository usage -->
+  <rect x="40" y="240" width="740" height="90" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="60" y="264" font-size="12.5" font-weight="700" fill="#1F6B4E">리포지터리에 전달</text>
+  <rect x="60" y="276" width="440" height="30" rx="5" fill="#ffffff" stroke="#B7D5DC"/><text x="72" y="296" font-size="10.5" fill="#3E5060">List&lt;Order&gt; findAll(Specification&lt;Order&gt; spec)</text>
+  <text x="520" y="288" font-size="11" fill="#1F6B4E">→ spec.isSatisfiedBy(agg) 로 걸러냄</text>
+  <text x="520" y="306" font-size="10" fill="#8A9BA8">원하는 스펙만 만들어 넘기면 됨</text>
+  <text x="60" y="323" font-size="9.5" fill="#8A9BA8">(실무에선 JPA Criteria/QueryDSL로 스펙을 쿼리로 변환해 DB에서 직접 필터링)</text>
+</svg>

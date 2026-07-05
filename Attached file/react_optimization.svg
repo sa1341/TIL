@@ -1,0 +1,36 @@
+<svg viewBox="0 0 820 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="roar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="820" height="360" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">리렌더 최적화 — shouldComponentUpdate / React.memo</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">state·props가 바뀌면 기본적으로 리렌더 · 실제로 바뀐 게 없다면 리렌더를 건너뛰어 불필요한 연산을 줄인다</text>
+
+  <!-- trigger -->
+  <rect x="40" y="110" width="150" height="56" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="115" y="134" font-size="12" font-weight="700" fill="#8A5E12" text-anchor="middle">setState / 새 props</text>
+  <text x="115" y="152" font-size="10" fill="#8A9BA8" text-anchor="middle">업데이트 트리거</text>
+  <line x1="190" y1="138" x2="236" y2="138" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#roar)"/>
+
+  <!-- gate -->
+  <path d="M 340 96 L 430 138 L 340 180 L 250 138 Z" fill="#EAF4F6" stroke="#08748C" stroke-width="1.4"/>
+  <text x="340" y="132" font-size="10.5" fill="#065A6E" text-anchor="middle">shouldComponent</text>
+  <text x="340" y="148" font-size="10.5" fill="#065A6E" text-anchor="middle">Update() ?</text>
+
+  <!-- true -->
+  <line x1="430" y1="138" x2="500" y2="138" stroke="#B83227" stroke-width="1.6" marker-end="url(#roar)"/>
+  <text x="465" y="128" font-size="10" fill="#B83227" text-anchor="middle">true</text>
+  <rect x="500" y="112" width="290" height="52" rx="10" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="645" y="134" font-size="11.5" font-weight="700" fill="#B83227" text-anchor="middle">리렌더 → Virtual DOM diff → 실제 DOM 갱신</text>
+  <text x="645" y="152" font-size="9.5" fill="#8A9BA8" text-anchor="middle">(바뀐 부분만 반영)</text>
+
+  <!-- false -->
+  <line x1="340" y1="180" x2="340" y2="230" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#roar)"/>
+  <text x="356" y="208" font-size="10" fill="#2E8B6B">false</text>
+  <rect x="200" y="232" width="290" height="52" rx="10" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="345" y="254" font-size="11.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">리렌더 건너뜀 (render 호출 X)</text>
+  <text x="345" y="272" font-size="9.5" fill="#8A9BA8" text-anchor="middle">불필요한 연산·비교 절약</text>
+
+  <text x="40" y="316" font-size="11" fill="#8A9BA8">클래스형: shouldComponentUpdate(nextProps, nextState)에서 이전 값과 비교해 false 반환 시 스킵.</text>
+  <text x="40" y="336" font-size="11" fill="#8A9BA8">함수형: React.memo(Component)로 props가 같으면 리렌더를 막는다 (얕은 비교).</text>
+</svg>
