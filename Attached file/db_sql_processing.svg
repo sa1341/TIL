@@ -1,0 +1,55 @@
+<svg viewBox="0 0 860 430" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="sar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="430" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">SQL 처리 과정 — 파싱 · 최적화 · 로우 소스 생성</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">선언적 SQL을 실제 실행 가능한 절차(프로시저)로 바꾸는 DBMS 엔진의 핵심 단계.</text>
+
+  <!-- SQL input -->
+  <rect x="40" y="100" width="130" height="54" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="105" y="124" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">사용자 SQL</text>
+  <text x="105" y="143" font-size="10" fill="#8A9BA8" text-anchor="middle">구조적·선언적 질의</text>
+  <line x1="170" y1="127" x2="212" y2="127" stroke="#08748C" stroke-width="1.6" marker-end="url(#sar)"/>
+
+  <!-- 1. Parser -->
+  <rect x="214" y="92" width="200" height="70" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="314" y="115" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">① SQL 파서</text>
+  <text x="314" y="134" font-size="10" fill="#5A6B78" text-anchor="middle">파싱 트리 생성</text>
+  <text x="314" y="150" font-size="10" fill="#5A6B78" text-anchor="middle">Syntax · Semantic 체크</text>
+  <line x1="414" y1="127" x2="456" y2="127" stroke="#08748C" stroke-width="1.6" marker-end="url(#sar)"/>
+
+  <!-- 2. Optimizer -->
+  <rect x="458" y="92" width="200" height="70" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="558" y="115" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">② 옵티마이저</text>
+  <text x="558" y="134" font-size="10" fill="#5A6B78" text-anchor="middle">통계 기반 실행계획 비교</text>
+  <text x="558" y="150" font-size="10" fill="#5A6B78" text-anchor="middle">최저 비용 경로 선택</text>
+  <line x1="658" y1="127" x2="700" y2="127" stroke="#08748C" stroke-width="1.6" marker-end="url(#sar)"/>
+
+  <!-- 3. Row-source generator -->
+  <rect x="702" y="92" width="118" height="70" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="761" y="118" font-size="12.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">③ 로우 소스</text>
+  <text x="761" y="135" font-size="12.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">생성</text>
+  <text x="761" y="152" font-size="9.5" fill="#8A9BA8" text-anchor="middle">실행 코드 포맷팅</text>
+
+  <!-- parser detail -->
+  <rect x="120" y="200" width="390" height="96" rx="10" fill="#F7FAFB" stroke="#B7D5DC"/>
+  <text x="138" y="224" font-size="12" font-weight="700" fill="#3E5060">파서가 하는 일</text>
+  <text x="138" y="246" font-size="10.8" fill="#5A6B78">· 파싱 트리: SQL 구성요소를 분석해 트리 구조로 변환</text>
+  <text x="138" y="266" font-size="10.8" fill="#5A6B78">· Syntax 체크: 문법·키워드·순서 오류 확인</text>
+  <text x="138" y="286" font-size="10.8" fill="#5A6B78">· Semantic 체크: 테이블/컬럼 존재·권한 확인</text>
+
+  <!-- optimizer detail -->
+  <rect x="530" y="200" width="290" height="96" rx="10" fill="#F7FAFB" stroke="#B7D5DC"/>
+  <text x="548" y="224" font-size="12" font-weight="700" fill="#3E5060">옵티마이저가 하는 일</text>
+  <text x="548" y="246" font-size="10.8" fill="#5A6B78">· 후보 실행계획들을 도출</text>
+  <text x="548" y="266" font-size="10.8" fill="#5A6B78">· 데이터 딕셔너리의 통계로 예상 비용 산정</text>
+  <text x="548" y="286" font-size="10.8" fill="#5A6B78">· 최저 비용 실행계획 선택 (Full Scan/Index 등)</text>
+
+  <line x1="314" y1="162" x2="314" y2="198" stroke="#8A9BA8" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="558" y1="162" x2="600" y2="198" stroke="#8A9BA8" stroke-width="1.2" stroke-dasharray="4,3"/>
+
+  <text x="40" y="340" font-size="11.5" fill="#8A9BA8">· 실행계획(Explain Plan)으로 어떤 스캔·인덱스를 쓰는지 미리 확인하고, 필요하면 옵티마이저 힌트로 경로를 바꿀 수 있다.</text>
+  <text x="40" y="362" font-size="11.5" fill="#8A9BA8">· 힌트는 주석 기호에 +를 붙여 지정한다. 예: SELECT /*+ INDEX(A 고객_PK) */ ...</text>
+  <text x="40" y="384" font-size="11.5" fill="#8A9BA8">· 옵티마이저도 완벽하지 않으므로, 통계에 담기 어려운 업무 특성은 개발자가 힌트로 보완한다.</text>
+</svg>

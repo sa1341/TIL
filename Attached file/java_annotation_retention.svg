@@ -1,0 +1,41 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="aar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">어노테이션 유지 정책 — RetentionPolicy</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">@Retention으로 어노테이션 정보를 어느 단계까지 남길지 지정한다. 단계가 뒤로 갈수록 더 오래 유지된다.</text>
+
+  <!-- three stages -->
+  <rect x="60" y="96" width="220" height="58" rx="10" fill="#F4F6F8" stroke="#C7D2DA" stroke-width="1.6"/>
+  <text x="170" y="120" font-size="13" font-weight="700" fill="#3E5060" text-anchor="middle">.java 소스 코드</text>
+  <text x="170" y="140" font-size="10.5" fill="#8A9BA8" text-anchor="middle">컴파일러가 읽는 원본</text>
+  <line x1="280" y1="125" x2="318" y2="125" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#aar)"/>
+  <text x="299" y="116" font-size="9.5" fill="#8A9BA8" text-anchor="middle">컴파일</text>
+
+  <rect x="320" y="96" width="220" height="58" rx="10" fill="#F4F6F8" stroke="#C7D2DA" stroke-width="1.6"/>
+  <text x="430" y="120" font-size="13" font-weight="700" fill="#3E5060" text-anchor="middle">.class 바이트 코드</text>
+  <text x="430" y="140" font-size="10.5" fill="#8A9BA8" text-anchor="middle">컴파일 결과물</text>
+  <line x1="540" y1="125" x2="578" y2="125" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#aar)"/>
+  <text x="559" y="116" font-size="9.5" fill="#8A9BA8" text-anchor="middle">로딩</text>
+
+  <rect x="580" y="96" width="220" height="58" rx="10" fill="#F4F6F8" stroke="#C7D2DA" stroke-width="1.6"/>
+  <text x="690" y="120" font-size="13" font-weight="700" fill="#3E5060" text-anchor="middle">JVM 런타임</text>
+  <text x="690" y="140" font-size="10.5" fill="#8A9BA8" text-anchor="middle">리플렉션으로 조회 가능</text>
+
+  <!-- SOURCE bar -->
+  <rect x="60" y="188" width="220" height="44" rx="8" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="170" y="215" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">SOURCE</text>
+  <text x="300" y="215" font-size="11" fill="#5A6B78">소스에서만 유지 · .class에 남지 않음 (예: @Override)</text>
+
+  <!-- CLASS bar -->
+  <rect x="60" y="244" width="480" height="44" rx="8" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="300" y="271" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">CLASS  (기본값)</text>
+  <text x="560" y="271" font-size="11" fill="#5A6B78">.class까지 유지 · 리플렉션으론 못 읽음</text>
+
+  <!-- RUNTIME bar -->
+  <rect x="60" y="300" width="740" height="44" rx="8" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.6"/>
+  <text x="430" y="327" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">RUNTIME — 런타임까지 유지 · 리플렉션으로 조회 가능 (예: @Autowired, 커스텀 어노테이션)</text>
+
+  <text x="40" y="378" font-size="11.5" fill="#8A9BA8">막대의 길이 = 정보가 살아남는 범위. 리플렉션으로 어노테이션을 읽으려면 반드시 RUNTIME으로 지정해야 한다.</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="420" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">데이터 저장 방식 3종 — 오브젝트 · 블록 · 파일</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">저장 단위와 접근 방식이 다르며, AWS는 각 방식에 대응하는 스토리지 서비스를 제공한다.</text>
+
+  <!-- Object storage -->
+  <rect x="40" y="94" width="250" height="270" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="165" y="122" font-size="15" font-weight="700" fill="#065A6E" text-anchor="middle">오브젝트 스토리지</text>
+  <text x="165" y="142" font-size="11" fill="#8A9BA8" text-anchor="middle">Amazon S3</text>
+  <line x1="60" y1="154" x2="270" y2="154" stroke="#B7D5DC"/>
+  <text x="60" y="180" font-size="11" fill="#3E5060">· 데이터를 오브젝트 단위로 저장</text>
+  <text x="60" y="204" font-size="11" fill="#3E5060">· 각 오브젝트 = 키 + 데이터</text>
+  <text x="60" y="222" font-size="11" fill="#3E5060">  + 메타데이터</text>
+  <text x="60" y="246" font-size="11" fill="#3E5060">· 고유 키로 위치 무관 접근</text>
+  <text x="60" y="270" font-size="11" fill="#3E5060">· 무제한에 가까운 확장성</text>
+  <rect x="60" y="292" width="210" height="56" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="165" y="314" font-size="10.5" fill="#5A6B78" text-anchor="middle">백업·아카이브·정적 웹</text>
+  <text x="165" y="334" font-size="10.5" fill="#5A6B78" text-anchor="middle">호스팅·데이터 레이크</text>
+
+  <!-- Block storage -->
+  <rect x="305" y="94" width="250" height="270" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.8"/>
+  <text x="430" y="122" font-size="15" font-weight="700" fill="#B83227" text-anchor="middle">블록 스토리지</text>
+  <text x="430" y="142" font-size="11" fill="#8A9BA8" text-anchor="middle">Amazon EBS</text>
+  <line x1="325" y1="154" x2="535" y2="154" stroke="#F0C9C3"/>
+  <text x="325" y="180" font-size="11" fill="#3E5060">· 고정 크기 블록으로 분할 저장</text>
+  <text x="325" y="204" font-size="11" fill="#3E5060">· 각 블록에 고유 식별자 부여</text>
+  <text x="325" y="228" font-size="11" fill="#3E5060">· 원하는 위치에 블록 배치</text>
+  <text x="325" y="252" font-size="11" fill="#3E5060">· 낮은 지연·높은 IOPS</text>
+  <text x="325" y="276" font-size="11" fill="#3E5060">· EC2에 붙이는 디스크 볼륨</text>
+  <rect x="325" y="292" width="210" height="56" rx="8" fill="#ffffff" stroke="#F0C9C3"/>
+  <text x="430" y="314" font-size="10.5" fill="#5A6B78" text-anchor="middle">DB 데이터 볼륨</text>
+  <text x="430" y="334" font-size="10.5" fill="#5A6B78" text-anchor="middle">부트 볼륨·저지연 워크로드</text>
+
+  <!-- File storage -->
+  <rect x="570" y="94" width="250" height="270" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="695" y="122" font-size="15" font-weight="700" fill="#1F6B4E" text-anchor="middle">파일 스토리지</text>
+  <text x="695" y="142" font-size="11" fill="#8A9BA8" text-anchor="middle">Amazon EFS · FSx</text>
+  <line x1="590" y1="154" x2="800" y2="154" stroke="#C3E2D2"/>
+  <text x="590" y="180" font-size="11" fill="#3E5060">· 계층적 디렉터리 구조로 저장</text>
+  <text x="590" y="204" font-size="11" fill="#3E5060">· 파일을 폴더 경로로 관리</text>
+  <text x="590" y="228" font-size="11" fill="#3E5060">· 접근 시 경로를 알아야 함</text>
+  <text x="590" y="252" font-size="11" fill="#3E5060">· 여러 인스턴스가 공유 마운트</text>
+  <text x="590" y="276" font-size="11" fill="#3E5060">· 제한된 메타데이터</text>
+  <rect x="590" y="292" width="210" height="56" rx="8" fill="#ffffff" stroke="#C3E2D2"/>
+  <text x="695" y="314" font-size="10.5" fill="#5A6B78" text-anchor="middle">공유 파일 시스템</text>
+  <text x="695" y="334" font-size="10.5" fill="#5A6B78" text-anchor="middle">콘텐츠 저장소·리프트앤시프트</text>
+
+  <text x="40" y="396" font-size="11.5" fill="#8A9BA8">S3는 최소 3개 가용영역에 자동 분산 저장되어 높은 내구성·가용성을 제공하며, 버킷(리전 단위)에 오브젝트(최대 5TB)를 담는다.</text>
+</svg>

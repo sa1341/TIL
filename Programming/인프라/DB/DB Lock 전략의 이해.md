@@ -22,6 +22,8 @@
 
 그럼 트랜잭션 격리수준 4가지를 전부 상세하게 살펴보겠습니다.
 
+![트랜잭션 격리 수준별 발생 가능한 이상 현상 매트릭스](../../../Attached%20file/db_isolation_levels.svg)
+
 #### READ UNCOMMITTED
 
 READ UNCOMMITTED는 격리수준에서는 어떤 트랜잭션 변경 내용이 COMMIT이나 ROLLBACK과 상관없이 다른 트랜잭션에서 보여집니다.

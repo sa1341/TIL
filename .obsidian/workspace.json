@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/CS/멀티 쓰레드의 개념.md",
+                "file": "Programming/인프라/DB/Oracle/SQL 처리과정과 IO 다루기.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "멀티 쓰레드의 개념"
+              "title": "SQL 처리과정과 IO 다루기"
             }
           }
         ],
@@ -464,6 +464,15 @@
   },
   "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Programming/인프라/k8s/프로세스 상태검사.md.tmp.40895.aee971da0101",
+    "Attached file/java_annotation_retention.svg",
+    "Attached file/java_annotation_retention.svg.tmp.40895.c9489a54a63b",
+    "Attached file/aws_s3_storage_types.svg",
+    "Attached file/db_sql_processing.svg",
+    "Attached file/k8s_probes.svg",
+    "Attached file/db_isolation_levels.svg",
+    "Attached file/db_isolation_levels.svg.tmp.40895.1329fbbf8e13",
+    "Attached file/js_promise_states.svg",
     "Programming/JavaScript/Ajax.md.tmp.40895.ed996095ea65",
     "Programming/JavaScript/자바스크립트 에러 핸들링.md.tmp.40895.ba851ab6beb2",
     "Programming/JavaScript/JavaScript 컴파일.md.tmp.40895.5f68b13dfd01",
@@ -472,19 +481,10 @@
     "Attached file/react_props_state.svg.tmp.40895.d4a58a978692",
     "Attached file/cs_ssl_cert_chain.svg",
     "Attached file/oauth_authorization_code.svg",
-    "Attached file/react_optimization.svg",
-    "Attached file/ddd_specification.svg",
     "Programming/JavaScript/자바스크립트 함수형 프로그래밍.md.tmp.40895.a02f110db1cb",
-    "Attached file/js_pure_function.svg",
-    "Attached file/spring_test_slices.svg",
-    "Attached file/angular_ngmodule.svg",
     "Attached file/angular_ngmodule.svg.tmp.40895.83fdbbc1619a",
     "Programming/JavaScript/모듈.md.tmp.40895.f42485203ff3",
-    "Attached file/js_modules.svg",
     "Attached file/js_modules.svg.tmp.40895.ebf999d1a391",
-    "Attached file/kotlin_visibility.svg.tmp.40895.cd36691ea4b3",
-    "Attached file/kotlin_lazy_lateinit.svg.tmp.40895.9a249d7946be",
-    "Programming/JPA/객체지향 쿼리 언어.md.tmp.40895.8a6ae94f5e13",
     "Programming/인프라/DB/Oracle/오라클 리스너.md",
     "Programming/인프라/AWS/AWS 데이터베이스.md",
     "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
