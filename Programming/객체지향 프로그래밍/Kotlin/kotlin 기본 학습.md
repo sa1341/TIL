@@ -13,7 +13,7 @@ fun main() {
 
 순서는 코틀린 -> 바이트 코드 순서로 JVM에서 실행됩니다.
 
-위의 메서드를 decompile을 하면 아래와 같은 코드로 해석이됩니다.
+위의 메서드를 decompile을 하면 아래와 같은 코드로 해석이 됩니다.
 
 ```kotlin
 public final class HelloKotlinKt {
@@ -299,7 +299,7 @@ var y:Int = 3
 val t:String = y as String 
 val tt:String? = y as? String
 ```
-y가 null이 아니면 String으로 형변환되어 t에 할당됩니다. 만약 null이라면 형변환 할 수 없으므로 exception이 발생합니다.
+y가 null이 아니면 String으로 형변환되어 t에 할당됩니다. 만약 null이라면 형변환할 수 없으므로 exception이 발생합니다.
 
 null이 발생할 가능성이 있다면 예외를 피하기 위해 아래와 같이 물음표를 붙여서 해결 가능합니다.
 

@@ -12,7 +12,7 @@
 
 ## 프로세스 영역
 
-- Server Process: redis-server.exe 또는 redis-sentinel.exe 실행코드에 의해 활성화 되는 프로세스를 서버 프로세스라고 하며 Redis 인스턴스를 관리해 주며 사용자가 요구한 작업을 수행하는 프로세스입니다. Redis Server 프로세스는 4개의 멀티 스레드로 구성되는데 main thread, sub thread 1 (BIO-Close-File), sub thread 2(BIO-AOF-Resync), sub thread 3(BIO-Lazy-Free) 입니다.
+- Server Process: redis-server.exe 또는 redis-sentinel.exe 실행코드에 의해 활성화되는 프로세스를 서버 프로세스라고 하며 Redis 인스턴스를 관리해 주며 사용자가 요구한 작업을 수행하는 프로세스입니다. Redis Server 프로세스는 4개의 멀티 스레드로 구성되는데 main thread, sub thread 1 (BIO-Close-File), sub thread 2(BIO-AOF-Resync), sub thread 3(BIO-Lazy-Free) 입니다.
 
 - Client Process: redis-cli.exe 또는 사용자 애플리케이션에 의해 실행되는 명령어를 실행하기 위해 제공되는 프로세스 입니다.
 

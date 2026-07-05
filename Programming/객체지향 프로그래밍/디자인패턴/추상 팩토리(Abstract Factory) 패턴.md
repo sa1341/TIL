@@ -5,7 +5,7 @@
 
 ![Untitled Diagram (4)](https://user-images.githubusercontent.com/22395934/81499868-70856300-9309-11ea-8648-9c4200544fec.png)
 
-실제 게임 플레이를 진행하는 Stage 클래스는 몇 단계인지 따라 서로 다른 적기, 장애물 또는 보스를 생성해야 합니다. 이를 처리하기 위해 Stage 클래스의 코드를 다음과 같이 작성할 수 있을 것입니다.
+실제 게임 플레이를 진행하는 Stage 클래스는 몇 단계인지에 따라 서로 다른 적기, 장애물 또는 보스를 생성해야 합니다. 이를 처리하기 위해 Stage 클래스의 코드를 다음과 같이 작성할 수 있을 것입니다.
 
 ```java
 // Stage 클래스
@@ -99,7 +99,7 @@ public class HardEnemyFactory extends EnemyFactory {
 }
 ```
 
-Stage 클래스는 객체 생성이 필요한 경우 직접 생성하기 보다는 아래 코드처럼 추상 팩토리 타입인 EnemyFactory를 이용해서 객체를 생성합니다.
+Stage 클래스는 객체 생성이 필요한 경우 직접 생성하기보다는 아래 코드처럼 추상 팩토리 타입인 EnemyFactory를 이용해서 객체를 생성합니다.
 
 ```java
 // 팩토리를 사용하도록 바뀐 Stage 클래스

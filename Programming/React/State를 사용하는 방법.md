@@ -44,7 +44,7 @@ export default Counter; // 모듈을 사용하기 위해서 항상 export를 해
 
 counter.js 파일을 만들고 내부에 Counter 컴포넌트를 생성하고 JSX 문법으로 값을 증감시키는 버튼을 만들어서 버튼을 통해서 값을 변경하는 예제 코드입니다.
 
-그리고 App 컴포넌트에서 state를 가지고 있는 Counter 컴포넌트를 import하여 실제 html 페이지에서 Counter 컴포넌트가 랜더링한 페이지를 보여주고 있습니다.
+그리고 App 컴포넌트에서 state를 가지고 있는 Counter 컴포넌트를 import하여 실제 html 페이지에서 Counter 컴포넌트가 렌더링한 페이지를 보여주고 있습니다.
 
 ```javascript
 import React, { Component } from 'react';

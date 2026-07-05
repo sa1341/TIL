@@ -1,6 +1,6 @@
 # Angular 모듈
 
-Angular 모듈에 대해서 알기전에 간단하게 사전지식으로 Annotation이라는 것을 알아봤습니다. Java 언어에서 사용해봤던 어노테이션과 마찬가지로 Angular에서도 어노테이션은 중요한 개념입니다. Annotation의 용도는 Class를 어떤 용도로 사용할 것인지를 정해주는 용도입니다.
+Angular 모듈에 대해서 알기 전에 간단하게 사전지식으로 Annotation이라는 것을 알아봤습니다. Java 언어에서 사용해봤던 어노테이션과 마찬가지로 Angular에서도 어노테이션은 중요한 개념입니다. Annotation의 용도는 Class를 어떤 용도로 사용할 것인지를 정해주는 용도입니다.
 
 Annotation은 class위에 @를 사용해서 정의합니다.
 
@@ -18,7 +18,7 @@ Annotation은 class위에 @를 사용해서 정의합니다.
 1. 특정 기능에 대하여 관련된 component나 service, directive 등을 편하게 사용하기 위해 하나로 모은 것입니다.
 
 즉, 특정한 기능을 사용하기 위해 관련된 모든 것을 모아 놓은 것이라고 볼 수 있습니다.
-예를 들면 배송 모듈이나 결제 모듈을 대표적입니다.
+예를 들면 배송 모듈이나 결제 모듈이 대표적입니다.
 
 2. 생성방법은 @NgModule 어노테이션을 class에 선언함으로써 해당 class를 모듈로 만들 수 있습니다.
 
@@ -47,7 +47,7 @@ export class AppModule {}
     - 공통 서비스의 등록, 등록된 서비스는 앱의 모든 부분에서 사용 가능합니다.
 
 - bootstrap
-    - 메인 애플리케이션 view로 사용될 root component를 지정합니다. root module에서만 지정 가능 합니다.
+    - 메인 애플리케이션 view로 사용될 root component를 지정합니다. root module에서만 지정 가능합니다.
 
 
 
@@ -66,7 +66,7 @@ export class AppModule {}
 3. 생성 방법
 - @Component 어노테이션을 사용하여 class를 component로 만듭니다.
 - annotation안에는 화면 관련 부분을 구현합니다.
-- class 부분에는 component의 동작 관련 부분을 구현 합니다.
+- class 부분에는 component의 동작 관련 부분을 구현합니다.
 
 ```java
 // 컴포넌트 선언
@@ -87,14 +87,14 @@ class AngularComponent { // 동작을 구성하는 class 부분
 4. @Component Annotation에서 사용 가능한 메타데이터 구성 요소
 
 - selector
-    - HTML에서 어느 곳을 Component로 대체 할지 구분하기 위한 용도로 사용합니다.
+    - HTML에서 어느 곳을 Component로 대체할지 구분하기 위한 용도로 사용합니다.
     - CSS의 selector와 유사합니다.
     - selector가 '<pet-world>'일 경우 다음 HTML 태그를 안다면 해당 부분을 Component로 교체합니다.
 
     ```javascript
     <pet-world></pet-world>
     ```
-    - Angular라는 다른 애플리케이션의 selector 또는 HTML 요소와 충돌을 방지하기 위해 접두사(prefix)를 추가하여 케밥 표기법(하이폰으로 단어를 연결하는 표기법)으로 selector를 명명하도록 권장하고 있습니다.
+    - Angular라는 다른 애플리케이션의 selector 또는 HTML 요소와 충돌을 방지하기 위해 접두사(prefix)를 추가하여 케밥 표기법(하이픈으로 단어를 연결하는 표기법)으로 selector를 명명하도록 권장하고 있습니다.
 
 
 - template
@@ -144,7 +144,7 @@ class LogDirective {
     - 이벤트 바인딩 된 출력 특성 세트. 출력 속성이 이벤트를 내 보내면 템플릿의 해당 이벤트에 연결된 이벤트 처리기가 호출됩니다.
 
 - providers	
-    - 이 지시문 또는 구성 요소의 인젝터를 종속성 공급자에 매핑되는 토큰으로 구성 합니다.
+    - 이 지시문 또는 구성 요소의 인젝터를 종속성 공급자에 매핑되는 토큰으로 구성합니다.
 
 - exportAs	
     - 이 지시어를 변수에 할당하기 위해 템플릿에서 사용할 수 있는 이름. 
@@ -154,13 +154,13 @@ class LogDirective {
     - 지시문에 삽입 될 쿼리를 구성합니다.
 
 - jit	
-    - true 인 경우이 지시문 / 구성 요소는 AOT 컴파일러에서 건너 뛰므로 항상 JIT를 사용하여 컴파일됩니다.
+    - true 인 경우 이 지시문 / 구성 요소는 AOT 컴파일러에서 건너 뛰므로 항상 JIT를 사용하여 컴파일됩니다.
 
 - host	
     - 키 : 값 쌍을 사용하여, 호스트 element에 event 이벤트를 연결 합니다.
     호스트 element는 selector에서 선택한 input element입니다.
 
 > 이벤트를 이벤트 핸들러 함수와 연결하려면 이벤트명(input)을 괄호로 감싸면 됩니다.
-`'(input)' : 'onInput($event)'` 그리고 이벤트 핸들러 `onInput`을 class에 서 정의하면 됩니다.
+`'(input)' : 'onInput($event)'` 그리고 이벤트 핸들러 `onInput`을 class에서 정의하면 됩니다.
 
 #### 참조: https://doitnow-man.tistory.com/177 [즐거운인생 (실패 또하나의 성공]    

@@ -156,14 +156,14 @@ class MyComponent extends Component {
 export default MyComponent;
 ```
 
-render() 함수에서 `{this.props.missing.something}` 값을 브라우저에 랜더링 할 경우 missing이 객체인데 undefined 일 경우 something 값에 접근 할 경우 아래와 같이 에러 문구가 노출이 됩니다.
+render() 함수에서 `{this.props.missing.something}` 값을 브라우저에 렌더링 할 경우 missing이 객체인데 undefined 일 경우 something 값에 접근 할 경우 아래와 같이 에러 문구가 노출이 됩니다.
 
 ![image](https://user-images.githubusercontent.com/22395934/103901901-1d380e80-513d-11eb-8628-12239301bfd7.png)
 
 
 이건 사용자들이 봤을 때 좋지 않은 화면이기 때문에 개발자들에게 에러정보를 전달해 주고 개발자는 사용자가 이해하기 쉬운 에러 문구를 보여줘야 할 경우가 있습니다.
 
-이 경우에는 부모 컴포넌트에서 자식 컴포넌트가 랜더링 할 때 에러가 발생하면 해당 에러를 캐치하여 에러 문구를 보여줄 수 있도록 해줄 수 있습니다.
+이 경우에는 부모 컴포넌트에서 자식 컴포넌트가 렌더링 할 때 에러가 발생하면 해당 에러를 캐치하여 에러 문구를 보여줄 수 있도록 해줄 수 있습니다.
 
 ```javascript
 import React, { Component } from 'react';
@@ -222,6 +222,6 @@ export default App;
 ![image](https://user-images.githubusercontent.com/22395934/103902427-db5b9800-513d-11eb-8288-c314e2ebfa26.png)
 
 
-error는 어떤 자식 컴포넌트에서 랜더링 에러가 발생했는지 보여줍니다. 그리고 info는 stackTrace 정보를 보여주고 있습니다.
+error는 어떤 자식 컴포넌트에서 렌더링 에러가 발생했는지 보여줍니다. 그리고 info는 stackTrace 정보를 보여주고 있습니다.
 
-여기서 에러 문구를 보여주기 위해서 componentDidCatch 호출 시 state.error를 true로 변경하면 render() 함수 호출 시 에러 문구만 보여주도록 랜더링 할 수 있습니다. 
+여기서 에러 문구를 보여주기 위해서 componentDidCatch 호출 시 state.error를 true로 변경하면 render() 함수 호출 시 에러 문구만 보여주도록 렌더링 할 수 있습니다. 
