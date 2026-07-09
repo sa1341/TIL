@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/DB/비관적 락과 낙관적 락.md",
+                "file": "Programming/인프라/네트워크/200 OK인데 왜 결제는 실패했을까 (HTTP 상태 코드의 의미).md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "비관적 락과 낙관적 락"
+              "title": "200 OK인데 왜 결제는 실패했을까 (HTTP 상태 코드의 의미)"
             }
           }
         ],
@@ -464,6 +464,21 @@
   },
   "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Programming/Kafka/알림이 두 번 갔다 (카프카 at-least-once와 컨슈머 멱등성).md",
+    "Programming/Kafka/알림이 두 번 갔다 (카프카 at-least-once와 컨슈머 멱등성).md.tmp.40895.7077cca43f22",
+    "Programming/Kafka/카프카 파티션은 왜 늘리기만 되고 줄이기는 막혀 있을까.md",
+    "Programming/Redis/Redis가 느리다면 네트워크를 의심하라 (파이프라인).md",
+    "Programming/Redis/Redis 분산락 (동시성 · TTL · Watchdog).md",
+    "Programming/인프라/AI 에이전트 시대의 멱등성 (되돌릴 수 없는 작업엔 사람 승인).md",
+    "Programming/인프라/배치가 두 번 실행됐다 (크론잡 중복 실행의 함정).md",
+    "Programming/인프라/배치가 두 번 실행됐다 (크론잡 중복 실행의 함정).md.tmp.40895.1e15c495eed1",
+    "Programming/인프라/재시도가 오히려 장애를 키운다 (재시도 폭풍).md",
+    "Programming/인프라/서킷 브레이커는 차단보다 복귀가 어렵다.md",
+    "Programming/인프라/k8s/무중단 배포인데 왜 결제가 실패할까 (graceful shutdown과 멱등성).md",
+    "Programming/인프라/k8s/무중단 배포인데 왜 결제가 실패할까 (graceful shutdown과 멱등성).md.tmp.40895.69f7de0b0bca",
+    "Programming/인프라/k8s/힙은 남는데 Pod가 계속 죽는다 (OOMKilled의 함정).md",
+    "Programming/인프라/네트워크/WebSocket은 왜 HTTP로 시작할까 (WebSocket 설계).md",
+    "Programming/인프라/네트워크/WebSocket은 왜 HTTP로 시작할까 (WebSocket 설계).md.tmp.40895.f9293ee5df48",
     "Programming/인프라/네트워크/관리자 IP만 허용했는데 뚫렸다 (X-Forwarded-For의 함정).md",
     "Programming/인프라/네트워크/개발에선 나던 이메일 오류가 운영에선 안 나는 이유 (SMTP의 함정).md",
     "Programming/인프라/네트워크/필드 하나 추가했는데 앱이 죽었다 (API 하위 호환성).md",
@@ -484,12 +499,8 @@
     "Programming/인프라/DB/데드락은 왜 생기고 어떻게 대응할까.md",
     "Programming/인프라/DB/데드락은 왜 생기고 어떻게 대응할까.md.tmp.40895.1c69450ce76c",
     "Programming/인프라/DB/비관적 락과 낙관적 락.md",
-    "Programming/인프라/DB/비관적 락과 낙관적 락.md.tmp.40895.ae6ff411ffaa",
     "Programming/인프라/DB/MySQL/MySQL은 왜 기본 격리 수준이 REPEATABLE READ일까.md",
-    "Programming/인프라/DB/MySQL/MySQL은 왜 기본 격리 수준이 REPEATABLE READ일까.md.tmp.40895.4ac38b1fcf1e",
-    "Programming/인프라/k8s/프로세스 상태검사.md.tmp.40895.aee971da0101",
     "Attached file/java_annotation_retention.svg",
-    "Attached file/java_annotation_retention.svg.tmp.40895.c9489a54a63b",
     "Attached file/aws_s3_storage_types.svg",
     "Attached file/db_sql_processing.svg",
     "Attached file/k8s_probes.svg",
@@ -499,17 +510,6 @@
     "Attached file/react_props_state.svg",
     "Attached file/cs_ssl_cert_chain.svg",
     "Attached file/oauth_authorization_code.svg",
-    "Programming/인프라/DB/Oracle/오라클 리스너.md",
-    "Programming/인프라/AWS/AWS 데이터베이스.md",
-    "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
-    "Programming/JavaScript/함수와 프로토타입 체이닝.md",
-    "Programming/JavaScript/모듈.md",
-    "Programming/JavaScript/자바스크립트 함수형 프로그래밍.md",
-    "Programming/JavaScript/자바스크립트 에러 핸들링.md",
-    "Programming/JavaScript/자바스크립트 기초.md",
-    "Programming/JavaScript/duck 타이핑.md",
-    "Programming/JavaScript/실행 컨텍스트와 클로저.md",
-    "Programming/JavaScript/css 기본 속성.md",
     "Untitled.canvas"
   ]
 }
