@@ -2,6 +2,8 @@
 
 WebSocket 연결의 첫 줄을 보면 의외입니다. 양방향 실시간 통신이 목표인데, 왜 굳이 **HTTP 핸드셰이크부터** 거칠까요? TCP 위에 자기만의 프로토콜을 바로 올리면 되잖아요?
 
+![WebSocket — HTTP Upgrade 핸드셰이크 후 양방향 전환](../../../Attached%20file/net_websocket_upgrade.svg)
+
 ## 두 가지 벽
 
 WebSocket 이전엔 **롱 폴링(long polling)**으로 실시간을 흉내 냈습니다. 그럼 TCP 위에 새 프로토콜을 그냥 만들면 되지 않을까요? 두 가지 벽이 있습니다.

@@ -1,0 +1,25 @@
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="380" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">OOMKilled — 힙은 남는데 Pod가 죽는 이유</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">쿠버네티스는 힙이 아니라 컨테이너 전체 RSS를 본다. 보이지 않는 off-heap이 범인</text>
+
+  <!-- heap monitoring view -->
+  <text x="40" y="104" font-size="12" font-weight="700" fill="#065A6E">힙 모니터링이 보는 것 (512MB 중 380MB 여유)</text>
+  <rect x="40" y="114" width="360" height="40" rx="6" fill="#ffffff" stroke="#08748C"/>
+  <rect x="42" y="116" width="120" height="36" rx="4" fill="#EAF4F6"/><text x="102" y="139" font-size="10.5" fill="#065A6E" text-anchor="middle">Heap 사용</text>
+  <text x="300" y="139" font-size="10.5" fill="#8A9BA8" text-anchor="middle">여유 있음 ✓</text>
+
+  <!-- actual RSS -->
+  <text x="440" y="104" font-size="12" font-weight="700" fill="#B83227">쿠버네티스가 보는 것 (컨테이너 RSS 전체)</text>
+  <rect x="440" y="114" width="380" height="150" rx="6" fill="#ffffff" stroke="#B83227"/>
+  <rect x="442" y="116" width="376" height="34" rx="4" fill="#EAF4F6"/><text x="630" y="138" font-size="10.5" fill="#065A6E" text-anchor="middle">Heap</text>
+  <rect x="442" y="152" width="376" height="26" rx="4" fill="#FBF3E4"/><text x="630" y="169" font-size="10" fill="#8A5E12" text-anchor="middle">Metaspace</text>
+  <rect x="442" y="180" width="376" height="26" rx="4" fill="#FBF3E4"/><text x="630" y="197" font-size="10" fill="#8A5E12" text-anchor="middle">Thread Stack (스레드마다)</text>
+  <rect x="442" y="208" width="376" height="26" rx="4" fill="#FBF3E4"/><text x="630" y="225" font-size="10" fill="#8A5E12" text-anchor="middle">Direct Buffer</text>
+  <rect x="442" y="236" width="376" height="26" rx="4" fill="#FBF3E4"/><text x="630" y="253" font-size="10" fill="#8A5E12" text-anchor="middle">Code Cache</text>
+  <text x="630" y="286" font-size="10.5" fill="#B83227" text-anchor="middle">↑ off-heap 합치면 limit 초과 → 커널이 즉시 강제 종료(로그 없이)</text>
+
+  <rect x="40" y="300" width="780" height="52" rx="8" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="56" y="322" font-size="12" font-weight="700" fill="#1F6B4E">정답: off-heap을 직접 제한 (MaxMetaspaceSize, MaxDirectMemorySize, -Xss …)</text>
+  <text x="56" y="342" font-size="11" fill="#5A6B78">limit을 과하게 키우면 노드 메모리를 점유해 같은 노드의 다른 Pod를 쫓아낸다(eviction).</text>
+</svg>

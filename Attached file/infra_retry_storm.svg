@@ -1,0 +1,26 @@
+<svg viewBox="0 0 860 350" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="350" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">재시도 폭풍 — 복구되면 폭주가 덮친다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">외부는 30초 만에 복구됐는데 우리 서버는 10분 더 죽어 있던 이유</text>
+
+  <!-- storm -->
+  <rect x="40" y="90" width="380" height="150" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="230" y="114" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">재시도 폭풍</text>
+  <text x="58" y="138" font-size="10.8" fill="#5A6B78">① 외부 결제 통째로 잠깐 죽음</text>
+  <text x="58" y="158" font-size="10.8" fill="#5A6B78">② 모든 요청 실패 → 모두 3번씩 재시도</text>
+  <text x="58" y="178" font-size="10.8" fill="#5A6B78">③ 30초 뒤 복구 순간 밀린 재시도 폭주</text>
+  <text x="58" y="198" font-size="10.8" fill="#B83227">④ 다시 무너짐 → 반복</text>
+  <text x="230" y="224" font-size="10.5" fill="#8A9BA8" text-anchor="middle">복구되면 폭주, 폭주하면 다시 죽고…</text>
+
+  <!-- solutions -->
+  <rect x="440" y="90" width="380" height="150" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="630" y="114" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">해결 — 타이밍 흩기 + 총량 통제</text>
+  <text x="458" y="138" font-size="11" font-weight="700" fill="#1F6B4E">지수 백오프 + 지터</text>
+  <text x="458" y="156" font-size="10.5" fill="#5A6B78">간격을 점점 벌리고 무작위 흔들림 추가</text>
+  <text x="458" y="174" font-size="10.5" fill="#8A9BA8">(동시 재시도를 흩음 — 단, 총량은 그대로)</text>
+  <text x="458" y="198" font-size="11" font-weight="700" fill="#1F6B4E">서킷 브레이커 · 재시도 예산</text>
+  <text x="458" y="216" font-size="10.5" fill="#5A6B78">임계치 넘으면 차단 · 재시도 비율에 상한</text>
+
+  <text x="32" y="288" font-size="11.5" fill="#8A9BA8">재시도는 복구 도구인 동시에, 잘못 쓰면 장애 증폭 도구.</text>
+  <text x="32" y="312" font-size="11.5" fill="#8A9BA8">안정성은 재시도 횟수가 아니라, 재시도를 멈출 줄 아는 설계에서 나온다.</text>
+</svg>
