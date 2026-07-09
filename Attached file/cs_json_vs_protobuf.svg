@@ -1,0 +1,31 @@
+<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">JSON vs Protobuf — 같은 데이터, 70% 차이</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">직렬화: 메모리 객체 → 바이트 배열. 텍스트냐 바이너리냐가 크기·속도를 가른다</text>
+
+  <!-- JSON -->
+  <rect x="32" y="92" width="390" height="200" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="227" y="118" font-size="15" font-weight="700" fill="#8A5E12" text-anchor="middle">JSON (텍스트)</text>
+  <rect x="52" y="132" width="350" height="30" rx="4" fill="#ffffff" stroke="#DFC28A"/>
+  <text x="227" y="152" font-size="11" fill="#5A6B78" text-anchor="middle" font-family="monospace">{"amount":123400}</text>
+  <text x="52" y="184" font-size="11" fill="#5A6B78">· 필드 이름·콜론·따옴표·중괄호가 전부 바이트</text>
+  <text x="52" y="206" font-size="11" fill="#5A6B78">· 숫자도 문자열 → 파싱·변환 필요</text>
+  <text x="52" y="228" font-size="11" fill="#1F6B4E">✓ 사람이 읽음 · 필드명이 데이터에 포함</text>
+  <text x="52" y="250" font-size="11" fill="#1F6B4E">✓ 스키마 유연 (외부 통신에 유리)</text>
+  <rect x="52" y="262" width="350" height="20" rx="4" fill="#F6EAD2"/>
+  <text x="227" y="277" font-size="10.5" font-weight="700" fill="#8A5E12" text-anchor="middle">크기 큼 · 느림 (읽기 편함의 대가)</text>
+
+  <!-- Protobuf -->
+  <rect x="438" y="92" width="390" height="200" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.6"/>
+  <text x="633" y="118" font-size="15" font-weight="700" fill="#1F6B4E" text-anchor="middle">Protobuf (바이너리)</text>
+  <rect x="458" y="132" width="350" height="30" rx="4" fill="#ffffff" stroke="#A9D5BF"/>
+  <text x="633" y="152" font-size="11" fill="#5A6B78" text-anchor="middle" font-family="monospace">08 E4 C4 07  (필드번호+값)</text>
+  <text x="458" y="184" font-size="11" fill="#5A6B78">· 필드 이름 대신 번호, 숫자는 바이너리</text>
+  <text x="458" y="206" font-size="11" fill="#5A6B78">· 구분자·따옴표 없음 → 바이트 그대로 읽음</text>
+  <text x="458" y="228" font-size="11" fill="#B83227">✗ 디버깅 어려움 (별도 도구 필요)</text>
+  <text x="458" y="250" font-size="11" fill="#B83227">✗ 필드번호 재사용 시 구버전 오독</text>
+  <rect x="458" y="262" width="350" height="20" rx="4" fill="#CDE9DC"/>
+  <text x="633" y="277" font-size="10.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">크기 작음 · 빠름 (내부 통신에 유리)</text>
+
+  <text x="32" y="322" font-size="11.5" fill="#8A9BA8">성능이 필요한 내부 통신은 Protobuf, 유연성이 필요한 외부 통신은 JSON — 용도에 따라 나누는 것이 실무의 선택.</text>
+</svg>

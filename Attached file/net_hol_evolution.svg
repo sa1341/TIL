@@ -1,0 +1,41 @@
+<svg viewBox="0 0 860 430" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="430" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">HTTP의 진화 — HOL 블로킹을 한 계층씩 내려가며 해결</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">같은 문제(Head-of-Line Blocking)를 애플리케이션 → 전송 계층 → 전송 계층 교체로 풀어온 역사</text>
+
+  <!-- HTTP/1.1 -->
+  <rect x="32" y="90" width="256" height="300" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="160" y="118" font-size="15" font-weight="700" fill="#B83227" text-anchor="middle">HTTP/1.1</text>
+  <text x="160" y="138" font-size="11" fill="#8A9BA8" text-anchor="middle">Keep-Alive · 요청 순서대로 응답</text>
+  <rect x="52" y="156" width="216" height="30" rx="5" fill="#ffffff" stroke="#E0B4AD"/><text x="160" y="176" font-size="11" fill="#5A6B78" text-anchor="middle">req1 → (느림) 🐢</text>
+  <rect x="52" y="192" width="216" height="30" rx="5" fill="#F6E4E1" stroke="#E0B4AD"/><text x="160" y="212" font-size="11" fill="#B83227" text-anchor="middle">req2 ⏳ 대기 (앞이 막힘)</text>
+  <rect x="52" y="228" width="216" height="30" rx="5" fill="#F6E4E1" stroke="#E0B4AD"/><text x="160" y="248" font-size="11" fill="#B83227" text-anchor="middle">req3 ⏳ 대기</text>
+  <text x="160" y="292" font-size="12" font-weight="700" fill="#B83227" text-anchor="middle">애플리케이션 레벨 HOL</text>
+  <text x="160" y="314" font-size="10.5" fill="#8A9BA8" text-anchor="middle">우회책: 커넥션 6개 열기</text>
+  <text x="160" y="332" font-size="10.5" fill="#8A9BA8" text-anchor="middle">(근본 해결 아님)</text>
+
+  <!-- HTTP/2 -->
+  <rect x="302" y="90" width="256" height="300" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="430" y="118" font-size="15" font-weight="700" fill="#8A5E12" text-anchor="middle">HTTP/2</text>
+  <text x="430" y="138" font-size="11" fill="#8A9BA8" text-anchor="middle">멀티플렉싱 · 한 TCP에 동시 요청</text>
+  <rect x="322" y="156" width="216" height="30" rx="5" fill="#ffffff" stroke="#DFC28A"/><text x="430" y="176" font-size="11" fill="#2E8B6B" text-anchor="middle">req1 req2 req3 동시 ✓</text>
+  <text x="430" y="210" font-size="11.5" fill="#1F6B4E" text-anchor="middle">앱 레벨 HOL 해결 ✓</text>
+  <rect x="322" y="228" width="216" height="72" rx="6" fill="#FCF5F4" stroke="#B83227" stroke-dasharray="4,3"/>
+  <text x="430" y="252" font-size="11" fill="#B83227" text-anchor="middle">그러나 아래 TCP는</text>
+  <text x="430" y="270" font-size="11" fill="#B83227" text-anchor="middle">패킷 순서를 보장 →</text>
+  <text x="430" y="288" font-size="11" fill="#B83227" text-anchor="middle">패킷 1개 유실 시 전부 대기</text>
+  <text x="430" y="330" font-size="12" font-weight="700" fill="#B83227" text-anchor="middle">TCP 레벨 HOL 재발</text>
+
+  <!-- HTTP/3 -->
+  <rect x="572" y="90" width="256" height="300" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.6"/>
+  <text x="700" y="118" font-size="15" font-weight="700" fill="#1F6B4E" text-anchor="middle">HTTP/3</text>
+  <text x="700" y="138" font-size="11" fill="#8A9BA8" text-anchor="middle">TCP 버리고 UDP 위 QUIC</text>
+  <rect x="592" y="156" width="216" height="30" rx="5" fill="#ffffff" stroke="#A9D5BF"/><text x="700" y="176" font-size="11" fill="#1F6B4E" text-anchor="middle">스트림별 독립 패킷 관리</text>
+  <rect x="592" y="192" width="102" height="46" rx="5" fill="#CDE9DC" stroke="#A9D5BF"/><text x="643" y="212" font-size="10.5" fill="#1F6B4E" text-anchor="middle">스트림1</text><text x="643" y="228" font-size="9.5" fill="#B83227" text-anchor="middle">유실 발생</text>
+  <rect x="706" y="192" width="102" height="46" rx="5" fill="#CDE9DC" stroke="#A9D5BF"/><text x="757" y="212" font-size="10.5" fill="#1F6B4E" text-anchor="middle">스트림2·3</text><text x="757" y="228" font-size="9.5" fill="#1F6B4E" text-anchor="middle">영향 없음 ✓</text>
+  <text x="700" y="268" font-size="12" font-weight="700" fill="#1F6B4E" text-anchor="middle">HOL 근본 해결</text>
+  <text x="700" y="300" font-size="10.5" fill="#8A9BA8" text-anchor="middle">한계: 방화벽 UDP 차단·</text>
+  <text x="700" y="317" font-size="10.5" fill="#8A9BA8" text-anchor="middle">CPU 부담 → 2/3 병행 제공</text>
+
+  <text x="32" y="418" font-size="11.5" fill="#8A9BA8">애플리케이션(1.1→2)에서 풀고, 전송 계층에서 다시 막히자, 결국 전송 계층 자체를 교체(TCP→QUIC)했다.</text>
+</svg>

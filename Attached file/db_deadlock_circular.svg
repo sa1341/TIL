@@ -1,0 +1,31 @@
+<svg viewBox="0 0 860 370" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="dar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#B83227"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="370" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">데드락 — 순환 대기가 만드는 교착</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">A는 B가 쥔 락을, B는 A가 쥔 락을 기다린다 → 영원히 안 풀림</text>
+
+  <!-- circular wait -->
+  <rect x="120" y="120" width="180" height="70" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="210" y="150" font-size="14" font-weight="700" fill="#065A6E" text-anchor="middle">트랜잭션 A</text>
+  <text x="210" y="172" font-size="10.5" fill="#8A9BA8" text-anchor="middle">재고 락 보유 · 상품 락 대기</text>
+
+  <rect x="480" y="120" width="180" height="70" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.8"/>
+  <text x="570" y="150" font-size="14" font-weight="700" fill="#8A5E12" text-anchor="middle">트랜잭션 B</text>
+  <text x="570" y="172" font-size="10.5" fill="#8A9BA8" text-anchor="middle">상품 락 보유 · 재고 락 대기</text>
+
+  <path d="M300 138 C 380 118, 400 118, 478 138" fill="none" stroke="#B83227" stroke-width="1.8" marker-end="url(#dar)"/>
+  <text x="390" y="112" font-size="11" fill="#B83227" text-anchor="middle">상품 락을 기다림</text>
+  <path d="M478 172 C 400 192, 380 192, 302 172" fill="none" stroke="#B83227" stroke-width="1.8" marker-end="url(#dar)"/>
+  <text x="390" y="210" font-size="11" fill="#B83227" text-anchor="middle">재고 락을 기다림</text>
+
+  <!-- conditions -->
+  <text x="40" y="252" font-size="12.5" font-weight="700" fill="#3E5060">4가지 조건이 동시 성립해야 발생 (Coffman) — 하나만 깨면 예방</text>
+  <rect x="40" y="264" width="190" height="34" rx="6" fill="#F4F6F8" stroke="#C7D2DA"/><text x="135" y="286" font-size="10.5" fill="#5A6B78" text-anchor="middle">① 상호 배제</text>
+  <rect x="238" y="264" width="190" height="34" rx="6" fill="#F4F6F8" stroke="#C7D2DA"/><text x="333" y="286" font-size="10.5" fill="#5A6B78" text-anchor="middle">② 점유와 대기</text>
+  <rect x="436" y="264" width="190" height="34" rx="6" fill="#F4F6F8" stroke="#C7D2DA"/><text x="531" y="286" font-size="10.5" fill="#5A6B78" text-anchor="middle">③ 비선점</text>
+  <rect x="634" y="264" width="186" height="34" rx="6" fill="#DFF0E8" stroke="#2E8B6B"/><text x="727" y="286" font-size="10.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">④ 순환 대기 ← 주로 깬다</text>
+
+  <text x="40" y="332" font-size="11.5" fill="#8A9BA8">실무: 락 순서 통일(예방)은 ORM·MSA에서 한계 → DB의 자동 탐지 + 강제 롤백 + 재시도로 대응.</text>
+</svg>

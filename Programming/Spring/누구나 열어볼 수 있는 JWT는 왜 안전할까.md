@@ -2,6 +2,8 @@
 
 JWT 토큰, Base64 디코딩해 본 적 있나요? **페이로드가 그대로 보입니다.** 암호화가 안 되어 있죠. 그럼 이걸 왜 안전하다고 할까요?
 
+![JWT 구조 — Header.Payload.Signature와 서명의 역할](../../Attached%20file/spring_jwt_structure.svg)
+
 ## JWT가 해결하려는 문제 — 서버가 아무것도 저장하지 않는다
 
 JWT 이전에는 서버가 **세션을 직접 들고** 있었습니다. JWT의 핵심은 **서버가 아무것도 저장하지 않는 것(stateless)**입니다.

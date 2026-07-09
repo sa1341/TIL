@@ -1,0 +1,35 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">프로세스 vs 스레드 vs 코루틴 — 1만 개의 차이</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">무엇을 쓸지는 격리·메모리·스케줄링, 즉 작업의 성격이 결정한다</text>
+
+  <!-- Process -->
+  <rect x="32" y="92" width="256" height="230" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.6"/>
+  <text x="160" y="118" font-size="15" font-weight="700" fill="#B83227" text-anchor="middle">프로세스</text>
+  <text x="160" y="150" font-size="11.5" fill="#5A6B78" text-anchor="middle">완전히 격리된 실행 단위</text>
+  <text x="160" y="174" font-size="11.5" fill="#5A6B78" text-anchor="middle">메모리 공유 X → 안전</text>
+  <text x="160" y="198" font-size="11.5" fill="#5A6B78" text-anchor="middle">생성마다 메모리 전체 복사</text>
+  <rect x="52" y="222" width="216" height="30" rx="5" fill="#F6E4E1"/><text x="160" y="242" font-size="11" fill="#B83227" text-anchor="middle">비용: 매우 큼</text>
+  <text x="160" y="284" font-size="11" fill="#8A9BA8" text-anchor="middle">격리가 필요할 때</text>
+
+  <!-- Thread -->
+  <rect x="302" y="92" width="256" height="230" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="430" y="118" font-size="15" font-weight="700" fill="#8A5E12" text-anchor="middle">스레드</text>
+  <text x="430" y="150" font-size="11.5" fill="#5A6B78" text-anchor="middle">프로세스 안, 힙 공유</text>
+  <text x="430" y="174" font-size="11.5" fill="#5A6B78" text-anchor="middle">스택 1MB씩 → 1만 개 = 10GB</text>
+  <text x="430" y="198" font-size="11.5" fill="#5A6B78" text-anchor="middle">OS 컨텍스트 스위칭 비용</text>
+  <rect x="322" y="222" width="216" height="30" rx="5" fill="#F6EAD2"/><text x="430" y="242" font-size="11" fill="#8A5E12" text-anchor="middle">선점형 스케줄링 (OS)</text>
+  <text x="430" y="284" font-size="11" fill="#8A9BA8" text-anchor="middle">CPU 연산이 많을 때</text>
+
+  <!-- Coroutine -->
+  <rect x="572" y="92" width="256" height="230" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.6"/>
+  <text x="700" y="118" font-size="15" font-weight="700" fill="#1F6B4E" text-anchor="middle">코루틴</text>
+  <text x="700" y="150" font-size="11.5" fill="#5A6B78" text-anchor="middle">OS 스레드 위에서 실행</text>
+  <text x="700" y="174" font-size="11.5" fill="#5A6B78" text-anchor="middle">스레드 몇 개 위 수만 개 전환</text>
+  <text x="700" y="198" font-size="11.5" fill="#5A6B78" text-anchor="middle">런타임 전환 → 비용 거의 0</text>
+  <rect x="592" y="222" width="216" height="30" rx="5" fill="#CDE9DC"/><text x="700" y="242" font-size="11" fill="#1F6B4E" text-anchor="middle">협력적 스케줄링 (양보 필요)</text>
+  <text x="700" y="284" font-size="11" fill="#8A9BA8" text-anchor="middle">IO 대기가 많을 때</text>
+
+  <text x="32" y="356" font-size="11.5" fill="#8A9BA8">코루틴은 IO 대기에서 다른 코루틴으로 전환해 효율적 · 단, CPU 바운드 작업이 양보하지 않으면 나머지가 전부 멈춘다.</text>
+  <text x="32" y="378" font-size="11.5" fill="#8A9BA8">가벼움: 프로세스 &lt; 스레드 &lt; 코루틴 · 격리: 코루틴 &lt; 스레드 &lt; 프로세스</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="cbar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="380" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">서킷 브레이커 상태 전이 — 복귀가 더 어렵다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">Closed → Open → Half-Open → Closed. 문제는 Closed로 돌아가는 순간의 트래픽 폭주</text>
+
+  <!-- Closed -->
+  <circle cx="150" cy="200" r="66" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="150" y="196" font-size="14" font-weight="700" fill="#1F6B4E" text-anchor="middle">Closed</text>
+  <text x="150" y="216" font-size="10.5" fill="#5A6B78" text-anchor="middle">정상 통과</text>
+
+  <!-- Open -->
+  <circle cx="430" cy="200" r="66" fill="#FCF5F4" stroke="#B83227" stroke-width="1.8"/>
+  <text x="430" y="196" font-size="14" font-weight="700" fill="#B83227" text-anchor="middle">Open</text>
+  <text x="430" y="216" font-size="10.5" fill="#5A6B78" text-anchor="middle">요청 차단·즉시 실패</text>
+
+  <!-- Half-Open -->
+  <circle cx="710" cy="200" r="66" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.8"/>
+  <text x="710" y="192" font-size="14" font-weight="700" fill="#8A5E12" text-anchor="middle">Half-Open</text>
+  <text x="710" y="212" font-size="10.5" fill="#5A6B78" text-anchor="middle">10개 테스트 요청</text>
+
+  <!-- Closed -> Open -->
+  <path d="M212 176 C 270 150, 340 150, 372 172" fill="none" stroke="#8A9BA8" stroke-width="1.5" marker-end="url(#cbar)"/>
+  <text x="292" y="146" font-size="10.5" fill="#B83227" text-anchor="middle">연속 실패 임계치 초과</text>
+
+  <!-- Open -> Half-Open -->
+  <path d="M492 176 C 550 150, 620 150, 652 172" fill="none" stroke="#8A9BA8" stroke-width="1.5" marker-end="url(#cbar)"/>
+  <text x="572" y="146" font-size="10.5" fill="#8A5E12" text-anchor="middle">60초 경과</text>
+
+  <!-- Half-Open -> Closed (success) -->
+  <path d="M652 246 C 470 330, 300 330, 168 262" fill="none" stroke="#2E8B6B" stroke-width="1.6" marker-end="url(#cbar)"/>
+  <text x="430" y="326" font-size="10.5" font-weight="700" fill="#2E8B6B" text-anchor="middle">성공 → Closed 복귀 (⚠ 밀린 요청 폭주)</text>
+
+  <!-- Half-Open -> Open (fail) -->
+  <path d="M690 264 C 660 300, 500 300, 468 258" fill="none" stroke="#B83227" stroke-width="1.4" stroke-dasharray="4,3" marker-end="url(#cbar)"/>
+  <text x="590" y="300" font-size="10" fill="#B83227" text-anchor="middle">실패 → 다시 Open</text>
+
+  <rect x="40" y="344" width="780" height="26" rx="6" fill="#EAF4F6" stroke="#B7D5DC"/>
+  <text x="52" y="361" font-size="11" fill="#065A6E">보완: 슬로우 스타트로 트래픽 점진 증가 · MSA에선 여러 호출자의 테스트 트래픽이 동시에 몰리는 점까지 고려</text>
+</svg>

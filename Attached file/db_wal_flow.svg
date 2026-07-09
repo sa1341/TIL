@@ -1,0 +1,39 @@
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="war" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="380" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">WAL — 데이터보다 로그를 먼저 쓴다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">두 번 써서 느린 게 아니라, 안전하게 순차로 한 번 쓰고 나중에 여유 있게 반영</text>
+
+  <rect x="40" y="98" width="130" height="56" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="105" y="123" font-size="12.5" font-weight="700" fill="#8A5E12" text-anchor="middle">UPDATE 요청</text>
+  <text x="105" y="141" font-size="10" fill="#8A9BA8" text-anchor="middle">커밋</text>
+  <line x1="170" y1="126" x2="210" y2="126" stroke="#08748C" stroke-width="1.6" marker-end="url(#war)"/>
+
+  <rect x="212" y="98" width="200" height="56" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="312" y="121" font-size="12.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">① WAL에 먼저 기록</text>
+  <text x="312" y="140" font-size="10" fill="#5A6B78" text-anchor="middle">append-only 순차 쓰기 + fsync</text>
+  <line x1="412" y1="126" x2="452" y2="126" stroke="#08748C" stroke-width="1.6" marker-end="url(#war)"/>
+
+  <rect x="454" y="98" width="200" height="56" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="554" y="121" font-size="12.5" font-weight="700" fill="#065A6E" text-anchor="middle">② 실제 데이터 변경</text>
+  <text x="554" y="140" font-size="10" fill="#8A9BA8" text-anchor="middle">나중에 여유 있게</text>
+
+  <!-- crash safety -->
+  <rect x="40" y="184" width="380" height="120" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="230" y="208" font-size="12.5" font-weight="700" fill="#B83227" text-anchor="middle">WAL이 없으면 — Partial Write</text>
+  <text x="58" y="232" font-size="10.8" fill="#5A6B78">· 8KB 페이지를 OS가 원자적으로 못 씀</text>
+  <text x="58" y="252" font-size="10.8" fill="#5A6B78">· 쓰는 도중 크래시 → 앞은 새 데이터,</text>
+  <text x="58" y="269" font-size="10.8" fill="#5A6B78">  뒤는 옛 데이터 → 복구 불가</text>
+  <text x="58" y="292" font-size="10.8" fill="#B83227">✗ 데이터 파일 직접 덮어쓰기는 위험</text>
+
+  <rect x="440" y="184" width="380" height="120" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="630" y="208" font-size="12.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">WAL이 있으면</text>
+  <text x="458" y="232" font-size="10.8" fill="#5A6B78">· 끝에 이어붙이기만 함 (덮어쓰기 X)</text>
+  <text x="458" y="252" font-size="10.8" fill="#5A6B78">· 크래시 시 마지막 완전한 레코드까지가</text>
+  <text x="458" y="269" font-size="10.8" fill="#5A6B78">  커밋된 데이터, 불완전한 꼬리는 버림</text>
+  <text x="458" y="292" font-size="10.8" fill="#1F6B4E">✓ 그룹 커밋으로 여러 fsync를 한 번에</text>
+
+  <text x="32" y="344" font-size="11.5" fill="#8A9BA8">빠른 DB는 데이터를 빨리 쓰는 DB가 아니라, 로그를 잘 쓰는 DB다.</text>
+</svg>

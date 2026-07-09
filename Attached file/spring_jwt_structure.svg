@@ -1,0 +1,35 @@
+<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">JWT — 서명은 위변조 방지, 은닉이 아니다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">Base64 디코딩하면 페이로드가 그대로 보인다 (암호화 X). 그래도 안전한 이유</text>
+
+  <!-- three parts -->
+  <rect x="40" y="98" width="240" height="70" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="160" y="124" font-size="13" font-weight="700" fill="#065A6E" text-anchor="middle">Header</text>
+  <text x="160" y="146" font-size="10.5" fill="#8A9BA8" text-anchor="middle">알고리즘·타입 (Base64)</text>
+  <rect x="300" y="98" width="240" height="70" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.6"/>
+  <text x="420" y="124" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">Payload</text>
+  <text x="420" y="146" font-size="10.5" fill="#8A9BA8" text-anchor="middle">누구나 열람 가능 (Base64)</text>
+  <rect x="560" y="98" width="260" height="70" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.6"/>
+  <text x="690" y="124" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">Signature</text>
+  <text x="690" y="146" font-size="10.5" fill="#8A9BA8" text-anchor="middle">서버 키로 서명 (위변조 검증)</text>
+
+  <text x="280" y="140" font-size="16" fill="#8A9BA8">.</text>
+  <text x="540" y="140" font-size="16" fill="#8A9BA8">.</text>
+
+  <rect x="40" y="192" width="380" height="120" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="230" y="216" font-size="12.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">서명이 하는 일 = 무결성</text>
+  <text x="58" y="240" font-size="10.8" fill="#5A6B78">· 우리 서버가 발급한 게 맞는지 확인</text>
+  <text x="58" y="260" font-size="10.8" fill="#5A6B78">· 중간에 user→admin 변조되지 않았는지 확인</text>
+  <text x="58" y="284" font-size="10.8" fill="#1F6B4E">→ 서버는 아무것도 저장 안 함 (stateless)</text>
+  <text x="58" y="304" font-size="10.8" fill="#8A9BA8">"내용을 숨기는 게 아니라 안 바뀌었음을 증명"</text>
+
+  <rect x="440" y="192" width="380" height="120" rx="10" fill="#FCF5F4" stroke="#E0B4AD" stroke-width="1.4"/>
+  <text x="630" y="216" font-size="12.5" font-weight="700" fill="#B83227" text-anchor="middle">그래서 넣으면 안 되는 것</text>
+  <text x="458" y="240" font-size="10.8" fill="#5A6B78">✗ 주민번호·전화번호 등 민감정보</text>
+  <text x="458" y="260" font-size="10.8" fill="#5A6B78">  → 토큰 가진 누구나 열람 (JS 디코딩)</text>
+  <text x="458" y="284" font-size="10.8" fill="#5A6B78">암호화 필요 시 JWE — 단 크기 2~3배·키 관리</text>
+  <text x="458" y="304" font-size="10.8" fill="#B83227">  → stateless 없애려다 키 서버 생기는 아이러니</text>
+
+  <text x="32" y="344" font-size="11.5" fill="#8A9BA8">JWT가 암호화를 안 한 건 설계 실수가 아니라 의도된 선택. 노출돼도 되는 정보만 담아야 한다.</text>
+</svg>

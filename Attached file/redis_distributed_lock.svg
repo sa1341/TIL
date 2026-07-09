@@ -1,0 +1,31 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Redis 분산락 — TTL 딜레마와 Watchdog</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">synchronized는 JVM 한정. 여러 서버가 공통으로 보는 외부 저장소(Redis)에 SET NX로 선점</text>
+
+  <!-- TTL dilemma -->
+  <rect x="32" y="92" width="390" height="150" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="227" y="116" font-size="14" font-weight="700" fill="#B83227" text-anchor="middle">TTL 딜레마</text>
+  <text x="52" y="142" font-size="11" fill="#5A6B78">· TTL 없으면 → 서버 죽을 때 락 영원히 남음(데드락)</text>
+  <text x="52" y="164" font-size="11" fill="#5A6B78">· TTL 짧으면 → GC(Full GC 수초)로 작업 중 락 풀림</text>
+  <text x="52" y="186" font-size="11" fill="#5A6B78">· TTL 길면 → 서버 죽었을 때 복구 느림</text>
+  <text x="52" y="212" font-size="11" fill="#B83227">✗ 만료 틈에 "남의 락"을 지우는 문제도</text>
+  <text x="52" y="230" font-size="10.5" fill="#8A9BA8">A의 TTL 만료 → B가 새 락 → A가 finally에서 B락 삭제</text>
+
+  <!-- solutions -->
+  <rect x="438" y="92" width="390" height="150" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="633" y="116" font-size="14" font-weight="700" fill="#1F6B4E" text-anchor="middle">두 가지 해결책</text>
+  <text x="458" y="144" font-size="11.5" font-weight="700" fill="#1F6B4E">① UUID 이름표</text>
+  <text x="458" y="164" font-size="10.8" fill="#5A6B78">각 서버가 고유 UUID 저장 → "내 것이 맞으면" 삭제</text>
+  <text x="458" y="192" font-size="11.5" font-weight="700" fill="#1F6B4E">② Watchdog (Redisson)</text>
+  <text x="458" y="212" font-size="10.8" fill="#5A6B78">작업 중이면 TTL 자동 연장 · 서버 죽으면 연장 멈춰</text>
+  <text x="458" y="229" font-size="10.8" fill="#5A6B78">TTL 자연 만료</text>
+
+  <!-- final defense -->
+  <rect x="32" y="262" width="796" height="80" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="430" y="286" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">그래도 남는 한계 → 최종 방어선</text>
+  <text x="52" y="310" font-size="11" fill="#5A6B78">· Redis 서버 자체가 죽으면 락 정보 통째로 소실 · Redlock도 네트워크 지연 앞에선 완벽하지 않음</text>
+  <text x="52" y="330" font-size="11" fill="#8A5E12">→ 정말 중요한 데이터면 DB의 유니크 제약 조건 같은 최종 방어선을 반드시 함께 둔다</text>
+
+  <text x="32" y="366" font-size="11.5" fill="#8A9BA8">분산락은 동시 접근 확률을 낮추는 도구이지, 절대적인 보장이 아니다.</text>
+</svg>

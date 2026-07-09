@@ -1,0 +1,31 @@
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="380" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">CPU 캐시와 공간 지역성 — 순서만 바꿔도 10배</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">메모리 접근 1개 = 옆 데이터까지 한 캐시 라인(약 64B)을 통째로 가져온다</text>
+
+  <!-- row-major -->
+  <text x="40" y="104" font-size="13" font-weight="700" fill="#1F6B4E">행 우선 순회 — 메모리 순서대로 (빠름)</text>
+  <g>
+    <rect x="40" y="116" width="240" height="30" rx="4" fill="#DFF0E8" stroke="#2E8B6B"/>
+    <text x="160" y="136" font-size="10.5" fill="#1F6B4E" text-anchor="middle">한 번 읽으면 옆 15개도 캐시에 ↑</text>
+    <rect x="288" y="116" width="240" height="30" rx="4" fill="#DFF0E8" stroke="#A9D5BF" stroke-dasharray="4,3"/>
+    <text x="408" y="136" font-size="10.5" fill="#1F6B4E" text-anchor="middle">다음 15번은 캐시에서 바로</text>
+    <rect x="536" y="116" width="240" height="30" rx="4" fill="#DFF0E8" stroke="#A9D5BF" stroke-dasharray="4,3"/>
+    <text x="656" y="136" font-size="10.5" fill="#1F6B4E" text-anchor="middle">메모리 안 감 → 1ns</text>
+  </g>
+
+  <!-- col-major -->
+  <text x="40" y="184" font-size="13" font-weight="700" fill="#B83227">열 우선 순회 — 메모리를 건너뛰며 (느림)</text>
+  <g>
+    <rect x="40" y="196" width="150" height="30" rx="4" fill="#FCF5F4" stroke="#B83227"/><text x="115" y="216" font-size="10.5" fill="#B83227" text-anchor="middle">1개 읽고 → 점프</text>
+    <rect x="220" y="196" width="150" height="30" rx="4" fill="#FCF5F4" stroke="#B83227"/><text x="295" y="216" font-size="10.5" fill="#B83227" text-anchor="middle">라인 15개 안 쓰고 점프</text>
+    <rect x="400" y="196" width="150" height="30" rx="4" fill="#FCF5F4" stroke="#B83227"/><text x="475" y="216" font-size="10.5" fill="#B83227" text-anchor="middle">매번 메모리행</text>
+    <rect x="580" y="196" width="196" height="30" rx="4" fill="#F6E4E1" stroke="#B83227"/><text x="678" y="216" font-size="10.5" fill="#B83227" text-anchor="middle">100ns × 1억 → 10배 느림</text>
+  </g>
+
+  <rect x="40" y="256" width="780" height="66" rx="8" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="56" y="280" font-size="12" font-weight="700" fill="#8A5E12">자바의 함정 — 2차원 배열은 각 행이 별도 객체</text>
+  <text x="56" y="302" font-size="11" fill="#5A6B78">행 안은 연속이지만 행과 행 사이는 힙에 흩어짐 → 극한 성능엔 1차원 배열로 펼쳐 완전 연속 배치.</text>
+
+  <text x="40" y="352" font-size="11.5" fill="#8A9BA8">for문의 성능은 알고리즘만이 아니라 하드웨어(캐시)가 좌우한다. 메모리 순서대로 접근하는 것만으로 10배.</text>
+</svg>

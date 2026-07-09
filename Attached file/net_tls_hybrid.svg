@@ -1,0 +1,31 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="tar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">TLS — 비대칭키로 키 교환, 대칭키로 데이터</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">각각의 약점을 상대의 강점으로 메우는 하이브리드 설계</text>
+
+  <rect x="40" y="96" width="150" height="220" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="115" y="122" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">클라이언트</text>
+  <rect x="670" y="96" width="150" height="220" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
+  <text x="745" y="122" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">서버</text>
+
+  <!-- phase 1 asymmetric -->
+  <rect x="210" y="96" width="440" height="96" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="430" y="120" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">① 비대칭키 (딱 한 번, 느림 ~10만 배)</text>
+  <line x1="190" y1="150" x2="668" y2="150" stroke="#08748C" stroke-width="1.4" marker-end="url(#tar)"/>
+  <text x="430" y="144" font-size="10.5" fill="#5A6B78" text-anchor="middle">공개키로 세션 키 안전하게 교환</text>
+  <text x="430" y="178" font-size="10.5" fill="#8A9BA8" text-anchor="middle">키 전달 문제 해결 (가로채도 개인키 없이 못 풂)</text>
+
+  <!-- phase 2 symmetric -->
+  <rect x="210" y="208" width="440" height="96" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="430" y="232" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">② 대칭키 (이후 계속, 빠름)</text>
+  <line x1="190" y1="262" x2="668" y2="262" stroke="#2E8B6B" stroke-width="1.4"/>
+  <line x1="668" y1="278" x2="192" y2="278" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="430" y="258" font-size="10.5" fill="#5A6B78" text-anchor="middle">공유한 세션 키로 실제 데이터 암호화 (양방향)</text>
+  <text x="430" y="296" font-size="10.5" fill="#8A9BA8" text-anchor="middle">수백 개 리소스도 빠르게 처리</text>
+
+  <text x="32" y="344" font-size="11.5" fill="#8A9BA8">느린 연산(비대칭)은 한 번만 · 빠른 연산(대칭)은 계속 → 안전성과 속도를 동시에 확보.</text>
+  <text x="32" y="366" font-size="11.5" fill="#8A9BA8">TLS 1.3: RSA 키 교환 제거, ECDHE 임시 키쌍만 허용 → 순방향 비밀성(Forward Secrecy) 확보.</text>
+</svg>

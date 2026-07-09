@@ -1,0 +1,38 @@
+<svg viewBox="0 0 860 370" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="car" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="370" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">커넥션 풀 — 빌리고 · 쓰고 · 돌려주기 (HikariCP)</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">close()는 진짜 연결을 끊는 게 아니라 풀에 반납 → 다음 요청은 핸드셰이크 없이 바로</text>
+
+  <rect x="40" y="98" width="120" height="50" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="100" y="128" font-size="12" font-weight="700" fill="#8A5E12" text-anchor="middle">애플리케이션</text>
+  <line x1="160" y1="123" x2="300" y2="123" stroke="#08748C" stroke-width="1.6" marker-end="url(#car)"/>
+  <text x="230" y="115" font-size="10.5" fill="#8A9BA8" text-anchor="middle">getConnection() 빌림</text>
+
+  <rect x="302" y="90" width="256" height="120" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="430" y="114" font-size="13.5" font-weight="700" fill="#065A6E" text-anchor="middle">커넥션 풀</text>
+  <rect x="322" y="126" width="52" height="30" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="348" y="146" font-size="10" fill="#1F6B4E" text-anchor="middle">conn</text>
+  <rect x="382" y="126" width="52" height="30" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="408" y="146" font-size="10" fill="#1F6B4E" text-anchor="middle">conn</text>
+  <rect x="442" y="126" width="52" height="30" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="468" y="146" font-size="10" fill="#1F6B4E" text-anchor="middle">conn</text>
+  <rect x="502" y="126" width="46" height="30" rx="5" fill="#F4F6F8" stroke="#C7D2DA"/><text x="525" y="146" font-size="9" fill="#8A9BA8" text-anchor="middle">idle</text>
+  <text x="430" y="184" font-size="10.5" fill="#8A9BA8" text-anchor="middle">close() = 반납 (재사용)</text>
+
+  <line x1="558" y1="123" x2="680" y2="123" stroke="#08748C" stroke-width="1.6" marker-end="url(#car)"/>
+  <rect x="682" y="98" width="120" height="50" rx="10" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="742" y="128" font-size="12" font-weight="700" fill="#B83227" text-anchor="middle">DB</text>
+
+  <!-- timers -->
+  <rect x="40" y="228" width="380" height="112" rx="10" fill="#F7FAFB" stroke="#B7D5DC"/>
+  <text x="58" y="252" font-size="12" font-weight="700" fill="#3E5060">세 가지 타이머 — 죽은 커넥션 걸러내기</text>
+  <text x="58" y="276" font-size="11" fill="#B83227" font-weight="700">maxLifetime &lt; DB wait_timeout (가장 중요)</text>
+  <text x="58" y="296" font-size="10.5" fill="#5A6B78">안 그러면 DB가 이미 끊은 커넥션을 풀이 빌려줌</text>
+  <text x="58" y="320" font-size="10.5" fill="#5A6B78">idleTimeout · connectionTimeout 도 함께</text>
+
+  <rect x="440" y="228" width="380" height="112" rx="10" fill="#FCF5F4" stroke="#E0B4AD"/>
+  <text x="458" y="252" font-size="12" font-weight="700" fill="#B83227">타이머로 못 막는 것 — 커넥션 누수</text>
+  <text x="458" y="276" font-size="11" fill="#5A6B78">leakDetectionThreshold 설정 시</text>
+  <text x="458" y="296" font-size="10.5" fill="#5A6B78">반환 안 되면 경고 로그 + 스택 트레이스</text>
+  <text x="458" y="320" font-size="10.5" fill="#8A9BA8">풀 사이즈보다 이 세 설정이 장애를 가른다</text>
+</svg>

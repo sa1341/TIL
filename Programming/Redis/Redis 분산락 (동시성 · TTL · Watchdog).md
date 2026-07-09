@@ -2,6 +2,8 @@
 
 서버를 두 대로 늘렸더니 **쿠폰이 초과 발급**됩니다. 코드엔 `synchronized`가 붙어 있는데도요. 이 노트는 왜 `synchronized`로는 부족하고, Redis 분산락이 어떻게 발전하며 어떤 한계를 갖는지 정리합니다.
 
+![Redis 분산락 — TTL 딜레마와 UUID·Watchdog 해결](../../Attached%20file/redis_distributed_lock.svg)
+
 ## 1. 왜 synchronized로는 안 되나
 
 - `synchronized`는 **같은 JVM 안에서만** 잠금입니다.
