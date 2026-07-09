@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/DB/Oracle/SQL 처리과정과 IO 다루기.md",
+                "file": "Programming/인프라/DB/비관적 락과 낙관적 락.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SQL 처리과정과 IO 다루기"
+              "title": "비관적 락과 낙관적 락"
             }
           }
         ],
@@ -464,6 +464,25 @@
   },
   "active": "1bc2d58b1a3064dc",
   "lastOpenFiles": [
+    "Programming/인프라/네트워크/관리자 IP만 허용했는데 뚫렸다 (X-Forwarded-For의 함정).md",
+    "Programming/인프라/네트워크/개발에선 나던 이메일 오류가 운영에선 안 나는 이유 (SMTP의 함정).md",
+    "Programming/인프라/네트워크/필드 하나 추가했는데 앱이 죽었다 (API 하위 호환성).md",
+    "Programming/인프라/네트워크/HTTP는 왜 세 번이나 다시 만들어졌을까 (HOL 블로킹의 역사).md",
+    "Programming/인프라/네트워크/HTTP는 왜 세 번이나 다시 만들어졌을까 (HOL 블로킹의 역사).md.tmp.40895.1731255ab569",
+    "Programming/인프라/네트워크/새벽에만 502가 뜨는 이유 (로드밸런서와 서버의 타임아웃 불일치).md",
+    "Programming/인프라/네트워크/새벽에만 502가 뜨는 이유 (로드밸런서와 서버의 타임아웃 불일치).md.tmp.40895.ae35033ddc02",
+    "Programming/인프라/네트워크/서버는 멀쩡한데 서비스가 죽었다 (SSL 인증서 만료의 함정).md",
+    "Programming/인프라/네트워크/HTTPS는 왜 대칭키와 비대칭키를 함께 쓸까 (TLS 설계).md",
+    "Programming/인프라/네트워크/HTTPS는 왜 대칭키와 비대칭키를 함께 쓸까 (TLS 설계).md.tmp.40895.c8be142b1a0c",
+    "Programming/인프라/네트워크/200 OK인데 왜 결제는 실패했을까 (HTTP 상태 코드의 의미).md",
+    "Programming/인프라/DB/격리 수준은 왜 일부러 낮출까 (격리와 처리량의 트레이드오프).md",
+    "Programming/인프라/DB/격리 수준은 왜 일부러 낮출까 (격리와 처리량의 트레이드오프).md.tmp.40895.65367484aed5",
+    "Programming/인프라/DB/방금 쓴 글이 안 보인다 (리드 레플리카의 함정).md",
+    "Programming/인프라/DB/방금 쓴 글이 안 보인다 (리드 레플리카의 함정).md.tmp.40895.dcf51c6d4f9f",
+    "Programming/인프라/DB/MySQL/VARCHAR는 왜 255일까 (길이 프리픽스).md",
+    "Programming/인프라/DB/DB는 왜 데이터보다 로그를 먼저 쓸까 (WAL).md",
+    "Programming/인프라/DB/데드락은 왜 생기고 어떻게 대응할까.md",
+    "Programming/인프라/DB/데드락은 왜 생기고 어떻게 대응할까.md.tmp.40895.1c69450ce76c",
     "Programming/인프라/DB/비관적 락과 낙관적 락.md",
     "Programming/인프라/DB/비관적 락과 낙관적 락.md.tmp.40895.ae6ff411ffaa",
     "Programming/인프라/DB/MySQL/MySQL은 왜 기본 격리 수준이 REPEATABLE READ일까.md",
@@ -475,17 +494,11 @@
     "Attached file/db_sql_processing.svg",
     "Attached file/k8s_probes.svg",
     "Attached file/db_isolation_levels.svg",
-    "Attached file/db_isolation_levels.svg.tmp.40895.1329fbbf8e13",
     "Attached file/js_promise_states.svg",
-    "Programming/JavaScript/Ajax.md.tmp.40895.ed996095ea65",
-    "Programming/JavaScript/자바스크립트 에러 핸들링.md.tmp.40895.ba851ab6beb2",
-    "Programming/JavaScript/JavaScript 컴파일.md.tmp.40895.5f68b13dfd01",
     "Attached file/js_v8_jit.svg",
     "Attached file/react_props_state.svg",
-    "Attached file/react_props_state.svg.tmp.40895.d4a58a978692",
     "Attached file/cs_ssl_cert_chain.svg",
     "Attached file/oauth_authorization_code.svg",
-    "Programming/JavaScript/자바스크립트 함수형 프로그래밍.md.tmp.40895.a02f110db1cb",
     "Programming/인프라/DB/Oracle/오라클 리스너.md",
     "Programming/인프라/AWS/AWS 데이터베이스.md",
     "Programming/JavaScript/자바스크립트 객체지향 프로그래밍.md",
@@ -497,19 +510,6 @@
     "Programming/JavaScript/duck 타이핑.md",
     "Programming/JavaScript/실행 컨텍스트와 클로저.md",
     "Programming/JavaScript/css 기본 속성.md",
-    "Programming/JavaScript/JavaScript 프라미스.md",
-    "Programming/JavaScript/JavaScript 컴파일.md",
-    "Programming/JavaScript/JavaScript Proxy와 Reflect.md",
-    "Programming/JavaScript/HTML DOM.md",
-    "Programming/JavaScript/Ajax.md",
-    "Programming/인프라/k8s/Docker/컨테이너 오케스트레이션.md",
-    "Programming/인프라/k8s/Docker/도커 설치 및 실행 방법.md",
-    "Programming/인프라/k8s/Docker/Dockerfile 만들기.md",
-    "Programming/인프라/k8s/Docker/Docker Compose.md",
-    "Programming/인프라/k8s/Docker/Ansible 개념 및 실습.md",
-    "Programming/인프라/DB/Oracle/읽기 일관성.md",
-    "Programming/인프라/DB/Oracle/서브쿼리의 종류.md",
-    "Programming/인프라/DB/Oracle/인덱스 구조 및 탐색.md",
     "Untitled.canvas"
   ]
 }
