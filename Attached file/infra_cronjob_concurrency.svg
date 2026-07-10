@@ -1,0 +1,25 @@
+<svg viewBox="0 0 860 330" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="330" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">크론잡 중복 실행 — 기본값이 중복을 허용한다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">이전 실행이 안 끝났는데 다음 스케줄이 오면? 크론은 확인하지 않고 새 프로세스를 띄운다</text>
+
+  <!-- Allow -->
+  <rect x="40" y="94" width="380" height="96" rx="10" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="230" y="118" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">concurrencyPolicy: Allow (기본)</text>
+  <rect x="60" y="130" width="150" height="24" rx="4" fill="#F6E4E1"/><text x="135" y="147" font-size="10" fill="#B83227" text-anchor="middle">Job A (아직 실행 중)</text>
+  <rect x="150" y="158" width="150" height="24" rx="4" fill="#F6E4E1"/><text x="225" y="175" font-size="10" fill="#B83227" text-anchor="middle">Job B (겹쳐서 시작)</text>
+  <text x="360" y="150" font-size="10.5" fill="#8A9BA8" text-anchor="middle">→ 두 배 정산</text>
+
+  <!-- Forbid -->
+  <rect x="440" y="94" width="380" height="96" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="630" y="118" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">Forbid (또는 리눅스 flock)</text>
+  <rect x="460" y="130" width="200" height="24" rx="4" fill="#CDE9DC"/><text x="560" y="147" font-size="10" fill="#1F6B4E" text-anchor="middle">Job A 실행 중</text>
+  <rect x="460" y="158" width="200" height="24" rx="4" fill="#F4F6F8" stroke="#C7D2DA" stroke-dasharray="3,3"/><text x="560" y="175" font-size="10" fill="#8A9BA8" text-anchor="middle">Job B 스킵</text>
+  <text x="740" y="163" font-size="10" fill="#8A5E12" text-anchor="middle">중복 방지 ✓</text>
+
+  <rect x="40" y="208" width="780" height="60" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="56" y="230" font-size="12" font-weight="700" fill="#8A5E12">그런데 Forbid도 함정 — 이전 Job이 hang에 걸리면 다음이 영원히 스킵</text>
+  <text x="56" y="251" font-size="11" fill="#5A6B78">실무: Forbid + activeDeadlineSeconds → 일정 시간 지나면 hang Job 강제 종료해 다음 스케줄이 돌게 한다.</text>
+
+  <text x="32" y="300" font-size="11.5" fill="#8A9BA8">중복 실행도 문제지만 아예 안 도는 것도 문제. 스케줄러를 믿지 말고 방어 설정을 직접 걸어야 한다.</text>
+</svg>

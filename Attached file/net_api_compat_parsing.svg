@@ -1,0 +1,33 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="aar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="320" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">API 하위 호환 — 필드 하나 추가가 누군가엔 장애</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">서버는 필드만 추가했는데, 클라이언트 파싱 라이브러리에 따라 브레이킹 체인지가 된다</text>
+
+  <rect x="40" y="94" width="200" height="50" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="140" y="118" font-size="11.5" font-weight="700" fill="#8A5E12" text-anchor="middle">서버</text>
+  <text x="140" y="136" font-size="9.5" fill="#8A9BA8" text-anchor="middle">응답에 필드 1개 추가</text>
+  <line x1="240" y1="119" x2="300" y2="119" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#aar)"/>
+
+  <rect x="302" y="94" width="240" height="50" rx="8" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="422" y="124" font-size="10.5" fill="#065A6E" text-anchor="middle" font-family="monospace">{ ..., newField: "x" }</text>
+
+  <rect x="580" y="86" width="240" height="66" rx="10" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="700" y="110" font-size="11.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">A팀: Gson / JS</text>
+  <text x="700" y="130" font-size="10" fill="#5A6B78" text-anchor="middle">모르는 필드 무시 → 정상 ✓</text>
+
+  <rect x="580" y="164" width="240" height="66" rx="10" fill="#FCF5F4" stroke="#E0B4AD"/>
+  <text x="700" y="188" font-size="11.5" font-weight="700" fill="#B83227" text-anchor="middle">B팀: kotlinx.serialization</text>
+  <text x="700" y="208" font-size="10" fill="#5A6B78" text-anchor="middle">엄격 파싱 → 역직렬화 실패 ✗</text>
+
+  <line x1="440" y1="144" x2="576" y2="118" stroke="#8A9BA8" stroke-width="1.2" marker-end="url(#aar)"/>
+  <line x1="440" y1="144" x2="576" y2="196" stroke="#8A9BA8" stroke-width="1.2" marker-end="url(#aar)"/>
+
+  <rect x="40" y="176" width="500" height="54" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="56" y="198" font-size="11.5" font-weight="700" fill="#8A5E12">방어 = 계약(Contract)</text>
+  <text x="56" y="218" font-size="10.5" fill="#5A6B78">API 명세에 "알 수 없는 필드는 무시한다" 명시 · 버전 관리(단, 구버전을 계속 유지하는 부담)</text>
+
+  <text x="32" y="262" font-size="11.5" fill="#8A9BA8">하위 호환성은 서버 코드가 아니라, 가장 엄격한 클라이언트 기준으로 판단해야 한다.</text>
+</svg>
