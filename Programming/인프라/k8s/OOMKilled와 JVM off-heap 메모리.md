@@ -2,7 +2,7 @@
 
 운영 중인 Pod가 하루에 열몇 번씩 재시작됩니다. `kubectl`로 보면 이유가 **OOMKilled** — 메모리 초과로 죽은 것입니다. 그런데 JVM **힙** 모니터링을 보면 512MB 중 380MB나 남아 있습니다. **힙은 남는데 왜 메모리 초과로 죽을까요?**
 
-![OOMKilled — 힙 모니터링 vs 컨테이너 RSS(off-heap 포함)](../../../Attached%20file/k8s_oomkilled_memory.svg)
+![OOMKilled — 힙 모니터링 vs 컨테이너 RSS(off-heap 포함)|697](../../../Attached%20file/k8s_oomkilled_memory.svg)
 
 ## JVM이 쓰는 메모리는 힙만이 아니다
 

@@ -2,7 +2,7 @@
 
 월말 정산 배치가 끝났는데 **금액이 정확히 두 배**가 나왔습니다. 코드에 버그는 없었습니다. **배치가 두 번 실행**된 것이죠. 이전 실행이 안 끝났는데 다음 스케줄이 시작된 것입니다.
 
-![크론잡 concurrencyPolicy — Allow vs Forbid](../../Attached%20file/infra_cronjob_concurrency.svg)
+![크론잡 concurrencyPolicy — Allow vs Forbid|697](../../Attached%20file/infra_cronjob_concurrency.svg)
 
 ## 크론은 이전 실행을 확인하지 않는다
 

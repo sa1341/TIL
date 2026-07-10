@@ -2,7 +2,7 @@
 
 스프링 개발자라면 한 번쯤 겪는 함정이 있습니다. **분명히 예외를 던졌는데 데이터가 그대로 들어가 있습니다.** 예외가 위로 올라갔는데도 `repository.save`로 INSERT한 주문은 DB에 그대로 남아 있죠. **트랜잭션이 롤백을 안 한** 것입니다.
 
-![@Transactional 롤백 규칙 — Checked vs Unchecked Exception](../../Attached%20file/spring_transactional_rollback.svg)
+![@Transactional 롤백 규칙 — Checked vs Unchecked Exception|697](../../Attached%20file/spring_transactional_rollback.svg)
 
 ## 왜 어떤 예외는 롤백되고, 어떤 예외는 안 될까
 

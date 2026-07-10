@@ -2,7 +2,7 @@
 
 JSON에는 주석을 달 수 없습니다. 설정 파일로 이렇게 많이 쓰이는데 주석 하나 못 단다니, 왜 이렇게 만들었을까요?
 
-![JSON 주석 제거와 생태계 파편화(JSON5·JSONC 등)](../../Attached%20file/cs_json_fragmentation.svg)
+![JSON 주석 제거와 생태계 파편화(JSON5·JSONC 등)|697](../../Attached%20file/cs_json_fragmentation.svg)
 
 ## 사실 처음엔 주석이 있었다
 

@@ -2,7 +2,7 @@
 
 서비스 간 통신에서 JSON을 **Protobuf**로 바꿨더니 **같은 데이터의 크기가 70% 줄었습니다.** 같은 정보를 담고 있는데 왜 이렇게 차이가 날까요?
 
-![JSON vs Protobuf 직렬화 비교](../../Attached%20file/cs_json_vs_protobuf.svg)
+![JSON vs Protobuf 직렬화 비교|697](../../Attached%20file/cs_json_vs_protobuf.svg)
 
 ## 직렬화란
 

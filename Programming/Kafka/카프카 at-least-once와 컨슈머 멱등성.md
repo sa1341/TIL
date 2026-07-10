@@ -2,7 +2,7 @@
 
 결제 한 건에 **알림톡이 두 번** 갔다는 CS가 들어왔습니다. 컨슈머는 분명 한 번만 처리하도록 짰는데요. 로그를 까 보니 **발송 직후 컨슈머가 죽었고**, 리밸런싱으로 다른 컨슈머가 **같은 메시지를 다시** 가져갔습니다.
 
-![카프카 at-least-once — 처리와 커밋 사이 장애로 인한 중복](../../Attached%20file/kafka_at_least_once.svg)
+![카프카 at-least-once — 처리와 커밋 사이 장애로 인한 중복|697](../../Attached%20file/kafka_at_least_once.svg)
 
 ## 카프카의 기본은 at-least-once
 

@@ -2,7 +2,7 @@
 
 스레드 1만 개를 만들었더니 서버가 **OutOfMemory 에러**로 죽었습니다. 그런데 코틀린 **코루틴**으로 똑같이 1만 개를 만들면 멀쩡합니다. 둘 다 동시에 실행되는 건데 왜 이런 차이가 날까요?
 
-![프로세스 vs 스레드 vs 코루틴 비교](../../Attached%20file/cs_process_thread_coroutine.svg)
+![프로세스 vs 스레드 vs 코루틴 비교|697](../../Attached%20file/cs_process_thread_coroutine.svg)
 
 ## 프로세스 — 격리, 그러나 비싸다
 

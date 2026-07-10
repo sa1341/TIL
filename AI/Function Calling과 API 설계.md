@@ -2,7 +2,7 @@
 
 챗봇에 "서울 날씨 알려 줘"라고 물었더니 AI가 **알아서 날씨 API를 호출**했습니다. 기존에는 클라이언트가 분기를 태웠죠 — `if`문이나 라우터가 어떤 API를 호출할지 결정했습니다. 그런데 **Function Calling**이 되면서 그 **결정권이 LLM에게** 넘어갔습니다.
 
-![Function Calling — LLM이 JSON 스키마를 보고 함수 선택](../Attached%20file/ai_function_calling.svg)
+![Function Calling — LLM이 JSON 스키마를 보고 함수 선택|697](../Attached%20file/ai_function_calling.svg)
 
 ## 작동 방식
 

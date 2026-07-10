@@ -2,7 +2,7 @@
 
 관리자 페이지를 **회사 IP로만 접근**하도록 막아 두었습니다. 그런데 어느 날 **외부에서 누군가 접근에 성공**해 있었습니다. 화이트리스트 코드는 분명 잘 짜여 있었죠. 코드에는 버그가 없는데 어떻게 뚫렸을까요?
 
-![X-Forwarded-For 위조 — 신뢰 홉을 명시하지 않으면 뚫린다](../../../Attached%20file/net_xforwardedfor_spoof.svg)
+![X-Forwarded-For 위조 — 신뢰 홉을 명시하지 않으면 뚫린다|697](../../../Attached%20file/net_xforwardedfor_spoof.svg)
 
 ## 원인 — X-Forwarded-For는 그냥 HTTP 헤더다
 

@@ -4,7 +4,7 @@ DB에 `UPDATE`를 날리면 데이터를 바로 바꾸지 않습니다. 먼저 *
 
 한 번 쓰면 될 걸 왜 두 번 쓸까요? 오히려 느려지는 것 아닐까요?
 
-![WAL 흐름 — 로그 먼저 기록 후 데이터 반영, partial write 방지](../../../Attached%20file/db_wal_flow.svg)
+![WAL 흐름 — 로그 먼저 기록 후 데이터 반영, partial write 방지|697](../../../Attached%20file/db_wal_flow.svg)
 
 ## 이 설계가 없으면 — Partial Write
 

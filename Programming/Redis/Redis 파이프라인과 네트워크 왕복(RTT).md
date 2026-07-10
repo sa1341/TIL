@@ -2,7 +2,7 @@
 
 상품 목록 API가 있습니다. 상품마다 Redis에서 좋아요 수를 가져옵니다. 상품이 10개일 때는 빨랐습니다. 그런데 **1,000개를 조회하니 API 응답이 3초**가 걸렸습니다. Redis는 빠르다면서요?
 
-![Redis 파이프라인 — 1000번 왕복 vs 1번 배치](../../Attached%20file/redis_pipeline.svg)
+![Redis 파이프라인 — 1000번 왕복 vs 1번 배치|697](../../Attached%20file/redis_pipeline.svg)
 
 ## 병목은 Redis가 아니라 네트워크 왕복
 

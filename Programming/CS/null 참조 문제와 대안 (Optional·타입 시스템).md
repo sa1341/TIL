@@ -4,7 +4,7 @@
 
 그런데 60년이 지난 지금도 대부분의 언어에 null이 있습니다. 왜 없어지지 않을까요?
 
-![null 참조 문제와 대안 — 코틀린 타입 시스템·자바 Optional](../../Attached%20file/cs_null_optional.svg)
+![null 참조 문제와 대안 — 코틀린 타입 시스템·자바 Optional|697](../../Attached%20file/cs_null_optional.svg)
 
 ## null이 왜 문제인가
 
