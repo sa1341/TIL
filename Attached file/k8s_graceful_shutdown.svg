@@ -1,0 +1,36 @@
+<svg viewBox="0 0 860 350" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="gar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="350" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">무중단 배포 — graceful shutdown + 멱등성</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">인프라가 손실을 줄이고, 멱등성이 남은 손실을 0으로 만든다</text>
+
+  <!-- sequence -->
+  <rect x="40" y="100" width="180" height="52" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="130" y="124" font-size="11.5" font-weight="700" fill="#8A5E12" text-anchor="middle">① preStop</text>
+  <text x="130" y="142" font-size="10" fill="#8A9BA8" text-anchor="middle">LB가 인스턴스 분리할 시간 확보</text>
+  <line x1="220" y1="126" x2="258" y2="126" stroke="#08748C" stroke-width="1.5" marker-end="url(#gar)"/>
+
+  <rect x="260" y="100" width="180" height="52" rx="10" fill="#EAF4F6" stroke="#08748C"/>
+  <text x="350" y="124" font-size="11.5" font-weight="700" fill="#065A6E" text-anchor="middle">② graceful shutdown</text>
+  <text x="350" y="142" font-size="10" fill="#8A9BA8" text-anchor="middle">새 요청 거부·진행 중 요청 완료</text>
+  <line x1="440" y1="126" x2="478" y2="126" stroke="#08748C" stroke-width="1.5" marker-end="url(#gar)"/>
+
+  <rect x="480" y="100" width="180" height="52" rx="10" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="570" y="124" font-size="11.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">③ 종료</text>
+  <text x="570" y="142" font-size="10" fill="#8A9BA8" text-anchor="middle">안전하게 Pod 종료</text>
+
+  <rect x="40" y="180" width="380" height="86" rx="10" fill="#FCF5F4" stroke="#E0B4AD" stroke-width="1.4"/>
+  <text x="230" y="204" font-size="12" font-weight="700" fill="#B83227" text-anchor="middle">인프라만으론 한계</text>
+  <text x="58" y="228" font-size="10.8" fill="#5A6B78">· 30초 넘는 배치·Kafka 컨슈머는 강제 종료</text>
+  <text x="58" y="248" font-size="10.8" fill="#5A6B78">· 외부 API 적용 후 우리 DB 반영 전 끊기면 불일치</text>
+
+  <rect x="440" y="180" width="380" height="86" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="630" y="204" font-size="12" font-weight="700" fill="#1F6B4E" text-anchor="middle">진짜 안전망: 멱등성</text>
+  <text x="458" y="228" font-size="10.8" fill="#5A6B78">· 같은 요청 두 번 와도 결과 동일</text>
+  <text x="458" y="248" font-size="10.8" fill="#5A6B78">· 외부 호출에 멱등 키(idempotency key) 함께</text>
+
+  <text x="32" y="300" font-size="11.5" fill="#8A9BA8">서버는 graceful shutdown+preStop으로 진행 중 요청을 지키고, 그 위에서 모든 외부 호출을 멱등 키로 감싼다.</text>
+  <text x="32" y="324" font-size="11.5" fill="#8A9BA8">Tomcat 기본은 SIGTERM 시 진행 중 요청도 즉시 끊음 → 스프링 부트 graceful shutdown 옵션으로 방지.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">MySQL 기본이 REPEATABLE READ인 이유 — 역사적 부채</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">대부분 DB는 READ COMMITTED가 기본. MySQL만 다른 건 옛 복제 방식(SBR) 때문</text>
+
+  <!-- SBR problem -->
+  <rect x="32" y="92" width="390" height="140" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="227" y="116" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">문장 기반 복제(SBR) + READ COMMITTED</text>
+  <text x="52" y="140" font-size="10.8" fill="#5A6B78">· 마스터의 SQL을 슬레이브가 커밋 순서로 재실행</text>
+  <text x="52" y="160" font-size="10.8" fill="#5A6B78">· RC에선 다른 트랜잭션이 중간에 끼어듦</text>
+  <text x="52" y="180" font-size="10.8" fill="#5A6B78">· 마스터엔 없던 row가 슬레이브 재실행 순서상</text>
+  <text x="52" y="197" font-size="10.8" fill="#5A6B78">  UPDATE 대상이 되어버림</text>
+  <text x="52" y="220" font-size="10.8" fill="#B83227">✗ 마스터/슬레이브 데이터 불일치</text>
+
+  <!-- RR solves -->
+  <rect x="438" y="92" width="390" height="140" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="633" y="116" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">REPEATABLE READ가 해결</text>
+  <text x="458" y="140" font-size="10.8" fill="#5A6B78">· 트랜잭션이 본 스냅샷을 끝까지 유지</text>
+  <text x="458" y="160" font-size="10.8" fill="#5A6B78">· InnoDB 갭 락으로 다른 트랜잭션 INSERT 차단</text>
+  <text x="458" y="180" font-size="10.8" fill="#1F6B4E">✓ 재실행 결과가 항상 일치</text>
+  <text x="458" y="204" font-size="10.8" fill="#8A9BA8">→ SBR이라는 제약이 기본 격리수준까지 정함</text>
+
+  <!-- twist -->
+  <rect x="32" y="252" width="796" height="72" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="430" y="276" font-size="12.5" font-weight="700" fill="#8A5E12" text-anchor="middle">반전 — 지금은 행 기반 복제(RBR)가 기본인데도 안 바뀐다</text>
+  <text x="52" y="300" font-size="10.8" fill="#5A6B78">RBR은 변경 결과를 직접 기록 → 재실행 없어 격리 약해도 정합성 유지. 제약은 이미 사라짐.</text>
+  <text x="52" y="318" font-size="10.8" fill="#8A5E12">그런데도 기본값은 여전히 RR — 수많은 운영 시스템이 의존해 바꾸면 호환성이 깨지기 때문.</text>
+</svg>

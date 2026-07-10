@@ -1,0 +1,29 @@
+<svg viewBox="0 0 860 330" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="xar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="330" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">X-Forwarded-For의 함정 — IP는 헤더의 약속</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">LB 뒤 서버는 모든 패킷이 LB 사설 IP로 들어옴 → 진짜 IP는 헤더로 전달. 그런데 헤더는 위조 가능</text>
+
+  <rect x="40" y="98" width="150" height="56" rx="10" fill="#FCF5F4" stroke="#B83227"/>
+  <text x="115" y="122" font-size="11.5" font-weight="700" fill="#B83227" text-anchor="middle">공격자</text>
+  <text x="115" y="140" font-size="9.5" fill="#8A9BA8" text-anchor="middle">XFF: 10.0.0.1 (가짜)</text>
+  <line x1="190" y1="126" x2="300" y2="126" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#xar)"/>
+
+  <rect x="302" y="98" width="150" height="56" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="377" y="122" font-size="11.5" font-weight="700" fill="#8A5E12" text-anchor="middle">LB</text>
+  <text x="377" y="140" font-size="9.5" fill="#8A9BA8" text-anchor="middle">그대로 통과/덧붙임</text>
+  <line x1="452" y1="126" x2="562" y2="126" stroke="#8A9BA8" stroke-width="1.4" marker-end="url(#xar)"/>
+
+  <rect x="564" y="98" width="256" height="56" rx="10" fill="#FCF5F4" stroke="#E0B4AD"/>
+  <text x="692" y="122" font-size="11.5" fill="#B83227" text-anchor="middle">서버: 헤더 첫 IP를 신뢰 → 뚫림</text>
+  <text x="692" y="140" font-size="9.5" fill="#8A9BA8" text-anchor="middle">화이트리스트 코드엔 버그 없음</text>
+
+  <rect x="40" y="180" width="780" height="58" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="56" y="203" font-size="12" font-weight="700" fill="#1F6B4E">해결 — 신뢰할 홉(hop)을 명시</text>
+  <text x="56" y="224" font-size="11" fill="#5A6B78">스프링 RemoteIpValve/ForwardedHeaderFilter로 신뢰 프록시를 정하고, 거기서 가장 가까운 IP만 클라이언트로 인정.</text>
+
+  <text x="32" y="266" font-size="11.5" fill="#8A9BA8">한계: CDN 추가 시 홉이 하나 더 · 이동통신은 수만 명이 같은 외부 IP 공유.</text>
+  <text x="32" y="290" font-size="11.5" fill="#8A9BA8">→ IP 단일 신호가 아니라 토큰·디바이스·핑거프린트·이상행동 탐지를 함께 봐야 한다.</text>
+</svg>

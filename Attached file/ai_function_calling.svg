@@ -1,0 +1,38 @@
+<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="fcar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Function Calling — 결정권이 코드에서 LLM으로</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">기존엔 if/라우터가 어떤 API를 부를지 결정 → 이제 LLM이 스키마를 보고 고른다</text>
+
+  <rect x="40" y="98" width="150" height="50" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="115" y="122" font-size="11.5" font-weight="700" fill="#8A5E12" text-anchor="middle">사용자</text>
+  <text x="115" y="140" font-size="10" fill="#8A9BA8" text-anchor="middle">"서울 날씨 알려줘"</text>
+  <line x1="190" y1="123" x2="300" y2="123" stroke="#08748C" stroke-width="1.5" marker-end="url(#fcar)"/>
+
+  <rect x="302" y="90" width="256" height="70" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="430" y="114" font-size="13" font-weight="700" fill="#065A6E" text-anchor="middle">LLM</text>
+  <text x="430" y="134" font-size="10.5" fill="#5A6B78" text-anchor="middle">함수 목록(JSON 스키마)을 보고</text>
+  <text x="430" y="150" font-size="10.5" fill="#5A6B78" text-anchor="middle">의도에 맞는 함수+파라미터 선택</text>
+  <line x1="558" y1="123" x2="668" y2="123" stroke="#08748C" stroke-width="1.5" marker-end="url(#fcar)"/>
+
+  <rect x="670" y="90" width="150" height="70" rx="10" fill="#DFF0E8" stroke="#2E8B6B"/>
+  <text x="745" y="120" font-size="11.5" font-weight="700" fill="#1F6B4E" text-anchor="middle">getWeather</text>
+  <text x="745" y="140" font-size="10" fill="#8A9BA8" text-anchor="middle">(city="서울")</text>
+
+  <rect x="40" y="184" width="380" height="90" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="230" y="208" font-size="12.5" font-weight="700" fill="#8A5E12" text-anchor="middle">description이 정확도를 좌우</text>
+  <text x="58" y="232" font-size="10.8" fill="#5A6B78">"도시의 현재 날씨 조회" → 서울 날씨에 반응</text>
+  <text x="58" y="252" font-size="10.8" fill="#5A6B78">같은 함수라도 설명이 다르면 다른 질문에 반응</text>
+  <text x="58" y="270" font-size="10.5" fill="#8A9BA8">→ "AI가 판단하기 좋은 이름"을 설계</text>
+
+  <rect x="440" y="184" width="380" height="90" rx="10" fill="#FCF5F4" stroke="#E0B4AD" stroke-width="1.4"/>
+  <text x="630" y="208" font-size="12.5" font-weight="700" fill="#B83227" text-anchor="middle">툴이 많아지면 헷갈린다</text>
+  <text x="458" y="232" font-size="10.8" fill="#5A6B78">getUserInfo vs getUser → AI도 확신 못 함</text>
+  <text x="458" y="252" font-size="10.8" fill="#5A6B78">REST는 작고 명확한 엔드포인트, Tool은 적을수록 ↑</text>
+  <text x="458" y="270" font-size="10.5" fill="#8A9BA8">→ 사람용 REST API와 AI용 Tool API를 분리</text>
+
+  <text x="32" y="308" font-size="11.5" fill="#8A9BA8">여러 툴 조합(첫 결과 보고 다음 함수 결정) = AI 에이전트의 시작점.</text>
+  <text x="32" y="330" font-size="11.5" fill="#8A9BA8">사람이 호출하는 API와 AI가 고르는 API는 설계 원칙이 다르다.</text>
+</svg>
