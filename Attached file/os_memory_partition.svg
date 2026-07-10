@@ -1,4 +1,4 @@
-<svg viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="820" height="430" viewBox="0 0 820 430" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="820" height="430" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">가변 분할 vs 고정 분할 — 그리고 단편화</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">가변 분할은 프로세스 크기대로(→ 외부 단편화) · 고정 분할은 똑같은 크기로(→ 내부 단편화)</text>

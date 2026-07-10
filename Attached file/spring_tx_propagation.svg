@@ -1,4 +1,4 @@
-<svg viewBox="0 0 860 440" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="440" viewBox="0 0 860 440" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="860" height="440" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">트랜잭션 전파 — REQUIRED vs REQUIRES_NEW</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">REQUIRED는 하나의 물리 트랜잭션에 참여(내부 롤백 → 전체 롤백) · REQUIRES_NEW는 별도 물리 트랜잭션(서로 영향 없음)</text>
