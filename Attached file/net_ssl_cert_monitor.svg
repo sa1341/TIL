@@ -1,0 +1,24 @@
+<svg viewBox="0 0 860 330" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="330" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">SSL 인증서 만료 — 조용히 다가오는 장애</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">서버·DB·로그 모두 정상인데 서비스만 멈춘다. 감시는 서버 바깥에 독립적으로 둬야 한다</text>
+
+  <!-- inside server -->
+  <rect x="40" y="90" width="380" height="150" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="230" y="114" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">서버 내부 감시 (취약)</text>
+  <rect x="60" y="128" width="340" height="26" rx="5" fill="#F6E4E1"/><text x="230" y="146" font-size="10.5" fill="#B83227" text-anchor="middle">certbot 크론 (자동 갱신) — 실패해도 조용</text>
+  <rect x="60" y="160" width="340" height="26" rx="5" fill="#F6E4E1"/><text x="230" y="178" font-size="10.5" fill="#B83227" text-anchor="middle">모니터링 크론 (30일 이하 Slack)</text>
+  <text x="230" y="210" font-size="10.5" fill="#8A9BA8" text-anchor="middle">✗ 서버가 죽으면 크론도 같이 죽음</text>
+  <text x="230" y="228" font-size="10.5" fill="#8A9BA8" text-anchor="middle">Let's Encrypt 만료 알림 이메일도 중단됨</text>
+
+  <!-- outside -->
+  <rect x="440" y="90" width="380" height="150" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="630" y="114" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">외부 독립 감시 (안전)</text>
+  <rect x="460" y="128" width="340" height="26" rx="5" fill="#CDE9DC"/><text x="630" y="146" font-size="10.5" fill="#1F6B4E" text-anchor="middle">UptimeRobot 등 외부 서비스</text>
+  <text x="460" y="176" font-size="10.5" fill="#5A6B78">서버 바깥에서 인증서 만료를 확인</text>
+  <text x="460" y="196" font-size="10.5" fill="#5A6B78">서버가 죽어도 독립적으로 동작</text>
+  <text x="460" y="222" font-size="10.5" fill="#1F6B4E">✓ ALB+ACM은 자동 관리 (EC2 직접 연결 시 수동)</text>
+
+  <text x="32" y="278" font-size="11.5" fill="#8A9BA8">Let's Encrypt 인증서 유효기간 90일. 많은 서버 장애는 서버 코드가 아니라 인프라 만료에서 시작된다.</text>
+  <text x="32" y="300" font-size="11.5" fill="#8A9BA8">가장 위험한 장애는 조용히 다가오는 장애다.</text>
+</svg>

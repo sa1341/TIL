@@ -4,7 +4,7 @@
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">HTTP 상태 = 전송/시스템의 결과. 비즈니스 성공 여부가 아니다</text>
 
   <rect x="40" y="94" width="380" height="86" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.6"/>
-  <text x="230" y="118" font-size="13" font-weight="700" fill="#065A6E" text-anchor="middle">HTTP 상태 코드 (전송 계층)</text>
+  <text x="230" y="118" font-size="13" font-weight="700" fill="#065A6E" text-anchor="middle">HTTP 상태 코드 (전송·전달 단계)</text>
   <text x="230" y="140" font-size="11" fill="#5A6B78" text-anchor="middle">200 = "요청 잘 받고 잘 처리함"</text>
   <text x="230" y="162" font-size="10.5" fill="#8A9BA8" text-anchor="middle">인프라 장비(프록시·CDN·서킷브레이커)가 보는 값</text>
 

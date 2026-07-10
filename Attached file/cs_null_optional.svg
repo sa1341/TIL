@@ -1,0 +1,23 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="320" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">null 참조의 문제와 대안</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">토니 호어(1965, ALGOL W): "10억 달러짜리 실수" — 구현이 쉬워 만들었고, 호환성 때문에 못 없앤다</text>
+
+  <!-- problem -->
+  <rect x="40" y="90" width="380" height="90" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.4"/>
+  <text x="230" y="114" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">null의 문제</text>
+  <text x="58" y="138" font-size="10.8" fill="#5A6B78">· 어디든 들어올 수 있음 · 컴파일러가 못 잡음</text>
+  <text x="58" y="158" font-size="10.8" fill="#B83227">· 런타임에 NullPointerException 한 줄만 남김</text>
+  <text x="58" y="174" font-size="10.5" fill="#8A9BA8">→ 실행 중에야 터짐</text>
+
+  <!-- solutions -->
+  <rect x="440" y="90" width="380" height="90" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="630" y="114" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">대안</text>
+  <text x="458" y="138" font-size="10.8" fill="#5A6B78">· 코틀린: 타입 시스템에서 null 가능 분리(컴파일 차단)</text>
+  <text x="458" y="158" font-size="10.8" fill="#5A6B78">· 자바 Optional: "값 없을 수 있음"을 호출자에 강제</text>
+  <text x="458" y="174" font-size="10.5" fill="#B83227">단 Optional이 null 반환하면 다시 NPE</text>
+
+  <rect x="40" y="204" width="780" height="52" rx="10" fill="#FBF3E4" stroke="#C88A2E"/>
+  <text x="56" y="226" font-size="12" font-weight="700" fill="#8A5E12">자바는 하위 호환성 때문에 null을 제거할 수 없다</text>
+  <text x="56" y="246" font-size="11" fill="#5A6B78">60년이 지나도 null이 살아있는 이유는 기술적 한계가 아니라 생태계의 관성.</text>
+</svg>

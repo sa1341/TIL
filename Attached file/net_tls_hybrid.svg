@@ -13,7 +13,7 @@
 
   <!-- phase 1 asymmetric -->
   <rect x="210" y="96" width="440" height="96" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
-  <text x="430" y="120" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">① 비대칭키 (딱 한 번, 느림 ~10만 배)</text>
+  <text x="430" y="120" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">① 비대칭키 (딱 한 번, 느림 · 수백 배↑)</text>
   <line x1="190" y1="150" x2="668" y2="150" stroke="#08748C" stroke-width="1.4" marker-end="url(#tar)"/>
   <text x="430" y="144" font-size="10.5" fill="#5A6B78" text-anchor="middle">공개키로 세션 키 안전하게 교환</text>
   <text x="430" y="178" font-size="10.5" fill="#8A9BA8" text-anchor="middle">키 전달 문제 해결 (가로채도 개인키 없이 못 풂)</text>

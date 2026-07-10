@@ -1,0 +1,29 @@
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="iar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="340" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">AI 에이전트 시대의 멱등성 — 서버만으로 안 된다</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">타임아웃은 클라이언트가 응답을 못 받은 것일 뿐, 서버는 정상 처리 → 재시도 시 중복 결제</text>
+
+  <!-- existing client -->
+  <rect x="40" y="90" width="380" height="90" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.4"/>
+  <text x="230" y="114" font-size="13" font-weight="700" fill="#1F6B4E" text-anchor="middle">기존 클라이언트</text>
+  <text x="58" y="138" font-size="10.8" fill="#5A6B78">· 재시도 시 멱등 키를 그대로 재사용</text>
+  <text x="58" y="158" font-size="10.8" fill="#1F6B4E">✓ 서버가 중복을 잡을 수 있음</text>
+  <text x="58" y="174" font-size="10.5" fill="#8A9BA8">개발자가 코드로 순서·키를 통제</text>
+
+  <!-- AI agent -->
+  <rect x="440" y="90" width="380" height="90" rx="12" fill="#FCF5F4" stroke="#E0B4AD" stroke-width="1.4"/>
+  <text x="630" y="114" font-size="13" font-weight="700" fill="#B83227" text-anchor="middle">AI 에이전트</text>
+  <text x="458" y="138" font-size="10.8" fill="#5A6B78">· "이건 새 시도"라며 멱등 키를 새로 생성</text>
+  <text x="458" y="158" font-size="10.8" fill="#B83227">✗ 서버엔 완전히 다른 요청 → 중복 결제</text>
+  <text x="458" y="174" font-size="10.5" fill="#8A9BA8">프롬프트로 순서를 강제해도 건너뜀</text>
+
+  <!-- human gate -->
+  <rect x="40" y="204" width="780" height="60" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <text x="430" y="228" font-size="13" font-weight="700" fill="#8A5E12" text-anchor="middle">해결 — 에이전트와 실제 실행 사이에 "사람 승인(human approval)" 게이트</text>
+  <text x="430" y="250" font-size="10.8" fill="#5A6B78" text-anchor="middle">서버가 키를 만들어도 에이전트가 순서를 건너뛸 수 있어, 되돌릴 수 없는 작업엔 사람 확인이 필수</text>
+
+  <text x="32" y="300" font-size="11.5" fill="#8A9BA8">AI 에이전트 시대의 멱등성은 서버만으로 해결되지 않는다. 되돌릴 수 없는 작업에는 반드시 사람의 승인이 필요하다.</text>
+</svg>
