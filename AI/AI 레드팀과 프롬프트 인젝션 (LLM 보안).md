@@ -29,6 +29,6 @@ AI 챗봇 서비스를 런칭한 다음 날, 트위터에 스크린샷 하나가
 
 > 기존 보안 테스트가 "한 번 통과하면 안전"이었다면, **AI 레드티밍은 통과해도 안심할 수 없는 테스트**입니다. AI 서비스의 보안 테스트는 **배포 전 한 번으로 끝나는 게 아니라, 모델이 바뀔 때마다 반복**해야 합니다.
 
-관련 노트: [[AI 에이전트와 멱등성]]
+관련 노트: [[Function Calling과 API 설계]] · [[MCP 아키텍처 개념정리]] · [[AI 에이전트와 멱등성]]
 
 > 출처: 2분코딩 — "A single prompt leaked the entire system prompt (AI Red Teaming)" · https://www.youtube.com/shorts/tvH_xbSdDUA
