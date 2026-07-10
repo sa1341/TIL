@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/운영체제/입출력 시스템.md",
+                "file": "AI/MCP 아키텍처 개념정리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "입출력 시스템"
+              "title": "MCP 아키텍처 개념정리"
             }
           }
         ],
@@ -338,6 +338,19 @@
           },
           {
             "id": "c0c4587de4905075",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "c6bd91b0da2b67d9",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
