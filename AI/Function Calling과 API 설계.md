@@ -30,6 +30,6 @@
 
 > Function Calling은 **API 설계의 기준 자체를 바꿉니다.** **사람이 호출하는 API와 AI가 고르는 API는 설계 원칙이 다릅니다.**
 
-관련 노트: [[MCP 아키텍처 개념정리]]
+관련 노트: [[MCP 아키텍처 개념정리]] · [[코드베이스 RAG — 청킹·검색·에이전틱 탐색]]
 
 > 출처: 2분코딩 — "No longer the server: The AI now decides which API the LLM calls (Function Calling)" · https://www.youtube.com/shorts/41wgfOix228

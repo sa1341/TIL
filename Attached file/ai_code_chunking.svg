@@ -1,0 +1,49 @@
+<svg width="860" height="440" viewBox="0 0 860 440" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="440" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">코드 청킹 전략 — 고정 크기 vs 구조 인식(AST)</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">코드는 자연어와 달리 문법 경계가 있어, 어디서 자르느냐가 검색 품질을 좌우한다.</text>
+
+  <!-- LEFT: fixed-size -->
+  <rect x="40" y="96" width="380" height="300" rx="12" fill="#FCF5F4" stroke="#B83227" stroke-width="1.8"/>
+  <text x="230" y="124" font-size="15" font-weight="700" fill="#B83227" text-anchor="middle">고정 크기 청킹 (naive)</text>
+  <text x="230" y="144" font-size="11" fill="#8A9BA8" text-anchor="middle">N줄 / N토큰 단위로 기계적으로 절단</text>
+
+  <!-- code block left -->
+  <rect x="66" y="162" width="328" height="150" rx="8" fill="#ffffff" stroke="#F0C9C3"/>
+  <text x="82" y="184" font-size="11" fill="#5A6B78" font-family="monospace">def process_order(o):</text>
+  <text x="82" y="202" font-size="11" fill="#5A6B78" font-family="monospace">    validate(o)</text>
+  <line x1="72" y1="214" x2="388" y2="214" stroke="#B83227" stroke-width="1.6" stroke-dasharray="5,3"/>
+  <text x="398" y="211" font-size="9.5" fill="#B83227" text-anchor="end">✂ 청크 경계</text>
+  <text x="82" y="234" font-size="11" fill="#5A6B78" font-family="monospace">    charge(o.card)</text>
+  <text x="82" y="252" font-size="11" fill="#5A6B78" font-family="monospace">    ship(o.addr)</text>
+  <text x="82" y="270" font-size="11" fill="#5A6B78" font-family="monospace">def refund(o):</text>
+  <text x="82" y="288" font-size="11" fill="#5A6B78" font-family="monospace">    reverse(o.card)</text>
+
+  <rect x="66" y="326" width="328" height="52" rx="8" fill="#F6DFDC"/>
+  <text x="230" y="347" font-size="11" font-weight="700" fill="#B83227" text-anchor="middle">함수가 중간에 잘림</text>
+  <text x="230" y="366" font-size="10.5" fill="#8A5050" text-anchor="middle">검색 시 반쪽짜리 로직 → LLM이 문맥 오해</text>
+
+  <!-- RIGHT: AST -->
+  <rect x="440" y="96" width="380" height="300" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="630" y="124" font-size="15" font-weight="700" fill="#1F6B4E" text-anchor="middle">구조 인식 청킹 (AST 기반)</text>
+  <text x="630" y="144" font-size="11" fill="#8A9BA8" text-anchor="middle">함수·클래스 등 문법 단위로 온전히 분할</text>
+
+  <!-- chunk1 -->
+  <rect x="466" y="162" width="328" height="76" rx="8" fill="#ffffff" stroke="#C3E2D2"/>
+  <text x="482" y="182" font-size="9.5" fill="#2E8B6B" font-weight="700">CHUNK 1 · process_order()</text>
+  <text x="482" y="200" font-size="11" fill="#5A6B78" font-family="monospace">def process_order(o):</text>
+  <text x="482" y="216" font-size="11" fill="#5A6B78" font-family="monospace">    validate(o); charge(o.card)</text>
+  <text x="482" y="232" font-size="11" fill="#5A6B78" font-family="monospace">    ship(o.addr)</text>
+
+  <!-- chunk2 -->
+  <rect x="466" y="248" width="328" height="60" rx="8" fill="#ffffff" stroke="#C3E2D2"/>
+  <text x="482" y="268" font-size="9.5" fill="#2E8B6B" font-weight="700">CHUNK 2 · refund()</text>
+  <text x="482" y="286" font-size="11" fill="#5A6B78" font-family="monospace">def refund(o):</text>
+  <text x="482" y="300" font-size="11" fill="#5A6B78" font-family="monospace">    reverse(o.card)</text>
+
+  <rect x="466" y="326" width="328" height="52" rx="8" fill="#CDE9DC"/>
+  <text x="630" y="347" font-size="11" font-weight="700" fill="#1F6B4E" text-anchor="middle">함수 단위로 완결</text>
+  <text x="630" y="366" font-size="10.5" fill="#3E7A5E" text-anchor="middle">청크 하나가 곧 의미 단위 → 검색 정확도↑</text>
+
+  <text x="40" y="422" font-size="11.5" fill="#8A9BA8">· 큰 함수는 재귀적으로 쪼개고 작은 조각은 합쳐(greedy merge) 크기 상한 안에서 문법 완결성을 유지한다(cAST).</text>
+</svg>

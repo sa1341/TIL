@@ -1,0 +1,52 @@
+<svg width="860" height="430" viewBox="0 0 860 430" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="ccar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#08748C"/></marker>
+  </defs>
+  <rect x="0" y="0" width="860" height="430" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Claude Code 작업 흐름 — 컨텍스트 · Plan → Edit</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">루트에서 실행해 전체 구조를 파악하고, 계획을 먼저 세운 뒤 구현하며, 컨텍스트를 아껴 쓴다.</text>
+
+  <!-- CLAUDE.md as foundation -->
+  <rect x="40" y="96" width="200" height="230" rx="12" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.8"/>
+  <text x="140" y="122" font-size="14" font-weight="700" fill="#8A5E12" text-anchor="middle">CLAUDE.md</text>
+  <text x="140" y="140" font-size="10.5" fill="#8A9BA8" text-anchor="middle">프로젝트의 '헌법'</text>
+  <line x1="60" y1="152" x2="220" y2="152" stroke="#E5CF9E"/>
+  <text x="58" y="176" font-size="10.5" fill="#5A6B78">· 절대 규칙 (운영 DB 금지 등)</text>
+  <text x="58" y="198" font-size="10.5" fill="#5A6B78">· 아키텍처 트리</text>
+  <text x="58" y="220" font-size="10.5" fill="#5A6B78">· 빌드/테스트 명령어</text>
+  <text x="58" y="242" font-size="10.5" fill="#5A6B78">· 코딩 컨벤션</text>
+  <text x="58" y="272" font-size="10" fill="#8A9BA8">루트는 300줄 이내로 유지</text>
+  <text x="58" y="290" font-size="10" fill="#8A9BA8">→ 폴더별 분산(레이어드)</text>
+  <text x="58" y="312" font-size="10" fill="#8A9BA8">apps/api/CLAUDE.md ...</text>
+
+  <!-- Plan mode -->
+  <rect x="288" y="112" width="240" height="90" rx="10" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="408" y="140" font-size="14" font-weight="700" fill="#065A6E" text-anchor="middle">Plan 모드</text>
+  <text x="408" y="162" font-size="10.5" fill="#5A6B78" text-anchor="middle">수정 권한 없이 계획만 수립</text>
+  <text x="408" y="182" font-size="10.5" fill="#5A6B78" text-anchor="middle">불필요한 코드 생성 방지 → 비용 절약</text>
+
+  <!-- arrow down -->
+  <line x1="408" y1="202" x2="408" y2="234" stroke="#08748C" stroke-width="1.8" marker-end="url(#ccar)"/>
+  <text x="452" y="222" font-size="10" fill="#8A9BA8">Shift+Tab</text>
+
+  <!-- Edit mode -->
+  <rect x="288" y="236" width="240" height="90" rx="10" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="408" y="264" font-size="14" font-weight="700" fill="#1F6B4E" text-anchor="middle">Edit 모드</text>
+  <text x="408" y="286" font-size="10.5" fill="#3E7A5E" text-anchor="middle">계획 검토 후 실제 코드 작성</text>
+  <text x="408" y="306" font-size="10.5" fill="#3E7A5E" text-anchor="middle">항상 Plan 선행 → Edit 권장</text>
+
+  <!-- context management -->
+  <rect x="576" y="112" width="244" height="214" rx="12" fill="#F7FAFB" stroke="#B7D5DC"/>
+  <text x="698" y="138" font-size="13" font-weight="700" fill="#3E5060" text-anchor="middle">컨텍스트 관리</text>
+  <line x1="596" y1="150" x2="800" y2="150" stroke="#D8E3E8"/>
+  <text x="596" y="174" font-size="10.8" fill="#5A6B78"><tspan font-weight="700" fill="#065A6E">/context</tspan>  토큰 점유율 확인</text>
+  <text x="596" y="198" font-size="10.8" fill="#5A6B78"><tspan font-weight="700" fill="#065A6E">/compact</tspan>  대화 요약해 압축</text>
+  <text x="596" y="222" font-size="10.8" fill="#5A6B78"><tspan font-weight="700" fill="#065A6E">/clear</tspan>  히스토리 완전 삭제</text>
+  <text x="596" y="246" font-size="10.8" fill="#5A6B78"><tspan font-weight="700" fill="#B83227">Esc Esc</tspan>  이전 상태로 되감기</text>
+  <text x="596" y="270" font-size="10.8" fill="#5A6B78"><tspan font-weight="700" fill="#8A5E12">!cmd</tspan>  세션 안에서 배시 실행</text>
+  <text x="596" y="300" font-size="10" fill="#8A9BA8">모델: Opus(설계) · Sonnet(구현)</text>
+  <text x="596" y="316" font-size="10" fill="#8A9BA8">· Haiku(단순 확인)</text>
+
+  <text x="40" y="360" font-size="11.5" fill="#8A9BA8">· 루트 디렉터리에서 실행해야 전체 구조를 정확히 파악하고 토큰을 효율적으로 쓴다.</text>
+  <text x="40" y="382" font-size="11.5" fill="#8A9BA8">· 반복 작업은 커스텀 슬래시 명령어(~/.claude/commands/*.md)로 묶으면 자동완성·안정성 면에서 트리거 키워드보다 낫다.</text>
+</svg>

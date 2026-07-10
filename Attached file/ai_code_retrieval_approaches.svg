@@ -1,0 +1,45 @@
+<svg width="860" height="450" viewBox="0 0 860 450" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="450" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">코드 문맥을 찾는 두 방식 — 임베딩 인덱스 vs 에이전틱 검색</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">사전에 인덱스를 만들어 두느냐, 매번 실시간으로 코드를 뒤지느냐. 둘 다 2026년 현재의 실전 방식이다.</text>
+
+  <!-- LEFT: embedding index -->
+  <rect x="40" y="94" width="380" height="308" rx="12" fill="#EAF4F6" stroke="#08748C" stroke-width="1.8"/>
+  <text x="230" y="122" font-size="15" font-weight="700" fill="#065A6E" text-anchor="middle">임베딩 인덱스 RAG</text>
+  <text x="230" y="142" font-size="11" fill="#8A9BA8" text-anchor="middle">사전 청킹 · 벡터 검색 (Cursor · Sourcegraph 등)</text>
+  <line x1="60" y1="154" x2="400" y2="154" stroke="#B7D5DC"/>
+
+  <text x="60" y="180" font-size="11.5" font-weight="700" fill="#1F6B4E">장점</text>
+  <text x="60" y="202" font-size="11" fill="#3E5060">· 검색이 빠르다 (미리 벡터화)</text>
+  <text x="60" y="222" font-size="11" fill="#3E5060">· 대규모 코드베이스에 확장 용이</text>
+  <text x="60" y="242" font-size="11" fill="#3E5060">· 의미 기반 "비슷한 코드" 검색에 강함</text>
+
+  <text x="60" y="272" font-size="11.5" font-weight="700" fill="#B83227">단점</text>
+  <text x="60" y="294" font-size="11" fill="#3E5060">· 인덱스가 코드 변경보다 뒤처짐(staleness)</text>
+  <text x="60" y="314" font-size="11" fill="#3E5060">· 청크 경계에서 문맥 손실 가능</text>
+  <text x="60" y="334" font-size="11" fill="#3E5060">· 임베딩·벡터DB 운영 비용</text>
+
+  <rect x="60" y="352" width="340" height="38" rx="8" fill="#ffffff" stroke="#B7D5DC"/>
+  <text x="230" y="376" font-size="10.5" fill="#5A6B78" text-anchor="middle">"질문 → 유사 청크 K개 회수 → 리랭크 → LLM"</text>
+
+  <!-- RIGHT: agentic search -->
+  <rect x="440" y="94" width="380" height="308" rx="12" fill="#DFF0E8" stroke="#2E8B6B" stroke-width="1.8"/>
+  <text x="630" y="122" font-size="15" font-weight="700" fill="#1F6B4E" text-anchor="middle">에이전틱 검색</text>
+  <text x="630" y="142" font-size="11" fill="#8A9BA8" text-anchor="middle">실시간 grep · glob · read (Claude Code 방식)</text>
+  <line x1="460" y1="154" x2="800" y2="154" stroke="#C3E2D2"/>
+
+  <text x="460" y="180" font-size="11.5" font-weight="700" fill="#1F6B4E">장점</text>
+  <text x="460" y="202" font-size="11" fill="#3E5060">· 항상 최신 코드를 직접 읽음 (staleness 없음)</text>
+  <text x="460" y="222" font-size="11" fill="#3E5060">· 청킹·인덱스 인프라 불필요</text>
+  <text x="460" y="242" font-size="11" fill="#3E5060">· LLM이 스스로 탐색 경로를 좁혀감</text>
+
+  <text x="460" y="272" font-size="11.5" font-weight="700" fill="#B83227">단점</text>
+  <text x="460" y="294" font-size="11" fill="#3E5060">· 매 질의마다 탐색 → 느리고 토큰 소모 큼</text>
+  <text x="460" y="314" font-size="11" fill="#3E5060">· 키워드를 모르면 못 찾을 수 있음</text>
+  <text x="460" y="334" font-size="11" fill="#3E5060">· 초대형 저장소에선 탐색 비용 증가</text>
+
+  <rect x="460" y="352" width="340" height="38" rx="8" fill="#ffffff" stroke="#C3E2D2"/>
+  <text x="630" y="376" font-size="10.5" fill="#5A6B78" text-anchor="middle">"질문 → 에이전트가 grep/파일읽기 반복 → 답변"</text>
+
+  <text x="40" y="426" font-size="11.5" fill="#8A9BA8">최근엔 둘을 섞는다: 임베딩으로 후보를 좁힌 뒤 에이전트가 실제 파일을 읽어 확인하는 하이브리드가 늘고 있다.</text>
+</svg>
