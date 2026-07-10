@@ -1,4 +1,4 @@
-<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="380" viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="860" height="380" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">비관적 락 vs 낙관적 락 — 충돌 빈도가 선택을 결정</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">충돌이 드물면 낙관적, 잦으면 비관적</text>

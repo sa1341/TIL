@@ -1,4 +1,4 @@
-<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="360" viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">카프카 파티션 — 늘리기만 되고 줄이기는 막힌 이유</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">각 파티션은 독립적으로 0부터 증가하는 오프셋 시퀀스를 가진다</text>

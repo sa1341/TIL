@@ -1,4 +1,4 @@
-<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="360" viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">MySQL 기본이 REPEATABLE READ인 이유 — 역사적 부채</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">대부분 DB는 READ COMMITTED가 기본. MySQL만 다른 건 옛 복제 방식(SBR) 때문</text>

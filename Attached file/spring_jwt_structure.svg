@@ -1,4 +1,4 @@
-<svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="360" viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="860" height="360" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">JWT — 서명은 위변조 방지, 은닉이 아니다</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">Base64 디코딩하면 페이로드가 그대로 보인다 (암호화 X). 그래도 안전한 이유</text>

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="400" viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
   <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">Redis 분산락 — TTL 딜레마와 Watchdog</text>
   <text x="32" y="64" font-size="13.5" fill="#8A9BA8">synchronized는 JVM 한정. 여러 서버가 공통으로 보는 외부 저장소(Redis)에 SET NX로 선점</text>
