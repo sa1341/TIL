@@ -39,6 +39,6 @@
 >
 > **인프라가 손실을 줄이고, 멱등성이 남은 손실을 0으로 만들 때 무중단 배포는 비로소 완성됩니다.**
 
-관련 노트: [[쿠버네티스 오브젝트]] · [[롤링 업데이트]]
+관련 노트: [[쿠버네티스 오브젝트]] · [[롤링 업데이트 설정]]
 
 > 출처: 2분코딩 — "Payments keep failing despite claiming to be zero-downtime deployment (Shutdown trap)" · https://www.youtube.com/shorts/bAdJC-RpzOE

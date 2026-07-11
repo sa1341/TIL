@@ -463,6 +463,8 @@
   },
   "active": "56f62b6c70529d54",
   "lastOpenFiles": [
+    "Attached file/k8s_service_types.svg",
+    "Attached file/k8s_service_types.svg.tmp.40895.aa53b26fd7aa",
     "Programming/인프라/k8s/OOMKilled와 JVM off-heap 메모리.md.tmp.40895.375a9a0f11ed",
     "Programming/인프라/k8s/롤링 업데이트.md",
     "Programming/인프라/k8s/롤링 업데이트.md.tmp.40895.3fffbf6e1901",
@@ -507,8 +509,6 @@
     "Attached file/net_api_compat_parsing.svg.tmp.40895.6e078c34423a",
     "Attached file/spring_transactional_rollback.svg.tmp.40895.d5ae9b727e37",
     "Programming/Redis/Redis가 느리다면 네트워크를 의심하라 (파이프라인).md.tmp.40895.908d9487a689",
-    "Attached file/kafka_at_least_once.svg.tmp.40895.cc714d2112f3",
-    "AI/함수 호출(Function Calling)은 API 설계 기준을 바꾼다.md.tmp.40895.ce2e01ef2601",
     "Untitled.canvas"
   ]
 }
