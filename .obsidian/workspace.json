@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/k8s/프로세스 상태검사.md",
+                "file": "Programming/인프라/k8s/쿠버네티스 오브젝트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "프로세스 상태검사"
+              "title": "쿠버네티스 오브젝트"
             }
           }
         ],
