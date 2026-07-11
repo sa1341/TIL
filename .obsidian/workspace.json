@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/k8s/OOMKilled와 JVM off-heap 메모리.md",
+                "file": "Programming/인프라/k8s/무중단 배포와 graceful shutdown·멱등성.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OOMKilled와 JVM off-heap 메모리"
+              "title": "무중단 배포와 graceful shutdown·멱등성"
             }
           }
         ],
