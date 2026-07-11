@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/코드베이스 RAG — 청킹·검색·에이전틱 탐색.md",
+                "file": "Programming/인프라/k8s/OOMKilled와 JVM off-heap 메모리.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "코드베이스 RAG — 청킹·검색·에이전틱 탐색"
+              "title": "OOMKilled와 JVM off-heap 메모리"
             }
           }
         ],
@@ -463,6 +463,7 @@
   },
   "active": "56f62b6c70529d54",
   "lastOpenFiles": [
+    "Attached file/k8s_jvm_offheap_regions.svg",
     "AI/코드베이스 RAG — 청킹·검색·에이전틱 탐색.md",
     "AI/코드베이스 RAG — 청킹·검색·에이전틱 탐색.md.tmp.40895.9eb694bd046f",
     "Attached file/ai_claude_code_workflow.svg",
@@ -500,7 +501,6 @@
     "Programming/Kafka/카프카 at-least-once와 컨슈머 멱등성.md",
     "Programming/Kafka/카프카 파티션 수를 줄일 수 없는 이유.md",
     "Programming/Redis/Redis 파이프라인과 네트워크 왕복(RTT).md",
-    "Programming/Spring/커넥션 풀 동작 원리 (HikariCP).md",
     "Programming/인프라/네트워크/필드 하나 추가했는데 앱이 죽었다 (API 하위 호환성).md.tmp.40895.cd8ee4da8e29",
     "Attached file/net_api_compat_parsing.svg.tmp.40895.6e078c34423a",
     "Attached file/spring_transactional_rollback.svg.tmp.40895.d5ae9b727e37",

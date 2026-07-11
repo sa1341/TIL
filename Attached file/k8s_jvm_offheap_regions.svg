@@ -1,0 +1,79 @@
+<svg width="860" height="452" viewBox="0 0 860 452" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="860" height="452" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">컨테이너 RSS 구성 — 힙 + off-heap 영역별 용도</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">쿠버네티스가 감시하는 건 힙이 아니라 RSS 전체. off-heap은 힙 모니터링에 안 잡히지만 limit을 함께 채운다.</text>
+
+  <!-- container limit frame -->
+  <text x="40" y="92" font-size="11.5" font-weight="700" fill="#3E5060">컨테이너 메모리 limit (= RSS 전체를 감시)</text>
+  <rect x="38" y="100" width="784" height="60" rx="8" fill="#F7FAFB" stroke="#B7D5DC" stroke-width="1.5"/>
+
+  <!-- stacked bar: heap + off-heap -->
+  <!-- Heap 45% = 351 -->
+  <rect x="46" y="108" width="345" height="44" rx="4" fill="#2E8B6B"/>
+  <text x="218" y="135" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Heap (힙)</text>
+  <!-- Metaspace -->
+  <rect x="393" y="108" width="92" height="44" rx="4" fill="#08748C"/>
+  <text x="439" y="131" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Meta</text>
+  <text x="439" y="143" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">space</text>
+  <!-- Thread Stack -->
+  <rect x="487" y="108" width="96" height="44" rx="4" fill="#C88A2E"/>
+  <text x="535" y="131" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Thread</text>
+  <text x="535" y="143" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Stack</text>
+  <!-- Code Cache -->
+  <rect x="585" y="108" width="66" height="44" rx="4" fill="#B83227"/>
+  <text x="618" y="131" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Code</text>
+  <text x="618" y="143" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Cache</text>
+  <!-- Direct Buffer -->
+  <rect x="653" y="108" width="86" height="44" rx="4" fill="#065A6E"/>
+  <text x="696" y="131" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Direct</text>
+  <text x="696" y="143" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Buffer</text>
+  <!-- GC/Native -->
+  <rect x="741" y="108" width="73" height="44" rx="4" fill="#8A9BA8"/>
+  <text x="777" y="131" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">GC·</text>
+  <text x="777" y="143" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">Native</text>
+
+  <!-- off-heap bracket -->
+  <path d="M393 170 v6 h421 v-6" fill="none" stroke="#B83227" stroke-width="1.3"/>
+  <text x="603" y="192" font-size="11" font-weight="700" fill="#B83227" text-anchor="middle">off-heap — 힙 모니터링(-Xmx)에 안 잡힘</text>
+  <path d="M46 170 v6 h345 v-6" fill="none" stroke="#2E8B6B" stroke-width="1.3"/>
+  <text x="218" y="192" font-size="11" font-weight="700" fill="#1F6B4E" text-anchor="middle">on-heap</text>
+
+  <!-- legend table -->
+  <text x="40" y="226" font-size="12" font-weight="700" fill="#3E5060">영역</text>
+  <text x="196" y="226" font-size="12" font-weight="700" fill="#3E5060">용도</text>
+  <text x="600" y="226" font-size="12" font-weight="700" fill="#3E5060">제한 방법</text>
+  <line x1="40" y1="234" x2="820" y2="234" stroke="#D8E3E8"/>
+
+  <!-- rows -->
+  <rect x="40" y="244" width="13" height="13" rx="2" fill="#2E8B6B"/>
+  <text x="62" y="255" font-size="11" font-weight="700" fill="#17212B">Heap</text>
+  <text x="196" y="255" font-size="11" fill="#5A6B78">객체 인스턴스가 사는 곳</text>
+  <text x="600" y="255" font-size="11" fill="#5A6B78" font-family="monospace">-Xmx</text>
+
+  <rect x="40" y="272" width="13" height="13" rx="2" fill="#08748C"/>
+  <text x="62" y="283" font-size="11" font-weight="700" fill="#17212B">Metaspace</text>
+  <text x="196" y="283" font-size="11" fill="#5A6B78">클래스 메타데이터 (프록시·클래스로더가 늘림)</text>
+  <text x="600" y="283" font-size="11" fill="#5A6B78" font-family="monospace">-XX:MaxMetaspaceSize</text>
+
+  <rect x="40" y="300" width="13" height="13" rx="2" fill="#C88A2E"/>
+  <text x="62" y="311" font-size="11" font-weight="700" fill="#17212B">Thread Stack</text>
+  <text x="196" y="311" font-size="11" fill="#5A6B78">스레드별 호출 스택 (스레드 수 × 크기)</text>
+  <text x="600" y="311" font-size="11" fill="#5A6B78" font-family="monospace">-Xss + 스레드 수 상한</text>
+
+  <rect x="40" y="328" width="13" height="13" rx="2" fill="#B83227"/>
+  <text x="62" y="339" font-size="11" font-weight="700" fill="#17212B">Code Cache</text>
+  <text x="196" y="339" font-size="11" fill="#5A6B78">JIT이 컴파일한 네이티브 기계어</text>
+  <text x="600" y="339" font-size="11" fill="#5A6B78" font-family="monospace">-XX:ReservedCodeCacheSize</text>
+
+  <rect x="40" y="356" width="13" height="13" rx="2" fill="#065A6E"/>
+  <text x="62" y="367" font-size="11" font-weight="700" fill="#17212B">Direct Buffer</text>
+  <text x="196" y="367" font-size="11" fill="#5A6B78">NIO I/O 버퍼 · zero-copy (Netty·gRPC 등)</text>
+  <text x="600" y="367" font-size="11" fill="#5A6B78" font-family="monospace">-XX:MaxDirectMemorySize</text>
+
+  <rect x="40" y="384" width="13" height="13" rx="2" fill="#8A9BA8"/>
+  <text x="62" y="395" font-size="11" font-weight="700" fill="#17212B">GC · Native</text>
+  <text x="196" y="395" font-size="11" fill="#5A6B78">GC 구조체(힙 비례) · JNI · malloc 아레나</text>
+  <text x="600" y="395" font-size="11" fill="#5A6B78">힙 비례 / 플래그 밖 (jemalloc·NMT)</text>
+
+  <text x="40" y="428" font-size="11.5" fill="#8A9BA8">힙은 limit의 ~70~75%로 잡아 off-heap 여유를 남기고(-XX:MaxRAMPercentage), 실측은 -XX:NativeMemoryTracking + jcmd VM.native_memory로.</text>
+</svg>
