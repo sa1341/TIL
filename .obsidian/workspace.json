@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/k8s/쿠버네티스 오브젝트.md",
+                "file": "Programming/인프라/네트워크/IP 계층의 차이점.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "쿠버네티스 오브젝트"
+              "title": "IP 계층의 차이점"
             }
           }
         ],
@@ -463,6 +463,7 @@
   },
   "active": "56f62b6c70529d54",
   "lastOpenFiles": [
+    "Attached file/net_l4_l7_loadbalancer.svg",
     "Attached file/k8s_service_types.svg",
     "Attached file/k8s_service_types.svg.tmp.40895.aa53b26fd7aa",
     "Programming/인프라/k8s/OOMKilled와 JVM off-heap 메모리.md.tmp.40895.375a9a0f11ed",
@@ -481,7 +482,6 @@
     "Attached file/cs_null_optional.svg",
     "Attached file/cs_json_fragmentation.svg",
     "Attached file/ai_agent_idempotency.svg",
-    "Attached file/net_ssl_cert_monitor.svg",
     "Programming/인프라/네트워크/API 하위 호환성과 JSON 파싱 전략.md",
     "Programming/인프라/네트워크/SSL 인증서 만료와 갱신·모니터링.md",
     "Programming/인프라/네트워크/로드밸런서-서버 Keep-Alive 타임아웃 불일치와 502.md",
