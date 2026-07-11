@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/네트워크/IP 계층의 차이점.md",
+                "file": "Programming/인프라/네트워크/X-Forwarded-For와 신뢰 프록시 설정.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IP 계층의 차이점"
+              "title": "X-Forwarded-For와 신뢰 프록시 설정"
             }
           }
         ],
