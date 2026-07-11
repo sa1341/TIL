@@ -1,10 +1,10 @@
-<svg width="860" height="400" viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<svg width="860" height="446" viewBox="0 0 860 446" xmlns="http://www.w3.org/2000/svg" font-family="'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
   <defs>
     <marker id="ruar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 Z" fill="#8A9BA8"/></marker>
   </defs>
-  <rect x="0" y="0" width="860" height="400" fill="#ffffff"/>
-  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">롤링 업데이트 — 서비스 중단 없이 조금씩 교체</text>
-  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">구버전(v1) Pod를 조금씩 줄이고 신버전(v2)을 조금씩 늘리며 총 용량을 유지 · maxSurge / maxUnavailable로 속도 조절</text>
+  <rect x="0" y="0" width="860" height="446" fill="#ffffff"/>
+  <text x="32" y="40" font-size="21" font-weight="700" fill="#17212B">롤링 업데이트 — 서비스 중단 없이 점진 교체</text>
+  <text x="32" y="64" font-size="13.5" fill="#8A9BA8">구버전(v1)을 신버전(v2)으로 조금씩 교체 · maxSurge(용량 상한)와 maxUnavailable(가용성 하한)로 순서·속도 조절</text>
 
   <!-- legend -->
   <rect x="600" y="86" width="16" height="16" rx="3" fill="#EAF4F6" stroke="#08748C"/><text x="622" y="99" font-size="11" fill="#3E5060">v1 (구버전)</text>
@@ -32,7 +32,7 @@
     <rect x="274" y="214" width="52" height="44" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="300" y="241" font-size="10" fill="#1F6B4E" text-anchor="middle">v2</text>
     <rect x="334" y="214" width="52" height="44" rx="5" fill="#DFF0E8" stroke="#2E8B6B"/><text x="360" y="241" font-size="10" fill="#1F6B4E" text-anchor="middle">v2</text>
   </g>
-  <text x="330" y="346" font-size="10.5" fill="#8A9BA8" text-anchor="middle">용량 유지 (무중단)</text>
+  <text x="330" y="346" font-size="10.5" fill="#8A9BA8" text-anchor="middle">신버전은 readiness 통과 후 편입</text>
 
   <line x1="412" y1="236" x2="448" y2="236" stroke="#8A9BA8" stroke-width="1.6" marker-end="url(#ruar)"/>
 
@@ -47,14 +47,20 @@
   </g>
   <text x="530" y="346" font-size="10.5" fill="#8A9BA8" text-anchor="middle">용량 100%</text>
 
-  <!-- params -->
-  <rect x="628" y="146" width="200" height="180" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
+  <!-- params box -->
+  <rect x="628" y="146" width="200" height="196" rx="10" fill="#FBF3E4" stroke="#C88A2E" stroke-width="1.4"/>
   <text x="728" y="170" font-size="12.5" font-weight="700" fill="#8A5E12" text-anchor="middle">조절 매개변수</text>
-  <text x="644" y="196" font-size="11" fill="#8A5E12" font-weight="700">maxUnavailable</text>
-  <text x="644" y="213" font-size="10.5" fill="#8A9BA8">동시에 내릴 수 있는</text>
-  <text x="644" y="228" font-size="10.5" fill="#8A9BA8">최대 Pod 수(가용성 하한)</text>
-  <text x="644" y="256" font-size="11" fill="#8A5E12" font-weight="700">maxSurge</text>
-  <text x="644" y="273" font-size="10.5" fill="#8A9BA8">추가로 띄울 수 있는</text>
-  <text x="644" y="288" font-size="10.5" fill="#8A9BA8">최대 Pod 수(용량 상한)</text>
-  <text x="644" y="314" font-size="10" fill="#C88A2E">maxSurge 100% = 블루/그린</text>
+  <text x="644" y="194" font-size="11" fill="#8A5E12" font-weight="700">maxUnavailable</text>
+  <text x="644" y="210" font-size="10.5" fill="#8A9BA8">배포 중 모자라도 되는</text>
+  <text x="644" y="224" font-size="10.5" fill="#8A9BA8">최대 Pod 수 (가용성 하한)</text>
+  <text x="644" y="250" font-size="11" fill="#8A5E12" font-weight="700">maxSurge</text>
+  <text x="644" y="266" font-size="10.5" fill="#8A9BA8">추가로 띄울 수 있는</text>
+  <text x="644" y="280" font-size="10.5" fill="#8A9BA8">최대 Pod 수 (용량 상한)</text>
+  <line x1="644" y1="296" x2="812" y2="296" stroke="#E5CF9E"/>
+  <text x="644" y="316" font-size="10" fill="#C88A2E">기본값 25% / 25%</text>
+  <text x="644" y="332" font-size="10" fill="#C88A2E">(Surge 올림 · Unavail 내림)</text>
+
+  <text x="40" y="376" font-size="11.5" fill="#8A9BA8">· <tspan font-weight="700" fill="#1F6B4E">초과형</tspan> (maxSurge&gt;0 · maxUnavailable=0): 신버전을 먼저 더 띄운 뒤 구버전을 내림 → 용량이 안 줄지만 배포 중 리소스를 더 쓴다.</text>
+  <text x="40" y="398" font-size="11.5" fill="#8A9BA8">· <tspan font-weight="700" fill="#B83227">감소형</tspan> (maxSurge=0 · maxUnavailable&gt;0): 구버전을 먼저 줄이고 채움 → 리소스는 아끼지만 배포 중 용량이 잠깐 준다. (둘 다 0은 불가)</text>
+  <text x="40" y="420" font-size="11.5" fill="#8A9BA8">· maxSurge=100%는 신버전 전체를 먼저 올려 블루/그린과 비슷해 보이나, 트래픽을 한 번에 전환하는 진짜 블루/그린과는 다르다.</text>
 </svg>
