@@ -132,12 +132,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/DB/WAL (Write-Ahead Logging) 원리.md",
+                "file": "Programming/인프라/서킷 브레이커 상태 전이와 복귀 설계.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WAL (Write-Ahead Logging) 원리"
+              "title": "서킷 브레이커 상태 전이와 복귀 설계"
             }
           }
         ],
