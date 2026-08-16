@@ -139,9 +139,21 @@
               "icon": "lucide-file",
               "title": "서킷 브레이커 상태 전이와 복귀 설계"
             }
+          },
+          {
+            "id": "7cf0de891ac04679",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "릴리즈 노트 1.13.7"
+            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -161,7 +173,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -353,13 +367,29 @@
             "id": "c6bd91b0da2b67d9",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "54bc96b40237eb22",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
               "title": "Spaces"
             }
           }
-        ]
+        ],
+        "currentTab": 16
       }
     ],
     "direction": "horizontal",
@@ -461,7 +491,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "56f62b6c70529d54",
+  "active": "7cf0de891ac04679",
   "lastOpenFiles": [
     "Attached file/net_l4_l7_loadbalancer.svg",
     "Attached file/k8s_service_types.svg",
