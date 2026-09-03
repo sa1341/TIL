@@ -146,12 +146,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Programming/인프라/DB/DB Lock 전략의 이해.md",
-                "mode": "source",
+                "file": "Programming/인프라/DB/데드락 발생 조건과 대응 (탐지·예방).md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DB Lock 전략의 이해"
+              "title": "데드락 발생 조건과 대응 (탐지·예방)"
             }
           }
         ],
