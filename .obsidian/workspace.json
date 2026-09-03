@@ -144,12 +144,14 @@
             "id": "7cf0de891ac04679",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.7"
+                "file": "Programming/인프라/DB/DB Lock 전략의 이해.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "릴리즈 노트 1.13.7"
+              "icon": "lucide-file",
+              "title": "DB Lock 전략의 이해"
             }
           }
         ],
@@ -344,7 +346,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -397,6 +401,21 @@
             "id": "9e5ca3ebf39fb752",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "386b485b6c1ecd1e",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
@@ -404,7 +423,7 @@
             }
           }
         ],
-        "currentTab": 17
+        "currentTab": 13
       }
     ],
     "direction": "horizontal",
