@@ -153,9 +153,21 @@
               "icon": "lucide-file",
               "title": "격리 수준과 처리량의 트레이드오프"
             }
+          },
+          {
+            "id": "be1b35c1826f8cf7",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "릴리즈 노트 1.14.4"
+            }
           }
         ],
-        "currentTab": 10
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -416,6 +428,21 @@
             "id": "386b485b6c1ecd1e",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "170076b802ec77cd",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
@@ -423,7 +450,7 @@
             }
           }
         ],
-        "currentTab": 13
+        "currentTab": 19
       }
     ],
     "direction": "horizontal",
@@ -525,7 +552,7 @@
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "7cf0de891ac04679",
+  "active": "be1b35c1826f8cf7",
   "lastOpenFiles": [
     "Attached file/net_l4_l7_loadbalancer.svg",
     "Attached file/k8s_service_types.svg",
