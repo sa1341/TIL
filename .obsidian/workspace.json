@@ -165,9 +165,21 @@
               "icon": "lucide-book-up",
               "title": "릴리즈 노트 1.14.4"
             }
+          },
+          {
+            "id": "c0fa640a5d1c9b37",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.15.0"
+              },
+              "icon": "lucide-book-up",
+              "title": "릴리즈 노트 1.15.0"
+            }
           }
         ],
-        "currentTab": 11
+        "currentTab": 12
       }
     ],
     "direction": "vertical"
@@ -458,6 +470,21 @@
             "id": "67001304467729ed",
             "type": "leaf",
             "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "417cb72561f5e235",
+            "type": "leaf",
+            "state": {
               "type": "mk-path-view",
               "state": {},
               "icon": "layout-grid",
@@ -465,7 +492,7 @@
             }
           }
         ],
-        "currentTab": 20
+        "currentTab": 21
       }
     ],
     "direction": "horizontal",
@@ -560,14 +587,13 @@
       "command-palette:명령어 팔레트 열기": false,
       "bases:새 베이스 생성하기": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "obsidian-full-calendar:Open Full Calendar": false,
       "templater-obsidian:Templater": false,
       "smart-random-note:Open Random Note from Search": false
     }
   },
-  "active": "be1b35c1826f8cf7",
+  "active": "c0fa640a5d1c9b37",
   "lastOpenFiles": [
     "Attached file/net_l4_l7_loadbalancer.svg",
     "Attached file/k8s_service_types.svg",
